@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import SuccessModal from '../SuccessModal/SuccessModal';
 
 const ContactForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const ContactForm = ({ isOpen, onClose }) => {
     email: '',
     message: ''
   });
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,7 +17,6 @@ const ContactForm = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Sending data:', formData);
       const response = await fetch('https://autumn-frost-d9cf.aman16tanwar.workers.dev/api/contact', {
         method: 'POST',
         headers: {
@@ -23,22 +24,17 @@ const ContactForm = ({ isOpen, onClose }) => {
         },
         body: JSON.stringify(formData),
       });
-      console.log('Response status:', response.status);
-      const data = await response.json();
-      console.log('Response data:', data);
       if (response.ok) {
-        alert('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
-        onClose();
+        setIsSuccessModalOpen(true);
       } else {
-        throw new Error(data.message || 'Failed to send message');
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Error:', error);
       alert('Failed to send message. Please try again later.');
     }
   };
-  
 
   if (!isOpen) return null;
 
@@ -84,6 +80,13 @@ const ContactForm = ({ isOpen, onClose }) => {
           </button>
         </form>
       </div>
+      <SuccessModal 
+        isOpen={isSuccessModalOpen} 
+        onClose={() => {
+          setIsSuccessModalOpen(false);
+          onClose();
+        }} 
+      />
     </div>
   );
 };
