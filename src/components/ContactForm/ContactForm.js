@@ -34,7 +34,7 @@ const ContactForm = ({ isOpen, onClose, onSubmitSuccess }) => {
       onSubmitSuccess();
     } catch (error) {
       console.error('Error:', error);
-      alert('There was an issue sending your message, but it may have been received. Please check your email for confirmation.');
+      alert('Thank you for reaching out. There was an issue submitting your message, but we have likely received it. Our team will contact you within the next few hours to confirm and assist with your inquiry.');
     } finally {
       setIsSubmitting(false);
     }
