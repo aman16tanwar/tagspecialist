@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import SuccessModal from '../SuccessModal/SuccessModal';
 
-const ContactForm = ({ isOpen, onClose }) => {
+const ContactForm = ({ isOpen, onClose, onSubmitSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +24,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       });
       if (response.ok) {
         setFormData({ name: '', email: '', message: '' });
-        setIsSuccessModalOpen(true);
+        onSubmitSuccess();
       } else {
         throw new Error('Failed to send message');
       }
@@ -80,13 +78,6 @@ const ContactForm = ({ isOpen, onClose }) => {
           </button>
         </form>
       </div>
-      <SuccessModal 
-        isOpen={isSuccessModalOpen} 
-        onClose={() => {
-          setIsSuccessModalOpen(false);
-          onClose();
-        }} 
-      />
     </div>
   );
 };
