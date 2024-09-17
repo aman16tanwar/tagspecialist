@@ -15,19 +15,23 @@ const ContactForm = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {  // Use localhost:5000 for backend
+      console.log('Sending data:', formData);
+      const response = await fetch('https://autumn-frost-d9cf.aman16tanwar.workers.dev/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
+      console.log('Response status:', response.status);
+      const data = await response.json();
+      console.log('Response data:', data);
       if (response.ok) {
         alert('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
         onClose();
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(data.message || 'Failed to send message');
       }
     } catch (error) {
       console.error('Error:', error);
