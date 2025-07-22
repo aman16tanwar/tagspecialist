@@ -48,10 +48,15 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess }) => {
         body: JSON.stringify(formData),
       });
       
+      const data = await response.json();
+      
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        console.error('Server error:', data);
+        throw new Error(data.error || 'Network response was not ok');
       }
       
+      // Success!
+      alert('Thank you for reaching out! I\'ll get back to you within 24 hours.');
       setFormData({ name: '', email: '', company: '', budget: '', message: '' });
       if (onSubmitSuccess) onSubmitSuccess();
       handleClose();
