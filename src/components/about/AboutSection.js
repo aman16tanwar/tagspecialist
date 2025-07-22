@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    HiAcademicCap, HiClock, HiBriefcase, HiUserGroup,
+    HiClock, HiBriefcase, HiUserGroup,
     HiCheckCircle, HiLightningBolt, HiGlobeAlt, HiMail
 } from 'react-icons/hi';
-import { FaGoogle, FaFacebook, FaAws, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { SiGooglecloud, SiGoogleanalytics, SiTableau } from 'react-icons/si';
+import { FaFacebook, FaAws, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiGooglecloud, SiGoogleanalytics } from 'react-icons/si';
 
 const AboutSection = () => {
     const containerVariants = {

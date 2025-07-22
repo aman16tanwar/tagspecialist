@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     HiSparkles, HiChartBar, HiLightningBolt, HiDatabase,
-    HiTrendingUp, HiClock, HiCheckCircle, HiPlay,
+    HiTrendingUp, HiClock, HiPlay,
     HiCode, HiChatAlt, HiCursorClick
 } from 'react-icons/hi';
 import { FaRobot } from 'react-icons/fa';
@@ -112,7 +112,7 @@ SELECT
 
             return () => clearInterval(interval);
         }
-    }, [isTyping, currentStep]);
+    }, [isTyping, currentStep, demoSteps]);
 
     const nextStep = () => {
         if (currentStep < demoSteps.length - 1) {

@@ -7,7 +7,6 @@ import AIAssistantShowcase from './components/ai/AIAssistantShowcase';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import AboutSection from './components/about/AboutSection';
 import PricingSection from './components/pricing/PricingSection';
-import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
   return (

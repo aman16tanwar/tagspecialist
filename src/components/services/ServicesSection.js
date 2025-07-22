@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    HiDatabase, HiChartBar, HiLightningBolt, HiDesktopComputer,
+    HiDatabase, HiChartBar, HiLightningBolt,
     HiChip, HiCode, HiShieldCheck, HiCursorClick,
     HiClock, HiTrendingUp, HiBeaker, HiPuzzle
 } from 'react-icons/hi';

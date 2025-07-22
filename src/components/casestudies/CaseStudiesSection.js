@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-    HiTrendingUp, HiCash, HiClock, HiChartBar,
+    HiTrendingUp,
     HiArrowRight, HiCheckCircle, HiLightningBolt,
     HiShoppingCart, HiDatabase, HiCode
 } from 'react-icons/hi';
