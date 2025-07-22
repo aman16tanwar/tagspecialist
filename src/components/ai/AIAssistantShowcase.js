@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     HiSparkles, HiChartBar, HiLightningBolt, HiDatabase,
@@ -12,7 +12,7 @@ const AIAssistantShowcase = () => {
     const [isTyping, setIsTyping] = useState(false);
     const [displayedText, setDisplayedText] = useState('');
 
-    const demoSteps = [
+    const demoSteps = useMemo(() => [
         {
             id: 1,
             question: "Which products have the highest LTV?",
@@ -82,7 +82,7 @@ SELECT
             },
             insight: "Based on seasonality and growth trends, expect 12% revenue increase. Ensure inventory for top products."
         }
-    ];
+    ], []);
 
     const features = [
         { icon: HiDatabase, text: "Connects directly to your BigQuery data warehouse" },
