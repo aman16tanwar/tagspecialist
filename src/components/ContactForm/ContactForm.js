@@ -40,19 +40,26 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess }) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://autumn-frost-d9cf.aman16tanwar.workers.dev/api/contact', {
+      // Call Web3Forms directly from frontend
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: '281edfc6-1b7f-429f-a500-da5b83ede63e',
+          name: formData.name,
+          email: formData.email,
+          subject: `New Contact from ${formData.name} - Tag Specialist`,
+          message: `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nBudget: ${formData.budget || 'N/A'}\n\nMessage:\n${formData.message}`
+        }),
       });
       
       const data = await response.json();
       
-      if (!response.ok) {
+      if (!response.ok || !data.success) {
         console.error('Server error:', data);
-        throw new Error(data.error || 'Network response was not ok');
+        throw new Error(data.message || 'Network response was not ok');
       }
       
       // Success!
