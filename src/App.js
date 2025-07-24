@@ -7,6 +7,7 @@ import AIAssistantShowcase from './components/ai/AIAssistantShowcase';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import AboutSection from './components/about/AboutSection';
 import PricingSection from './components/pricing/PricingSection';
+import ProductsSection from './components/products/ProductsSection';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <AIAssistantShowcase />
       <AboutSection />
       <TestimonialsSection />
+      <ProductsSection />
       <PricingSection />
       <div id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
         <div className="container mx-auto px-4 text-center">

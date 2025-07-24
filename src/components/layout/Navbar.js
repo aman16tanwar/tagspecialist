@@ -28,6 +28,7 @@ const Navbar = () => {
     { name: 'Case Studies', id: 'case-studies' },
     { name: 'AI Assistant', id: 'ai-assistant' },
     { name: 'About', id: 'about' },
+    { name: 'Products', id: 'products' },
     { name: 'Pricing', id: 'pricing' },
     { name: 'Contact', id: 'contact' }
   ];
