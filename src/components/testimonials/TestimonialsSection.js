@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
             company: "E-commerce Client",
             content: "Aman is hands down the best Google and Meta tracking specialist I've ever worked with. His deep expertise, problem-solving skills, and attention to detail make him an absolute game-changer.",
             rating: 5,
-            highlight: "Best tracking specialist",
+            highlight: "$2,314 project • 41 hours",
             image: "MD",
             gradient: "from-blue-500 to-cyan-500"
         },
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
             company: "E-commerce Brands",
             content: "Aman did a fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites I have. I will definitely work with him again and be referring others to him.",
             rating: 5,
-            highlight: "3 sites implemented",
+            highlight: "$405 project • 7 hours",
             image: "BO",
             gradient: "from-indigo-500 to-blue-500"
         },
@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
             company: "SaaS Company",
             content: "Incredibly skilled with Facebook attribution, and was thorough in troubleshooting and solving my issue, even on my checkout software that he wasn't already familiar with.",
             rating: 5,
-            highlight: "Expert troubleshooting",
+            highlight: "$35 project • Quick fix",
             image: "MM",
             gradient: "from-green-500 to-teal-500"
         },
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
             company: "ThriveCart User",
             content: "Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, Facebook Ads Manager. Would highly recommend and will gladly rehire in future.",
             rating: 5,
-            highlight: "Highly professional",
+            highlight: "$70 project • 1 hour",
             image: "EM",
             gradient: "from-orange-500 to-red-500"
         },
@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
             company: "Long-term Client",
             content: "Very good developer. Always did a good job. We've worked together for over 3 years with 172 hours logged. Aman has been instrumental in our tracking success.",
             rating: 5,
-            highlight: "3+ years partnership",
+            highlight: "$7,740 • 172 hours",
             image: "GL",
             gradient: "from-indigo-500 to-blue-500"
         },
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
             company: "Digital Agency",
             content: "Aman is great and knowledgeable. He's a great communicator too. His audit helped us identify critical tracking gaps and improve our campaign performance significantly.",
             rating: 5,
-            highlight: "Great communicator",
+            highlight: "$366 project • 6 hours",
             image: "AM",
             gradient: "from-pink-500 to-rose-500"
         }
@@ -129,15 +129,21 @@ const TestimonialsSection = () => {
                     <div className="flex-1">
                         <h4 className="text-white font-semibold">{testimonial.name}</h4>
                         <p className="text-sm text-gray-400">
-                            {testimonial.role} at {testimonial.company}
+                            {testimonial.role} • {testimonial.company}
+                        </p>
+                        <p className="text-xs text-green-400 mt-1">
+                            ✓ Verified Upwork Client
                         </p>
                     </div>
                     
                     {/* Rating */}
-                    <div className="flex gap-0.5">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                            <HiStar key={i} className="w-4 h-4 text-yellow-400" />
-                        ))}
+                    <div className="flex flex-col items-end">
+                        <div className="flex gap-0.5">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                                <HiStar key={i} className="w-4 h-4 text-yellow-400" />
+                            ))}
+                        </div>
+                        <span className="text-xs text-gray-500 mt-1">via Upwork</span>
                     </div>
                 </div>
             </div>
@@ -212,19 +218,29 @@ const TestimonialsSection = () => {
                     {/* Trust Badges */}
                     <motion.div 
                         variants={itemVariants}
-                        className="mt-16 flex flex-wrap justify-center items-center gap-8"
+                        className="mt-16 flex flex-col items-center gap-6"
                     >
-                        <div className="flex items-center gap-2 text-gray-400">
-                            <HiStar className="w-5 h-5 text-yellow-400" />
-                            <span>Top Rated on Upwork</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400">
-                            <HiStar className="w-5 h-5 text-yellow-400" />
-                            <span>Google Analytics Certified</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400">
-                            <HiStar className="w-5 h-5 text-yellow-400" />
-                            <span>Meta Marketing Partner</span>
+                        <p className="text-gray-400 text-center">
+                            All testimonials are from verified Upwork clients with whom I've completed successful projects.
+                        </p>
+                        <div className="flex flex-wrap justify-center items-center gap-8">
+                            <a 
+                                href="https://www.upwork.com/freelancers/~01528e07812749b309" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+                            >
+                                <HiStar className="w-5 h-5" />
+                                <span>View My Upwork Profile</span>
+                            </a>
+                            <div className="flex items-center gap-2 text-gray-400">
+                                <HiStar className="w-5 h-5 text-yellow-400" />
+                                <span>100% Job Success Score</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-gray-400">
+                                <HiStar className="w-5 h-5 text-yellow-400" />
+                                <span>Top Rated Plus</span>
+                            </div>
                         </div>
                     </motion.div>
                 </motion.div>
