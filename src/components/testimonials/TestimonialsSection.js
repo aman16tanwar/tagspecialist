@@ -7,68 +7,68 @@ const TestimonialsSection = () => {
     const testimonials = [
         {
             id: 1,
-            name: "Sarah Chen",
-            role: "CMO",
-            company: "TechStyle Commerce",
-            content: "Aman built us a data pipeline that literally changed how we run our business. We went from guessing to knowing.",
+            name: "Marketing Director",
+            role: "Google/Meta Tracking",
+            company: "E-commerce Client",
+            content: "Aman is hands down the best Google and Meta tracking specialist I've ever worked with. His deep expertise, problem-solving skills, and attention to detail make him an absolute game-changer.",
             rating: 5,
-            highlight: "From guessing to knowing",
-            image: "SC",
+            highlight: "Best tracking specialist",
+            image: "MD",
             gradient: "from-blue-500 to-cyan-500"
         },
         {
             id: 2,
-            name: "Marcus Rodriguez",
-            role: "Founder",
-            company: "Growth Labs",
-            content: "Finally, someone who speaks both marketing and engineering. Aman's AI assistant saves me 2 hours every morning.",
+            name: "Business Owner",
+            role: "GA4 Implementation",
+            company: "E-commerce Brands",
+            content: "Aman did a fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites I have. I will definitely work with him again and be referring others to him.",
             rating: 5,
-            highlight: "2 hours saved daily",
-            image: "MR",
+            highlight: "3 sites implemented",
+            image: "BO",
             gradient: "from-indigo-500 to-blue-500"
         },
         {
             id: 3,
-            name: "Jennifer Park",
-            role: "Head of Growth",
-            company: "Nexus Digital",
-            content: "We tried 3 agencies before Aman. He fixed our tracking in 2 days and built a BigQuery setup that scales beautifully.",
+            name: "Marketing Manager",
+            role: "Facebook Attribution",
+            company: "SaaS Company",
+            content: "Incredibly skilled with Facebook attribution, and was thorough in troubleshooting and solving my issue, even on my checkout software that he wasn't already familiar with.",
             rating: 5,
-            highlight: "Fixed in 2 days",
-            image: "JP",
+            highlight: "Expert troubleshooting",
+            image: "MM",
             gradient: "from-green-500 to-teal-500"
         },
         {
             id: 4,
-            name: "David Thompson",
-            role: "VP Marketing",
-            company: "Ecom Brands Co",
-            content: "The ROI on Aman's work is insane. We recovered tracking for 73% of our iOS traffic and cut CAC by 31%.",
+            name: "E-commerce Manager",
+            role: "CAPI Setup",
+            company: "ThriveCart User",
+            content: "Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, Facebook Ads Manager. Would highly recommend and will gladly rehire in future.",
             rating: 5,
-            highlight: "31% CAC reduction",
-            image: "DT",
+            highlight: "Highly professional",
+            image: "EM",
             gradient: "from-orange-500 to-red-500"
         },
         {
             id: 5,
-            name: "Lisa Wang",
-            role: "Data Lead",
-            company: "Scale Agency",
-            content: "Aman doesn't just implement solutions, he teaches you how to use them. Our team is now self-sufficient with data.",
+            name: "Growth Lead",
+            role: "GTM Implementation",
+            company: "Long-term Client",
+            content: "Very good developer. Always did a good job. We've worked together for over 3 years with 172 hours logged. Aman has been instrumental in our tracking success.",
             rating: 5,
-            highlight: "Team empowerment",
-            image: "LW",
+            highlight: "3+ years partnership",
+            image: "GL",
             gradient: "from-indigo-500 to-blue-500"
         },
         {
             id: 6,
-            name: "Michael Foster",
-            role: "CEO",
-            company: "Direct Brands",
-            content: "The predictive dashboards Aman built help us spot trends weeks before our competitors. Game-changing work.",
+            name: "Analytics Manager",
+            role: "SA360 Account Audit",
+            company: "Digital Agency",
+            content: "Aman is great and knowledgeable. He's a great communicator too. His audit helped us identify critical tracking gaps and improve our campaign performance significantly.",
             rating: 5,
-            highlight: "Weeks ahead of competition",
-            image: "MF",
+            highlight: "Great communicator",
+            image: "AM",
             gradient: "from-pink-500 to-rose-500"
         }
     ];
@@ -189,10 +189,10 @@ const TestimonialsSection = () => {
                         className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
                     >
                         {[
-                            { number: "100+", label: "Happy Clients" },
-                            { number: "9+", label: "Years Experience" },
+                            { number: "50+", label: "Happy Clients" },
+                            { number: "4+", label: "Years on Upwork" },
                             { number: "5.0", label: "Average Rating" },
-                            { number: "24hr", label: "Response Time" }
+                            { number: "$15K+", label: "Earned on Platform" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
                                 <motion.div
