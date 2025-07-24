@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    HiDownload, HiClock, HiCurrencyDollar, HiCheckCircle,
-    HiLightningBolt, HiCode, HiSupport, HiArrowRight
+    HiDownload, HiCheckCircle,
+    HiLightningBolt, HiCode, HiArrowRight
 } from 'react-icons/hi';
-import { FaShopify, FaGoogle, FaPython } from 'react-icons/fa';
+import { FaShopify } from 'react-icons/fa';
 
 const ProductsSection = () => {
     const products = [
