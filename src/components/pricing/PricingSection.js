@@ -11,82 +11,86 @@ const PricingSection = () => {
     const pricingPlans = [
         {
             id: 'starter',
-            name: 'Fix Your Tracking',
-            tagline: 'Recover lost conversions and trust your data again',
-            price: 'From $750',
-            priceNote: 'One-time implementation',
+            name: 'Starter Package',
+            tagline: 'Foundation & Visibility',
+            price: 'From $2,500',
+            priceNote: 'One-time + monthly insights',
             icon: FaRocket,
             color: 'from-blue-500 to-cyan-500',
             features: [
-                'GA4 + GTM audit & fixes',
-                'iOS tracking recovery',
-                'Conversion tracking setup',
-                'Server-side tracking basics',
-                'Enhanced ecommerce tracking',
-                'Cross-domain tracking',
-                '30-day support included',
+                'Full GA4 + GTM tracking setup (web + server-side)',
+                'Core pipelines: Google Ads / Meta Ads → BigQuery',
+                'Standard Looker Studio dashboards',
+                'Traffic, conversions & revenue tracking',
+                'Monthly performance insights report',
+                'Key actions & trends analysis',
+                'Email support',
                 'Implementation documentation'
             ],
             notIncluded: [
-                'Data warehouse setup',
-                'Custom dashboards',
-                'AI analytics'
-            ],
-            cta: 'Fix My Tracking',
-            popular: false,
-            highlight: 'Most choose $1,500 package'
-        },
-        {
-            id: 'growth',
-            name: 'Scale Your Data',
-            tagline: 'Transform raw data into competitive advantage',
-            price: 'From $2,500',
-            priceNote: 'Complete data pipeline',
-            icon: FaChartLine,
-            color: 'from-indigo-500 to-blue-600',
-            features: [
-                'Everything in Starter',
-                'Shopify → BigQuery pipeline',
-                'Meta & Google Ads integration',
-                'Custom Looker Studio dashboards',
-                'Automated reporting',
-                'Cost & profit analysis',
-                'Real-time data sync',
-                '90-day optimization support',
-                'Monthly performance reviews'
-            ],
-            notIncluded: [
+                'Multi-platform integration',
                 'AI-powered insights',
                 'Predictive analytics'
             ],
-            cta: 'Build My Pipeline',
+            cta: 'Start with Foundation',
+            popular: false,
+            highlight: 'Perfect for small businesses',
+            outcome: 'Clear visibility into marketing data with accurate tracking'
+        },
+        {
+            id: 'growth',
+            name: 'Growth Package',
+            tagline: 'Multi-Channel Integration & Automation',
+            price: 'From $5,000',
+            priceNote: 'Complete automation suite',
+            icon: FaChartLine,
+            color: 'from-indigo-500 to-blue-600',
+            features: [
+                'Everything in Starter Package',
+                'Multi-platform pipelines (DV360, Shopify, etc.)',
+                'Advanced BigQuery transformations',
+                'Custom funnels & segmentation',
+                'LTV analysis & cohorts',
+                'AI-powered insights (LangGraph/n8n)',
+                'Weekly performance summaries',
+                'Anomaly detection alerts',
+                'Priority email/phone support'
+            ],
+            notIncluded: [
+                'Predictive modeling',
+                'Custom ML models',
+                'Dedicated strategy calls'
+            ],
+            cta: 'Scale with Automation',
             popular: true,
-            highlight: 'ROI in 30 days guaranteed'
+            highlight: 'Most popular for scaling brands',
+            outcome: 'Automated insights and multi-channel ROI tracking'
         },
         {
             id: 'enterprise',
-            name: 'AI-Powered Intelligence',
-            tagline: 'Ask questions, get answers, predict the future',
-            price: 'From $5,000',
+            name: 'Enterprise Package',
+            tagline: 'AI-Driven Intelligence & Predictive Analytics',
+            price: 'From $10,000',
             priceNote: 'Full AI implementation',
             icon: FaCrown,
             color: 'from-yellow-500 to-orange-500',
             features: [
-                'Everything in Growth',
-                'Custom AI analytics assistant',
-                'Natural language queries',
-                'Predictive revenue models',
-                'Automated insights in Slack',
-                'Anomaly detection alerts',
-                'Custom ML models',
-                'Weekly strategy calls',
-                'White-glove support',
+                'Everything in Growth Package',
+                'Advanced multi-domain tracking audits',
+                'Predictive modeling with BigQuery ML',
+                'Forecasting, churn & LTV predictions',
+                'Full AI agent integration (schema-aware)',
+                'Custom workflow automation',
+                'QuickBooks & PM tools integration',
+                'Dedicated support & monthly strategy calls',
+                'API access or private deployment',
                 'Quarterly business reviews'
             ],
             notIncluded: [],
-            cta: 'Get AI Superpowers',
+            cta: 'Get Enterprise AI',
             popular: false,
-            highlight: 'Save 10+ hours/week'
+            highlight: 'For large-scale advertisers',
+            outcome: 'AI-driven decision-making with predictive insights'
         }
     ];
 
@@ -179,6 +183,14 @@ const PricingSection = () => {
                                         )}
                                     </div>
 
+                                    {/* Outcome */}
+                                    {plan.outcome && (
+                                        <div className="mb-6 p-4 bg-gray-700/30 rounded-lg">
+                                            <h4 className="text-sm font-semibold text-gray-400 mb-2">OUTCOME</h4>
+                                            <p className="text-sm text-gray-300">{plan.outcome}</p>
+                                        </div>
+                                    )}
+
                                     {/* CTA */}
                                     <a
                                         href="#contact"
@@ -227,55 +239,63 @@ const PricingSection = () => {
 
                 {/* Retainer Plans */}
                 <div className="mt-20">
-                    <h3 className="text-3xl font-bold text-white text-center mb-4">Ongoing Support Plans</h3>
-                    <p className="text-gray-400 text-center mb-12">Keep your data infrastructure running smoothly</p>
+                    <h3 className="text-3xl font-bold text-white text-center mb-4">Ongoing Support & Optimization</h3>
+                    <p className="text-gray-400 text-center mb-12">Keep your data infrastructure running and improving</p>
                     
                     <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         <div className="bg-gradient-to-br from-gray-800 to-gray-700 border border-gray-600 rounded-xl p-6">
-                            <h4 className="text-xl font-bold text-white mb-2">Essential</h4>
-                            <div className="text-3xl font-bold text-white mb-4">$500<span className="text-lg text-gray-400">/mo</span></div>
+                            <h4 className="text-xl font-bold text-white mb-2">Maintenance</h4>
+                            <div className="text-3xl font-bold text-white mb-4">$1,000<span className="text-lg text-gray-400">/mo</span></div>
                             <ul className="space-y-2 text-sm text-gray-300">
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Monthly tracking QA
+                                    Monthly tracking QA & fixes
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Bug fixes & updates
+                                    Dashboard maintenance
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    2 hours support
+                                    Platform updates
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                                    4 hours support/month
                                 </li>
                             </ul>
                         </div>
                         
                         <div className="bg-gradient-to-br from-indigo-800/20 to-indigo-700/20 border border-indigo-600 rounded-xl p-6">
-                            <h4 className="text-xl font-bold text-white mb-2">Growth</h4>
-                            <div className="text-3xl font-bold text-white mb-4">$1,500<span className="text-lg text-gray-400">/mo</span></div>
+                            <h4 className="text-xl font-bold text-white mb-2">Optimization</h4>
+                            <div className="text-3xl font-bold text-white mb-4">$2,500<span className="text-lg text-gray-400">/mo</span></div>
                             <ul className="space-y-2 text-sm text-gray-300">
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Pipeline monitoring
+                                    Everything in Maintenance
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Dashboard updates
+                                    Pipeline optimization
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    5 hours support
+                                    New metrics & KPIs
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
                                     Weekly check-ins
                                 </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                                    8 hours support/month
+                                </li>
                             </ul>
                         </div>
                         
                         <div className="bg-gradient-to-br from-yellow-800/20 to-orange-700/20 border border-yellow-600 rounded-xl p-6">
-                            <h4 className="text-xl font-bold text-white mb-2">Enterprise</h4>
-                            <div className="text-3xl font-bold text-white mb-4">$3,000<span className="text-lg text-gray-400">/mo</span></div>
+                            <h4 className="text-xl font-bold text-white mb-2">Full Service</h4>
+                            <div className="text-3xl font-bold text-white mb-4">$5,000<span className="text-lg text-gray-400">/mo</span></div>
                             <ul className="space-y-2 text-sm text-gray-300">
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
@@ -283,15 +303,19 @@ const PricingSection = () => {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    AI insights & alerts
+                                    AI model improvements
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    10 hours support
+                                    New integrations
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Priority response
+                                    Strategic consulting
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                                    20 hours support/month
                                 </li>
                             </ul>
                         </div>
@@ -341,7 +365,7 @@ const PricingSection = () => {
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full">
                         <HiClock className="w-5 h-5 text-yellow-400" />
                         <span className="text-sm text-yellow-300">
-                            I take on 2-3 new implementations per month. Current availability: January 2025
+                            I take on 2-3 new implementations per month. Current availability: August 2025
                         </span>
                     </div>
                 </div>
