@@ -11,12 +11,27 @@ const BlogsPage = () => {
 
     const blogPosts = [
         {
+            id: 'tutorial',
+            title: 'Complete Guide: Build Your Own Shopify → BigQuery Pipeline',
+            description: 'Step-by-step tutorial to replace expensive ELT tools with a custom Python solution. Includes code snippets, architecture diagrams, and deployment guide.',
+            category: 'Technical Tutorial',
+            readTime: '20 min read',
+            featured: true,
+            link: '/blog/shopify-bigquery-pipeline-tutorial',
+            highlights: [
+                'Full implementation walkthrough',
+                'Docker & Cloud Run deployment',
+                'Multi-store configuration',
+                'Production-ready architecture'
+            ]
+        },
+        {
             id: 'starter-package',
             title: 'Stop Paying $1,000+/Month for Shopify → BigQuery Sync',
             description: 'Learn how to save 95% on ELT costs with our production-ready Python solution. One-time purchase, unlimited stores, full customization.',
             category: 'Product Guide',
             readTime: '10 min read',
-            featured: true,
+            featured: false,
             link: '/starter-package',
             highlights: [
                 'Save $10,903 in the first year',
@@ -24,8 +39,7 @@ const BlogsPage = () => {
                 'Unlimited Shopify stores',
                 'Full source code ownership'
             ]
-        },
-        // More blog posts can be added here in the future
+        }
     ];
 
     return (

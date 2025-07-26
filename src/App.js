@@ -12,6 +12,7 @@ import ProductsSection from './components/products/ProductsSection';
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
 import StarterPackagePage from './components/blog/StarterPackagePage';
 import BlogsPage from './components/blog/BlogsPage';
+import ShopifyBigQueryTutorial from './components/blog/ShopifyBigQueryTutorial';
 
 // Main page component
 const HomePage = () => (
@@ -65,6 +66,7 @@ function App() {
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/starter-package" element={<StarterPackagePage />} />
         <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blog/shopify-bigquery-pipeline-tutorial" element={<ShopifyBigQueryTutorial />} />
       </Routes>
     </Layout>
   );
