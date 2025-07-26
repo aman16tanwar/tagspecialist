@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { HiArrowRight, HiClock, HiCurrencyDollar } from 'react-icons/hi';
+import { HiArrowRight, HiClock } from 'react-icons/hi';
 
 const BlogsPage = () => {
     // Scroll to top when component mounts

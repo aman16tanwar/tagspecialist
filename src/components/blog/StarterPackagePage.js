@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-    HiChartBar, HiCurrencyDollar, HiClock, HiCode, 
-    HiShieldCheck, HiLightningBolt, HiCheckCircle, HiXCircle,
+    HiChartBar, HiCurrencyDollar, HiCode, 
+    HiShieldCheck, HiCheckCircle, HiXCircle,
     HiArrowRight, HiExternalLink, HiArrowLeft
 } from 'react-icons/hi';
 import { FaShopify, FaPython } from 'react-icons/fa';
