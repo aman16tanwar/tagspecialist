@@ -1,12 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
     HiDownload, HiCheckCircle,
-    HiLightningBolt, HiCode, HiArrowRight
+    HiLightningBolt, HiCode, HiArrowRight, HiExternalLink
 } from 'react-icons/hi';
 import { FaShopify } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import ContactForm from '../ContactForm/ContactForm';
+import StripeCheckoutModal from '../StripeCheckout/StripeCheckoutModal';
+import { productConfig } from '../../config/products.config';
 
 const ProductsSection = () => {
+    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+    const [isStripeModalOpen, setIsStripeModalOpen] = useState(false);
+    const [selectedPackage, setSelectedPackage] = useState(null);
+    const [stripeConfig, setStripeConfig] = useState(null);
+    
+    const handlePackageClick = (product, pkg) => {
+        const config = productConfig.paymentLinks[pkg.name];
+        
+        if (config?.type === 'stripe_embed') {
+            // Use embedded Stripe checkout modal
+            setStripeConfig({
+                ...config.stripeBuyButton,
+                productName: `${product.name} - ${pkg.name}`
+            });
+            setIsStripeModalOpen(true);
+        } else if (config?.type === 'direct_payment') {
+            // Direct payment link
+            window.open(config.url, '_blank');
+        } else if (config?.type === 'direct_booking') {
+            // Direct calendar booking link
+            window.open(config.url, '_blank');
+        } else if (config?.type === 'contact_form') {
+            // Open contact form with pre-filled message
+            setSelectedPackage({ 
+                product: product.name, 
+                package: pkg.name, 
+                price: pkg.price,
+                message: config.message || ''
+            });
+            setIsContactFormOpen(true);
+        } else if (productConfig.bookingLinks?.[pkg.name]) {
+            // Alternative: Direct calendar booking
+            window.open(productConfig.bookingLinks[pkg.name], '_blank');
+        } else {
+            // Fallback: Open contact form
+            setSelectedPackage({ product: product.name, package: pkg.name, price: pkg.price });
+            setIsContactFormOpen(true);
+        }
+    };
     const products = [
         {
             id: 'shopify-pipeline',
@@ -20,7 +63,7 @@ const ProductsSection = () => {
             savings: '$1,000+/month for 10 stores',
             packages: [
                 {
-                    name: 'DIY Script Package',
+                    name: 'Starter Package',
                     price: '$497',
                     description: 'Perfect for technical teams',
                     features: [
@@ -34,7 +77,7 @@ const ProductsSection = () => {
                     popular: false
                 },
                 {
-                    name: 'Guided Implementation',
+                    name: 'Professional Package',
                     price: '$997',
                     description: 'We help you set it up',
                     features: [
@@ -48,7 +91,7 @@ const ProductsSection = () => {
                     popular: true
                 },
                 {
-                    name: 'Done-For-You',
+                    name: 'Enterprise Package',
                     price: '$2,497',
                     description: 'Full white-glove service',
                     features: [
@@ -171,7 +214,21 @@ const ProductsSection = () => {
                                             ))}
                                         </ul>
                                         
-                                        <button className={`w-full py-3 px-4 ${pkg.popular ? 'bg-gradient-to-r from-blue-500 to-indigo-600' : 'bg-gray-700'} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2`}>
+                                        {/* Learn More link for Starter Package */}
+                                        {pkg.name === 'Starter Package' && (
+                                            <Link 
+                                                to="/starter-package" 
+                                                className="block text-center text-blue-400 hover:text-blue-300 mb-4 font-medium"
+                                            >
+                                                Learn More About This Package
+                                                <HiExternalLink className="inline-block w-4 h-4 ml-1" />
+                                            </Link>
+                                        )}
+                                        
+                                        <button 
+                                            onClick={() => handlePackageClick(product, pkg)}
+                                            className={`w-full py-3 px-4 ${pkg.popular ? 'bg-gradient-to-r from-blue-500 to-indigo-600' : 'bg-gray-700'} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2`}
+                                        >
                                             {pkg.cta}
                                             <HiArrowRight className="w-4 h-4" />
                                         </button>
@@ -247,6 +304,35 @@ const ProductsSection = () => {
                     </a>
                 </div>
             </div>
+            
+            {/* Contact Form Modal */}
+            {isContactFormOpen && (
+                <ContactForm 
+                    isOpen={isContactFormOpen}
+                    onClose={() => {
+                        setIsContactFormOpen(false);
+                        setSelectedPackage(null);
+                    }}
+                    initialMessage={selectedPackage ? 
+                        selectedPackage.message || `I'm interested in the ${selectedPackage.product} - ${selectedPackage.package} (${selectedPackage.price})` : 
+                        ''
+                    }
+                />
+            )}
+            
+            {/* Stripe Checkout Modal */}
+            {isStripeModalOpen && stripeConfig && (
+                <StripeCheckoutModal
+                    isOpen={isStripeModalOpen}
+                    onClose={() => {
+                        setIsStripeModalOpen(false);
+                        setStripeConfig(null);
+                    }}
+                    buyButtonId={stripeConfig.buyButtonId}
+                    publishableKey={stripeConfig.publishableKey}
+                    productName={stripeConfig.productName}
+                />
+            )}
         </section>
     );
 };

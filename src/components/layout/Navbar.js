@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,21 +18,40 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const handleNavigation = (item) => {
     setIsMobileMenuOpen(false);
+    
+    // If it's a route navigation (like blogs)
+    if (item.route) {
+      navigate(item.route);
+      return;
+    }
+    
+    // If we're on the homepage, just scroll to section
+    if (location.pathname === '/') {
+      const section = document.getElementById(item.id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // If we're on another page, navigate to homepage then scroll
+      navigate('/');
+      // Wait for navigation to complete then scroll
+      setTimeout(() => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
   };
 
   const menuItems = [
     { name: 'Services', id: 'services' },
-    { name: 'Case Studies', id: 'case-studies' },
-    { name: 'AI Assistant', id: 'ai-assistant' },
-    { name: 'About', id: 'about' },
+    { name: 'Blogs', route: '/blogs' },
     { name: 'Products', id: 'products' },
     { name: 'Pricing', id: 'pricing' },
+    { name: 'About', id: 'about' },
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -46,7 +68,7 @@ const Navbar = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => navigate('/')}
           >
             <div className="text-2xl font-bold">
               <span className="text-white">Tag</span>
@@ -60,30 +82,26 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => (
               <motion.button
-                key={item.id}
+                key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavigation(item)}
                 className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
               </motion.button>
             ))}
-            <motion.a
+            <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 }}
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contact');
-              }}
+              onClick={() => handleNavigation({ id: 'contact' })}
               className="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105"
             >
               Get Started
-            </motion.a>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,24 +123,20 @@ const Navbar = () => {
           >
             {menuItems.map((item) => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                key={item.name}
+                onClick={() => handleNavigation(item)}
                 className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
               >
                 {item.name}
               </button>
             ))}
             <div className="mt-4 px-4">
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('contact');
-                }}
+              <button
+                onClick={() => handleNavigation({ id: 'contact' })}
                 className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

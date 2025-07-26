@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX, HiMail, HiUser, HiChat } from 'react-icons/hi';
 
-const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess }) => {
+const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMessage = '' }) => {
   const [isOpen, setIsOpen] = useState(propIsOpen || false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     budget: '',
-    message: ''
+    message: initialMessage
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,6 +26,13 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess }) => {
       setIsOpen(propIsOpen);
     }
   }, [propIsOpen]);
+  
+  // Update message when initialMessage changes
+  useEffect(() => {
+    if (initialMessage) {
+      setFormData(prev => ({ ...prev, message: initialMessage }));
+    }
+  }, [initialMessage]);
 
   const handleClose = () => {
     setIsOpen(false);
