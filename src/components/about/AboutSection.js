@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
     HiClock, HiBriefcase, HiUserGroup,
-    HiCheckCircle, HiLightningBolt, HiGlobeAlt, HiMail
+    HiCheckCircle, HiLightningBolt, HiGlobeAlt, HiMail, HiCode, HiChip
 } from 'react-icons/hi';
-import { FaFacebook, FaAws, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaPython, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiGooglecloud, SiGoogleanalytics } from 'react-icons/si';
 
 const AboutSection = () => {
@@ -31,18 +31,18 @@ const AboutSection = () => {
     };
 
     const certifications = [
-        { name: "Google Analytics Certified", icon: SiGoogleanalytics, color: "text-orange-400" },
-        { name: "Meta Marketing Science", icon: FaFacebook, color: "text-blue-400" },
-        { name: "Google Cloud Data Engineer", icon: SiGooglecloud, color: "text-blue-500" },
-        { name: "AWS Solutions Architect", icon: FaAws, color: "text-yellow-500" }
+        { name: "Google Cloud Platform Expert", icon: SiGooglecloud, color: "text-blue-500" },
+        { name: "GA4 & GTM Implementation", icon: SiGoogleanalytics, color: "text-orange-400" },
+        { name: "Python & Data Engineering", icon: FaPython, color: "text-yellow-500" },
+        { name: "LangChain AI Development", icon: HiChip, color: "text-purple-400" }
     ];
 
     const milestones = [
-        { year: "2016", event: "Started with basic Google Analytics implementations" },
-        { year: "2018", event: "Mastered server-side tracking and GTM" },
-        { year: "2020", event: "Expanded into BigQuery and data engineering" },
-        { year: "2023", event: "Built first AI-powered analytics assistant" },
-        { year: "2025", event: "Leading the charge in AI-driven marketing analytics" }
+        { year: "2015", event: "Started as Google Ads Specialist, managing SA360 campaigns at scale" },
+        { year: "2019", event: "Transitioned to Lead Engineer on enterprise Microsoft project" },
+        { year: "2020", event: "Mastered GA4, GTM, and server-side tracking implementations" },
+        { year: "2022", event: "Built BigQuery pipelines saving clients $12K+/year" },
+        { year: "2025", event: "Architecting AI systems with LangChain & predictive analytics" }
     ];
 
     const values = [
@@ -95,16 +95,16 @@ const AboutSection = () => {
                             {/* Main Story */}
                             <div className="prose prose-lg prose-invert">
                                 <p className="text-gray-300 leading-relaxed">
-                                    For 9+ years, I've been in the trenches helping businesses turn messy data into clear decisions.
+                                    For 10+ years, I've evolved from performance marketer to technical architect — bridging the gap between marketing ambition and engineering execution.
                                 </p>
                                 <p className="text-gray-300 leading-relaxed">
-                                    Started with basic Google Analytics setups. Now I build AI-powered data systems that make CMOs look like heroes.
+                                    Started managing millions in Google/SA360 ad spend. Now I build AI-powered data pipelines and predictive analytics systems that turn marketing data into revenue.
                                 </p>
                                 <p className="text-gray-300 leading-relaxed">
-                                    I've implemented tracking for 100+ businesses — from Shopify stores doing $50K/month to agencies managing $10M in ad spend.
+                                    Currently leading technical initiatives at a $200K+ role — architecting BigQuery ecosystems, LangChain AI products, and automation systems that save 20+ hours weekly.
                                 </p>
                                 <p className="text-gray-300 leading-relaxed font-semibold">
-                                    My philosophy is simple: If you can't measure it properly, you can't improve it. And if analyzing it takes hours, you need better tools.
+                                    My superpower: I speak both languages — translating CEO vision into scalable technical architecture while keeping marketing ROI at the center.
                                 </p>
                             </div>
 
@@ -129,11 +129,11 @@ const AboutSection = () => {
                             {/* Personal Touch */}
                             <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 rounded-xl p-6">
                                 <p className="text-gray-300 italic mb-4">
-                                    "When I'm not building data pipelines or debugging tracking pixels, you'll find me exploring the latest in AI and sharing insights with my newsletter community."
+                                    "From managing engineering teams to architecting AI-powered analytics systems, I turn complex technical challenges into scalable solutions. Currently building predictive analytics that help companies forecast revenue with 90%+ accuracy."
                                 </p>
                                 <div className="flex items-center gap-2 text-sm text-gray-400">
                                     <HiGlobeAlt className="w-4 h-4" />
-                                    <span>Based in Vancouver, BC, Canada • Serving clients globally</span>
+                                    <span>Based in Vancouver, BC • Leading enterprise data initiatives</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -184,21 +184,21 @@ const AboutSection = () => {
                                 </div>
                             </div>
 
-                            {/* Community Involvement */}
+                            {/* Technical Leadership */}
                             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                                <h3 className="text-lg font-bold text-white mb-4">Active in the Community</h3>
+                                <h3 className="text-lg font-bold text-white mb-4">Technical Leadership</h3>
                                 <ul className="space-y-2 text-gray-300">
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span>Regular contributor to GA4 forums</span>
+                                        <span>Architecting AI products with LangChain/LangGraph</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span>Speaker at marketing analytics events</span>
+                                        <span>Managing offshore engineering teams</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span>Open source data tools contributor</span>
+                                        <span>Building enterprise automation systems</span>
                                     </li>
                                 </ul>
                             </div>
@@ -237,7 +237,7 @@ const AboutSection = () => {
                         className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700"
                     >
                         {[
-                            { icon: HiClock, value: "9+ Years", label: "Experience" },
+                            { icon: HiClock, value: "10+ Years", label: "Experience" },
                             { icon: HiBriefcase, value: "100+", label: "Projects Completed" },
                             { icon: HiUserGroup, value: "$50M+", label: "Ad Spend Tracked" },
                             { icon: HiGlobeAlt, value: "5 Countries", label: "Clients Worldwide" }

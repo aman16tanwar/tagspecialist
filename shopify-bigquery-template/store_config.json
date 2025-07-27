@@ -1,0 +1,13 @@
+[
+  {
+    "MERCHANT": "your-store.myshopify.com",
+    "TOKEN": "shpat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "GCP_PROJECT_ID": "your-gcp-project",
+    "BIGQUERY_DATASET": "shopify_data",
+    "BIGQUERY_TABLE_CUSTOMER_INSIGHTS": "customer_insights",
+    "BIGQUERY_TABLE_ORDER_INSIGHTS": "order_insights",
+    "BIGQUERY_TABLE_ORDER_ITEMS_INSIGHTS": "order_items_insights",
+    "BIGQUERY_TABLE_PRODUCT_INSIGHTS": "products_insights",
+    "BIGQUERY_CREDENTIALS_PATH": "bigquery.json"
+  }
+]

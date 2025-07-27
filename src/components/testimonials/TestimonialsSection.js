@@ -198,7 +198,7 @@ const TestimonialsSection = () => {
                             { number: "50+", label: "Happy Clients" },
                             { number: "4+", label: "Years on Upwork" },
                             { number: "5.0", label: "Average Rating" },
-                            { number: "$15K+", label: "Earned on Platform" }
+                            { number: "$70K+", label: "Earned on Platform" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
                                 <motion.div

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
     HiLockClosed, HiCheckCircle, HiCode, HiCloud,
     HiDatabase, HiArrowRight, HiCurrencyDollar,
-    HiDocumentText, HiLightningBolt
+    HiDocumentText, HiLightningBolt, HiExternalLink
 } from 'react-icons/hi';
 import { FaShopify, FaPython, FaDocker } from 'react-icons/fa';
 import { SiGooglecloud, SiGooglebigquery } from 'react-icons/si';
@@ -21,7 +21,8 @@ const ShopifyBigQueryTutorial = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            if (scrollPercentage > 40 && !showPaywall) {
+            // TEMPORARILY DISABLED FOR TESTING - Change back to 40 for production
+            if (scrollPercentage > 101 && !showPaywall) {
                 setShowPaywall(true);
             }
         };
@@ -30,13 +31,18 @@ const ShopifyBigQueryTutorial = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [showPaywall]);
 
-    const tableSchema = [
-        { field: 'order_id', type: 'STRING', description: 'Unique order identifier' },
-        { field: 'created_at', type: 'TIMESTAMP', description: 'Order creation timestamp' },
-        { field: 'total_price', type: 'FLOAT64', description: 'Total order value' },
-        { field: 'customer_id', type: 'STRING', description: 'Customer identifier' },
-        { field: 'line_items_count', type: 'INT64', description: 'Number of items in order' },
-        { field: 'store_domain', type: 'STRING', description: 'Shopify store domain' }
+    const requiredScopes = [
+        { scope: 'read_customers', description: 'Access customer data and insights' },
+        { scope: 'read_orders', description: 'Access order history and details' },
+        { scope: 'read_products', description: 'Access product catalog information' },
+        { scope: 'read_inventory', description: 'Access inventory levels' }
+    ];
+
+    const bigqueryTables = [
+        { name: 'customer_insights', description: 'Customer profiles and metrics' },
+        { name: 'order_insights', description: 'Order details and financials' },
+        { name: 'order_items_insights', description: 'Line items for each order' },
+        { name: 'products_insights', description: 'Product catalog and variants' }
     ];
 
     return (
@@ -56,10 +62,14 @@ const ShopifyBigQueryTutorial = () => {
                             ← Back to Blogs
                         </Link>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Complete Guide: Build Your Own 
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 block mt-2">
-                                Shopify → BigQuery Pipeline
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-normal">
+                            Complete Guide: Build Your Own{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 whitespace-nowrap">
+                                Shopify → BigQuery
+                            </span>
+                            {' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                                Pipeline
                             </span>
                         </h1>
 
@@ -67,14 +77,20 @@ const ShopifyBigQueryTutorial = () => {
                             <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
                                 Technical Tutorial
                             </span>
-                            <span className="text-gray-400">20 min read</span>
+                            <span className="text-gray-400">25 min read</span>
                             <span className="text-gray-400">•</span>
                             <span className="text-green-400 font-medium">Save $12,000/year</span>
                         </div>
 
                         <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
                             <p className="text-yellow-200">
-                                ⚡ <strong>What you'll build:</strong> A production-ready data pipeline that syncs unlimited Shopify stores to BigQuery for ~$50/month instead of $1,000+/month with traditional tools.
+                                ⚡ <strong>What you'll build:</strong> A production-ready data pipeline that syncs multiple Shopify stores to BigQuery for ~$50/month total infrastructure cost.
+                            </p>
+                        </div>
+
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-lg p-4 mb-8">
+                            <p className="text-blue-200">
+                                📝 <strong>Important Note:</strong> While our solution can handle many stores, performance depends on data volume, API rate limits, and processing requirements. Most clients successfully run 10-50 stores on a single pipeline.
                             </p>
                         </div>
                     </motion.div>
@@ -88,13 +104,13 @@ const ShopifyBigQueryTutorial = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                         {[
                             "The $1,000/month problem with ELT tools",
-                            "Our Python + Cloud Run solution architecture",
-                            "Setting up BigQuery schemas",
-                            "Historical data backfill script",
-                            "Incremental sync implementation",
-                            "Docker containerization",
-                            "Cloud Run deployment",
-                            "Multi-store configuration"
+                            "Step 1: Shopify API access setup",
+                            "Step 2: Store configuration (multi-store)",
+                            "Step 3: Our pre-built extraction code",
+                            "Step 4: BigQuery table schemas",
+                            "Step 5: Docker containerization",
+                            "Step 6: Artifact Registry setup",
+                            "Step 7: Cloud Run deployment"
                         ].map((item, idx) => (
                             <div key={idx} className="flex items-center gap-3">
                                 <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -125,6 +141,10 @@ const ShopifyBigQueryTutorial = () => {
                                 <span className="text-gray-300">Airbyte Cloud (10 stores):</span>
                                 <span className="text-red-400 font-bold">$800-1,200/month</span>
                             </li>
+                            <li className="flex justify-between items-center">
+                                <span className="text-gray-300">Zapier (30k tasks/month):</span>
+                                <span className="text-red-400 font-bold">$500-1,000/month</span>
+                            </li>
                         </ul>
                         <div className="mt-4 pt-4 border-t border-gray-700">
                             <p className="text-yellow-400">
@@ -136,87 +156,223 @@ const ShopifyBigQueryTutorial = () => {
                     <p className="text-gray-300 text-lg">
                         Here's the truth: These tools charge per data source, per row, or per monthly active row. 
                         When you have multiple Shopify stores, costs explode exponentially. But what if you could 
-                        build your own pipeline that handles unlimited stores for just the cost of infrastructure?
+                        build your own pipeline that handles multiple stores for just the cost of infrastructure?
                     </p>
                 </div>
             </section>
 
-            {/* Solution Architecture */}
+            {/* Step 1: Shopify API Setup */}
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-white mb-6">Our Solution Architecture</h2>
+                    <h2 className="text-3xl font-bold text-white mb-6">Step 1: Shopify Private App & API Access</h2>
                     
-                    <div className="bg-gray-900 rounded-xl p-8 mb-8">
-                        <div className="grid md:grid-cols-3 gap-6 text-center">
-                            <div>
-                                <div className="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <FaShopify className="w-8 h-8 text-green-400" />
-                                </div>
-                                <h3 className="font-semibold text-white mb-2">Shopify Stores</h3>
-                                <p className="text-sm text-gray-400">Unlimited stores, one pipeline</p>
-                            </div>
-                            <div>
-                                <div className="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <SiGooglecloud className="w-8 h-8 text-blue-400" />
-                                </div>
-                                <h3 className="font-semibold text-white mb-2">Cloud Run</h3>
-                                <p className="text-sm text-gray-400">Serverless, auto-scaling</p>
-                            </div>
-                            <div>
-                                <div className="w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <SiGooglebigquery className="w-8 h-8 text-purple-400" />
-                                </div>
-                                <h3 className="font-semibold text-white mb-2">BigQuery</h3>
-                                <p className="text-sm text-gray-400">Petabyte-scale analytics</p>
-                            </div>
+                    <p className="text-gray-300 mb-6">
+                        First, you need to create a private app in each Shopify store to get API credentials. This is crucial for data extraction.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-4 mb-8">
+                        <div className="group cursor-pointer" onClick={() => window.open('/images/tutorial/Shopify-API-1.webp', '_blank')}>
+                            <img 
+                                src="/images/tutorial/Shopify-API-1.webp" 
+                                alt="Shopify Private App Creation"
+                                className="rounded-lg border border-gray-700 group-hover:border-blue-500 transition-all w-full h-auto"
+                            />
+                            <p className="text-sm text-gray-400 mt-2 text-center">Click to enlarge</p>
+                        </div>
+                        <div className="group cursor-pointer" onClick={() => window.open('/images/tutorial/Shopify-API-2.webp', '_blank')}>
+                            <img 
+                                src="/images/tutorial/Shopify-API-2.webp" 
+                                alt="Shopify API Permissions"
+                                className="rounded-lg border border-gray-700 group-hover:border-blue-500 transition-all w-full h-auto"
+                            />
+                            <p className="text-sm text-gray-400 mt-2 text-center">Click to enlarge</p>
                         </div>
                     </div>
 
-                    <div className="prose prose-invert max-w-none">
-                        <h3 className="text-xl font-semibold text-white mb-4">Key Components:</h3>
-                        <ol className="space-y-3 text-gray-300">
-                            <li><strong>Historical Backfill Script:</strong> One-time import of all historical data</li>
-                            <li><strong>Incremental Sync Script:</strong> Daily updates of new/modified records</li>
-                            <li><strong>Store Configuration:</strong> JSON-based multi-store management</li>
-                            <li><strong>Error Handling:</strong> Automatic retries and failure notifications</li>
-                        </ol>
+                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-lg p-6 mb-8">
+                        <h3 className="text-lg font-semibold text-white mb-4">Required API Scopes:</h3>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            {requiredScopes.map((scope, idx) => (
+                                <div key={idx} className="flex items-start gap-3">
+                                    <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <div>
+                                        <code className="text-blue-400 font-mono text-sm">{scope.scope}</code>
+                                        <p className="text-gray-300 text-sm">{scope.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-900 rounded-lg p-4">
+                        <p className="text-gray-400 text-sm mb-2">Navigation path in Shopify Admin:</p>
+                        <code className="text-green-400 text-sm">
+                            Settings → Apps and sales channels → Develop apps → Create an app
+                        </code>
                     </div>
                 </div>
             </section>
 
-            {/* BigQuery Schema */}
+            {/* Step 2: Store Configuration */}
             <section className="py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-white mb-6">Step 1: BigQuery Schema Setup</h2>
+                    <h2 className="text-3xl font-bold text-white mb-6">Step 2: Multi-Store Configuration</h2>
                     
-                    <div className="bg-gray-800 rounded-lg p-6 mb-8">
-                        <h3 className="text-lg font-semibold text-white mb-4">Orders Table Schema Example:</h3>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-sm">
-                                <thead>
-                                    <tr className="border-b border-gray-700">
-                                        <th className="text-left py-2 text-gray-400">Field Name</th>
-                                        <th className="text-left py-2 text-gray-400">Type</th>
-                                        <th className="text-left py-2 text-gray-400">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {tableSchema.map((field, idx) => (
-                                        <tr key={idx} className="border-b border-gray-700/50">
-                                            <td className="py-2 text-white font-mono">{field.field}</td>
-                                            <td className="py-2 text-blue-400">{field.type}</td>
-                                            <td className="py-2 text-gray-400">{field.description}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <p className="text-gray-300 mb-6">
+                        Configure all your Shopify stores in a single <code className="bg-gray-900 px-2 py-1 rounded">store_config.json</code> file. 
+                        The pipeline will iterate through each store automatically:
+                    </p>
 
                     <div className="bg-gray-900 rounded-lg p-4 mb-8">
                         <pre className="text-sm text-gray-300 overflow-x-auto">
-                            <code>{`-- Order Insights Table
-CREATE OR REPLACE TABLE your_dataset.order_insights (
+                            <code>{`[
+    {
+        "MERCHANT": "your-store.myshopify.com",
+        "TOKEN": "shpat_xxxxxxxxxxxxx",
+        "GCP_PROJECT_ID": "your-gcp-project",
+        "BIGQUERY_DATASET": "shopify_data",
+        "BIGQUERY_TABLE_CUSTOMER_INSIGHTS": "customer_insights",
+        "BIGQUERY_TABLE_ORDER_INSIGHTS": "order_insights",
+        "BIGQUERY_TABLE_ORDER_ITEMS_INSIGHTS": "order_items_insights",
+        "BIGQUERY_TABLE_PRODUCT_INSIGHTS": "products_insights",
+        "BIGQUERY_CREDENTIALS_PATH": "bigquery.json"
+    },
+    {
+        "MERCHANT": "second-store.myshopify.com",
+        "TOKEN": "shpat_yyyyyyyyyyyyy",
+        "GCP_PROJECT_ID": "your-gcp-project",
+        "BIGQUERY_DATASET": "shopify_data_store2",
+        // ... same structure for additional stores
+    }
+]`}</code>
+                        </pre>
+                    </div>
+
+                    <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4">
+                        <p className="text-yellow-200">
+                            💡 <strong>Pro Tip:</strong> Use separate BigQuery datasets for each store to maintain data isolation and easier management.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Step 3: Pre-built Code */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold text-white mb-6">Step 3: Our Production-Ready Extraction Code</h2>
+                    
+                    <p className="text-gray-300 mb-6">
+                        We've already built and tested the complete extraction logic. Our Python solution includes:
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-6 mb-8">
+                        <div className="bg-gray-900 rounded-lg p-6">
+                            <FaPython className="w-8 h-8 text-blue-400 mb-4" />
+                            <h3 className="text-lg font-semibold text-white mb-3">Core Modules</h3>
+                            <ul className="space-y-2 text-sm">
+                                <li className="flex items-center gap-2">
+                                    <code className="text-green-400">customer_queue.py</code>
+                                    <span className="text-gray-400">- Customer data extraction</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <code className="text-green-400">order_queue.py</code>
+                                    <span className="text-gray-400">- Order processing</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <code className="text-green-400">order_items_queue.py</code>
+                                    <span className="text-gray-400">- Line items handling</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <code className="text-green-400">products_queue.py</code>
+                                    <span className="text-gray-400">- Product catalog sync</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-gray-900 rounded-lg p-6">
+                            <HiCode className="w-8 h-8 text-purple-400 mb-4" />
+                            <h3 className="text-lg font-semibold text-white mb-3">Key Features</h3>
+                            <ul className="space-y-2 text-sm text-gray-300">
+                                <li className="flex items-center gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400" />
+                                    Automatic retry logic for API failures
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400" />
+                                    Pagination handling for large datasets
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400" />
+                                    Rate limit management
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <HiCheckCircle className="w-4 h-4 text-green-400" />
+                                    Error logging and monitoring
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-900 rounded-lg p-4">
+                        <p className="text-gray-400 text-sm mb-2">Main orchestrator (main.py):</p>
+                        <pre className="text-sm text-gray-300 overflow-x-auto">
+                            <code>{`# Loop through each store configuration
+for store in stores:
+    print(f"🚀 Processing store: {store['MERCHANT']}")
+    
+    # Run customer insights
+    run_customer_insights(store)
+    
+    # Run order insights
+    run_order_insights(store)
+    
+    # Run order items insights
+    run_order_items_insights(store)
+    
+    # Run product insights
+    run_product_insights(store)`}</code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            {/* Step 4: BigQuery Schema */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold text-white mb-6">Step 4: BigQuery Table Schemas</h2>
+                    
+                    <p className="text-gray-300 mb-6">
+                        Our pipeline creates 4 optimized tables in BigQuery:
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-4 mb-8">
+                        {bigqueryTables.map((table, idx) => (
+                            <div key={idx} className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <HiDatabase className="w-5 h-5 text-blue-400" />
+                                    <h3 className="font-semibold text-white">{table.name}</h3>
+                                </div>
+                                <p className="text-sm text-gray-400">{table.description}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mb-8">
+                        <h3 className="text-lg font-semibold text-white mb-4">Visual Schema Overview:</h3>
+                        <div className="group cursor-pointer" onClick={() => window.open('/images/tutorial/BigQuery-tables.jpg', '_blank')}>
+                            <img 
+                                src="/images/tutorial/BigQuery-tables.jpg" 
+                                alt="BigQuery table schemas"
+                                className="rounded-lg border border-gray-700 group-hover:border-blue-500 transition-all w-full h-auto"
+                            />
+                            <p className="text-sm text-gray-400 mt-2 text-center">Click to enlarge</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-900 rounded-lg p-4">
+                        <p className="text-gray-400 text-sm mb-2">Example: Order Insights Table Schema</p>
+                        <pre className="text-sm text-gray-300 overflow-x-auto">
+                            <code>{`CREATE OR REPLACE TABLE your_dataset.order_insights (
     order_id STRING,
     order_number STRING,
     created_at TIMESTAMP,
@@ -232,20 +388,7 @@ CREATE OR REPLACE TABLE your_dataset.order_insights (
     store_domain STRING,
     _synced_at TIMESTAMP
 )
-PARTITION BY DATE(created_at);
-
--- Order Items Table (Separate for better performance)
-CREATE OR REPLACE TABLE your_dataset.order_items_insights (
-    order_id STRING,
-    product_id STRING,
-    variant_id STRING,
-    sku STRING,
-    title STRING,
-    quantity INT64,
-    price FLOAT64,
-    total_discount FLOAT64,
-    store_domain STRING
-);`}</code>
+PARTITION BY DATE(created_at);`}</code>
                         </pre>
                     </div>
                 </div>
@@ -253,78 +396,13 @@ CREATE OR REPLACE TABLE your_dataset.order_items_insights (
 
             {/* Here's where the paywall appears */}
             <div className={`relative ${showPaywall ? 'max-h-96 overflow-hidden' : ''}`}>
-                {/* Shopify API Setup */}
-                <section className="py-16 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-white mb-6">Step 2: Shopify API Access Setup</h2>
-                        
-                        <p className="text-gray-300 mb-6">
-                            First, you need to create a private app in your Shopify admin to get API credentials:
-                        </p>
-
-                        <div className="grid md:grid-cols-2 gap-4 mb-8">
-                            <img 
-                                src="/images/tutorial/Shopify-API-1.webp" 
-                                alt="Shopify Private App Creation"
-                                className="rounded-lg border border-gray-700"
-                            />
-                            <img 
-                                src="/images/tutorial/Shopify-API-2.webp" 
-                                alt="Shopify API Permissions"
-                                className="rounded-lg border border-gray-700"
-                            />
-                        </div>
-
-                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-lg p-4 mb-8">
-                            <p className="text-blue-200">
-                                💡 <strong>Required Permissions:</strong> Products (read), Orders (read), Customers (read), Inventory (read)
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-            {/* Store Configuration Section */}
+                {/* Step 5: Docker */}
                 <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-white mb-6">Step 3: Store Configuration</h2>
+                        <h2 className="text-3xl font-bold text-white mb-6">Step 5: Dockerize Your Pipeline</h2>
                         
                         <p className="text-gray-300 mb-6">
-                            The magic happens in the <code className="bg-gray-900 px-2 py-1 rounded">store_config.json</code> file. 
-                            This is where you configure all your Shopify stores:
-                        </p>
-
-                        <div className="bg-gray-900 rounded-lg p-4 mb-8">
-                            <pre className="text-sm text-gray-300 overflow-x-auto">
-                                <code>{`[
-    {
-        "MERCHANT": "your-store.myshopify.com",
-        "TOKEN": "shpat_xxxxxxxxxxxxx",
-        "GCP_PROJECT_ID": "your-gcp-project",
-        "BIGQUERY_DATASET": "shopify_data",
-        "BIGQUERY_TABLE_CUSTOMER_INSIGHTS": "customer_insights",
-        "BIGQUERY_TABLE_ORDER_INSIGHTS": "order_insights",
-        "BIGQUERY_TABLE_ORDER_ITEMS_INSIGHTS": "order_items_insights",
-        "BIGQUERY_TABLE_PRODUCT_INSIGHTS": "products_insights",
-        "BIGQUERY_CREDENTIALS_PATH": "bigquery.json"
-    },
-    {
-        "MERCHANT": "second-store.myshopify.com",
-        "TOKEN": "shpat_yyyyyyyyyyyyy",
-        // ... additional stores
-    }
-]`}</code>
-                            </pre>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Docker Implementation */}
-                <section className="py-16 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-white mb-6">Step 4: Dockerize Your Pipeline</h2>
-                        
-                        <p className="text-gray-300 mb-6">
-                            We'll containerize the application using Docker for easy deployment to Cloud Run:
+                            Container your application for consistent deployment:
                         </p>
 
                         <div className="bg-gray-900 rounded-lg p-4 mb-8">
@@ -346,44 +424,103 @@ CMD ["python", "main.py"]`}</code>
                             </pre>
                         </div>
 
-                        <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
-                            <p className="text-yellow-200">
-                                ⚡ <strong>Pro Tip:</strong> Using Python 3.11-slim reduces image size by 60% compared to full Python images
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-lg p-4">
+                            <p className="text-blue-200">
+                                💡 Build command: <code className="bg-gray-900 px-2 py-1 rounded">docker build -t shopify-pipeline .</code>
                             </p>
                         </div>
                     </div>
                 </section>
 
-                {/* Results Preview */}
+                {/* Step 6: Artifact Registry */}
+                <section className="py-16 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-bold text-white mb-6">Step 6: Push to Google Artifact Registry</h2>
+                        
+                        <p className="text-gray-300 mb-6">
+                            Following the official Google Cloud documentation for Artifact Registry:
+                        </p>
+
+                        <div className="bg-gray-900 rounded-lg p-4 mb-8">
+                            <pre className="text-sm text-gray-300 overflow-x-auto">
+                                <code>{`# 1. Create repository
+gcloud artifacts repositories create shopify-pipeline \
+    --repository-format=docker \
+    --location=us-central1
+
+# 2. Configure Docker
+gcloud auth configure-docker us-central1-docker.pkg.dev
+
+# 3. Tag your image
+docker tag shopify-pipeline \
+    us-central1-docker.pkg.dev/YOUR_PROJECT/shopify-pipeline/shopify-pipeline:latest
+
+# 4. Push to Artifact Registry
+docker push us-central1-docker.pkg.dev/YOUR_PROJECT/shopify-pipeline/shopify-pipeline:latest`}</code>
+                            </pre>
+                        </div>
+
+                        <a 
+                            href="https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+                        >
+                            View full Artifact Registry documentation
+                            <HiExternalLink className="w-4 h-4" />
+                        </a>
+                    </div>
+                </section>
+
+                {/* Step 7: Cloud Run Deployment */}
                 <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-white mb-6">What You'll Achieve</h2>
+                        <h2 className="text-3xl font-bold text-white mb-6">Step 7: Deploy to Cloud Run</h2>
                         
+                        <div className="bg-gray-900 rounded-lg p-4 mb-8">
+                            <pre className="text-sm text-gray-300 overflow-x-auto">
+                                <code>{`# Deploy from Artifact Registry
+gcloud run deploy shopify-pipeline \
+    --image us-central1-docker.pkg.dev/YOUR_PROJECT/shopify-pipeline/shopify-pipeline:latest \
+    --region us-central1 \
+    --memory 2Gi \
+    --timeout 3600 \
+    --max-instances 10 \
+    --no-allow-unauthenticated`}</code>
+                            </pre>
+                        </div>
+
                         <div className="grid md:grid-cols-2 gap-6 mb-8">
                             <div>
                                 <h3 className="text-lg font-semibold text-white mb-4">BigQuery Results:</h3>
-                                <img 
-                                    src="/images/tutorial/BigQuery-result.jpg" 
-                                    alt="BigQuery query results showing Shopify data"
-                                    className="rounded-lg border border-gray-700"
-                                />
+                                <div className="group cursor-pointer" onClick={() => window.open('/images/tutorial/BigQuery-result.jpg', '_blank')}>
+                                    <img 
+                                        src="/images/tutorial/BigQuery-result.jpg" 
+                                        alt="BigQuery query results"
+                                        className="rounded-lg border border-gray-700 group-hover:border-blue-500 transition-all w-full h-auto"
+                                    />
+                                    <p className="text-sm text-gray-400 mt-2 text-center">Click to enlarge</p>
+                                </div>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-white mb-4">Cloud Run Costs:</h3>
-                                <img 
-                                    src="/images/tutorial/Cloud-run-cost.jpg" 
-                                    alt="Cloud Run dashboard showing $50/month costs"
-                                    className="rounded-lg border border-gray-700"
-                                />
+                                <div className="group cursor-pointer" onClick={() => window.open('/images/tutorial/Cloud-run-cost.jpg', '_blank')}>
+                                    <img 
+                                        src="/images/tutorial/Cloud-run-cost.jpg" 
+                                        alt="Cloud Run costs"
+                                        className="rounded-lg border border-gray-700 group-hover:border-blue-500 transition-all w-full h-auto"
+                                    />
+                                    <p className="text-sm text-gray-400 mt-2 text-center">Click to enlarge</p>
+                                </div>
                             </div>
                         </div>
 
                         <div className="bg-green-900/20 border border-green-700/50 rounded-lg p-6">
-                            <h3 className="text-xl font-bold text-green-400 mb-2">Your Monthly Costs:</h3>
+                            <h3 className="text-xl font-bold text-green-400 mb-2">Your Total Monthly Costs:</h3>
                             <ul className="space-y-2 text-gray-300">
-                                <li>• Cloud Run: ~$30-50/month</li>
-                                <li>• BigQuery Storage: ~$20/month for 1TB</li>
-                                <li>• Total: <strong className="text-green-400">~$50/month for unlimited stores!</strong></li>
+                                <li>• Cloud Run: ~$30-50/month (for all stores)</li>
+                                <li>• BigQuery Storage: ~$20/month per TB</li>
+                                <li>• Total: <strong className="text-green-400">~$50-70/month for multiple stores!</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -400,31 +537,31 @@ CMD ["python", "main.py"]`}</code>
                             <div className="bg-gray-800 rounded-2xl p-8 border-2 border-blue-500/50 shadow-2xl">
                                 <HiLockClosed className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                                 <h3 className="text-2xl font-bold text-white mb-4">
-                                    Get the Complete Implementation Guide + Source Code
+                                    Get the Complete Implementation + Source Code
                                 </h3>
                                 <p className="text-gray-300 mb-6">
-                                    This article continues with:
+                                    This tutorial continues with:
                                 </p>
                                 <ul className="text-left max-w-md mx-auto mb-8 space-y-2">
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span className="text-gray-300">Complete Python implementation</span>
+                                        <span className="text-gray-300">Complete Python source code (1000+ lines)</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span className="text-gray-300">Docker containerization steps</span>
+                                        <span className="text-gray-300">Cloud Scheduler setup for automation</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span className="text-gray-300">Cloud Run deployment guide</span>
+                                        <span className="text-gray-300">Error handling & monitoring setup</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span className="text-gray-300">Multi-store configuration</span>
+                                        <span className="text-gray-300">Performance optimization tips</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <HiCheckCircle className="w-5 h-5 text-green-400" />
-                                        <span className="text-gray-300">All source code files</span>
+                                        <span className="text-gray-300">30 days of email support</span>
                                     </li>
                                 </ul>
 
@@ -436,9 +573,9 @@ CMD ["python", "main.py"]`}</code>
                                         <span className="text-green-400 text-sm">Save 80%</span>
                                     </div>
                                     <ul className="text-sm text-gray-300 space-y-1 mb-4">
-                                        <li>• Complete source code (1,000+ lines)</li>
-                                        <li>• Step-by-step documentation</li>
-                                        <li>• 30 days email support</li>
+                                        <li>• All Python modules (customer, orders, products)</li>
+                                        <li>• Complete deployment documentation</li>
+                                        <li>• Store configuration templates</li>
                                         <li>• Lifetime updates</li>
                                     </ul>
                                 </div>
@@ -462,8 +599,81 @@ CMD ["python", "main.py"]`}</code>
 
             {/* Hidden content preview for SEO */}
             <div className="opacity-0 h-0 overflow-hidden">
-                <p>Docker implementation, Cloud Run deployment, Artifact Registry setup, incremental sync configuration...</p>
+                <p>Cloud Scheduler setup, monitoring, performance optimization, incremental sync configuration...</p>
             </div>
+
+            {/* Final CTA Section */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                            Ready to Save $12,000/Year on Your Data Pipeline?
+                        </h2>
+                        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Stop paying thousands to ELT tools. Get our complete Python solution and deploy your own 
+                            Shopify → BigQuery pipeline this week.
+                        </p>
+
+                        <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-700 max-w-md mx-auto mb-8">
+                            <div className="flex items-center justify-center gap-4 mb-6">
+                                <HiCurrencyDollar className="w-12 h-12 text-green-400" />
+                                <div className="text-left">
+                                    <p className="text-sm text-gray-400">One-time investment</p>
+                                    <p className="text-3xl font-bold text-white">$497</p>
+                                </div>
+                            </div>
+                            
+                            <ul className="text-left space-y-3 mb-8">
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-300">Complete Python source code (1000+ lines)</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-300">Multi-store configuration templates</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-300">Step-by-step deployment guide</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-300">30 days of email support</span>
+                                </li>
+                            </ul>
+
+                            <a
+                                href="https://buy.stripe.com/fZu14o0xZ9EU0hkbaW83C01"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105"
+                            >
+                                Get Instant Access
+                                <HiArrowRight className="inline-block ml-2 w-5 h-5" />
+                            </a>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400">
+                            <span className="flex items-center gap-2">
+                                <HiLightningBolt className="w-4 h-4 text-yellow-400" />
+                                Instant download
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <HiCheckCircle className="w-4 h-4 text-green-400" />
+                                30-day money back guarantee
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <HiLockClosed className="w-4 h-4 text-blue-400" />
+                                Secure checkout
+                            </span>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 };
