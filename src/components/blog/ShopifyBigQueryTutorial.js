@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-    HiLockClosed, HiCheckCircle, HiCode, HiCloud,
+    HiLockClosed, HiCheckCircle, HiCode,
     HiDatabase, HiArrowRight, HiCurrencyDollar,
-    HiDocumentText, HiLightningBolt, HiExternalLink
+    HiLightningBolt, HiExternalLink
 } from 'react-icons/hi';
-import { FaShopify, FaPython, FaDocker } from 'react-icons/fa';
-import { SiGooglecloud, SiGooglebigquery } from 'react-icons/si';
+import { FaPython } from 'react-icons/fa';
 
 const ShopifyBigQueryTutorial = () => {
     const [showPaywall, setShowPaywall] = useState(false);

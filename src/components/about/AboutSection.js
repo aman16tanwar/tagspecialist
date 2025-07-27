@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
     HiClock, HiBriefcase, HiUserGroup,
-    HiCheckCircle, HiLightningBolt, HiGlobeAlt, HiMail, HiCode, HiChip
+    HiCheckCircle, HiLightningBolt, HiGlobeAlt, HiMail, HiChip
 } from 'react-icons/hi';
 import { FaPython, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiGooglecloud, SiGoogleanalytics } from 'react-icons/si';
