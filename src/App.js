@@ -13,6 +13,9 @@ import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import StarterPackagePage from './components/blog/StarterPackagePage';
 import BlogsPage from './components/blog/BlogsPage';
 import ShopifyBigQueryTutorial from './components/blog/ShopifyBigQueryTutorial';
+import FivetranAlternative from './components/alternatives/FivetranAlternative';
+import StitchAlternative from './components/alternatives/StitchAlternative';
+import ROICalculator from './components/calculator/ROICalculator';
 
 // Main page component
 const HomePage = () => (
@@ -67,6 +70,9 @@ function App() {
         <Route path="/starter-package" element={<StarterPackagePage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blog/shopify-bigquery-pipeline-tutorial" element={<ShopifyBigQueryTutorial />} />
+        <Route path="/fivetran-alternative" element={<FivetranAlternative />} />
+        <Route path="/stitch-data-alternative" element={<StitchAlternative />} />
+        <Route path="/roi-calculator" element={<ROICalculator />} />
       </Routes>
     </Layout>
   );

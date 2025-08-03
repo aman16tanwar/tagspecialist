@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -48,9 +49,13 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Services', id: 'services' },
-    { name: 'Blogs', route: '/blogs' },
-    { name: 'Products', id: 'products' },
+    { name: 'ROI Calculator', route: '/roi-calculator' },
+    { name: 'Compare', submenu: [
+      { name: 'vs Fivetran', route: '/fivetran-alternative' },
+      { name: 'vs Stitch', route: '/stitch-data-alternative' }
+    ]},
     { name: 'Pricing', id: 'pricing' },
+    { name: 'Blogs', route: '/blogs' },
     { name: 'About', id: 'about' },
     { name: 'Contact', id: 'contact' }
   ];
@@ -81,17 +86,51 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                onClick={() => handleNavigation(item)}
-                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
-              </motion.button>
+              item.submenu ? (
+                <div key={item.name} className="relative">
+                  <motion.button
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onMouseEnter={() => setOpenDropdown(item.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group flex items-center"
+                  >
+                    {item.name}
+                    <HiChevronDown className="ml-1 w-4 h-4" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
+                  </motion.button>
+                  {openDropdown === item.name && (
+                    <div 
+                      className="absolute top-full mt-2 bg-gray-800 rounded-lg shadow-xl py-2 min-w-[180px]"
+                      onMouseEnter={() => setOpenDropdown(item.name)}
+                      onMouseLeave={() => setOpenDropdown(null)}
+                    >
+                      {item.submenu.map((subItem) => (
+                        <button
+                          key={subItem.name}
+                          onClick={() => navigate(subItem.route)}
+                          className="block w-full text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                        >
+                          {subItem.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <motion.button
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => handleNavigation(item)}
+                  className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
+                </motion.button>
+              )
             ))}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
@@ -122,13 +161,31 @@ const Navbar = () => {
             className="md:hidden mt-4 py-4 bg-gray-800/95 backdrop-blur-md rounded-lg"
           >
             {menuItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigation(item)}
-                className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
-              >
-                {item.name}
-              </button>
+              item.submenu ? (
+                <div key={item.name}>
+                  <div className="px-4 py-3 text-gray-400 font-semibold">{item.name}</div>
+                  {item.submenu.map((subItem) => (
+                    <button
+                      key={subItem.name}
+                      onClick={() => {
+                        navigate(subItem.route);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="block w-full text-left px-8 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
+                    >
+                      {subItem.name}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavigation(item)}
+                  className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
             <div className="mt-4 px-4">
               <button
