@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, X, ArrowRight, DollarSign, Clock, Database, AlertCircle } from 'lucide-react';
+import { Check, X, ArrowRight, AlertCircle } from 'lucide-react';
 
 const FivetranAlternative = () => {
   const comparisonData = [
@@ -39,7 +39,6 @@ const FivetranAlternative = () => {
     }
   ];
 
-  const customerStories = [];
 
   const faqs = [
     {

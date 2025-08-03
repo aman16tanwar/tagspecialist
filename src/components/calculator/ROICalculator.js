@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, DollarSign, TrendingUp, ArrowRight, Info, Check } from 'lucide-react';
+import { Calculator, TrendingUp, ArrowRight, Info, Check } from 'lucide-react';
 
 const ROICalculator = () => {
   const [inputs, setInputs] = useState({
@@ -46,7 +46,7 @@ const ROICalculator = () => {
 
   useEffect(() => {
     calculateROI();
-  }, [inputs]);
+  }, [inputs]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const calculateROI = () => {
     const pricing = competitorPricing[inputs.currentTool];
@@ -107,7 +107,7 @@ const ROICalculator = () => {
       ...prev,
       dataVolume: getVolumeLabel()
     }));
-  }, [inputs.monthlyOrders]);
+  }, [inputs.monthlyOrders]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">

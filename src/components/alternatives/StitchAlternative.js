@@ -39,7 +39,6 @@ const StitchAlternative = () => {
     }
   ];
 
-  const migrationStories = [];
 
   const technicalAdvantages = [
     {
