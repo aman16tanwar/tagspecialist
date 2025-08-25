@@ -13,9 +13,12 @@ import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import StarterPackagePage from './components/blog/StarterPackagePage';
 import BlogsPage from './components/blog/BlogsPage';
 import ShopifyBigQueryTutorial from './components/blog/ShopifyBigQueryTutorial';
+import AutomatedPipelinePost from './components/blog/AutomatedPipelinePost';
 import FivetranAlternative from './components/alternatives/FivetranAlternative';
 import StitchAlternative from './components/alternatives/StitchAlternative';
 import ROICalculator from './components/calculator/ROICalculator';
+import ShopifyBigQueryLanding from './components/landing/ShopifyBigQueryLanding';
+import ShopifyPipelineComparison from './components/comparison/ShopifyPipelineComparison';
 
 // Main page component
 const HomePage = () => (
@@ -70,9 +73,12 @@ function App() {
         <Route path="/starter-package" element={<StarterPackagePage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blog/shopify-bigquery-pipeline-tutorial" element={<ShopifyBigQueryTutorial />} />
+        <Route path="/blog/automated-shopify-pipeline" element={<AutomatedPipelinePost />} />
         <Route path="/fivetran-alternative" element={<FivetranAlternative />} />
         <Route path="/stitch-data-alternative" element={<StitchAlternative />} />
         <Route path="/roi-calculator" element={<ROICalculator />} />
+        <Route path="/shopify-bigquery" element={<ShopifyBigQueryLanding />} />
+        <Route path="/shopify-pipeline-comparison" element={<ShopifyPipelineComparison />} />
       </Routes>
     </Layout>
   );

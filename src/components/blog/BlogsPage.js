@@ -11,12 +11,29 @@ const BlogsPage = () => {
 
     const blogPosts = [
         {
+            id: 'automated-pipeline',
+            title: 'NEW: From DIY to Done-For-You: Automated Shopify Pipelines',
+            description: 'Introducing our fully automated solution with web UI. No coding required, 5-minute setup, and it\'s FREE for up to 3 stores. Say goodbye to Docker and CLI commands.',
+            category: 'Product Update',
+            readTime: '15 min read',
+            featured: true,
+            link: '/blog/automated-shopify-pipeline',
+            highlights: [
+                'Web-based onboarding interface',
+                'Automatic Cloud Run deployment',
+                'FREE for up to 3 stores',
+                'No technical skills required'
+            ],
+            isNew: true,
+            date: 'January 2025'
+        },
+        {
             id: 'tutorial',
             title: 'Complete Guide: Build Your Own Shopify → BigQuery Pipeline',
             description: 'Step-by-step tutorial to replace expensive ELT tools with a custom Python solution. Includes code snippets, architecture diagrams, and deployment guide.',
             category: 'Technical Tutorial',
             readTime: '20 min read',
-            featured: true,
+            featured: false,
             link: '/blog/shopify-bigquery-pipeline-tutorial',
             highlights: [
                 'Full implementation walkthrough',
@@ -96,6 +113,11 @@ const BlogsPage = () => {
                                                     <HiClock className="w-4 h-4" />
                                                     {post.readTime}
                                                 </span>
+                                                {post.isNew && (
+                                                    <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium animate-pulse">
+                                                        NEW
+                                                    </span>
+                                                )}
                                             </div>
 
                                             <h2 className={`font-bold text-white mb-3 group-hover:text-blue-400 transition-colors ${

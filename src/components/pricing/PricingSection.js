@@ -1,14 +1,45 @@
 import React, { useState } from 'react';
 import { 
     HiCheckCircle, HiLightningBolt, HiChartBar, HiClock,
-    HiSupport, HiCursorClick, HiArrowRight, HiSparkles
+    HiSupport, HiCursorClick, HiArrowRight, HiSparkles, HiCloud
 } from 'react-icons/hi';
 import { FaRocket, FaChartLine, FaCrown } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const PricingSection = () => {
     const [hoveredPlan, setHoveredPlan] = useState(null);
 
     const pricingPlans = [
+        {
+            id: 'automated',
+            name: 'Shopify Pipeline',
+            tagline: 'Automated Data Sync',
+            price: 'FREE',
+            priceNote: 'Up to 3 stores • No row limits',
+            icon: HiCloud,
+            color: 'from-green-500 to-blue-500',
+            features: [
+                'Web-based onboarding (5 min setup)',
+                'Automatic Cloud Run deployment',
+                'Shopify → BigQuery sync (4 tables)',
+                'Daily automated updates',
+                'UNLIMITED data rows (no 500K limits)',
+                'Own your infrastructure ($50/mo total)',
+                'No coding required',
+                'No vendor lock-in'
+            ],
+            addOns: [
+                'Additional stores: $47/store/month',
+                'Priority support: $197/month',
+                'Custom integrations available'
+            ],
+            cta: 'Start Free Now',
+            ctaLink: '/blog/automated-shopify-pipeline',
+            popular: true,
+            highlight: 'NEW! Launch special',
+            outcome: 'Get your Shopify data flowing to BigQuery today',
+            isNew: true
+        },
         {
             id: 'starter',
             name: 'Starter Package',
@@ -62,7 +93,7 @@ const PricingSection = () => {
                 'Dedicated strategy calls'
             ],
             cta: 'Scale with Automation',
-            popular: true,
+            popular: false,
             highlight: 'Most popular for scaling brands',
             outcome: 'Automated insights and multi-channel ROI tracking'
         },
@@ -99,50 +130,53 @@ const PricingSection = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full mb-6">
-                        <HiSparkles className="w-5 h-5 text-green-400" />
-                        <span className="text-sm text-green-300 font-medium">Transparent Pricing</span>
-                    </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Investment Options for{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
-                            Serious Businesses
+                        Investment That{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                            Pays for Itself
                         </span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Choose the solution that matches your growth stage and ambitions
+                        Start with our free Shopify pipeline or choose a comprehensive package. Every solution is designed to deliver 10x+ ROI.
                     </p>
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
-                    {pricingPlans.map((plan) => (
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.id}
-                            className={`relative ${plan.popular ? 'md:-mt-8' : ''}`}
+                            className={`group relative ${plan.id === 'automated' ? 'lg:col-span-1' : ''}`}
                             onMouseEnter={() => setHoveredPlan(plan.id)}
                             onMouseLeave={() => setHoveredPlan(null)}
                         >
                             {/* Popular Badge */}
                             {plan.popular && (
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                                    <div className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full shadow-lg">
-                                        Most Popular
+                                    <div className={`px-4 py-1 ${plan.isNew ? 'bg-gradient-to-r from-green-600 to-blue-600' : 'bg-gradient-to-r from-blue-600 to-purple-600'} text-white text-sm font-bold rounded-full shadow-lg flex items-center gap-1`}>
+                                        {plan.isNew && <HiSparkles className="w-4 h-4" />}
+                                        {plan.isNew ? 'NEW' : 'MOST POPULAR'}
                                     </div>
                                 </div>
                             )}
 
                             {/* Card */}
-                            <div className={`relative h-full ${plan.popular ? 'shadow-2xl' : 'shadow-xl'}`}>
-                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${plan.color} rounded-2xl blur opacity-30 ${hoveredPlan === plan.id ? 'opacity-60' : ''} transition duration-300`} />
-                                
-                                <div className="relative h-full bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col">
-                                    {/* Header */}
-                                    <div className="text-center mb-8">
-                                        <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${plan.color} rounded-xl flex items-center justify-center`}>
-                                            <plan.icon className="w-8 h-8 text-white" />
+                            <div className={`relative h-full bg-gray-800 rounded-2xl overflow-hidden transition-all duration-300 ${
+                                hoveredPlan === plan.id ? 'transform -translate-y-2 shadow-2xl' : 'shadow-xl'
+                            } ${plan.popular ? 'border-2 border-blue-500/50' : 'border border-gray-700'}`}>
+                                {/* Gradient Border Effect */}
+                                {hoveredPlan === plan.id && (
+                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-50"></div>
+                                )}
+
+                                {/* Content */}
+                                <div className="relative z-10 p-8 flex flex-col h-full">
+                                    {/* Icon & Title */}
+                                    <div className="mb-6">
+                                        <div className={`w-12 h-12 bg-gradient-to-r ${plan.color} rounded-lg flex items-center justify-center mb-4`}>
+                                            <plan.icon className="w-6 h-6 text-white" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                                        <h3 className="text-2xl font-bold text-white mb-1">{plan.name}</h3>
                                         <p className="text-gray-400 text-sm">{plan.tagline}</p>
                                     </div>
 
@@ -151,7 +185,7 @@ const PricingSection = () => {
                                         <div className="text-4xl font-bold text-white mb-1">{plan.price}</div>
                                         <div className="text-gray-400 text-sm">{plan.priceNote}</div>
                                         {plan.highlight && (
-                                            <div className="mt-2 text-sm font-medium text-yellow-400">{plan.highlight}</div>
+                                            <div className={`mt-2 text-sm font-medium ${plan.isNew ? 'text-green-400' : 'text-yellow-400'}`}>{plan.highlight}</div>
                                         )}
                                     </div>
 
@@ -161,14 +195,26 @@ const PricingSection = () => {
                                         <ul className="space-y-3 mb-6">
                                             {plan.features.map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-3">
-                                                    <HiCheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.id === 'starter' ? 'text-blue-400' : plan.id === 'growth' ? 'text-indigo-400' : 'text-yellow-400'}`} />
+                                                    <HiCheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.id === 'automated' ? 'text-green-400' : plan.id === 'starter' ? 'text-blue-400' : plan.id === 'growth' ? 'text-indigo-400' : 'text-yellow-400'}`} />
                                                     <span className="text-gray-300 text-sm">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
 
+                                        {/* Add-ons for Automated Plan */}
+                                        {plan.addOns && (
+                                            <>
+                                                <h4 className="text-sm font-semibold text-gray-400 mb-3">PREMIUM ADD-ONS</h4>
+                                                <ul className="space-y-2 mb-6">
+                                                    {plan.addOns.map((addon, idx) => (
+                                                        <li key={idx} className="text-gray-400 text-sm pl-6">{addon}</li>
+                                                    ))}
+                                                </ul>
+                                            </>
+                                        )}
+
                                         {/* Not Included */}
-                                        {plan.notIncluded.length > 0 && (
+                                        {plan.notIncluded && plan.notIncluded.length > 0 && (
                                             <>
                                                 <h4 className="text-sm font-semibold text-gray-600 mb-3">NOT INCLUDED</h4>
                                                 <ul className="space-y-2 mb-6">
@@ -192,13 +238,23 @@ const PricingSection = () => {
                                     )}
 
                                     {/* CTA */}
-                                    <a
-                                        href="#contact"
-                                        className={`w-full py-4 px-6 bg-gradient-to-r ${plan.color} text-white font-semibold rounded-lg text-center flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg`}
-                                    >
-                                        {plan.cta}
-                                        <HiArrowRight className="w-5 h-5" />
-                                    </a>
+                                    {plan.ctaLink ? (
+                                        <Link
+                                            to={plan.ctaLink}
+                                            className={`w-full py-4 px-6 bg-gradient-to-r ${plan.color} text-white font-semibold rounded-lg text-center flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg`}
+                                        >
+                                            {plan.cta}
+                                            <HiArrowRight className="w-5 h-5" />
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href="#contact"
+                                            className={`w-full py-4 px-6 bg-gradient-to-r ${plan.color} text-white font-semibold rounded-lg text-center flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg`}
+                                        >
+                                            {plan.cta}
+                                            <HiArrowRight className="w-5 h-5" />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -247,127 +303,53 @@ const PricingSection = () => {
                             <h4 className="text-xl font-bold text-white mb-2">Maintenance</h4>
                             <div className="text-3xl font-bold text-white mb-4">$1,000<span className="text-lg text-gray-400">/mo</span></div>
                             <ul className="space-y-2 text-sm text-gray-300">
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Monthly tracking QA & fixes
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Dashboard maintenance
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Platform updates
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    4 hours support/month
-                                </li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Monthly health checks</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Basic troubleshooting</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> 8-hour response time</li>
                             </ul>
                         </div>
-                        
-                        <div className="bg-gradient-to-br from-indigo-800/20 to-indigo-700/20 border border-indigo-600 rounded-xl p-6">
+
+                        <div className="bg-gradient-to-br from-blue-800 to-indigo-700 border border-blue-600 rounded-xl p-6 relative">
+                            <div className="absolute -top-3 right-4 bg-blue-500 text-white text-xs px-2 py-1 rounded">POPULAR</div>
                             <h4 className="text-xl font-bold text-white mb-2">Optimization</h4>
-                            <div className="text-3xl font-bold text-white mb-4">$2,500<span className="text-lg text-gray-400">/mo</span></div>
-                            <ul className="space-y-2 text-sm text-gray-300">
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Everything in Maintenance
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Pipeline optimization
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    New metrics & KPIs
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Weekly check-ins
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    8 hours support/month
-                                </li>
+                            <div className="text-3xl font-bold text-white mb-4">$2,500<span className="text-lg text-gray-300">/mo</span></div>
+                            <ul className="space-y-2 text-sm text-gray-200">
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Everything in Maintenance</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Weekly performance reports</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Pipeline optimization</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> New integrations (2/mo)</li>
                             </ul>
                         </div>
-                        
-                        <div className="bg-gradient-to-br from-yellow-800/20 to-orange-700/20 border border-yellow-600 rounded-xl p-6">
-                            <h4 className="text-xl font-bold text-white mb-2">Full Service</h4>
-                            <div className="text-3xl font-bold text-white mb-4">$5,000<span className="text-lg text-gray-400">/mo</span></div>
-                            <ul className="space-y-2 text-sm text-gray-300">
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Full data ops management
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    AI model improvements
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    New integrations
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    Strategic consulting
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                                    20 hours support/month
-                                </li>
+
+                        <div className="bg-gradient-to-br from-yellow-800 to-orange-700 border border-yellow-600 rounded-xl p-6">
+                            <h4 className="text-xl font-bold text-white mb-2">Partnership</h4>
+                            <div className="text-3xl font-bold text-white mb-4">$5,000<span className="text-lg text-gray-300">/mo</span></div>
+                            <ul className="space-y-2 text-sm text-gray-200">
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Everything in Optimization</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Dedicated analyst</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Custom AI insights</li>
+                                <li className="flex items-center gap-2"><HiCheckCircle className="w-4 h-4 text-green-400" /> Strategic planning</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                {/* Additional Info */}
-                <div className="mt-16">
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 max-w-4xl mx-auto">
-                        <h3 className="text-2xl font-bold text-white text-center mb-8">All Plans Include</h3>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <div className="text-center">
-                                <HiLightningBolt className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-                                <h4 className="font-semibold text-white mb-2">Fast Implementation</h4>
-                                <p className="text-sm text-gray-400">Most projects completed in 1-4 weeks</p>
-                            </div>
-                            <div className="text-center">
-                                <HiSupport className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                                <h4 className="font-semibold text-white mb-2">Dedicated Support</h4>
-                                <p className="text-sm text-gray-400">Direct access via Slack or email</p>
-                            </div>
-                            <div className="text-center">
-                                <HiChartBar className="w-8 h-8 text-green-400 mx-auto mb-3" />
-                                <h4 className="font-semibold text-white mb-2">ROI Guarantee</h4>
-                                <p className="text-sm text-gray-400">See measurable results or money back</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Custom Solutions */}
-                <div className="mt-12 text-center">
-                    <p className="text-gray-400 mb-4">
-                        Need something custom? Have a unique challenge?
+                {/* Bottom CTA */}
+                <div className="mt-20 text-center">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                        Not sure which package fits? Let's talk.
+                    </h3>
+                    <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                        Every business is unique. I'll help you find the right solution for your data needs and budget.
                     </p>
                     <a
                         href="#contact"
-                        className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
                     >
-                        Let's create a custom solution
+                        <HiClock className="w-5 h-5" />
+                        Book a Free Consultation
                         <HiArrowRight className="w-5 h-5" />
                     </a>
-                </div>
-
-                {/* Availability Notice */}
-                <div className="mt-12 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full">
-                        <HiClock className="w-5 h-5 text-yellow-400" />
-                        <span className="text-sm text-yellow-300">
-                            I take on 2-3 new implementations per month. Current availability: August 2025
-                        </span>
-                    </div>
                 </div>
             </div>
         </section>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowRight, HiPlay, HiCheckCircle } from 'react-icons/hi';
+import { HiArrowRight, HiPlay, HiCheckCircle, HiSparkles, HiLightningBolt } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 import ContactForm from '../ContactForm/ContactForm';
 
 const HeroSection = () => {
@@ -48,6 +49,27 @@ const HeroSection = () => {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900/30 to-gray-900">
+            {/* New Announcement Banner */}
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute top-20 left-0 right-0 z-20 bg-gradient-to-r from-green-600/90 to-blue-600/90 backdrop-blur-sm py-3 px-4"
+            >
+                <div className="container mx-auto flex items-center justify-center gap-3 text-white">
+                    <HiSparkles className="w-5 h-5 animate-pulse" />
+                    <span className="text-sm sm:text-base font-medium">
+                        NEW: Shopify → BigQuery with NO row limits. Own your data for $50/month total.
+                    </span>
+                    <Link 
+                        to="/blog/automated-shopify-pipeline" 
+                        className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm font-medium transition-all"
+                    >
+                        Learn More
+                        <HiArrowRight className="w-4 h-4" />
+                    </Link>
+                </div>
+            </motion.div>
+
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Gradient Orbs */}
@@ -84,7 +106,7 @@ const HeroSection = () => {
             </div>
 
             {/* Hero Content */}
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-10">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -119,13 +141,21 @@ const HeroSection = () => {
                         I build AI-powered data pipelines and implement bulletproof tracking systems that give you the insights your competition doesn't have.
                     </motion.p>
 
-                    {/* Supporting Text */}
-                    <motion.p 
+                    {/* New Feature Highlight */}
+                    <motion.div 
                         variants={itemVariants}
-                        className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto"
+                        className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 mb-10 max-w-2xl mx-auto"
                     >
-                        From GA4 setup to custom BigQuery dashboards with AI assistants — I help ambitious brands make data-driven decisions that actually move the needle.
-                    </motion.p>
+                        <div className="flex items-center justify-center gap-3 mb-2">
+                            <HiLightningBolt className="w-6 h-6 text-yellow-400" />
+                            <h3 className="text-lg font-semibold text-white">Automated Shopify Data Pipelines</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm">
+                            Break free from row limits & vendor lock-in. Own your Shopify → BigQuery pipeline for 
+                            <span className="text-green-400 font-semibold"> $50/month total infrastructure cost</span>. 
+                            Web UI setup in 5 minutes, unlimited data.
+                        </p>
+                    </motion.div>
 
                     {/* CTA Buttons */}
                     <motion.div 
@@ -141,13 +171,13 @@ const HeroSection = () => {
                             <div className="absolute inset-0 rounded-lg bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
                         </button>
 
-                        <a
-                            href="#case-studies"
-                            className="group px-8 py-4 bg-gray-800/50 backdrop-blur-sm text-white font-semibold rounded-lg border border-gray-700 hover:border-gray-600 shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
+                        <Link
+                            to="/blog/automated-shopify-pipeline"
+                            className="group px-8 py-4 bg-gradient-to-r from-green-600/20 to-blue-600/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-green-500/50 hover:border-green-400 shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
                         >
-                            <HiPlay className="w-5 h-5" />
-                            <span>See It In Action</span>
-                        </a>
+                            <HiSparkles className="w-5 h-5 text-green-400" />
+                            <span>Try Free Shopify Pipeline</span>
+                        </Link>
                     </motion.div>
 
                     {/* Trust Indicators */}
@@ -184,8 +214,8 @@ const HeroSection = () => {
                         style={{ animationDelay: '2s' }}
                     >
                         <div className="bg-gray-800/80 backdrop-blur-md p-4 rounded-lg shadow-xl border border-gray-700 transform -rotate-6">
-                            <div className="text-xs text-gray-400 mb-1">AI Insights</div>
-                            <div className="text-2xl font-bold text-white">10hrs/week saved</div>
+                            <div className="text-xs text-gray-400 mb-1">Shopify → BigQuery</div>
+                            <div className="text-2xl font-bold text-green-400">FREE Setup</div>
                         </div>
                     </motion.div>
                 </motion.div>
