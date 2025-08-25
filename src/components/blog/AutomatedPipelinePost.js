@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { 
     HiLightningBolt, HiCheckCircle, HiCurrencyDollar,
     HiArrowRight, HiSparkles, HiChartBar,
-    HiDesktopComputer, HiCloud, HiPlay
+    HiDesktopComputer, HiCloud, HiPlay, HiUserGroup
 } from 'react-icons/hi';
 import { FaRocket, FaGithub } from 'react-icons/fa';
 
