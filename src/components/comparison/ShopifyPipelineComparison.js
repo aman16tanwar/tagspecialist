@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
     HiCheckCircle, HiXCircle, HiArrowRight, HiExclamation,
-    HiCurrencyDollar, HiDatabase, HiCloud, HiClock,
-    HiLockClosed, HiCode, HiSupport, HiSparkles
+    HiSparkles
 } from 'react-icons/hi';
 import ContactForm from '../ContactForm/ContactForm';
 

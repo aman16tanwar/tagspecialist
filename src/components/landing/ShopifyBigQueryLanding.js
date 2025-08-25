@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-    HiLightningBolt, HiCheckCircle, HiArrowRight, HiPlay,
-    HiCloud, HiChartBar, HiDatabase, HiCurrencyDollar,
-    HiExclamation, HiSparkles, HiUserGroup, HiClock
+    HiLightningBolt, HiArrowRight,
+    HiCloud, HiChartBar, HiDatabase,
+    HiExclamation, HiSparkles, HiClock
 } from 'react-icons/hi';
 import { FaShopify } from 'react-icons/fa';
 import { SiGooglecloud } from 'react-icons/si';
@@ -17,35 +17,6 @@ const ShopifyBigQueryLanding = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const comparisonData = [
-        {
-            name: 'Fivetran',
-            freeLimit: '500K rows/mo',
-            realityCheck: '≈ 1 week of data',
-            afterFree: '$120-500/mo',
-            vendorLock: 'High',
-            setupTime: '30 minutes',
-            infrastructure: 'Their cloud'
-        },
-        {
-            name: 'Stitch Data',
-            freeLimit: '5M rows/mo',
-            realityCheck: '≈ 1 month of data',
-            afterFree: '$100-300/mo',
-            vendorLock: 'High',
-            setupTime: '1 hour',
-            infrastructure: 'Their cloud'
-        },
-        {
-            name: 'Our Solution',
-            freeLimit: 'UNLIMITED',
-            realityCheck: 'All your data',
-            afterFree: '$50/mo hosting',
-            vendorLock: 'None',
-            setupTime: '5 minutes',
-            infrastructure: 'YOUR cloud'
-        }
-    ];
 
     const features = [
         {

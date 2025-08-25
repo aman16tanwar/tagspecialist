@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowRight, HiPlay, HiCheckCircle, HiSparkles, HiLightningBolt } from 'react-icons/hi';
+import { HiArrowRight, HiCheckCircle, HiSparkles, HiLightningBolt } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import ContactForm from '../ContactForm/ContactForm';
 

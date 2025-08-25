@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
     HiCheckCircle, HiLightningBolt, HiChartBar, HiClock,
-    HiSupport, HiCursorClick, HiArrowRight, HiSparkles, HiCloud
+    HiCursorClick, HiArrowRight, HiSparkles, HiCloud
 } from 'react-icons/hi';
 import { FaRocket, FaChartLine, FaCrown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';

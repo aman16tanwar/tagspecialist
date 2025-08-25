@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { 
-    HiLightningBolt, HiCheckCircle, HiClock, HiCurrencyDollar,
-    HiArrowRight, HiExternalLink, HiSparkles, HiChartBar,
-    HiDesktopComputer, HiCloud, HiUserGroup, HiPlay
+    HiLightningBolt, HiCheckCircle, HiCurrencyDollar,
+    HiArrowRight, HiSparkles, HiChartBar,
+    HiDesktopComputer, HiCloud, HiPlay
 } from 'react-icons/hi';
 import { FaRocket, FaGithub } from 'react-icons/fa';
 
 const AutomatedPipelinePost = () => {
-    const navigate = useNavigate();
     
     useEffect(() => {
         window.scrollTo(0, 0);
