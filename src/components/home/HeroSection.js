@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowRight, HiCheckCircle, HiSparkles, HiLightningBolt } from 'react-icons/hi';
+import { HiArrowRight, HiCheckCircle, HiSparkles } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import ContactForm from '../ContactForm/ContactForm';
 
@@ -26,17 +26,6 @@ const HeroSection = () => {
             transition: {
                 duration: 0.8,
                 ease: [0.645, 0.045, 0.355, 1],
-            },
-        },
-    };
-
-    const floatingVariants = {
-        animate: {
-            y: [0, -10, 0],
-            transition: {
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
             },
         },
     };

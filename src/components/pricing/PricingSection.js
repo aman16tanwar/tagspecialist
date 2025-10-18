@@ -3,7 +3,7 @@ import {
     HiCheckCircle, HiLightningBolt, HiChartBar, HiClock,
     HiCursorClick, HiArrowRight, HiSparkles, HiCloud
 } from 'react-icons/hi';
-import { FaRocket, FaChartLine, FaCrown } from 'react-icons/fa';
+import { FaChartLine, FaCrown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const PricingSection = () => {

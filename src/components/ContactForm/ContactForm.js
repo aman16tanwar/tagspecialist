@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiX, HiMail, HiUser, HiChat } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 
 const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMessage = '' }) => {
   const [isOpen, setIsOpen] = useState(propIsOpen || false);
