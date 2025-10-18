@@ -7,8 +7,14 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    website: '',
+    service: '',
+    channels: [],
+    painPoint: '',
     budget: '',
+    timeline: '',
     message: initialMessage
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,7 +64,8 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
           name: formData.name,
           email: formData.email,
           subject: `New Contact from ${formData.name} - Tag Specialist`,
-          message: `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\nBudget: ${formData.budget || 'N/A'}\n\nMessage:\n${formData.message}`
+          from_email: 'developer@tagspecialist.ca',
+          message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nService: ${formData.service}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
         }),
       });
       
@@ -71,7 +78,7 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
       
       // Success!
       alert('Thank you for reaching out! I\'ll get back to you within 24 hours.');
-      setFormData({ name: '', email: '', company: '', budget: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', company: '', website: '', service: '', channels: [], painPoint: '', budget: '', timeline: '', message: '' });
       if (onSubmitSuccess) onSubmitSuccess();
       handleClose();
     } catch (error) {
@@ -108,91 +115,192 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
               >
                 <HiX size={24} />
               </button>
-              <h3 className="text-2xl font-bold text-white mb-2">Let's Build Something Amazing</h3>
-              <p className="text-white/80 text-sm">Tell me about your project and I'll get back to you within 24 hours.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">Let's Transform Your Data Strategy</h3>
+              <p className="text-white/80 text-sm">Share your challenges and I'll provide a tailored solution within 24 hours.</p>
             </div>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
-              {/* Name Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
-                <div className="relative">
-                  <HiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Contact Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full pl-10 pr-3 py-3 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
                     required
                   />
                 </div>
-              </div>
 
-              {/* Email Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Email Address</label>
-                <div className="relative">
-                  <HiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                {/* Email Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Email Address *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full pl-10 pr-3 py-3 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
                     required
                   />
                 </div>
               </div>
 
-              {/* Company Input */}
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Phone Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+1 (555) 123-4567"
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                  />
+                </div>
+
+                {/* Company Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Company Name *</label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your Company"
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Website URL */}
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Company (Optional)</label>
+                <label className="block text-sm font-medium text-gray-400 mb-1">Company Website URL</label>
                 <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
+                  type="url"
+                  name="website"
+                  value={formData.website}
                   onChange={handleChange}
-                  placeholder="Your Company"
-                  className="w-full px-3 py-3 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                  placeholder="https://www.example.com"
+                  className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
                 />
               </div>
 
-              {/* Budget Select */}
+              {/* Service Select */}
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Project Budget</label>
+                <label className="block text-sm font-medium text-gray-400 mb-1">What service are you looking for? *</label>
                 <select
-                  name="budget"
-                  value={formData.budget}
+                  name="service"
+                  value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-3 py-3 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                  className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 >
-                  <option value="">Select Budget Range</option>
-                  <option value="5-15k">$5,000 - $15,000</option>
-                  <option value="15-25k">$15,000 - $25,000</option>
-                  <option value="25k+">$25,000+</option>
-                  <option value="custom">Let's Discuss</option>
+                  <option value="">Select a Service</option>
+                  <option value="data-pipeline">Data Pipeline & ETL Development</option>
+                  <option value="analytics-implementation">Analytics & Tracking Implementation</option>
+                  <option value="cloud-migration">Cloud Migration & Infrastructure</option>
+                  <option value="marketing-automation">Marketing Automation & Optimization</option>
+                  <option value="ai-analytics">AI-Powered Analytics</option>
+                  <option value="performance-marketing">Performance Marketing Management</option>
+                  <option value="custom">Custom Solution</option>
                 </select>
               </div>
 
-              {/* Message Textarea */}
+              {/* Marketing Channels */}
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Project Details</label>
-                <div className="relative">
-                  <HiChat className="absolute left-3 top-3 text-gray-500" />
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell me about your data challenges, current setup, and goals..."
-                    className="w-full pl-10 pr-3 py-3 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors h-32 resize-none"
-                    required
-                  />
+                <label className="block text-sm font-medium text-gray-400 mb-1">Which marketing channels do you use? (Select all that apply)</label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['Google Ads', 'Meta/Facebook', 'DV360', 'SA360', 'Microsoft Ads', 'LinkedIn', 'TikTok', 'Other'].map((channel) => (
+                    <label key={channel} className="flex items-center space-x-2 text-gray-300">
+                      <input
+                        type="checkbox"
+                        value={channel}
+                        checked={formData.channels.includes(channel)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setFormData({ ...formData, channels: [...formData.channels, channel] });
+                          } else {
+                            setFormData({ ...formData, channels: formData.channels.filter(c => c !== channel) });
+                          }
+                        }}
+                        className="rounded text-blue-600 bg-gray-700 border-gray-600 focus:ring-blue-500"
+                      />
+                      <span className="text-sm">{channel}</span>
+                    </label>
+                  ))}
                 </div>
+              </div>
+
+              {/* Pain Point */}
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1">What's your biggest data/marketing challenge? *</label>
+                <textarea
+                  name="painPoint"
+                  value={formData.painPoint}
+                  onChange={handleChange}
+                  placeholder="E.g., Manual reporting taking too long, can't track ROI across channels, data silos between platforms..."
+                  className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors h-20 resize-none"
+                  required
+                />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Budget Select */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Project Budget *</label>
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                    required
+                  >
+                    <option value="">Select Budget Range</option>
+                    <option value="5-15k">$5,000 - $15,000</option>
+                    <option value="15-25k">$15,000 - $25,000</option>
+                    <option value="25-50k">$25,000 - $50,000</option>
+                    <option value="50-100k">$50,000 - $100,000</option>
+                    <option value="100k+">$100,000+</option>
+                    <option value="monthly">Monthly Retainer</option>
+                  </select>
+                </div>
+
+                {/* Timeline */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Project Timeline</label>
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors"
+                  >
+                    <option value="">Select Timeline</option>
+                    <option value="asap">ASAP</option>
+                    <option value="1month">Within 1 month</option>
+                    <option value="3months">Within 3 months</option>
+                    <option value="planning">Just Planning</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Additional Details */}
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1">Additional Details (Optional)</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Any specific requirements, current tech stack, or additional context..."
+                  className="w-full px-3 py-2 bg-gray-700/50 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none transition-colors h-20 resize-none"
+                />
               </div>
 
               {/* Submit Button */}

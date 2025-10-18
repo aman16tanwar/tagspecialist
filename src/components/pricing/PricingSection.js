@@ -11,117 +11,120 @@ const PricingSection = () => {
 
     const pricingPlans = [
         {
-            id: 'automated',
-            name: 'Shopify Pipeline',
-            tagline: 'Automated Data Sync',
-            price: 'FREE',
-            priceNote: 'Up to 3 stores • No row limits',
-            icon: HiCloud,
+            id: 'foundation',
+            name: 'Foundation',
+            tagline: 'Analytics & Tracking Setup',
+            price: '$4,997',
+            priceNote: 'One-time implementation',
+            icon: HiLightningBolt,
             color: 'from-green-500 to-blue-500',
             features: [
-                'Web-based onboarding (5 min setup)',
-                'Automatic Cloud Run deployment',
-                'Shopify → BigQuery sync (4 tables)',
-                'Daily automated updates',
-                'UNLIMITED data rows (no 500K limits)',
-                'Own your infrastructure ($50/mo total)',
-                'No coding required',
-                'No vendor lock-in'
+                'GA4 + GTM complete setup',
+                'Server-side tracking implementation',
+                'Meta Conversions API setup',
+                'Enhanced ecommerce tracking',
+                'Cross-domain tracking',
+                'Custom events & conversions',
+                'Testing & QA process',
+                '30-day support included'
             ],
             addOns: [
-                'Additional stores: $47/store/month',
-                'Priority support: $197/month',
-                'Custom integrations available'
+                'Monthly maintenance: $497/month',
+                'Additional platforms: $1,997 each',
+                'Priority support: $297/month'
             ],
-            cta: 'Start Free Now',
-            ctaLink: '/blog/automated-shopify-pipeline',
-            popular: true,
-            highlight: 'NEW! Launch special',
-            outcome: 'Get your Shopify data flowing to BigQuery today',
-            isNew: true
+            cta: 'Start Tracking Right',
+            ctaLink: '/contact',
+            popular: false,
+            highlight: 'Most accurate tracking',
+            outcome: 'Never miss a conversion again',
+            isNew: false
         },
         {
-            id: 'starter',
-            name: 'Starter Package',
-            tagline: 'Foundation & Visibility',
-            price: 'From $2,500',
-            priceNote: 'One-time + monthly insights',
-            icon: FaRocket,
+            id: 'data-pipeline',
+            name: 'Data Pipeline',
+            tagline: 'Automated ETL & Reporting',
+            price: '$7,997',
+            priceNote: 'Setup + $997/month',
+            icon: HiCloud,
             color: 'from-blue-500 to-cyan-500',
             features: [
-                'Full GA4 + GTM tracking setup (web + server-side)',
-                'Core pipelines: Google Ads / Meta Ads → BigQuery',
-                'Standard Looker Studio dashboards',
-                'Traffic, conversions & revenue tracking',
-                'Monthly performance insights report',
-                'Key actions & trends analysis',
-                'Email support',
-                'Implementation documentation'
+                'Google Ads → BigQuery pipeline',
+                'Meta Ads → BigQuery pipeline',
+                'GA4 → BigQuery streaming',
+                'Automated daily/hourly sync',
+                'Data transformation & cleaning',
+                'Custom Looker Studio dashboards',
+                'Automated email reports',
+                'API rate limit handling',
+                'Error monitoring & alerts'
             ],
-            notIncluded: [
-                'Multi-platform integration',
-                'AI-powered insights',
-                'Predictive analytics'
+            addOns: [
+                'Additional data sources: $1,997 each',
+                'Custom transformations: $2,997',
+                'Real-time streaming: $497/month'
             ],
-            cta: 'Start with Foundation',
-            popular: false,
-            highlight: 'Perfect for small businesses',
-            outcome: 'Clear visibility into marketing data with accurate tracking'
+            cta: 'Automate Your Data',
+            popular: true,
+            highlight: '70+ clients served',
+            outcome: 'Save 20+ hours/week on reporting'
         },
         {
-            id: 'growth',
-            name: 'Growth Package',
-            tagline: 'Multi-Channel Integration & Automation',
-            price: 'From $5,000',
-            priceNote: 'Complete automation suite',
+            id: 'performance',
+            name: 'Performance Suite',
+            tagline: 'Full Marketing Stack Integration',
+            price: '$14,997',
+            priceNote: 'Setup + $1,997/month',
             icon: FaChartLine,
             color: 'from-indigo-500 to-blue-600',
             features: [
-                'Everything in Starter Package',
-                'Multi-platform pipelines (DV360, Shopify, etc.)',
-                'Advanced BigQuery transformations',
-                'Custom funnels & segmentation',
-                'LTV analysis & cohorts',
-                'AI-powered insights (LangGraph/n8n)',
-                'Weekly performance summaries',
-                'Anomaly detection alerts',
-                'Priority email/phone support'
+                'All Data Pipeline features',
+                'DV360 + SA360 integration',
+                'Campaign Manager sync',
+                'Shopify/eCommerce pipelines',
+                'Cross-channel attribution',
+                'Custom BigQuery ML models',
+                'Automated bid optimization',
+                'LTV & cohort analysis',
+                'AI-powered anomaly detection',
+                'Weekly strategy calls'
             ],
-            notIncluded: [
-                'Predictive modeling',
-                'Custom ML models',
-                'Dedicated strategy calls'
+            addOns: [
+                'Predictive modeling: $4,997',
+                'Custom AI chatbot: $7,997',
+                'White-label dashboards: $2,997'
             ],
-            cta: 'Scale with Automation',
+            cta: 'Maximize Performance',
             popular: false,
-            highlight: 'Most popular for scaling brands',
-            outcome: 'Automated insights and multi-channel ROI tracking'
+            highlight: '451% average ROAS',
+            outcome: 'Complete marketing intelligence'
         },
         {
             id: 'enterprise',
-            name: 'Enterprise Package',
-            tagline: 'AI-Driven Intelligence & Predictive Analytics',
-            price: 'From $10,000',
-            priceNote: 'Full AI implementation',
+            name: 'Enterprise AI',
+            tagline: 'Custom AI-Powered Solutions',
+            price: 'From $24,997',
+            priceNote: 'Custom implementation',
             icon: FaCrown,
             color: 'from-yellow-500 to-orange-500',
             features: [
-                'Everything in Growth Package',
-                'Advanced multi-domain tracking audits',
-                'Predictive modeling with BigQuery ML',
-                'Forecasting, churn & LTV predictions',
-                'Full AI agent integration (schema-aware)',
+                'Everything in Performance Suite',
+                'LangChain AI chatbot for data',
+                'Predictive revenue modeling',
+                'Churn prediction & prevention',
+                'Budget allocation optimization',
                 'Custom workflow automation',
-                'QuickBooks & PM tools integration',
-                'Dedicated support & monthly strategy calls',
-                'API access or private deployment',
-                'Quarterly business reviews'
+                'Airflow/Composer orchestration',
+                'Dedicated GCP infrastructure',
+                'SLA guarantees',
+                'Weekly strategy sessions',
+                '24/7 priority support'
             ],
             notIncluded: [],
-            cta: 'Get Enterprise AI',
+            cta: 'Transform with AI',
             popular: false,
-            highlight: 'For large-scale advertisers',
-            outcome: 'AI-driven decision-making with predictive insights'
+            highlight: 'For $3M+ ad spend',
+            outcome: 'AI-driven competitive advantage'
         }
     ];
 
@@ -137,7 +140,7 @@ const PricingSection = () => {
                         </span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Start with our free Shopify pipeline or choose a comprehensive package. Every solution is designed to deliver 10x+ ROI.
+                        Enterprise-grade solutions that delivered 451% ROAS for $3.5M+ in ad spend. Every package designed for immediate ROI.
                     </p>
                 </div>
 

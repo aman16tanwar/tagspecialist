@@ -49,13 +49,10 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Services', id: 'services' },
-    { name: 'ROI Calculator', route: '/roi-calculator' },
-    { name: 'Compare', submenu: [
-      { name: 'vs Fivetran', route: '/fivetran-alternative' },
-      { name: 'vs Stitch', route: '/stitch-data-alternative' }
-    ]},
+    { name: 'Solutions', id: 'solutions' },
+    { name: 'Expertise', id: 'expertise' },
     { name: 'Pricing', id: 'pricing' },
-    { name: 'Blogs', route: '/blogs' },
+    { name: 'Case Studies', route: '/case-studies' },
     { name: 'About', id: 'about' },
     { name: 'Contact', id: 'contact' }
   ];

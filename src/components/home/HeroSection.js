@@ -42,9 +42,9 @@ const HeroSection = () => {
     };
 
     const trustMetrics = [
-        { label: "9+ Years Experience", icon: HiCheckCircle },
-        { label: "100+ Implementations", icon: HiCheckCircle },
-        { label: "Trusted by Leading Agencies", icon: HiCheckCircle },
+        { label: "8+ Years Experience", icon: HiCheckCircle },
+        { label: "70+ Enterprise Clients", icon: HiCheckCircle },
+        { label: "451% Average ROAS", icon: HiCheckCircle },
     ];
 
     return (
@@ -53,15 +53,15 @@ const HeroSection = () => {
             <motion.div 
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="absolute top-20 left-0 right-0 z-20 bg-gradient-to-r from-green-600/90 to-blue-600/90 backdrop-blur-sm py-3 px-4"
+                className="absolute top-20 left-0 right-0 z-20 bg-gradient-to-r from-purple-600/90 to-blue-600/90 backdrop-blur-sm py-3 px-4"
             >
                 <div className="container mx-auto flex items-center justify-center gap-3 text-white">
                     <HiSparkles className="w-5 h-5 animate-pulse" />
                     <span className="text-sm sm:text-base font-medium">
-                        NEW: Shopify → BigQuery with NO row limits. Own your data for $50/month total.
+                        NEW: AI-Powered GTM Setup with MCP Integration. Automate your tracking in minutes.
                     </span>
                     <Link 
-                        to="/blog/automated-shopify-pipeline" 
+                        to="/services/ai-automation" 
                         className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm font-medium transition-all"
                     >
                         Learn More
@@ -114,12 +114,12 @@ const HeroSection = () => {
                     className="max-w-5xl mx-auto text-center"
                 >
                     {/* Badge */}
-                    <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-8">
+                    <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-8">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
                         </span>
-                        <span className="text-sm text-blue-300 font-medium">Now accepting Q1 2025 projects</span>
+                        <span className="text-sm text-purple-300 font-medium">Technical Marketing Services • USA, Canada & Europe</span>
                     </motion.div>
 
                     {/* Main Headline */}
@@ -127,9 +127,9 @@ const HeroSection = () => {
                         variants={itemVariants}
                         className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
                     >
-                        Turn Your Marketing Data Into{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                            Revenue-Driving Intelligence
+                        The Technical Co-Founder{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                            Your Marketing Team Needs
                         </span>
                     </motion.h1>
 
@@ -138,23 +138,32 @@ const HeroSection = () => {
                         variants={itemVariants}
                         className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
                     >
-                        I build AI-powered data pipelines and implement bulletproof tracking systems that give you the insights your competition doesn't have.
+                        From GA4 & GTM setup to AI-powered automation with MCP servers. I handle the technical complexity so your team can focus on strategy.
                     </motion.p>
 
-                    {/* New Feature Highlight */}
+                    {/* Three Service Pillars */}
                     <motion.div 
                         variants={itemVariants}
-                        className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 mb-10 max-w-2xl mx-auto"
+                        className="grid md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto"
                     >
-                        <div className="flex items-center justify-center gap-3 mb-2">
-                            <HiLightningBolt className="w-6 h-6 text-yellow-400" />
-                            <h3 className="text-lg font-semibold text-white">Automated Shopify Data Pipelines</h3>
+                        <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/30 rounded-lg p-4">
+                            <div className="text-purple-400 font-semibold mb-2">Analytics & Tracking</div>
+                            <p className="text-gray-300 text-sm">
+                                GA4, GTM, Meta Pixel, Server-side tagging, Cookie consent, GDPR compliance
+                            </p>
                         </div>
-                        <p className="text-gray-300 text-sm">
-                            Break free from row limits & vendor lock-in. Own your Shopify → BigQuery pipeline for 
-                            <span className="text-green-400 font-semibold"> $50/month total infrastructure cost</span>. 
-                            Web UI setup in 5 minutes, unlimited data.
-                        </p>
+                        <div className="bg-gray-800/50 backdrop-blur-sm border border-blue-500/30 rounded-lg p-4">
+                            <div className="text-blue-400 font-semibold mb-2">Data Engineering</div>
+                            <p className="text-gray-300 text-sm">
+                                Marketing data to BigQuery, ML models, Custom dashboards, Attribution
+                            </p>
+                        </div>
+                        <div className="bg-gray-800/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-4">
+                            <div className="text-green-400 font-semibold mb-2">AI Automation</div>
+                            <p className="text-gray-300 text-sm">
+                                MCP servers for GTM/GA4, AI-powered analytics, Automated reporting
+                            </p>
+                        </div>
                     </motion.div>
 
                     {/* CTA Buttons */}
@@ -172,11 +181,11 @@ const HeroSection = () => {
                         </button>
 
                         <Link
-                            to="/blog/automated-shopify-pipeline"
-                            className="group px-8 py-4 bg-gradient-to-r from-green-600/20 to-blue-600/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-green-500/50 hover:border-green-400 shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
+                            to="/free-audit"
+                            className="group px-8 py-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-purple-500/50 hover:border-purple-400 shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
                         >
-                            <HiSparkles className="w-5 h-5 text-green-400" />
-                            <span>Try Free Shopify Pipeline</span>
+                            <HiSparkles className="w-5 h-5 text-purple-400" />
+                            <span>Get Free GA4 Audit</span>
                         </Link>
                     </motion.div>
 
@@ -195,29 +204,6 @@ const HeroSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* Floating Cards Preview */}
-                    <motion.div 
-                        variants={floatingVariants}
-                        animate="animate"
-                        className="absolute -right-20 top-1/2 transform -translate-y-1/2 hidden xl:block"
-                    >
-                        <div className="bg-gray-800/80 backdrop-blur-md p-4 rounded-lg shadow-xl border border-gray-700 transform rotate-6">
-                            <div className="text-xs text-gray-400 mb-1">Real-time Analytics</div>
-                            <div className="text-2xl font-bold text-white">+47% ROAS</div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div 
-                        variants={floatingVariants}
-                        animate="animate"
-                        className="absolute -left-20 top-1/3 hidden xl:block"
-                        style={{ animationDelay: '2s' }}
-                    >
-                        <div className="bg-gray-800/80 backdrop-blur-md p-4 rounded-lg shadow-xl border border-gray-700 transform -rotate-6">
-                            <div className="text-xs text-gray-400 mb-1">Shopify → BigQuery</div>
-                            <div className="text-2xl font-bold text-green-400">FREE Setup</div>
-                        </div>
-                    </motion.div>
                 </motion.div>
             </div>
 

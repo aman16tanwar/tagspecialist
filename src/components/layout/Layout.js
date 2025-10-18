@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import ContactForm from '../ContactForm/ContactForm';
 import SuccessModal from '../SuccessModal/SuccessModal';
 
@@ -13,11 +14,12 @@ const Layout = ({ children }) => {
     };
 
     return (
-      <div className="bg-gray-900 text-white min-h-screen">
+      <div className="bg-gray-900 text-white min-h-screen flex flex-col">
         <Navbar onContactClick={() => setIsContactFormOpen(true)} />
-        <main className="pt-16 space-y-12">
+        <main className="pt-16 space-y-12 flex-grow">
           {children}
         </main>
+        <Footer />
         <ContactForm 
           isOpen={isContactFormOpen} 
           onClose={() => setIsContactFormOpen(false)}

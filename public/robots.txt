@@ -1,4 +1,21 @@
+# Robots.txt for Tag Specialist
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
-Sitemap: https://tagspecialist.ca/sitemap.xml
+# Sitemaps
+Sitemap: https://tagspecialist.com/sitemap.xml
+
+# Priority for Search Engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://tagspecialist.ca/</loc>
-        <lastmod>2025-07-27</lastmod>
+        <loc>https://tagspecialist.com/</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/starter-package</loc>
-        <lastmod>2025-07-27</lastmod>
+        <loc>https://tagspecialist.com/starter-package</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/blogs</loc>
-        <lastmod>2025-07-27</lastmod>
+        <loc>https://tagspecialist.com/blogs</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/blog/shopify-bigquery-pipeline-tutorial</loc>
-        <lastmod>2025-07-27</lastmod>
+        <loc>https://tagspecialist.com/blog/shopify-bigquery-pipeline-tutorial</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/fivetran-alternative</loc>
-        <lastmod>2025-08-03</lastmod>
+        <loc>https://tagspecialist.com/blog/automated-shopify-pipeline</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tagspecialist.com/case-studies</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tagspecialist.com/fivetran-alternative</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/stitch-data-alternative</loc>
-        <lastmod>2025-08-03</lastmod>
+        <loc>https://tagspecialist.com/stitch-data-alternative</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
-        <loc>https://tagspecialist.ca/roi-calculator</loc>
-        <lastmod>2025-08-03</lastmod>
+        <loc>https://tagspecialist.com/shopify-bigquery</loc>
+        <lastmod>2025-01-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>

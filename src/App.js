@@ -1,8 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import SEOHead from './components/seo/SEOHead';
 import HeroSection from './components/home/HeroSection';
 import ServicesSection from './components/services/ServicesSection';
+import SolutionsSection from './components/solutions/SolutionsSection';
+import ExpertiseSection from './components/expertise/ExpertiseSection';
 import CaseStudiesSection from './components/casestudies/CaseStudiesSection';
 import AIAssistantShowcase from './components/ai/AIAssistantShowcase';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
@@ -19,17 +22,21 @@ import StitchAlternative from './components/alternatives/StitchAlternative';
 import ROICalculator from './components/calculator/ROICalculator';
 import ShopifyBigQueryLanding from './components/landing/ShopifyBigQueryLanding';
 import ShopifyPipelineComparison from './components/comparison/ShopifyPipelineComparison';
+import PrivacyPolicy from './components/legal/PrivacyPolicy';
+import TermsOfService from './components/legal/TermsOfService';
 
 // Main page component
 const HomePage = () => (
   <>
+    <SEOHead />
     <HeroSection />
     <ServicesSection />
+    <SolutionsSection />
+    <ExpertiseSection />
     <CaseStudiesSection />
     <AIAssistantShowcase />
     <AboutSection />
     <TestimonialsSection />
-    <ProductsSection />
     <PricingSection />
     <div id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="container mx-auto px-4 text-center">
@@ -76,9 +83,11 @@ function App() {
         <Route path="/blog/automated-shopify-pipeline" element={<AutomatedPipelinePost />} />
         <Route path="/fivetran-alternative" element={<FivetranAlternative />} />
         <Route path="/stitch-data-alternative" element={<StitchAlternative />} />
-        <Route path="/roi-calculator" element={<ROICalculator />} />
+        <Route path="/case-studies" element={<CaseStudiesSection />} />
         <Route path="/shopify-bigquery" element={<ShopifyBigQueryLanding />} />
         <Route path="/shopify-pipeline-comparison" element={<ShopifyPipelineComparison />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </Layout>
   );
