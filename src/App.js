@@ -88,8 +88,6 @@ function App() {
         <Route path="/shopify-pipeline-comparison" element={<ShopifyPipelineComparison />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/learn" element={<BlogHub />} />
-        <Route path="/blog/:id" element={<VideoPlayer />} />
       </Routes>
     </Layout>
   );

@@ -51,7 +51,6 @@ const Navbar = () => {
     { name: 'Services', route: '/services' },
     { name: 'Case Studies', route: '/case-studies' },
     { name: 'About', route: '/about' },
-    { name: 'Learn', route: '/learn', badge: 'NEW' },
     { name: 'Contact', id: 'contact' }
   ];
 
