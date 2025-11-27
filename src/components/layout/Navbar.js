@@ -21,13 +21,13 @@ const Navbar = () => {
 
   const handleNavigation = (item) => {
     setIsMobileMenuOpen(false);
-    
+
     // If it's a route navigation (like blogs)
     if (item.route) {
       navigate(item.route);
       return;
     }
-    
+
     // If we're on the homepage, just scroll to section
     if (location.pathname === '/') {
       const section = document.getElementById(item.id);
@@ -48,25 +48,22 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: 'Services', id: 'services' },
-    { name: 'Solutions', id: 'solutions' },
-    { name: 'Expertise', id: 'expertise' },
-    { name: 'Pricing', id: 'pricing' },
+    { name: 'Services', route: '/services' },
     { name: 'Case Studies', route: '/case-studies' },
-    { name: 'About', id: 'about' },
+    { name: 'About', route: '/about' },
+    { name: 'Learn', route: '/learn', badge: 'NEW' },
     { name: 'Contact', id: 'contact' }
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center cursor-pointer"
@@ -98,7 +95,7 @@ const Navbar = () => {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
                   </motion.button>
                   {openDropdown === item.name && (
-                    <div 
+                    <div
                       className="absolute top-full mt-2 bg-gray-800 rounded-lg shadow-xl py-2 min-w-[180px]"
                       onMouseEnter={() => setOpenDropdown(item.name)}
                       onMouseLeave={() => setOpenDropdown(null)}
@@ -124,7 +121,14 @@ const Navbar = () => {
                   onClick={() => handleNavigation(item)}
                   className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
                 >
-                  {item.name}
+                  <span className="flex items-center gap-2">
+                    {item.name}
+                    {item.badge && (
+                      <span className="px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </span>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
                 </motion.button>
               )

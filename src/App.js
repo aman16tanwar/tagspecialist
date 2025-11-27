@@ -4,13 +4,9 @@ import Layout from './components/layout/Layout';
 import SEOHead from './components/seo/SEOHead';
 import HeroSection from './components/home/HeroSection';
 import ServicesSection from './components/services/ServicesSection';
-import SolutionsSection from './components/solutions/SolutionsSection';
-import ExpertiseSection from './components/expertise/ExpertiseSection';
-import CaseStudiesSection from './components/casestudies/CaseStudiesSection';
 import AIAssistantShowcase from './components/ai/AIAssistantShowcase';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import AboutSection from './components/about/AboutSection';
-import PricingSection from './components/pricing/PricingSection';
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
 import StarterPackagePage from './components/blog/StarterPackagePage';
 import BlogsPage from './components/blog/BlogsPage';
@@ -22,20 +18,23 @@ import ShopifyBigQueryLanding from './components/landing/ShopifyBigQueryLanding'
 import ShopifyPipelineComparison from './components/comparison/ShopifyPipelineComparison';
 import PrivacyPolicy from './components/legal/PrivacyPolicy';
 import TermsOfService from './components/legal/TermsOfService';
+import BlogHub from './components/blog/BlogHub';
+import VideoPlayer from './components/blog/VideoPlayer';
 
-// Main page component
+// New Pages
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
+
+// Main page component (Simplified)
 const HomePage = () => (
   <>
     <SEOHead />
     <HeroSection />
     <ServicesSection />
-    <SolutionsSection />
-    <ExpertiseSection />
-    <CaseStudiesSection />
     <AIAssistantShowcase />
     <AboutSection />
     <TestimonialsSection />
-    <PricingSection />
     <div id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -55,11 +54,11 @@ const HomePage = () => (
             }}
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
           >
-            Get Started - Contact Me
+            Get Started - Contact Us
           </button>
         </div>
         <p className="text-sm text-gray-500 mt-8">
-          I take on 2-3 new implementations per month. Current availability: January 2025
+          We take on 2-3 new implementations per month. Current availability: January 2025
         </p>
         <p className="text-sm text-gray-500 mt-2">
           🍁 Based in Vancouver, BC • Available for clients worldwide • PST/PDT timezone
@@ -74,6 +73,10 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/starter-package" element={<StarterPackagePage />} />
         <Route path="/blogs" element={<BlogsPage />} />
@@ -81,11 +84,12 @@ function App() {
         <Route path="/blog/automated-shopify-pipeline" element={<AutomatedPipelinePost />} />
         <Route path="/fivetran-alternative" element={<FivetranAlternative />} />
         <Route path="/stitch-data-alternative" element={<StitchAlternative />} />
-        <Route path="/case-studies" element={<CaseStudiesSection />} />
         <Route path="/shopify-bigquery" element={<ShopifyBigQueryLanding />} />
         <Route path="/shopify-pipeline-comparison" element={<ShopifyPipelineComparison />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/learn" element={<BlogHub />} />
+        <Route path="/blog/:id" element={<VideoPlayer />} />
       </Routes>
     </Layout>
   );

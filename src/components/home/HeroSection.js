@@ -39,7 +39,7 @@ const HeroSection = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900/30 to-gray-900">
             {/* New Announcement Banner */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="absolute top-20 left-0 right-0 z-20 bg-gradient-to-r from-purple-600/90 to-blue-600/90 backdrop-blur-sm py-3 px-4"
@@ -49,8 +49,8 @@ const HeroSection = () => {
                     <span className="text-sm sm:text-base font-medium">
                         NEW: AI-Powered GTM Setup with MCP Integration. Automate your tracking in minutes.
                     </span>
-                    <Link 
-                        to="/services/ai-automation" 
+                    <Link
+                        to="/services/ai-automation"
                         className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm font-medium transition-all"
                     >
                         Learn More
@@ -87,7 +87,7 @@ const HeroSection = () => {
                     }}
                     className="absolute -bottom-40 -left-40 w-96 h-96 bg-yellow-500 rounded-full blur-3xl opacity-20"
                 />
-                
+
                 {/* Grid Pattern */}
                 <div className="absolute inset-0 opacity-50" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)' /%3E%3C/svg%3E")`
@@ -112,26 +112,26 @@ const HeroSection = () => {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <motion.h1 
+                    <motion.h1
                         variants={itemVariants}
                         className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
                     >
-                        The Technical Co-Founder{' '}
+                        Data Engineering Meets{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-                            Your Marketing Team Needs
+                            Growth Strategy
                         </span>
                     </motion.h1>
 
                     {/* Subheadline */}
-                    <motion.p 
+                    <motion.p
                         variants={itemVariants}
                         className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
                     >
-                        From GA4 & GTM setup to AI-powered automation with MCP servers. I handle the technical complexity so your team can focus on strategy.
+                        We build the technical infrastructure you need and manage the campaigns that drive your revenue. A complete partnership for data-driven growth.
                     </motion.p>
 
                     {/* Three Service Pillars */}
-                    <motion.div 
+                    <motion.div
                         variants={itemVariants}
                         className="grid md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto"
                     >
@@ -156,7 +156,7 @@ const HeroSection = () => {
                     </motion.div>
 
                     {/* CTA Buttons */}
-                    <motion.div 
+                    <motion.div
                         variants={itemVariants}
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
                     >
@@ -197,7 +197,7 @@ const HeroSection = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <motion.div 
+            <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
