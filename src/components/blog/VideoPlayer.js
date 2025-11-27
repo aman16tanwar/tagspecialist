@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { HiLockClosed, HiPlay, HiClock, HiDownload, HiCode } from 'react-icons/hi';
+import { HiLockClosed, HiClock, HiDownload, HiCode } from 'react-icons/hi';
 import { FaYoutube, FaGithub } from 'react-icons/fa';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const VideoPlayer = () => {
-  const { id } = useParams();
   const [timeWatched, setTimeWatched] = useState(0);
   const [showPaywall, setShowPaywall] = useState(false);
-  const [isSubscribed, setIsSubscribed] = useState(false); // Check from auth/payment system
+  const [isSubscribed] = useState(false); // Check from auth/payment system
 
   // Sample video data - in production, fetch from API
   const video = {
@@ -93,15 +92,15 @@ const VideoPlayer = () => {
                     <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                       <HiLockClosed className="w-10 h-10 text-gray-900" />
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold text-white mb-4">
                       Premium Content
                     </h3>
                     <p className="text-gray-400 mb-6">
-                      You've watched the free {video.freeMinutes}-minute preview. 
+                      You've watched the free {video.freeMinutes}-minute preview.
                       Subscribe to access the full tutorial and downloadable resources.
                     </p>
-                    
+
                     <div className="space-y-4">
                       <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105">
                         Subscribe for $60/month
@@ -113,7 +112,7 @@ const VideoPlayer = () => {
                   </motion.div>
                 </div>
               )}
-              
+
               {/* Progress Bar */}
               {!isSubscribed && !showPaywall && (
                 <div className="absolute bottom-0 left-0 right-0 bg-gray-800 p-2">
@@ -121,7 +120,7 @@ const VideoPlayer = () => {
                     Free preview: {formatTime(timeWatched)} / {video.freeMinutes}:00
                   </div>
                   <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-1000"
                       style={{ width: `${Math.min((timeWatched / (video.freeMinutes * 60)) * 100, 100)}%` }}
                     />
@@ -133,7 +132,7 @@ const VideoPlayer = () => {
             {/* Video Info */}
             <div className="mt-6 bg-gray-800 rounded-xl p-6">
               <h1 className="text-2xl font-bold text-white mb-4">{video.title}</h1>
-              
+
               <div className="flex items-center gap-6 text-sm text-gray-400 mb-6">
                 <span className="flex items-center gap-2">
                   <HiClock className="w-4 h-4" />
@@ -154,13 +153,12 @@ const VideoPlayer = () => {
                 <h3 className="text-lg font-bold text-white mb-4">Video Chapters</h3>
                 <div className="space-y-2">
                   {video.chapters.map((chapter, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className={`flex items-center gap-4 p-3 rounded-lg ${
-                        chapter.title.includes('Premium') && !isSubscribed
+                      className={`flex items-center gap-4 p-3 rounded-lg ${chapter.title.includes('Premium') && !isSubscribed
                           ? 'bg-gray-900 opacity-60'
                           : 'bg-gray-700 hover:bg-gray-600 cursor-pointer'
-                      }`}
+                        }`}
                     >
                       <span className="text-blue-400 font-mono text-sm">{chapter.time}</span>
                       <span className="text-gray-300 flex-1">{chapter.title}</span>
@@ -187,11 +185,10 @@ const VideoPlayer = () => {
                   <button
                     key={index}
                     disabled={resource.isPremium && !isSubscribed}
-                    className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-                      resource.isPremium && !isSubscribed
+                    className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${resource.isPremium && !isSubscribed
                         ? 'bg-gray-900 opacity-60 cursor-not-allowed'
                         : 'bg-gray-700 hover:bg-gray-600'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       {resource.type === 'github' ? (
@@ -247,8 +244,8 @@ const VideoPlayer = () => {
                   >
                     <div className="flex gap-3">
                       <div className="w-32 h-20 bg-gray-700 rounded-lg overflow-hidden flex-shrink-0">
-                        <img 
-                          src={related.thumbnail} 
+                        <img
+                          src={related.thumbnail}
                           alt={related.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform"
                         />

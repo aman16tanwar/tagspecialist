@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiPlay, HiLockClosed, HiClock, HiCode, HiLightningBolt, HiChartBar, HiStar, HiCheckCircle } from 'react-icons/hi';
+import { HiPlay, HiLockClosed, HiClock, HiCheckCircle } from 'react-icons/hi';
 import { FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -104,8 +104,8 @@ const BlogHub = () => {
     }
   ];
 
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === 'all'
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
@@ -122,7 +122,7 @@ const BlogHub = () => {
               <FaYoutube className="w-5 h-5 text-red-500" />
               <span className="text-sm text-blue-300 font-medium">New videos every week</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Learn Data Engineering & Marketing Analytics
             </h1>
@@ -170,11 +170,10 @@ const BlogHub = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                selectedCategory === category.id
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedCategory === category.id
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-              }`}
+                }`}
             >
               {category.name} ({category.count})
             </button>
@@ -195,8 +194,8 @@ const BlogHub = () => {
             >
               {/* Thumbnail */}
               <div className="relative aspect-video bg-gray-700">
-                <img 
-                  src={post.thumbnail} 
+                <img
+                  src={post.thumbnail}
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />
@@ -232,7 +231,7 @@ const BlogHub = () => {
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {post.title}
                 </h3>
-                
+
                 <p className="text-gray-400 text-sm mb-4">
                   {post.excerpt}
                 </p>
@@ -250,11 +249,10 @@ const BlogHub = () => {
                       {post.readTime}
                     </span>
                   )}
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${
-                    post.difficulty === 'beginner' ? 'bg-green-900/50 text-green-400' :
-                    post.difficulty === 'intermediate' ? 'bg-yellow-900/50 text-yellow-400' :
-                    'bg-red-900/50 text-red-400'
-                  }`}>
+                  <span className={`px-2 py-1 rounded text-xs font-medium ${post.difficulty === 'beginner' ? 'bg-green-900/50 text-green-400' :
+                      post.difficulty === 'intermediate' ? 'bg-yellow-900/50 text-yellow-400' :
+                        'bg-red-900/50 text-red-400'
+                    }`}>
                     {post.difficulty}
                   </span>
                 </div>
@@ -271,11 +269,10 @@ const BlogHub = () => {
                 {/* CTA Button */}
                 <Link
                   to={`/blog/${post.id}`}
-                  className={`block w-full text-center px-4 py-2 rounded-lg font-medium transition-all ${
-                    post.isPremium
+                  className={`block w-full text-center px-4 py-2 rounded-lg font-medium transition-all ${post.isPremium
                       ? 'bg-gradient-to-r from-yellow-600 to-orange-600 text-white hover:shadow-lg'
                       : 'bg-blue-600 text-white hover:bg-blue-700'
-                  }`}
+                    }`}
                 >
                   {post.isPremium ? 'Watch with Premium' : 'Watch Free Sample'}
                 </Link>
