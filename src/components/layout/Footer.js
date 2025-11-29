@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  HiMail, HiPhone, HiLocationMarker, HiShieldCheck,
-  HiCheckCircle, HiLockClosed, HiExternalLink 
+  HiMail, HiLocationMarker, HiShieldCheck,
+  HiCheckCircle, HiLockClosed 
 } from 'react-icons/hi';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiGooglecloud, SiGoogleanalytics, SiGoogleads } from 'react-icons/si';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   const trustBadges = [
     { icon: SiGooglecloud, text: 'GCP Certified', color: 'text-blue-400' },
     { icon: SiGoogleanalytics, text: 'GA4 Certified', color: 'text-orange-400' },
