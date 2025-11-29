@@ -22,6 +22,11 @@ const Navbar = () => {
   const handleNavigation = (item) => {
     setIsMobileMenuOpen(false);
 
+    if (item.id === 'contact') {
+      window.dispatchEvent(new CustomEvent('openContactForm'));
+      return;
+    }
+
     // If it's a route navigation (like blogs)
     if (item.route) {
       navigate(item.route);
@@ -56,7 +61,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' : 'bg-transparent'
         }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -68,16 +73,14 @@ const Navbar = () => {
             className="flex items-center cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <div className="text-2xl font-bold">
-              <span className="text-white">Tag</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-                Specialist
-              </span>
+            <div className="text-2xl font-semibold tracking-tight">
+              <span className="text-brand-primary">Tag</span>
+              <span className="text-brand-accent">Specialist</span>
             </div>
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {menuItems.map((item, index) => (
               item.submenu ? (
                 <div key={item.name} className="relative">
@@ -87,15 +90,14 @@ const Navbar = () => {
                     transition={{ delay: index * 0.1 }}
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group flex items-center"
+                    className="text-text-main hover:text-brand-primary transition-colors duration-300 font-medium relative group flex items-center text-sm uppercase tracking-wide"
                   >
                     {item.name}
                     <HiChevronDown className="ml-1 w-4 h-4" />
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
                   </motion.button>
                   {openDropdown === item.name && (
                     <div
-                      className="absolute top-full mt-2 bg-gray-800 rounded-lg shadow-xl py-2 min-w-[180px]"
+                      className="absolute top-full mt-2 bg-white border border-gray-200 rounded-sm shadow-xl py-2 min-w-[180px]"
                       onMouseEnter={() => setOpenDropdown(item.name)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
@@ -103,7 +105,7 @@ const Navbar = () => {
                         <button
                           key={subItem.name}
                           onClick={() => navigate(subItem.route)}
-                          className="block w-full text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                          className="block w-full text-left px-4 py-2 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors text-sm"
                         >
                           {subItem.name}
                         </button>
@@ -118,17 +120,11 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => handleNavigation(item)}
-                  className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
+                  className="text-text-main hover:text-brand-primary transition-colors duration-300 font-medium relative group text-sm uppercase tracking-wide"
                 >
                   <span className="flex items-center gap-2">
                     {item.name}
-                    {item.badge && (
-                      <span className="px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
                   </span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover:w-full transition-all duration-300" />
                 </motion.button>
               )
             ))}
@@ -136,8 +132,8 @@ const Navbar = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 }}
-              onClick={() => handleNavigation({ id: 'contact' })}
-              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105"
+              onClick={() => window.dispatchEvent(new CustomEvent('openContactForm'))}
+              className="btn-primary"
             >
               Get Started
             </motion.button>
@@ -145,7 +141,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-brand-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
@@ -158,12 +154,12 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 py-4 bg-gray-800/95 backdrop-blur-md rounded-lg"
+            className="md:hidden mt-4 py-4 bg-white border border-gray-200 rounded-lg shadow-lg"
           >
             {menuItems.map((item) => (
               item.submenu ? (
                 <div key={item.name}>
-                  <div className="px-4 py-3 text-gray-400 font-semibold">{item.name}</div>
+                  <div className="px-4 py-3 text-text-dark font-semibold text-sm uppercase">{item.name}</div>
                   {item.submenu.map((subItem) => (
                     <button
                       key={subItem.name}
@@ -171,7 +167,7 @@ const Navbar = () => {
                         navigate(subItem.route);
                         setIsMobileMenuOpen(false);
                       }}
-                      className="block w-full text-left px-8 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
+                      className="block w-full text-left px-8 py-2 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors duration-300 text-sm"
                     >
                       {subItem.name}
                     </button>
@@ -181,7 +177,7 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavigation(item)}
-                  className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors duration-300"
+                  className="block w-full text-left px-4 py-3 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors duration-300 text-sm uppercase"
                 >
                   {item.name}
                 </button>
@@ -189,8 +185,11 @@ const Navbar = () => {
             ))}
             <div className="mt-4 px-4">
               <button
-                onClick={() => handleNavigation({ id: 'contact' })}
-                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  window.dispatchEvent(new CustomEvent('openContactForm'));
+                }}
+                className="block w-full text-center px-6 py-3 bg-brand-accent hover:bg-blue-600 text-white font-semibold rounded-sm uppercase text-sm tracking-wider"
               >
                 Get Started
               </button>

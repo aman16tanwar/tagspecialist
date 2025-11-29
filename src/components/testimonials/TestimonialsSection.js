@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$2,314 project • 41 hours",
             image: "MD",
-            gradient: "from-blue-500 to-cyan-500"
+            // Removed gradients
         },
         {
             id: 2,
@@ -25,7 +25,6 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$405 project • 7 hours",
             image: "BO",
-            gradient: "from-indigo-500 to-blue-500"
         },
         {
             id: 3,
@@ -36,7 +35,6 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$35 project • Quick fix",
             image: "MM",
-            gradient: "from-green-500 to-teal-500"
         },
         {
             id: 4,
@@ -47,7 +45,6 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$70 project • 1 hour",
             image: "EM",
-            gradient: "from-orange-500 to-red-500"
         },
         {
             id: 5,
@@ -58,7 +55,6 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$7,740 • 172 hours",
             image: "GL",
-            gradient: "from-indigo-500 to-blue-500"
         },
         {
             id: 6,
@@ -69,7 +65,6 @@ const TestimonialsSection = () => {
             rating: 5,
             highlight: "$366 project • 6 hours",
             image: "AM",
-            gradient: "from-pink-500 to-rose-500"
         }
     ];
 
@@ -101,19 +96,16 @@ const TestimonialsSection = () => {
             whileHover={{ y: -5 }}
             className="relative group h-full"
         >
-            {/* Gradient border effect */}
-            <div className={`absolute -inset-0.5 bg-gradient-to-r ${testimonial.gradient} rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300`} />
-            
-            <div className="relative h-full bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 flex flex-col">
+            <div className="relative h-full bg-white border border-gray-200 rounded-lg p-6 flex flex-col shadow-sm hover:border-blue-400 transition-all duration-300">
                 {/* Quote Icon */}
-                <FaQuoteLeft className="w-8 h-8 text-gray-700 mb-4" />
+                <FaQuoteLeft className="w-8 h-8 text-gray-300 mb-4" />
                 
                 {/* Content */}
-                <p className="text-gray-300 mb-6 flex-grow">"{testimonial.content}"</p>
+                <p className="text-gray-600 mb-6 flex-grow italic">"{testimonial.content}"</p>
                 
                 {/* Highlight */}
                 <div className="inline-flex items-center mb-6">
-                    <span className={`text-sm font-semibold bg-gradient-to-r ${testimonial.gradient} text-transparent bg-clip-text`}>
+                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                         {testimonial.highlight}
                     </span>
                 </div>
@@ -121,18 +113,18 @@ const TestimonialsSection = () => {
                 {/* Author */}
                 <div className="flex items-center gap-4">
                     {/* Avatar */}
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center text-white font-bold`}>
+                    <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center text-white font-bold border border-gray-200">
                         {testimonial.image}
                     </div>
                     
                     {/* Info */}
                     <div className="flex-1">
-                        <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-400">
+                        <h4 className="text-navy-900 font-semibold">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-500">
                             {testimonial.role} • {testimonial.company}
                         </p>
-                        <p className="text-xs text-green-400 mt-1">
-                            ✓ Verified Upwork Client
+                        <p className="text-xs text-green-600 mt-1 font-medium">
+                            ✓ Verified Client
                         </p>
                     </div>
                     
@@ -143,7 +135,6 @@ const TestimonialsSection = () => {
                                 <HiStar key={i} className="w-4 h-4 text-yellow-400" />
                             ))}
                         </div>
-                        <span className="text-xs text-gray-500 mt-1">via Upwork</span>
                     </div>
                 </div>
             </div>
@@ -151,13 +142,7 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="relative py-20 bg-gray-900 overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
-            </div>
-
+        <section id="testimonials" className="relative py-20 bg-gray-50 overflow-hidden">
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial="hidden"
@@ -167,17 +152,14 @@ const TestimonialsSection = () => {
                 >
                     {/* Section Header */}
                     <motion.div variants={itemVariants} className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-6">
-                            <HiChat className="w-5 h-5 text-yellow-400" />
-                            <span className="text-sm text-yellow-300 font-medium">Client Success Stories</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
+                            <HiChat className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm text-blue-800 font-medium">Client Success Stories</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                            Don't Just Take{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
-                                My Word For It
-                            </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+                            Don't Just Take <span className="text-blue-600">My Word For It</span>
                         </h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Hear from the businesses I've helped transform their data operations
                         </p>
                     </motion.div>
@@ -195,10 +177,10 @@ const TestimonialsSection = () => {
                         className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
                     >
                         {[
-                            { number: "50+", label: "Happy Clients" },
-                            { number: "4+", label: "Years on Upwork" },
+                            { number: "70+", label: "Happy Clients" },
+                            { number: "8+", label: "Years Experience" },
                             { number: "5.0", label: "Average Rating" },
-                            { number: "$70K+", label: "Earned on Platform" }
+                            { number: "451%", label: "Average ROAS" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
                                 <motion.div
@@ -206,11 +188,11 @@ const TestimonialsSection = () => {
                                     whileInView={{ scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
-                                    className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-2"
+                                    className="text-4xl md:text-5xl font-bold text-navy-900 mb-2"
                                 >
                                     {stat.number}
                                 </motion.div>
-                                <p className="text-gray-400">{stat.label}</p>
+                                <p className="text-gray-600">{stat.label}</p>
                             </div>
                         ))}
                     </motion.div>
@@ -220,26 +202,17 @@ const TestimonialsSection = () => {
                         variants={itemVariants}
                         className="mt-16 flex flex-col items-center gap-6"
                     >
-                        <p className="text-gray-400 text-center">
-                            All testimonials are from verified Upwork clients with whom I've completed successful projects.
+                        <p className="text-gray-600 text-center">
+                            Testimonials from verified enterprise and agency clients.
                         </p>
                         <div className="flex flex-wrap justify-center items-center gap-8">
-                            <a 
-                                href="https://www.upwork.com/freelancers/~01528e07812749b309" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
-                            >
-                                <HiStar className="w-5 h-5" />
-                                <span>View My Upwork Profile</span>
-                            </a>
-                            <div className="flex items-center gap-2 text-gray-400">
-                                <HiStar className="w-5 h-5 text-yellow-400" />
-                                <span>100% Job Success Score</span>
+                             <div className="flex items-center gap-2 text-gray-500">
+                                <HiStar className="w-5 h-5 text-yellow-500" />
+                                <span>100% Client Satisfaction</span>
                             </div>
-                            <div className="flex items-center gap-2 text-gray-400">
-                                <HiStar className="w-5 h-5 text-yellow-400" />
-                                <span>Top Rated Plus</span>
+                            <div className="flex items-center gap-2 text-gray-500">
+                                <HiStar className="w-5 h-5 text-yellow-500" />
+                                <span>Top Tier Engineering</span>
                             </div>
                         </div>
                     </motion.div>

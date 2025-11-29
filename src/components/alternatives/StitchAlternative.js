@@ -124,18 +124,18 @@ const StitchAlternative = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center bg-orange-50 text-orange-800 px-4 py-2 rounded-sm mb-6 border border-orange-100">
               <TrendingUp className="w-5 h-5 mr-2" />
-              <span className="font-semibold">Escape Stitch Data's Row Limits</span>
+              <span className="font-semibold text-sm uppercase tracking-wide">Escape Stitch Data's Row Limits</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-navy-900 mb-6">
               Stitch Data Alternative:
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600"> Unlimited Shopify Sync</span>
+              <span className="text-orange-600"> Unlimited Shopify Sync</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Compare Stitch Data's monthly subscription model with Tag Specialist's one-time purchase Python solution.
@@ -143,14 +143,14 @@ const StitchAlternative = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/starter-package"
-                className="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-sm shadow-lg hover:bg-blue-700 transition-colors uppercase text-sm tracking-wide"
               >
                 Replace Stitch for $497
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <a
                 href="#pricing-comparison"
-                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-semibold rounded-lg border-2 border-orange-600 hover:bg-orange-50 transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-sm border border-blue-600 hover:bg-blue-50 transition-colors uppercase text-sm tracking-wide"
               >
                 See Cost Comparison
               </a>
@@ -158,22 +158,22 @@ const StitchAlternative = () => {
           </div>
 
           {/* Row Limit Comparison */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
-            <h2 className="text-2xl font-bold text-center mb-8">The Row Limit Problem</h2>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-16">
+            <h2 className="text-2xl font-bold text-center text-navy-900 mb-8">The Row Limit Problem</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-center">
+              <div className="text-center p-6 bg-red-50 rounded-lg border border-red-100">
                 <div className="text-5xl font-bold text-red-600 mb-4">5M</div>
                 <div className="text-gray-600 mb-4">Stitch Standard Plan Row Limit</div>
-                <div className="bg-red-50 rounded-lg p-4">
+                <div className="bg-white rounded-sm p-4 border border-red-100">
                   <p className="text-sm text-red-800">
                     Row limits may require plan upgrades as your store grows
                   </p>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center p-6 bg-green-50 rounded-lg border border-green-100">
                 <div className="text-5xl font-bold text-green-600 mb-4">∞</div>
                 <div className="text-gray-600 mb-4">Tag Specialist Row Limit</div>
-                <div className="bg-green-50 rounded-lg p-4">
+                <div className="bg-white rounded-sm p-4 border border-green-100">
                   <p className="text-sm text-green-800">
                     No built-in row limits in the Python code
                   </p>
@@ -187,23 +187,23 @@ const StitchAlternative = () => {
       {/* Detailed Comparison Table */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Stitch Data vs Tag Specialist: Feature Comparison
           </h2>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b">
+                <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Stitch Data</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Tag Specialist</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold text-navy-900 uppercase tracking-wider">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold text-navy-900 uppercase tracking-wider">Stitch Data</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold text-navy-900 uppercase tracking-wider">Tag Specialist</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {comparisonData.map((row, index) => (
                     <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">{row.feature}</td>
+                      <td className="px-6 py-4 text-sm font-medium text-navy-900">{row.feature}</td>
                       <td className={`px-6 py-4 text-sm text-center ${row.winner === 'stitch' ? 'text-green-600 font-semibold' : 'text-gray-600'}`}>
                         {row.stitch}
                       </td>
@@ -220,15 +220,15 @@ const StitchAlternative = () => {
       </section>
 
       {/* Pricing Scenarios */}
-      <section id="pricing-comparison" className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="pricing-comparison" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Real Cost Comparison by Store Size
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pricingComparison.scenarios.map((scenario, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{scenario.name}</h3>
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all">
+                <h3 className="text-xl font-semibold text-navy-900 mb-2">{scenario.name}</h3>
                 <p className="text-sm text-gray-500 mb-4">{scenario.volume}</p>
                 <div className="space-y-3">
                   <div>
@@ -240,7 +240,7 @@ const StitchAlternative = () => {
                     <p className="text-sm text-gray-600">Tag Specialist:</p>
                     <p className="text-lg font-semibold text-green-600">{scenario.tagCost}</p>
                   </div>
-                  <div className="pt-3 border-t">
+                  <div className="pt-3 border-t border-gray-100">
                     <p className="text-sm font-semibold text-green-700">You Save:</p>
                     <p className="text-sm text-green-600">{scenario.savings}</p>
                   </div>
@@ -254,16 +254,16 @@ const StitchAlternative = () => {
       {/* Limitations Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Stitch Data Limitations (And Our Solutions)
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {stitchLimitations.map((limitation, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all">
                 <div className="flex items-start">
                   <X className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{limitation.title}</h3>
+                    <h3 className="text-xl font-semibold text-navy-900 mb-2">{limitation.title}</h3>
                     <p className="text-gray-600 mb-4">{limitation.description}</p>
                     <div className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -278,18 +278,18 @@ const StitchAlternative = () => {
       </section>
 
       {/* Technical Advantages */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Technical Advantages Over Stitch
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {technicalAdvantages.map((advantage, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center p-6 bg-gray-50 rounded-lg border border-gray-100">
                 <div className="flex justify-center mb-4">
                   {advantage.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{advantage.title}</h3>
+                <h3 className="text-xl font-semibold text-navy-900 mb-2">{advantage.title}</h3>
                 <p className="text-gray-600">{advantage.description}</p>
               </div>
             ))}
@@ -299,56 +299,57 @@ const StitchAlternative = () => {
 
 
       {/* Migration Process */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-white">
-            <h2 className="text-3xl font-bold mb-6">Simple Migration from Stitch</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                  <span className="text-xl font-bold">1</span>
+          <div className="text-center text-white mb-12">
+            <h2 className="text-3xl font-bold mb-4">Simple Migration from Stitch</h2>
+            <p className="text-gray-300">Switching is seamless. Keep your historical data.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3 mx-auto">
+                  <span className="text-xl font-bold text-white">1</span>
                 </div>
-                <h3 className="font-semibold mb-2">Export Stitch Schema</h3>
-                <p className="text-sm text-white/80">Document your current BigQuery table structure</p>
+                <h3 className="font-semibold text-white mb-2">Export Stitch Schema</h3>
+                <p className="text-sm text-gray-400">Document your current BigQuery table structure</p>
               </div>
-              <div>
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                  <span className="text-xl font-bold">2</span>
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3 mx-auto">
+                  <span className="text-xl font-bold text-white">2</span>
                 </div>
-                <h3 className="font-semibold mb-2">Deploy Tag Specialist</h3>
-                <p className="text-sm text-white/80">Match schema and start syncing (2 hours)</p>
+                <h3 className="font-semibold text-white mb-2">Deploy Tag Specialist</h3>
+                <p className="text-sm text-gray-400">Match schema and start syncing (2 hours)</p>
               </div>
-              <div>
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                  <span className="text-xl font-bold">3</span>
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3 mx-auto">
+                  <span className="text-xl font-bold text-white">3</span>
                 </div>
-                <h3 className="font-semibold mb-2">Cancel Stitch</h3>
-                <p className="text-sm text-white/80">Stop monthly payments, keep unlimited sync</p>
+                <h3 className="font-semibold text-white mb-2">Cancel Stitch</h3>
+                <p className="text-sm text-gray-400">Stop monthly payments, keep unlimited sync</p>
               </div>
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-12 text-center">
               <Link
                 to="/starter-package"
-                className="inline-flex items-center px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-sm hover:bg-blue-700 transition-colors uppercase text-sm tracking-wide shadow-lg"
               >
                 Start Migration Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </div>
-          </div>
         </div>
       </section>
 
       {/* FAQs */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold text-navy-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}
@@ -357,18 +358,18 @@ const StitchAlternative = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-navy-900 mb-6">
             Choose One-Time Purchase Over Monthly Subscriptions
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Get your Shopify to BigQuery pipeline without recurring fees
           </p>
-          <div className="bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8 max-w-2xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 mb-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Stitch Data Costs</h3>
+                <h3 className="text-lg font-semibold text-navy-900 mb-2">Stitch Data Costs</h3>
                 <ul className="space-y-2 text-left">
                   <li className="flex items-center text-gray-600">
                     <X className="w-4 h-4 mr-2 text-red-500" />
@@ -385,7 +386,7 @@ const StitchAlternative = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Tag Specialist</h3>
+                <h3 className="text-lg font-semibold text-navy-900 mb-2">Tag Specialist</h3>
                 <ul className="space-y-2 text-left">
                   <li className="flex items-center text-gray-600">
                     <Check className="w-4 h-4 mr-2 text-green-500" />
@@ -404,7 +405,7 @@ const StitchAlternative = () => {
             </div>
             <Link
               to="/starter-package"
-              className="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors w-full justify-center"
+              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-sm hover:bg-blue-700 transition-colors w-full justify-center uppercase text-sm tracking-wide shadow-md"
             >
               Get Unlimited Sync for $497
               <ArrowRight className="ml-2 w-5 h-5" />

@@ -16,7 +16,7 @@ const SEOHead = ({
     "name": "Tag Specialist",
     "description": "Enterprise data engineering and marketing analytics solutions",
     "url": "https://tagspecialist.com",
-    "email": "developer@tagspecialist.ca",
+    "email": "developer@tagspecialist.com",
     "telephone": "+1-236-668-8922",
     "address": {
       "@type": "PostalAddress",
@@ -36,11 +36,6 @@ const SEOHead = ({
       "opens": "09:00",
       "closes": "18:00"
     },
-    "sameAs": [
-      "https://www.linkedin.com/in/tamantanwar/",
-      "https://github.com/aman16tanwar",
-      "https://www.upwork.com/freelancers/~01528e07812749b309"
-    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Data Engineering Services",

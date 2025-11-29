@@ -5,6 +5,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        brand: {
+          primary: '#0A1A2F',   // Deep Navy
+          secondary: '#1F2937', // Graphite
+          accent: '#3B82F6',    // Electric Blue
+          highlight: '#F8FAFC', // Off-white/Panel background
+        },
+        text: {
+          main: '#6B7280', // Body text
+          dark: '#111827', // Headings
+          light: '#E5E7EB', // Light text/borders
+        }
+      },
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out',
         slideInLeft: 'slideInLeft 0.5s ease-out',

@@ -64,18 +64,18 @@ const FivetranAlternative = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center bg-red-50 text-red-700 px-4 py-2 rounded-sm mb-6 border border-red-100">
               <AlertCircle className="w-5 h-5 mr-2" />
-              <span className="font-semibold">Stop Overpaying for Shopify Data Sync</span>
+              <span className="font-semibold text-sm uppercase tracking-wide">Stop Overpaying for Shopify Data Sync</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-navy-900 mb-6">
               Fivetran Alternative for
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Shopify to BigQuery</span>
+              <span className="text-blue-600"> Shopify to BigQuery</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Compare the costs: Fivetran charges monthly fees while Tag Specialist offers a one-time purchase Python solution for $497
@@ -83,14 +83,14 @@ const FivetranAlternative = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/starter-package"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-sm shadow-lg hover:bg-blue-700 transition-colors uppercase text-sm tracking-wide"
               >
                 Get Tag Specialist for $497
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <a
                 href="https://calendly.com/aman16tanwar/30min"
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-sm border border-blue-600 hover:bg-blue-50 transition-colors uppercase text-sm tracking-wide"
               >
                 Schedule Free Consultation
               </a>
@@ -98,48 +98,48 @@ const FivetranAlternative = () => {
           </div>
 
           {/* Cost Comparison Visual */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
-            <h2 className="text-2xl font-bold text-center mb-8">Annual Cost Comparison</h2>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-16">
+            <h2 className="text-2xl font-bold text-center text-navy-900 mb-8">Annual Cost Comparison</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-center">
+              <div className="text-center p-6 bg-red-50 rounded-lg border border-red-100">
                 <div className="text-3xl font-bold text-red-600 mb-2">Monthly Subscription</div>
                 <div className="text-gray-600 mb-4">Fivetran Pricing Model</div>
                 <div className="space-y-2 text-left">
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <X className="w-5 h-5 mr-2 text-red-500" />
                     <span>Recurring monthly fees</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <X className="w-5 h-5 mr-2 text-red-500" />
                     <span>Per-connector pricing</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <X className="w-5 h-5 mr-2 text-red-500" />
                     <span>MAR-based scaling costs</span>
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center p-6 bg-green-50 rounded-lg border border-green-100">
                 <div className="text-4xl font-bold text-green-600 mb-2">$497</div>
                 <div className="text-gray-600 mb-4">Tag Specialist One-Time Cost</div>
                 <div className="space-y-2 text-left">
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <Check className="w-5 h-5 mr-2 text-green-500" />
                     <span>One-time payment</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <Check className="w-5 h-5 mr-2 text-green-500" />
                     <span>Unlimited stores</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
+                  <div className="flex items-center text-gray-600">
                     <Check className="w-5 h-5 mr-2 text-green-500" />
                     <span>No volume limits</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="mt-8 p-4 bg-green-50 rounded-lg text-center">
-              <p className="text-2xl font-bold text-green-800">
+            <div className="mt-8 p-4 bg-green-50 border border-green-100 rounded-lg text-center">
+              <p className="text-2xl font-bold text-green-700">
                 One-Time Purchase vs Recurring Monthly Fees
               </p>
             </div>
@@ -150,23 +150,23 @@ const FivetranAlternative = () => {
       {/* Detailed Comparison Table */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Side-by-Side Comparison: Fivetran vs Tag Specialist
           </h2>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b">
+                <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Fivetran</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Tag Specialist</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold text-navy-900 uppercase tracking-wider">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold text-navy-900 uppercase tracking-wider">Fivetran</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold text-navy-900 uppercase tracking-wider">Tag Specialist</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {comparisonData.map((row, index) => (
                     <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">{row.feature}</td>
+                      <td className="px-6 py-4 text-sm font-medium text-navy-900">{row.feature}</td>
                       <td className={`px-6 py-4 text-sm text-center ${row.winner === 'fivetran' ? 'text-green-600 font-semibold' : 'text-gray-600'}`}>
                         {row.fivetran}
                       </td>
@@ -183,20 +183,20 @@ const FivetranAlternative = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Common Fivetran Pain Points (And How We Solve Them)
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {fivetranPainPoints.map((point, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all">
                 <div className="flex items-start mb-4">
                   <div className="flex-shrink-0">
                     <AlertCircle className="w-6 h-6 text-red-500 mt-1" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{point.title}</h3>
+                    <h3 className="text-xl font-semibold text-navy-900 mb-2">{point.title}</h3>
                     <p className="text-gray-600 mb-4">{point.description}</p>
                     <div className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -212,54 +212,55 @@ const FivetranAlternative = () => {
 
 
       {/* Migration Guide */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-            <h2 className="text-3xl font-bold mb-6">Easy Migration from Fivetran</h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-xl font-bold">1</span>
+          <div className="text-center text-white mb-12">
+            <h2 className="text-3xl font-bold mb-4">Easy Migration from Fivetran</h2>
+            <p className="text-gray-300">Switching is easier than you think. Start saving immediately.</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">1</span>
                 </div>
-                <h3 className="font-semibold mb-2">Purchase Package</h3>
-                <p className="text-sm text-white/80">Get instant access to code and documentation</p>
+                <h3 className="font-semibold text-white mb-2">Purchase Package</h3>
+                <p className="text-sm text-gray-400">Get instant access to code and documentation</p>
               </div>
-              <div className="text-center">
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-xl font-bold">2</span>
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">2</span>
                 </div>
-                <h3 className="font-semibold mb-2">Setup Pipeline</h3>
-                <p className="text-sm text-white/80">Deploy to Google Cloud Functions (2 hours)</p>
+                <h3 className="font-semibold text-white mb-2">Setup Pipeline</h3>
+                <p className="text-sm text-gray-400">Deploy to Google Cloud Functions (2 hours)</p>
               </div>
-              <div className="text-center">
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-xl font-bold">3</span>
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">3</span>
                 </div>
-                <h3 className="font-semibold mb-2">Test & Validate</h3>
-                <p className="text-sm text-white/80">Verify data matches Fivetran output</p>
+                <h3 className="font-semibold text-white mb-2">Test & Validate</h3>
+                <p className="text-sm text-gray-400">Verify data matches Fivetran output</p>
               </div>
-              <div className="text-center">
-                <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-xl font-bold">4</span>
+              <div className="text-center bg-white/5 rounded-lg p-6 border border-white/10">
+                <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">4</span>
                 </div>
-                <h3 className="font-semibold mb-2">Cancel Fivetran</h3>
-                <p className="text-sm text-white/80">Start saving $1,000+/month immediately</p>
+                <h3 className="font-semibold text-white mb-2">Cancel Fivetran</h3>
+                <p className="text-sm text-gray-400">Start saving $1,000+/month immediately</p>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
       {/* FAQs */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold text-navy-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}
@@ -268,44 +269,44 @@ const FivetranAlternative = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-navy-900 mb-6">
             Ready to Switch from Monthly Fees to One-Time Purchase?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Get your Shopify to BigQuery pipeline with a single payment
           </p>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">$497</h3>
+            <div className="bg-gray-50 rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all">
+              <h3 className="text-2xl font-bold text-navy-900 mb-2">$497</h3>
               <p className="text-gray-600 mb-4">Starter Package</p>
               <Link
                 to="/starter-package"
-                className="block w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="block w-full py-3 bg-blue-600 text-white font-semibold rounded-sm hover:bg-blue-700 transition-colors uppercase text-sm tracking-wide"
               >
                 Buy Now
               </Link>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6 border-2 border-blue-600">
-              <div className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
-                MOST POPULAR
+            <div className="bg-white rounded-lg shadow-md p-6 border-2 border-blue-600 transform scale-105">
+              <div className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2 uppercase tracking-wide">
+                Most Popular
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">$997</h3>
+              <h3 className="text-2xl font-bold text-navy-900 mb-2">$997</h3>
               <p className="text-gray-600 mb-4">Professional Package</p>
               <a
                 href="https://calendly.com/aman16tanwar/30min"
-                className="block w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="block w-full py-3 bg-blue-600 text-white font-semibold rounded-sm hover:bg-blue-700 transition-colors uppercase text-sm tracking-wide"
               >
                 Book Setup Call
               </a>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">$2,997</h3>
+            <div className="bg-gray-50 rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all">
+              <h3 className="text-2xl font-bold text-navy-900 mb-2">$2,997</h3>
               <p className="text-gray-600 mb-4">Enterprise Package</p>
               <a
                 href="https://calendly.com/aman16tanwar/30min"
-                className="block w-full py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors"
+                className="block w-full py-3 bg-navy-900 text-white font-semibold rounded-sm hover:bg-navy-800 transition-colors uppercase text-sm tracking-wide"
               >
                 Get Started
               </a>

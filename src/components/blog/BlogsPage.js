@@ -29,7 +29,7 @@ const BlogsPage = () => {
         },
         {
             id: 'tutorial',
-            title: 'Complete Guide: Build Your Own Shopify → BigQuery Pipeline',
+            title: 'Complete Guide: Build Your Own Shopify \u2192 BigQuery Pipeline',
             description: 'Step-by-step tutorial to replace expensive ELT tools with a custom Python solution. Includes code snippets, architecture diagrams, and deployment guide.',
             category: 'Technical Tutorial',
             readTime: '20 min read',
@@ -44,7 +44,7 @@ const BlogsPage = () => {
         },
         {
             id: 'starter-package',
-            title: 'Stop Paying $1,000+/Month for Shopify → BigQuery Sync',
+            title: 'Stop Paying $1,000+/Month for Shopify \u2192 BigQuery Sync',
             description: 'Learn how to save 95% on ELT costs with our production-ready Python solution. One-time purchase, unlimited stores, full customization.',
             category: 'Product Guide',
             readTime: '10 min read',
@@ -60,9 +60,9 @@ const BlogsPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-900 pt-20">
+        <div className="min-h-screen bg-white pt-20">
             {/* Hero Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8">
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
                 <div className="max-w-7xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ const BlogsPage = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             Data Engineering
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block mt-2">
+                            <span className="text-blue-400 block mt-2">
                                 Insights & Guides
                             </span>
                         </h1>
@@ -95,38 +95,34 @@ const BlogsPage = () => {
                                 className={`${post.featured ? 'md:col-span-2 lg:col-span-3' : ''}`}
                             >
                                 <Link to={post.link} className="block group">
-                                    <div className={`bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${
-                                        post.featured ? 'border-2 border-blue-500/50' : 'border border-gray-700'
-                                    }`}>
+                                    <div className={`bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${post.featured ? 'border-2 border-blue-500 shadow-md' : 'border border-gray-200 shadow-sm'}`}>
                                         {post.featured && (
-                                            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-sm font-medium">
+                                            <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium uppercase tracking-wide">
                                                 Featured Guide
                                             </div>
                                         )}
                                         
                                         <div className="p-8">
                                             <div className="flex items-center gap-4 mb-4">
-                                                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium">
+                                                <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
                                                     {post.category}
                                                 </span>
-                                                <span className="flex items-center gap-1 text-gray-400 text-sm">
+                                                <span className="flex items-center gap-1 text-gray-500 text-sm">
                                                     <HiClock className="w-4 h-4" />
                                                     {post.readTime}
                                                 </span>
                                                 {post.isNew && (
-                                                    <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium animate-pulse">
+                                                    <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium border border-green-100 animate-pulse">
                                                         NEW
                                                     </span>
                                                 )}
                                             </div>
 
-                                            <h2 className={`font-bold text-white mb-3 group-hover:text-blue-400 transition-colors ${
-                                                post.featured ? 'text-3xl' : 'text-2xl'
-                                            }`}>
+                                            <h2 className={`font-bold text-navy-900 mb-3 group-hover:text-blue-600 transition-colors ${post.featured ? 'text-3xl' : 'text-2xl'}`}>
                                                 {post.title}
                                             </h2>
 
-                                            <p className={`text-gray-400 mb-6 ${post.featured ? 'text-lg' : ''}`}>
+                                            <p className={`text-gray-600 mb-6 leading-relaxed ${post.featured ? 'text-lg' : ''}`}>
                                                 {post.description}
                                             </p>
 
@@ -134,14 +130,14 @@ const BlogsPage = () => {
                                                 <div className="grid md:grid-cols-2 gap-3 mb-6">
                                                     {post.highlights.map((highlight, idx) => (
                                                         <div key={idx} className="flex items-center gap-2">
-                                                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                                                            <span className="text-gray-300">{highlight}</span>
+                                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                                            <span className="text-gray-700">{highlight}</span>
                                                         </div>
                                                     ))}
                                                 </div>
                                             )}
 
-                                            <div className="flex items-center gap-2 text-blue-400 font-medium group-hover:gap-3 transition-all">
+                                            <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all uppercase text-sm tracking-wide">
                                                 Read More
                                                 <HiArrowRight className="w-5 h-5" />
                                             </div>
@@ -154,11 +150,11 @@ const BlogsPage = () => {
 
                     {/* Coming Soon Section */}
                     <div className="mt-16 text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 border border-gray-700 rounded-full mb-4">
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                            <span className="text-sm text-gray-400 font-medium">More Guides Coming Soon</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-full mb-4">
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm text-gray-600 font-medium">More Guides Coming Soon</span>
                         </div>
-                        <p className="text-gray-400">
+                        <p className="text-gray-500">
                             Subscribe to get notified about new data engineering insights and cost-saving strategies
                         </p>
                     </div>

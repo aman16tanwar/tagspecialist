@@ -109,18 +109,18 @@ const BlogHub = () => {
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-blue-900/20 to-gray-900 py-16">
+      <div className="bg-navy-900 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-6">
               <FaYoutube className="w-5 h-5 text-red-500" />
-              <span className="text-sm text-blue-300 font-medium">New videos every week</span>
+              <span className="text-sm text-white font-medium">New videos every week</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -131,31 +131,31 @@ const BlogHub = () => {
             </p>
 
             {/* Subscription CTA */}
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 max-w-2xl mx-auto">
+            <div className="bg-white rounded-lg p-8 border border-gray-200 shadow-lg max-w-2xl mx-auto">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold text-white mb-2">Premium Access</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className="text-2xl font-bold text-navy-900 mb-2">Premium Access</h3>
+                  <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center gap-2">
-                      <HiCheckCircle className="w-5 h-5 text-green-500" />
+                      <HiCheckCircle className="w-5 h-5 text-green-600" />
                       <span>All video tutorials & code</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <HiCheckCircle className="w-5 h-5 text-green-500" />
+                      <HiCheckCircle className="w-5 h-5 text-green-600" />
                       <span>Downloadable templates</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <HiCheckCircle className="w-5 h-5 text-green-500" />
+                      <HiCheckCircle className="w-5 h-5 text-green-600" />
                       <span>Private Discord community</span>
                     </li>
                   </ul>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">$60/month</div>
-                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105">
+                  <div className="text-3xl font-bold text-navy-900 mb-2">$60/month</div>
+                  <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-sm shadow-md hover:shadow-lg transform transition-all duration-200 hover:scale-105 uppercase text-sm tracking-wide">
                     Start Learning
                   </button>
-                  <p className="text-sm text-gray-400 mt-2">Cancel anytime</p>
+                  <p className="text-sm text-gray-500 mt-2">Cancel anytime</p>
                 </div>
               </div>
             </div>
@@ -164,15 +164,15 @@ const BlogHub = () => {
       </div>
 
       {/* Category Filter */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 bg-gray-50 border-b border-gray-200">
         <div className="flex flex-wrap gap-3 justify-center">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedCategory === category.id
+              className={`px-4 py-2 rounded-sm font-medium transition-all text-sm uppercase tracking-wide ${selectedCategory === category.id
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                  : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
                 }`}
             >
               {category.name} ({category.count})
@@ -182,39 +182,39 @@ const BlogHub = () => {
       </div>
 
       {/* Content Grid */}
-      <div className="container mx-auto px-4 pb-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-4 py-12 pb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post, index) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 group"
+              className="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm hover:shadow-md"
             >
               {/* Thumbnail */}
-              <div className="relative aspect-video bg-gray-700">
+              <div className="relative aspect-video bg-gray-100">
                 <img
                   src={post.thumbnail}
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
                 {post.type === 'video' && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <HiPlay className="w-8 h-8 text-white ml-1" />
                     </div>
                   </div>
                 )}
                 {post.isPremium && (
-                  <div className="absolute top-3 right-3 px-3 py-1 bg-yellow-500 text-gray-900 rounded-full text-xs font-bold flex items-center gap-1">
+                  <div className="absolute top-3 right-3 px-3 py-1 bg-yellow-500 text-navy-900 rounded-sm text-xs font-bold flex items-center gap-1 uppercase">
                     <HiLockClosed className="w-3 h-3" />
-                    PREMIUM
+                    Premium
                   </div>
                 )}
                 {!post.isPremium && post.freePortion && (
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">
-                    {post.freePortion} MIN FREE
+                  <div className="absolute top-3 left-3 px-3 py-1 bg-green-600 text-white rounded-sm text-xs font-bold uppercase">
+                    {post.freePortion} Min Free
                   </div>
                 )}
               </div>
@@ -223,16 +223,16 @@ const BlogHub = () => {
               <div className="p-6">
                 {/* Series Badge */}
                 {post.series && (
-                  <div className="text-xs text-blue-400 font-medium mb-2">
+                  <div className="text-xs text-blue-600 font-bold mb-2 uppercase tracking-wider">
                     {post.series} • Part {post.partNumber}
                   </div>
                 )}
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
 
@@ -249,18 +249,18 @@ const BlogHub = () => {
                       {post.readTime}
                     </span>
                   )}
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${post.difficulty === 'beginner' ? 'bg-green-900/50 text-green-400' :
-                      post.difficulty === 'intermediate' ? 'bg-yellow-900/50 text-yellow-400' :
-                        'bg-red-900/50 text-red-400'
+                  <span className={`px-2 py-0.5 rounded-sm text-xs font-bold uppercase ${post.difficulty === 'beginner' ? 'bg-green-100 text-green-700' :
+                      post.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-red-100 text-red-700'
                     }`}>
                     {post.difficulty}
                   </span>
                 </div>
 
                 {/* Topics */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {post.topics.slice(0, 3).map((topic, idx) => (
-                    <span key={idx} className="text-xs px-2 py-1 bg-gray-700 text-gray-400 rounded">
+                    <span key={idx} className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-sm border border-gray-200">
                       {topic}
                     </span>
                   ))}
@@ -269,8 +269,8 @@ const BlogHub = () => {
                 {/* CTA Button */}
                 <Link
                   to={`/blog/${post.id}`}
-                  className={`block w-full text-center px-4 py-2 rounded-lg font-medium transition-all ${post.isPremium
-                      ? 'bg-gradient-to-r from-yellow-600 to-orange-600 text-white hover:shadow-lg'
+                  className={`block w-full text-center px-4 py-2 rounded-sm font-semibold text-sm uppercase tracking-wide transition-all ${post.isPremium
+                      ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:shadow-md'
                       : 'bg-blue-600 text-white hover:bg-blue-700'
                     }`}
                 >
@@ -283,15 +283,15 @@ const BlogHub = () => {
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-gradient-to-t from-blue-900/20 to-gray-900 py-16">
+      <div className="bg-gray-50 border-t border-gray-200 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-navy-900 mb-4">
             Ready to Level Up Your Skills?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Join hundreds of data engineers and marketers learning practical skills that get results.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transform transition-all duration-200 hover:scale-105 text-lg">
+          <button className="px-8 py-4 bg-navy-900 hover:bg-navy-800 text-white font-semibold rounded-sm shadow-lg transform transition-all duration-200 hover:scale-105 text-lg uppercase tracking-wide">
             Get Premium Access - $60/month
           </button>
         </div>

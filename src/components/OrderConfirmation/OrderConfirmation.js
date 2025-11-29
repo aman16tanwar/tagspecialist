@@ -49,7 +49,7 @@ const OrderConfirmation = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,36 +62,36 @@ const OrderConfirmation = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="inline-flex items-center justify-center w-24 h-24 bg-green-500/20 rounded-full mb-4"
+              className="inline-flex items-center justify-center w-24 h-24 bg-green-50 rounded-full mb-4 border border-green-100"
             >
               <HiCheckCircle className="w-12 h-12 text-green-500" />
             </motion.div>
             
-            <h1 className="text-4xl font-bold text-white mb-4">
+            <h1 className="text-4xl font-bold text-navy-900 mb-4">
               Thank You for Your Purchase!
             </h1>
             
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-600">
               Your order has been confirmed and is being processed
             </p>
           </div>
 
           {/* Order Details */}
           {orderDetails && (
-            <div className="bg-gray-800 rounded-xl p-8 mb-8">
-              <h2 className="text-2xl font-semibold text-white mb-4">Order Details</h2>
+            <div className="bg-white rounded-lg p-8 mb-8 border border-gray-200 shadow-sm">
+              <h2 className="text-2xl font-semibold text-navy-900 mb-4">Order Details</h2>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Package:</span>
-                  <span className="text-white font-medium">{orderDetails.package}</span>
+                  <span className="text-gray-600">Package:</span>
+                  <span className="text-navy-900 font-medium">{orderDetails.package}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Amount:</span>
-                  <span className="text-white font-medium">{orderDetails.price} USD</span>
+                  <span className="text-gray-600">Amount:</span>
+                  <span className="text-navy-900 font-medium">{orderDetails.price} USD</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Status:</span>
-                  <span className="text-green-400 font-medium">Confirmed</span>
+                  <span className="text-gray-600">Status:</span>
+                  <span className="text-green-600 font-medium bg-green-50 px-3 py-1 rounded-full text-sm">Confirmed</span>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const OrderConfirmation = () => {
 
           {/* Next Steps */}
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-6">What Happens Next?</h2>
+            <h2 className="text-2xl font-semibold text-navy-900 mb-6">What Happens Next?</h2>
             <div className="space-y-4">
               {nextSteps.map((step, index) => (
                 <motion.div
@@ -107,16 +107,16 @@ const OrderConfirmation = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex gap-4 bg-gray-800/50 rounded-lg p-6"
+                  className="flex gap-4 bg-gray-50 rounded-lg p-6 border border-gray-200"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                      <step.icon className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center border border-blue-100">
+                      <step.icon className="w-6 h-6 text-blue-600" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">{step.title}</h3>
-                    <p className="text-gray-400">{step.description}</p>
+                    <h3 className="text-lg font-semibold text-navy-900 mb-1">{step.title}</h3>
+                    <p className="text-gray-600">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -124,16 +124,16 @@ const OrderConfirmation = () => {
           </div>
 
           {/* Support Section */}
-          <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-white mb-2">Need Help?</h3>
-            <p className="text-gray-300 mb-4">
+          <div className="bg-blue-50 rounded-lg p-8 text-center border border-blue-100">
+            <h3 className="text-xl font-semibold text-navy-900 mb-2">Need Help?</h3>
+            <p className="text-gray-600 mb-4">
               Our support team is here to help you get started
             </p>
             <a
-              href="mailto:support@tagspecialist.ca"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium"
+              href="mailto:support@tagspecialist.com"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
-              support@tagspecialist.ca
+              support@tagspecialist.com
               <HiArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -142,7 +142,7 @@ const OrderConfirmation = () => {
           <div className="text-center mt-8">
             <button
               onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-medium rounded-sm hover:bg-navy-800 transition-colors uppercase text-sm tracking-wide shadow-md hover:shadow-lg"
             >
               Return to Homepage
               <HiArrowRight className="w-4 h-4" />

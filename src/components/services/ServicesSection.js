@@ -19,7 +19,11 @@ const ServicesSection = () => {
         {
             title: "Analytics & Tracking Implementation",
             icon: HiChartBar,
-            color: "purple",
+            // Using specific text/bg classes instead of dynamic 'color' prop
+            iconColor: "text-blue-600",
+            bgColor: "bg-blue-50",
+            borderColor: "hover:border-blue-400",
+            buttonColor: "bg-blue-600 hover:bg-blue-700",
             description: "End-to-end tracking setup that captures every customer touchpoint with precision and privacy compliance.",
             features: [
                 "GA4 & GTM complete setup",
@@ -41,7 +45,10 @@ const ServicesSection = () => {
         {
             title: "Marketing Data Engineering",
             icon: HiDatabase,
-            color: "blue",
+            iconColor: "text-blue-600",
+            bgColor: "bg-blue-50",
+            borderColor: "hover:border-blue-400",
+            buttonColor: "bg-blue-600 hover:bg-blue-700",
             description: "Transform scattered marketing data into a unified, AI-ready data warehouse with automated pipelines.",
             features: [
                 "All marketing channels → BigQuery",
@@ -63,7 +70,10 @@ const ServicesSection = () => {
         {
             title: "AI & Automation Solutions",
             icon: HiLightningBolt,
-            color: "green",
+            iconColor: "text-blue-600", // Unified accent color
+            bgColor: "bg-blue-50",
+            borderColor: "hover:border-blue-400",
+            buttonColor: "bg-blue-600 hover:bg-blue-700",
             description: "Cutting-edge AI integration with MCP servers and GenAI to automate your marketing operations.",
             features: [
                 "MCP servers for GTM/GA4 automation",
@@ -139,7 +149,7 @@ const ServicesSection = () => {
     };
 
     return (
-        <section id="services" className="py-20 bg-gray-900">
+        <section id="services" className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 {/* Section Header */}
                 <motion.div 
@@ -148,10 +158,10 @@ const ServicesSection = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
                         Technical Marketing Services
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         From tracking implementation to AI automation. Choose standalone services or combine them for a complete marketing technology stack.
                     </p>
                 </motion.div>
@@ -168,23 +178,23 @@ const ServicesSection = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className={`bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-${service.color}-500/50 transition-all duration-300 group`}
+                            className={`bg-gray-50 rounded-lg p-6 border border-gray-200 ${service.borderColor} transition-all duration-300 group`}
                         >
                             {/* Service Header */}
                             <div className="flex items-start justify-between mb-4">
-                                <div className={`p-3 bg-${service.color}-500/10 rounded-lg`}>
-                                    <service.icon className={`w-8 h-8 text-${service.color}-400`} />
+                                <div className={`p-3 ${service.bgColor} rounded-lg border border-gray-200`}>
+                                    <service.icon className={`w-8 h-8 ${service.iconColor}`} />
                                 </div>
-                                <span className={`text-sm font-semibold text-${service.color}-400`}>
+                                <span className={`text-sm font-semibold ${service.iconColor}`}>
                                     {service.timeline}
                                 </span>
                             </div>
 
                             {/* Service Title & Description */}
-                            <h3 className="text-2xl font-bold text-white mb-3">
+                            <h3 className="text-2xl font-bold text-navy-900 mb-3">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-400 mb-6">
+                            <p className="text-gray-600 mb-6">
                                 {service.description}
                             </p>
 
@@ -194,8 +204,8 @@ const ServicesSection = () => {
                                 <ul className="space-y-2">
                                     {service.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-2">
-                                            <HiCheckCircle className={`w-5 h-5 text-${service.color}-400 mt-0.5 flex-shrink-0`} />
-                                            <span className="text-sm text-gray-300">{feature}</span>
+                                            <HiCheckCircle className={`w-5 h-5 ${service.iconColor} mt-0.5 flex-shrink-0`} />
+                                            <span className="text-sm text-gray-700">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -206,7 +216,7 @@ const ServicesSection = () => {
                                 <h4 className="text-sm font-semibold text-gray-500 uppercase mb-3">Deliverables</h4>
                                 <ul className="space-y-1">
                                     {service.deliverables.map((deliverable, idx) => (
-                                        <li key={idx} className="text-sm text-gray-400">
+                                        <li key={idx} className="text-sm text-gray-600">
                                             • {deliverable}
                                         </li>
                                     ))}
@@ -214,9 +224,9 @@ const ServicesSection = () => {
                             </div>
 
                             {/* Pricing & CTA */}
-                            <div className="pt-4 border-t border-gray-700">
+                            <div className="pt-4 border-t border-gray-200">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-2xl font-bold text-white">
+                                    <span className="text-2xl font-bold text-navy-900">
                                         {service.pricing}
                                     </span>
                                 </div>
@@ -227,7 +237,7 @@ const ServicesSection = () => {
                                         });
                                         window.dispatchEvent(event);
                                     }}
-                                    className={`w-full px-4 py-3 bg-${service.color}-600 hover:bg-${service.color}-500 text-white font-semibold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 group`}
+                                    className={`w-full px-4 py-3 ${service.buttonColor} text-white font-semibold rounded-sm transition-all duration-200 flex items-center justify-center gap-2 group uppercase text-sm tracking-wide`}
                                 >
                                     <span>Get Started</span>
                                     <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -242,20 +252,20 @@ const ServicesSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-gray-800/50 rounded-xl p-8 border border-gray-700"
+                    className="bg-gray-50 rounded-lg p-8 border border-gray-200"
                 >
-                    <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                    <h3 className="text-2xl font-bold text-navy-900 mb-6 text-center">
                         Additional Services & Capabilities
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {additionalServices.map((service, index) => (
                             <div key={index} className="flex gap-3">
-                                <div className="p-2 bg-gray-700/50 rounded-lg h-fit">
-                                    <service.icon className="w-6 h-6 text-blue-400" />
+                                <div className="p-2 bg-white border border-gray-200 rounded-lg h-fit">
+                                    <service.icon className="w-6 h-6 text-blue-600" />
                                 </div>
                                 <div>
-                                    <h4 className="text-white font-semibold mb-1">{service.title}</h4>
-                                    <p className="text-sm text-gray-400">{service.description}</p>
+                                    <h4 className="text-navy-900 font-semibold mb-1">{service.title}</h4>
+                                    <p className="text-sm text-gray-600">{service.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -269,11 +279,11 @@ const ServicesSection = () => {
                     viewport={{ once: true }}
                     className="mt-12 text-center"
                 >
-                    <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-xl p-8 border border-purple-500/30">
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                    <div className="bg-navy-50 rounded-lg p-8 border border-navy-100">
+                        <h3 className="text-2xl font-bold text-navy-900 mb-4">
                             Looking for a Complete Solution?
                         </h3>
-                        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                             Combine services for a full marketing technology transformation. Get custom packages tailored to your business needs.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -284,13 +294,13 @@ const ServicesSection = () => {
                                     });
                                     window.dispatchEvent(event);
                                 }}
-                                className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition-all duration-200"
+                                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-sm transition-all duration-200 uppercase text-sm tracking-wide"
                             >
                                 Get Custom Quote
                             </button>
                             <a
                                 href="/case-studies"
-                                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200"
+                                className="px-6 py-3 bg-white hover:bg-gray-50 text-navy-900 font-semibold rounded-sm border border-gray-300 transition-all duration-200 uppercase text-sm tracking-wide"
                             >
                                 View Case Studies
                             </a>

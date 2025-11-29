@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ContactForm from '../ContactForm/ContactForm';
@@ -7,6 +7,12 @@ import SuccessModal from '../SuccessModal/SuccessModal';
 const Layout = ({ children }) => {
     const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+
+    useEffect(() => {
+      const handleOpenContact = () => setIsContactFormOpen(true);
+      window.addEventListener('openContactForm', handleOpenContact);
+      return () => window.removeEventListener('openContactForm', handleOpenContact);
+    }, []);
   
     const handleContactFormSuccess = () => {
       setIsContactFormOpen(false);
@@ -14,7 +20,7 @@ const Layout = ({ children }) => {
     };
 
     return (
-      <div className="bg-gray-900 text-white min-h-screen flex flex-col">
+      <div className="bg-white text-navy-900 min-h-screen flex flex-col">
         <Navbar onContactClick={() => setIsContactFormOpen(true)} />
         <main className="pt-16 space-y-12 flex-grow">
           {children}

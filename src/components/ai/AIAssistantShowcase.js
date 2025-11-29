@@ -147,13 +147,7 @@ SELECT
     };
 
     return (
-        <section id="ai-assistant" className="relative py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-500 rounded-full blur-3xl opacity-10 animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }} />
-            </div>
-
+        <section id="ai-assistant" className="relative py-20 bg-white overflow-hidden">
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial="hidden"
@@ -163,34 +157,31 @@ SELECT
                 >
                     {/* Section Header */}
                     <motion.div variants={itemVariants} className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full mb-6">
-                            <HiSparkles className="w-5 h-5 text-indigo-400" />
-                            <span className="text-sm text-indigo-300 font-medium">AI-Powered Analytics</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
+                            <HiSparkles className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm text-blue-800 font-medium">AI-Powered Analytics</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                            Your Data,{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-                                Supercharged with AI
-                            </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+                            Your Data, <span className="text-blue-600">Supercharged with AI</span>
                         </h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             See how my AI Analytics Assistant transforms complex data questions into instant insights
                         </p>
                     </motion.div>
 
                     {/* How it Works */}
                     <motion.div variants={itemVariants} className="mb-16">
-                        <h3 className="text-2xl font-bold text-white text-center mb-8">How It Works</h3>
+                        <h3 className="text-2xl font-bold text-navy-900 text-center mb-8">How It Works</h3>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.05 }}
-                                    className="flex items-start gap-4 p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg"
+                                    className="flex items-start gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg"
                                 >
-                                    <feature.icon className="w-6 h-6 text-indigo-400 flex-shrink-0" />
-                                    <span className="text-gray-300">{feature.text}</span>
+                                    <feature.icon className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                                    <span className="text-gray-700">{feature.text}</span>
                                 </motion.div>
                             ))}
                         </div>
@@ -198,9 +189,9 @@ SELECT
 
                     {/* Interactive Demo */}
                     <motion.div variants={itemVariants} className="max-w-6xl mx-auto">
-                        <div className="bg-gray-800/80 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xl">
                             {/* Demo Header */}
-                            <div className="bg-gradient-to-r from-indigo-600 to-blue-600 p-6">
+                            <div className="bg-navy-900 p-6">
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-3">
                                         <FaRobot className="w-8 h-8 text-white" />
@@ -208,7 +199,7 @@ SELECT
                                     </div>
                                     <button
                                         onClick={() => { setCurrentStep(0); setIsTyping(true); }}
-                                        className="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-colors flex items-center gap-2"
+                                        className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-sm transition-colors flex items-center gap-2 text-sm uppercase tracking-wide"
                                     >
                                         <HiPlay className="w-4 h-4" />
                                         Restart Demo
@@ -220,10 +211,10 @@ SELECT
                             <div className="p-8 space-y-6">
                                 {/* Question Input */}
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Your Question:</label>
-                                    <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 flex items-center gap-3">
+                                    <label className="block text-sm font-semibold text-navy-900 mb-2">Your Question:</label>
+                                    <div className="bg-gray-50 border border-gray-300 rounded-sm p-4 flex items-center gap-3">
                                         <HiCursorClick className="w-5 h-5 text-gray-500" />
-                                        <span className="text-white font-mono">
+                                        <span className="text-navy-900 font-mono">
                                             {isTyping ? displayedText : (currentStep < demoSteps.length ? demoSteps[currentStep].question : '')}
                                             {isTyping && <span className="animate-pulse">|</span>}
                                         </span>
@@ -239,8 +230,8 @@ SELECT
                                             exit={{ opacity: 0, height: 0 }}
                                             transition={{ duration: 0.5 }}
                                         >
-                                            <label className="block text-sm font-medium text-gray-400 mb-2">Generated SQL:</label>
-                                            <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 overflow-x-auto">
+                                            <label className="block text-sm font-semibold text-navy-900 mb-2">Generated SQL:</label>
+                                            <div className="bg-navy-900 border border-navy-800 rounded-sm p-4 overflow-x-auto">
                                                 <pre className="text-sm text-green-400 font-mono">
                                                     {demoSteps[currentStep].sql}
                                                 </pre>
@@ -258,13 +249,13 @@ SELECT
                                             exit={{ opacity: 0, y: -20 }}
                                             transition={{ duration: 0.5, delay: 0.3 }}
                                         >
-                                            <label className="block text-sm font-medium text-gray-400 mb-2">Results:</label>
-                                            <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
+                                            <label className="block text-sm font-semibold text-navy-900 mb-2">Results:</label>
+                                            <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
                                                 <table className="w-full">
                                                     <thead>
-                                                        <tr className="bg-gray-800">
+                                                        <tr className="bg-gray-100">
                                                             {demoSteps[currentStep].result.headers.map((header, index) => (
-                                                                <th key={index} className="px-4 py-3 text-left text-sm font-medium text-gray-300">
+                                                                <th key={index} className="px-4 py-3 text-left text-sm font-semibold text-navy-900">
                                                                     {header}
                                                                 </th>
                                                             ))}
@@ -277,10 +268,10 @@ SELECT
                                                                 initial={{ opacity: 0, x: -20 }}
                                                                 animate={{ opacity: 1, x: 0 }}
                                                                 transition={{ delay: 0.5 + rowIndex * 0.1 }}
-                                                                className="border-t border-gray-800"
+                                                                className="border-t border-gray-200"
                                                             >
                                                                 {row.map((cell, cellIndex) => (
-                                                                    <td key={cellIndex} className="px-4 py-3 text-sm text-gray-300">
+                                                                    <td key={cellIndex} className="px-4 py-3 text-sm text-gray-700">
                                                                         {cell}
                                                                     </td>
                                                                 ))}
@@ -301,13 +292,13 @@ SELECT
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -20 }}
                                             transition={{ duration: 0.5, delay: 0.6 }}
-                                            className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 border border-indigo-500/20 rounded-lg p-6"
+                                            className="bg-blue-50 border border-blue-100 rounded-sm p-6"
                                         >
                                             <div className="flex items-start gap-3">
-                                                <HiLightningBolt className="w-6 h-6 text-indigo-400 flex-shrink-0" />
+                                                <HiLightningBolt className="w-6 h-6 text-blue-600 flex-shrink-0" />
                                                 <div>
-                                                    <h4 className="text-sm font-semibold text-indigo-400 mb-2">AI Insight</h4>
-                                                    <p className="text-gray-300">{demoSteps[currentStep].insight}</p>
+                                                    <h4 className="text-sm font-semibold text-blue-800 mb-2">AI Insight</h4>
+                                                    <p className="text-gray-700">{demoSteps[currentStep].insight}</p>
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -324,7 +315,7 @@ SELECT
                                     >
                                         <button
                                             onClick={nextStep}
-                                            className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
+                                            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-sm shadow-md hover:shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center gap-2 uppercase text-sm tracking-wide"
                                         >
                                             Try Another Question
                                             <HiSparkles className="w-5 h-5" />
@@ -337,16 +328,16 @@ SELECT
 
                     {/* CTA */}
                     <motion.div variants={itemVariants} className="text-center mt-12">
-                        <p className="text-lg text-gray-400 mb-6">
+                        <p className="text-lg text-gray-600 mb-6">
                             Ready to unlock insights from your data in seconds?
                         </p>
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
+                        <button
+                            onClick={() => window.dispatchEvent(new CustomEvent('openContactForm'))}
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-sm shadow-lg transition-all duration-200 hover:scale-105 uppercase tracking-wide"
                         >
                             Get Your AI Assistant
                             <FaRobot className="w-5 h-5" />
-                        </a>
+                        </button>
                     </motion.div>
                 </motion.div>
             </div>

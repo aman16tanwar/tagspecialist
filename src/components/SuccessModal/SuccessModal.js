@@ -1,34 +1,53 @@
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiCheckCircle, HiX } from 'react-icons/hi';
 
 const SuccessModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="my-modal">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-gray-800">
-        <div className="mt-3 text-center">
-          <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-            <FaCheckCircle className="h-6 w-6 text-green-600" />
-          </div>
-          <h3 className="text-lg leading-6 font-medium text-white mt-2">Message Sent Successfully!</h3>
-          <div className="mt-2 px-7 py-3">
-            <p className="text-sm text-gray-300">
-              Thank you for your message. We'll be in touch soon!
-            </p>
-          </div>
-          <div className="items-center px-4 py-3">
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-navy-900/80 backdrop-blur-sm overflow-y-auto h-full w-full flex justify-center items-center z-[60]"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="relative bg-white border border-gray-200 rounded-lg shadow-2xl w-full max-w-md mx-4 p-8 text-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              id="ok-btn"
-              className="px-4 py-2 bg-yellow-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               onClick={onClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-navy-900 transition-colors"
+            >
+              <HiX size={20} />
+            </button>
+
+            <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-50 mb-6">
+              <HiCheckCircle className="h-10 w-10 text-green-600" />
+            </div>
+
+            <h3 className="text-2xl font-bold text-navy-900 mb-2">Message Sent!</h3>
+            
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              Thank you for reaching out. I've received your details and will get back to you within 24 hours to discuss your data strategy.
+            </p>
+
+            <button
+              onClick={onClose}
+              className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-sm shadow-lg transition-all transform hover:scale-[1.02] uppercase text-sm tracking-wide"
             >
               Close
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
