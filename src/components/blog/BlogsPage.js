@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowRight, HiClock } from 'react-icons/hi';
 
 const BlogsPage = () => {
-    // Scroll to top when component mounts
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    const [posts, setPosts] = useState([]);
 
-    const blogPosts = [
+    // Hardcoded "Starter" posts
+    const staticPosts = [
         {
             id: 'automated-pipeline',
             title: 'NEW: From DIY to Done-For-You: Automated Shopify Pipelines',
@@ -59,6 +57,42 @@ const BlogsPage = () => {
         }
     ];
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        // Fetch dynamic posts
+        const fetchPosts = async () => {
+            try {
+                // Fetch from static JSON file (works on Cloudflare Pages)
+                const response = await fetch('/data/blogs.json');
+                if (!response.ok) throw new Error('Failed to fetch blogs');
+                const dynamicPosts = await response.json();
+                
+                // Map dynamic posts to match the UI structure
+                const formattedDynamicPosts = dynamicPosts.map(p => ({
+                    id: p.id,
+                    title: p.title,
+                    description: p.excerpt || p.content.substring(0, 150) + '...', // Create excerpt from content if missing
+                    category: p.category || 'AI Insight',
+                    readTime: p.readTime || '5 min read',
+                    featured: false,
+                    link: `/blog/${p.id}`,
+                    isNew: true,
+                    date: p.date
+                }));
+
+                // Combine: Dynamic first, then static
+                setPosts([...formattedDynamicPosts, ...staticPosts]);
+            } catch (error) {
+                console.warn("Failed to load dynamic blogs (using static only):", error);
+                // Fallback to static only
+                setPosts(staticPosts);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
     return (
         <div className="min-h-screen bg-white pt-20">
             {/* Hero Section */}
@@ -86,7 +120,7 @@ const BlogsPage = () => {
             <section className="py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post, index) => (
+                        {posts.map((post, index) => (
                             <motion.div
                                 key={post.id}
                                 initial={{ opacity: 0, y: 20 }}

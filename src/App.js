@@ -12,6 +12,8 @@ import RefundPolicy from './components/legal/RefundPolicy';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import BlogsPage from './components/blog/BlogsPage';
+import BlogPost from './components/blog/BlogPost';
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        
+        {/* Blog Routes */}
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
