@@ -1,11 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { HiArrowLeft, HiCalendar, HiClock, HiTag } from 'react-icons/hi';
-import SEOHead from '../seo/SEOHead';
-import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
-import remarkGfm from 'remark-gfm'; // Import remarkGfm for GitHub Flavored Markdown
-
 const BlogPost = () => {
     const { id } = useParams();
     const [post, setPost] = useState(null);
@@ -15,23 +7,21 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                // Fetch from static JSON file (works on Cloudflare Pages)
                 const response = await fetch('/data/blogs.json');
                 const blogs = await response.json();
                 
-                // Find the post with the matching ID (converted to string for comparison)
                 const foundPost = blogs.find(b => b.id.toString() === id);
                 
                 if (foundPost) {
                     setPost(foundPost);
-                }
-                else {
+                } else {
                     setError('Post not found');
                 }
             } catch (err) {
                 console.error("Failed to fetch blog post:", err);
                 setError('Failed to load content');
-            } finally {
+            }
+            finally {
                 setLoading(false);
             }
         };
@@ -42,6 +32,15 @@ const BlogPost = () => {
     if (loading) return <div className="min-h-screen pt-32 text-center">Loading...</div>;
     if (error) return <div className="min-h-screen pt-32 text-center text-red-600">{error}</div>;
     if (!post) return null;
+
+    // --- Polish Fix: Remove first H1 from content & prioritize system date ---
+    let displayContent = post.content;
+    const firstH1Regex = /^#\s.*(?:\r?\n|$)/; // Matches '# Title' at the beginning of content
+    if (displayContent.match(firstH1Regex)) {
+        displayContent = displayContent.replace(firstH1Regex, '').trim();
+    }
+    const displayDate = post.date ? new Date(post.date) : new Date(post.publishDate || Date.now());
+    // -------------------------------------------------------------------------
 
     return (
         <div className="min-h-screen bg-white pt-24 pb-16">
@@ -69,7 +68,7 @@ const BlogPost = () => {
                         </span>
                         <span className="flex items-center gap-1">
                             <HiCalendar className="w-4 h-4" />
-                            {new Date(post.publishDate || post.date || Date.now()).toLocaleDateString()}
+                            {displayDate.toLocaleDateString()}
                         </span>
                         {post.readTime && (
                             <span className="flex items-center gap-1">
@@ -101,7 +100,7 @@ const BlogPost = () => {
                         hover:prose-a:text-blue-700 transition-all"
                 >
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {post.content}
+                        {displayContent}
                     </ReactMarkdown>
                 </motion.div>
             </article>
