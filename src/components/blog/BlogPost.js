@@ -86,7 +86,16 @@ const BlogPost = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="prose prose-lg max-w-none prose-headings:text-navy-900 prose-a:text-blue-600 hover:prose-a:text-blue-700"
+                    className="prose prose-lg prose-blue max-w-none 
+                        prose-headings:text-navy-900 prose-headings:font-bold 
+                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 
+                        prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                        prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-6
+                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-li:text-gray-600 prose-li:mb-2
+                        prose-strong:text-navy-900 prose-strong:font-bold
+                        prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg prose-pre:shadow-lg
+                        prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                        hover:prose-a:text-blue-700 transition-all"
                 >
                     {/* 
                         Security Note: For a real app, sanitize this content (e.g., DOMPurify).

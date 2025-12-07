@@ -6,34 +6,43 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          primary: '#0A1A2F',   // Deep Navy
-          secondary: '#1F2937', // Graphite
-          accent: '#3B82F6',    // Electric Blue
-          highlight: '#F8FAFC', // Off-white/Panel background
+        navy: {
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          800: '#102a43',
+          900: '#0a192f', // Deep navy for primary headings/bg
         },
-        text: {
-          main: '#6B7280', // Body text
-          dark: '#111827', // Headings
-          light: '#E5E7EB', // Light text/borders
+        gold: {
+          400: '#fbbf24',
+          500: '#f59e0b', // Gold for accents/buttons
+        },
+        gray: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
         }
       },
       animation: {
-        fadeIn: 'fadeIn 1s ease-in-out',
-        slideInLeft: 'slideInLeft 0.5s ease-out',
+        'blob': 'blob 7s infinite',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideInLeft: {
-          '0%': { transform: 'translateX(-20px)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        }
       },
-      scale: ['hover', 'focus'], // Not needed in "extend" if already handled elsewhere
     },
   },
-  plugins: [],
-};
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}
