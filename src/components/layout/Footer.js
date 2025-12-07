@@ -87,6 +87,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-navy-900 mb-4">Legal & Compliance</h4>
             <ul className="space-y-2">
               <li>
+                <Link to="/blogs" className="text-gray-600 hover:text-brand-accent transition-colors text-sm">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to="/privacy-policy" className="text-gray-600 hover:text-brand-accent transition-colors text-sm flex items-center">
                   <HiLockClosed className="w-3 h-3 mr-1" />
                   Privacy Policy

@@ -55,6 +55,7 @@ const Navbar = () => {
   const menuItems = [
     { name: 'Services', route: '/services' },
     { name: 'Case Studies', route: '/case-studies' },
+    { name: 'Blog', route: '/blogs' }, // Added Blog link
     { name: 'About', route: '/about' },
     { name: 'Contact', id: 'contact' }
   ];
