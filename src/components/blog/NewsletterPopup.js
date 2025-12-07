@@ -41,35 +41,43 @@ const NewsletterPopup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus('loading');
-
+        setIsSubmitting(true);
+        setStatus('loading'); // Set status to loading
         try {
-            // Reuse existing contact endpoint
-            const response = await fetch('https://tagspecialist-backend.onrender.com/api/contact', { // Replace with your actual backend URL if different, or relative path if proxy setup
+            // Use Web3Forms directly, same as ContactForm
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: 'Newsletter Subscriber', // Default name
+                    access_key: '281edfc6-1b7f-429f-a500-da5b83ede63e', // Web3Forms Access Key
+                    name: 'Newsletter Subscriber',
                     email: email,
-                    message: 'New Newsletter Subscription from Blog Page',
-                    type: 'newsletter'
+                    subject: 'New Newsletter Subscription - Tag Specialist Blog',
+                    message: `New subscriber email: ${email}`,
+                    from_email: 'developer@tagspecialist.com', // Optional: where the email appears to come from
                 }),
             });
+            
+            const data = await response.json();
 
-            if (response.ok) {
+            if (response.ok && data.success) { // Web3Forms returns { success: true }
                 setStatus('success');
-                localStorage.setItem('newsletter_dismissed', 'subscribed');
+                localStorage.setItem('newsletter_dismissed', 'subscribed'); // Mark as subscribed
                 setTimeout(() => {
                     setIsVisible(false);
+                    setEmail(''); // Clear email field
                 }, 3000);
             } else {
+                console.error('Web3Forms error:', data);
                 setStatus('error');
             }
         } catch (error) {
             console.error('Newsletter submission error:', error);
             setStatus('error');
+        } finally {
+            setIsSubmitting(false); // Reset submitting state
         }
     };
 
