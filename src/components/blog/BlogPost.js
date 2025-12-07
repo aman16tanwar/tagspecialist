@@ -88,6 +88,7 @@ const BlogPost = () => {
             </article>
 
             <NewsletterPopup />
+            <NewsletterPopup />
         </div>
     );
 };
