@@ -5,6 +5,7 @@ import { HiArrowLeft, HiCalendar, HiClock, HiTag } from 'react-icons/hi';
 import SEOHead from '../seo/SEOHead';
 import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
 import remarkGfm from 'remark-gfm'; // Import remarkGfm for GitHub Flavored Markdown
+import rehypeHighlight from 'rehype-highlight'; // Import rehypeHighlight for syntax highlighting
 import NewsletterPopup from './NewsletterPopup'; // Import NewsletterPopup
 
 const BlogPost = () => {
@@ -105,11 +106,11 @@ const BlogPost = () => {
                         prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-6
                         prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-li:text-gray-600 prose-li:mb-2
                         prose-strong:text-navy-900 prose-strong:font-bold
-                        prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg prose-pre:shadow-lg
+                        prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg prose-pre:shadow-lg prose-pre:overflow-x-auto prose-pre:whitespace-pre-wrap prose-pre:break-words
                         prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
                         hover:prose-a:text-blue-700 transition-all"
                 >
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
                         {displayContent}
                     </ReactMarkdown>
                 </motion.div>
