@@ -3,57 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowRight, HiClock } from 'react-icons/hi';
 
-// Hardcoded "Starter" posts (moved outside the component to fix useEffect dependency warning)
-const staticPosts = [
-    {
-        id: 'automated-pipeline',
-        title: 'NEW: From DIY to Done-For-You: Automated Shopify Pipelines',
-        description: 'Introducing our fully automated solution with web UI. No coding required, 5-minute setup, and it\'s FREE for up to 3 stores. Say goodbye to Docker and CLI commands.',
-        category: 'Product Update',
-        readTime: '15 min read',
-        featured: true,
-        link: '/blog/automated-shopify-pipeline',
-        highlights: [
-            'Web-based onboarding interface',
-            'Automatic Cloud Run deployment',
-            'FREE for up to 3 stores',
-            'No technical skills required'
-        ],
-        isNew: true,
-        date: 'January 2025'
-    },
-    {
-        id: 'tutorial',
-        title: 'Complete Guide: Build Your Own Shopify \u2192 BigQuery Pipeline',
-        description: 'Step-by-step tutorial to replace expensive ELT tools with a custom Python solution. Includes code snippets, architecture diagrams, and deployment guide.',
-        category: 'Technical Tutorial',
-        readTime: '20 min read',
-        featured: false,
-        link: '/blog/shopify-bigquery-pipeline-tutorial',
-        highlights: [
-            'Full implementation walkthrough',
-            'Docker & Cloud Run deployment',
-            'Multi-store configuration',
-            'Production-ready architecture'
-        ]
-    },
-    {
-        id: 'starter-package',
-        title: 'Stop Paying $1,000+/Month for Shopify \u2192 BigQuery Sync',
-        description: 'Learn how to save 95% on ELT costs with our production-ready Python solution. One-time purchase, unlimited stores, full customization.',
-        category: 'Product Guide',
-        readTime: '10 min read',
-        featured: false,
-        link: '/starter-package',
-        highlights: [
-            'Save $10,903 in the first year',
-            'Setup in 2 hours',
-            'Unlimited Shopify stores',
-            'Full source code ownership'
-        ]
-    }
-];
-
 const BlogsPage = () => {
     const [posts, setPosts] = useState([]);
 
@@ -62,11 +11,16 @@ const BlogsPage = () => {
 
         // Fetch dynamic posts
         const fetchPosts = async () => {
+            console.log('Fetching blogs from /data/blogs.json...');
             try {
                 // Fetch from static JSON file (works on Cloudflare Pages)
                 const response = await fetch('/data/blogs.json');
-                if (!response.ok) throw new Error('Failed to fetch blogs');
+                if (!response.ok) {
+                    console.error('Fetch failed:', response.status, response.statusText);
+                    throw new Error('Failed to fetch blogs');
+                }
                 const dynamicPosts = await response.json();
+                console.log('Raw dynamic posts:', dynamicPosts);
                 
                 // Map dynamic posts to match the UI structure
                 const formattedDynamicPosts = dynamicPosts.map(p => ({
@@ -81,12 +35,16 @@ const BlogsPage = () => {
                     date: p.publishDate || new Date().toISOString() // Use publishDate from JSON
                 }));
 
-                // Combine: Dynamic first, then static
-                setPosts([...formattedDynamicPosts, ...staticPosts]);
+                console.log('Formatted posts:', formattedDynamicPosts);
+
+                // Now, only set the dynamically fetched posts
+                const combinedPosts = [...formattedDynamicPosts]; // No static posts anymore
+                console.log('Setting combined posts:', combinedPosts);
+                setPosts(combinedPosts);
             } catch (error) {
-                console.warn("Failed to load dynamic blogs (using static only):", error);
-                // Fallback to static only
-                setPosts(staticPosts);
+                console.warn("Failed to load dynamic blogs (displaying empty list):", error);
+                // Fallback to empty array if dynamic fetch fails
+                setPosts([]); 
             }
         };
 
