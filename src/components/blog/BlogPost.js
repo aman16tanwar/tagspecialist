@@ -86,6 +86,7 @@ const BlogPost = () => {
                     </ReactMarkdown>
                 </div>
             </article>
+
             <NewsletterPopup />
         </div>
     );
