@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
 import remarkGfm from 'remark-gfm'; // Import remarkGfm for GitHub Flavored Markdown
 import rehypeHighlight from 'rehype-highlight'; // Import rehypeHighlight for syntax highlighting
 import NewsletterPopup from './NewsletterPopup'; // Import NewsletterPopup
+import MermaidDiagram from './MermaidDiagram'; // Import MermaidDiagram
 
 const BlogPost = () => {
     const { id } = useParams();
@@ -110,7 +111,19 @@ const BlogPost = () => {
                         prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
                         hover:prose-a:text-blue-700 transition-all"
                 >
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
+                    <ReactMarkdown 
+                        remarkPlugins={[remarkGfm]} 
+                        rehypePlugins={[rehypeHighlight]}
+                        components={{
+                            code({node, inline, className, children, ...props}) {
+                                const match = /language-(\w+)/.exec(className || '')
+                                if (!inline && match && match[1] === 'mermaid') {
+                                    return <MermaidDiagram chart={String(children).replace(/\n$/, '')} />
+                                }
+                                return <code className={className} {...props}>{children}</code>
+                            }
+                        }}
+                    >
                         {displayContent}
                     </ReactMarkdown>
                 </motion.div>
