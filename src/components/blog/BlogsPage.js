@@ -23,18 +23,18 @@ const BlogsPage = () => {
                 const dynamicPosts = await response.json();
                 console.log('Raw dynamic posts:', dynamicPosts);
                 
-                // Map dynamic posts to match the UI structure
-                const formattedDynamicPosts = dynamicPosts.map(p => ({
-                    id: p.id,
-                    title: p.title,
-                    description: p.description || (p.content ? p.content.substring(0, 150) + '...' : 'No description available.'),
-                    category: p.category || 'AI Insight',
-                    readTime: p.readTime || '8 min read', // Assuming a default read time if not provided by AI
+                // Map dynamic posts to match the UI structure with robust fallbacks
+                const formattedDynamicPosts = Array.isArray(dynamicPosts) ? dynamicPosts.map(p => ({
+                    id: p.id || Math.random().toString(36).substr(2, 9), // Fallback ID if missing
+                    title: p.title || 'Untitled Post',
+                    description: p.description || (p.content && typeof p.content === 'string' ? p.content.substring(0, 150) + '...' : 'No description available.'),
+                    category: p.category || 'General',
+                    readTime: p.readTime || '5 min read',
                     featured: false,
                     link: `/blog/${p.id}`,
                     isNew: true,
-                    date: p.publishDate || new Date().toISOString() // Use publishDate from JSON
-                }));
+                    date: p.publishDate || p.date || new Date().toISOString()
+                })) : [];
 
                 console.log('Formatted posts:', formattedDynamicPosts);
 
