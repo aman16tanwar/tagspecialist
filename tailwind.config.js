@@ -12,6 +12,14 @@ module.exports = {
           800: '#102a43',
           900: '#0a192f', // Deep navy for primary headings/bg
         },
+        blue: { // Ensure a blue is defined, or use an existing one
+          600: '#2563eb',
+          700: '#1d4ed8',
+        },
+        brand: {
+          primary: '#0a192f', // Map to navy-900
+          accent: '#2563eb',  // Map to a strong blue
+        },
         gold: {
           400: '#fbbf24',
           500: '#f59e0b', // Gold for accents/buttons
