@@ -1,3 +1,12 @@
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { HiArrowLeft, HiCalendar, HiClock, HiTag } from 'react-icons/hi';
+import SEOHead from '../seo/SEOHead';
+import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
+import remarkGfm from 'remark-gfm'; // Import remarkGfm for GitHub Flavored Markdown
+import NewsletterPopup from './NewsletterPopup'; // Import NewsletterPopup
+
 const BlogPost = () => {
     const { id } = useParams();
     const [post, setPost] = useState(null);
@@ -7,9 +16,11 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
+                // Fetch from static JSON file (works on Cloudflare Pages)
                 const response = await fetch('/data/blogs.json');
                 const blogs = await response.json();
                 
+                // Find the post with the matching ID (converted to string for comparison)
                 const foundPost = blogs.find(b => b.id.toString() === id);
                 
                 if (foundPost) {
@@ -20,8 +31,7 @@ const BlogPost = () => {
             } catch (err) {
                 console.error("Failed to fetch blog post:", err);
                 setError('Failed to load content');
-            }
-            finally {
+            } finally {
                 setLoading(false);
             }
         };
@@ -104,6 +114,8 @@ const BlogPost = () => {
                     </ReactMarkdown>
                 </motion.div>
             </article>
+
+            <NewsletterPopup />
         </div>
     );
 };
