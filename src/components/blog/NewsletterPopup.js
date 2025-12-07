@@ -134,10 +134,10 @@ const NewsletterPopup = () => {
                                         </div>
                                         <button
                                             type="submit"
-                                            disabled={status === 'loading'}
+                                            disabled={isSubmitting} // Use isSubmitting here
                                             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors text-sm flex items-center justify-center gap-2"
                                         >
-                                            {status === 'loading' ? 'Subscribing...' : 'Subscribe Free'}
+                                            {isSubmitting ? 'Submitting...' : 'Subscribe Free'}
                                         </button>
                                         {status === 'error' && (
                                             <p className="text-red-500 text-xs text-center">Something went wrong. Please try again.</p>
