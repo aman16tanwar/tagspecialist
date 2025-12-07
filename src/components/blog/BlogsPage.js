@@ -14,7 +14,8 @@ const BlogsPage = () => {
             console.log('Fetching blogs from /data/blogs.json...');
             try {
                 // Fetch from static JSON file (works on Cloudflare Pages)
-                const response = await fetch('/data/blogs.json');
+                // Add a cache-busting query parameter to ensure latest data
+                const response = await fetch(`/data/blogs.json?_=${new Date().getTime()}`);
                 if (!response.ok) {
                     console.error('Fetch failed:', response.status, response.statusText);
                     throw new Error('Failed to fetch blogs');
