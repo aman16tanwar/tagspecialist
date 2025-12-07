@@ -21,5 +21,21 @@
     ],
     "publishDate": "2024-01-15",
     "author": "Tag Specialist"
+  },
+  {
+    "title": "Understanding JSON Schema Validation",
+    "slug": "understanding-json-schema-validation",
+    "description": "A comprehensive guide to working with JSON Schema for data validation and type checking in modern applications.",
+    "content": "# Understanding JSON Schema Validation\n\nJSON Schema is a powerful tool for validating the structure of JSON data. It provides a clear, human- and machine-readable documentation of your data format.\n\n## Key Benefits\n\n- **Validation**: Ensure data matches expected formats\n- **Documentation**: Self-documenting data structures\n- **Type Safety**: Catch errors before they cause problems\n\n## Getting Started\n\nJSON Schema uses keywords like `type`, `properties`, `required`, and `items` to define the shape of your data.\n\n## Conclusion\n\nMastering JSON Schema helps build more robust applications.",
+    "category": "Development",
+    "tags": [
+      "JSON",
+      "validation",
+      "schema",
+      "data-structures",
+      "API"
+    ],
+    "publishDate": "2024-01-15",
+    "author": "Tag Specialist"
   }
 ]
