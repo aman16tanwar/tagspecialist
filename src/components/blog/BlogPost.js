@@ -69,7 +69,7 @@ const BlogPost = () => {
                         </span>
                         <span className="flex items-center gap-1">
                             <HiCalendar className="w-4 h-4" />
-                            {new Date(post.date).toLocaleDateString()}
+                            {new Date(post.publishDate || post.date || Date.now()).toLocaleDateString()}
                         </span>
                         {post.readTime && (
                             <span className="flex items-center gap-1">
