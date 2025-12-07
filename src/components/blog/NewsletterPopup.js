@@ -7,6 +7,7 @@ const NewsletterPopup = () => {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
     const [hasScrolled, setHasScrolled] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false); // Added missing state
 
     useEffect(() => {
         // Check if previously dismissed or subscribed
