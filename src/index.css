@@ -8,11 +8,11 @@
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
-    @apply text-gray-700 bg-white; /* Replaced text-text-main with text-gray-700 */
+    @apply text-gray-700 bg-white;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900 tracking-tight; /* Replaced text-text-dark with text-gray-900 */
+    @apply font-bold text-gray-900 tracking-tight;
   }
 
   p {
@@ -35,5 +35,31 @@
 
   .card-base {
     @apply bg-white border border-gray-200 rounded-lg shadow-sm p-8;
+  }
+}
+
+@layer utilities {
+  /* Fix for ASCII diagrams in <pre> tags */
+  .prose pre {
+    line-height: 1.2 !important; /* Important for ASCII art alignment */
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Specific monospace font */
+    white-space: pre; /* Ensure whitespace is preserved */
+    word-break: normal; /* Prevent word breaking */
+    overflow-wrap: normal; /* Prevent overflow wrapping */
+  }
+
+  /* Override for prose styling of code blocks for better appearance */
+  .prose :where(pre):not(:where([class~="not-prose"] *)) {
+    background-color: #282c34; /* A common dark background for code */
+    color: #abb2bf; /* A common text color for code */
+    padding: 1.25em 1.5em; /* Standard padding */
+    border-radius: 0.375rem; /* rounded-md */
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+
+  /* Inline code style fix if needed */
+  .prose :where(code):not(:where([class~="not-prose"] *))::before,
+  .prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: none;
   }
 }
