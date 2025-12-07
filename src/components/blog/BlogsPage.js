@@ -72,13 +72,13 @@ const BlogsPage = () => {
                 const formattedDynamicPosts = dynamicPosts.map(p => ({
                     id: p.id,
                     title: p.title,
-                    description: p.excerpt || p.content.substring(0, 150) + '...', // Create excerpt from content if missing
+                    description: p.description || (p.content ? p.content.substring(0, 150) + '...' : 'No description available.'),
                     category: p.category || 'AI Insight',
-                    readTime: p.readTime || '5 min read',
+                    readTime: p.readTime || '8 min read', // Assuming a default read time if not provided by AI
                     featured: false,
                     link: `/blog/${p.id}`,
                     isNew: true,
-                    date: p.date
+                    date: p.publishDate || new Date().toISOString() // Use publishDate from JSON
                 }));
 
                 // Combine: Dynamic first, then static
