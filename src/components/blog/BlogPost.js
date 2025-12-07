@@ -118,8 +118,18 @@ const BlogPost = () => {
                             code({node, inline, className, children, ...props}) {
                                 const match = /language-(\w+)/.exec(className || '')
                                 if (!inline && match && match[1] === 'mermaid') {
-                                    return <MermaidDiagram chart={String(children).replace(/\n$/, '')} />
+                                    // Use a try-catch block to handle Mermaid rendering errors
+                                    try {
+                                        // Ensure mermaid is initialized before attempting to render
+                                        // This is handled within MermaidDiagram component's useEffect
+                                        return <MermaidDiagram chart={String(children).replace(/\n$/, '')} />
+                                    } catch (e) {
+                                        console.error("Mermaid diagram rendering failed, falling back to text:", e);
+                                        // Fallback to a standard code block if Mermaid fails
+                                        return <code className={className} {...props}>{children}</code>;
+                                    }
                                 }
+                                // Default code block rendering (with highlighting)
                                 return <code className={className} {...props}>{children}</code>
                             }
                         }}
