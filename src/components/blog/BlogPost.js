@@ -3,11 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiArrowLeft, HiCalendar, HiClock, HiTag } from 'react-icons/hi';
 import SEOHead from '../seo/SEOHead';
-import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
-import remarkGfm from 'remark-gfm'; // Import remarkGfm for GitHub Flavored Markdown
-import rehypeHighlight from 'rehype-highlight'; // Import rehypeHighlight for syntax highlighting
-import NewsletterPopup from './NewsletterPopup'; // Import NewsletterPopup
-import MermaidDiagram from './MermaidDiagram'; // Import MermaidDiagram
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import NewsletterPopup from './NewsletterPopup';
 
 const BlogPost = () => {
     const { id } = useParams();
@@ -18,11 +17,8 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                // Fetch from static JSON file (works on Cloudflare Pages)
-                const response = await fetch('/data/blogs.json');
+                const response = await fetch(`/data/blogs.json?_=${Date.now()}`);
                 const blogs = await response.json();
-                
-                // Find the post with the matching ID (converted to string for comparison)
                 const foundPost = blogs.find(b => b.id.toString() === id);
                 
                 if (foundPost) {
@@ -31,7 +27,7 @@ const BlogPost = () => {
                     setError('Post not found');
                 }
             } catch (err) {
-                console.error("Failed to fetch blog post:", err);
+                console.error("Error fetching post:", err);
                 setError('Failed to load content');
             } finally {
                 setLoading(false);
@@ -45,49 +41,35 @@ const BlogPost = () => {
     if (error) return <div className="min-h-screen pt-32 text-center text-red-600">{error}</div>;
     if (!post) return null;
 
-    // --- Polish Fix: Remove first H1 from content & prioritize system date ---
+    // Remove first H1 from content to avoid duplicate title
     let displayContent = post.content;
-    const firstH1Regex = /^#\s.*(?:\r?\n|$)/; // Matches '# Title' at the beginning of content
+    const firstH1Regex = /^#\s.*(?:\r?\n|$)/;
     if (displayContent.match(firstH1Regex)) {
         displayContent = displayContent.replace(firstH1Regex, '').trim();
     }
-    const displayDate = post.date ? new Date(post.date) : new Date(post.publishDate || Date.now());
-    // -------------------------------------------------------------------------
+
+    const displayDate = post.date || post.publishDate ? new Date(post.date || post.publishDate) : new Date();
 
     return (
         <div className="min-h-screen bg-white pt-24 pb-16">
-            <SEOHead 
-                title={`${post.title} | TagSpecialist Blog`}
-                description={post.excerpt || post.title}
-            />
+            <SEOHead title={post.title} description={post.description || post.excerpt} />
             
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mb-12"
-                >
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
                     <Link to="/blogs" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-                        <HiArrowLeft className="mr-2 w-4 h-4" />
-                        Back to Blog
+                        <HiArrowLeft className="mr-2 w-4 h-4" /> Back to Insights
                     </Link>
 
                     <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
                         <span className="flex items-center gap-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full">
-                            <HiTag className="w-4 h-4" />
-                            {post.category || 'Update'}
+                            <HiTag className="w-4 h-4" /> {post.category || 'General'}
                         </span>
                         <span className="flex items-center gap-1">
-                            <HiCalendar className="w-4 h-4" />
-                            {displayDate.toLocaleDateString()}
+                            <HiCalendar className="w-4 h-4" /> {displayDate.toLocaleDateString()}
                         </span>
-                        {post.readTime && (
-                            <span className="flex items-center gap-1">
-                                <HiClock className="w-4 h-4" />
-                                {post.readTime}
-                            </span>
-                        )}
+                        <span className="flex items-center gap-1">
+                            <HiClock className="w-4 h-4" /> {post.readTime || '5 min read'}
+                        </span>
                     </div>
 
                     <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6 leading-tight">
@@ -95,50 +77,15 @@ const BlogPost = () => {
                     </h1>
                 </motion.div>
 
-                {/* Content - Render Markdown */}
-                <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="prose prose-lg prose-blue max-w-none 
-                        prose-headings:text-navy-900 prose-headings:font-bold 
-                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 
-                        prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                        prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-6
-                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-li:text-gray-600 prose-li:mb-2
-                        prose-strong:text-navy-900 prose-strong:font-bold
-                        prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg prose-pre:shadow-lg prose-pre:overflow-x-auto prose-pre:whitespace-pre-wrap prose-pre:break-words
-                        prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                        hover:prose-a:text-blue-700 transition-all"
-                >
+                <div className="prose prose-lg prose-blue max-w-none">
                     <ReactMarkdown 
                         remarkPlugins={[remarkGfm]} 
                         rehypePlugins={[rehypeHighlight]}
-                        components={{
-                            code({node, inline, className, children, ...props}) {
-                                const match = /language-(\w+)/.exec(className || '')
-                                if (!inline && match && match[1] === 'mermaid') {
-                                    // Use a try-catch block to handle Mermaid rendering errors
-                                    try {
-                                        // Ensure mermaid is initialized before attempting to render
-                                        // This is handled within MermaidDiagram component's useEffect
-                                        return <MermaidDiagram chart={String(children).replace(/\n$/, '')} />
-                                    } catch (e) {
-                                        console.error("Mermaid diagram rendering failed, falling back to text:", e);
-                                        // Fallback to a standard code block if Mermaid fails
-                                        return <code className={className} {...props}>{children}</code>;
-                                    }
-                                }
-                                // Default code block rendering (with highlighting)
-                                return <code className={className} {...props}>{children}</code>
-                            }
-                        }}
                     >
                         {displayContent}
                     </ReactMarkdown>
-                </motion.div>
+                </div>
             </article>
-
             <NewsletterPopup />
         </div>
     );

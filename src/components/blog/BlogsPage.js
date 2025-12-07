@@ -5,47 +5,35 @@ import { HiArrowRight, HiClock } from 'react-icons/hi';
 
 const BlogsPage = () => {
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        // Fetch dynamic posts
         const fetchPosts = async () => {
-            console.log('Fetching blogs from /data/blogs.json...');
             try {
-                // Fetch from static JSON file (works on Cloudflare Pages)
-                // Add a cache-busting query parameter to ensure latest data
-                const response = await fetch(`/data/blogs.json?_=${new Date().getTime()}`);
-                if (!response.ok) {
-                    console.error('Fetch failed:', response.status, response.statusText);
-                    throw new Error('Failed to fetch blogs');
-                }
-                const dynamicPosts = await response.json();
-                console.log('Raw dynamic posts:', dynamicPosts);
+                // Fetch with cache-busting to ensure fresh data
+                const response = await fetch(`/data/blogs.json?_=${Date.now()}`);
+                if (!response.ok) throw new Error('Failed to fetch');
                 
-                // Map dynamic posts to match the UI structure with robust fallbacks
-                const formattedDynamicPosts = Array.isArray(dynamicPosts) ? dynamicPosts.map(p => ({
-                    id: p.id || Math.random().toString(36).substr(2, 9), // Fallback ID if missing
+                const data = await response.json();
+                
+                // Minimal, safe mapping
+                const safePosts = Array.isArray(data) ? data.map(p => ({
+                    id: p.id || Math.random().toString(36).substr(2, 9),
                     title: p.title || 'Untitled Post',
-                    description: p.description || (p.content && typeof p.content === 'string' ? p.content.substring(0, 150) + '...' : 'No description available.'),
+                    description: p.description || (p.content ? p.content.substring(0, 150) + '...' : 'No description'),
                     category: p.category || 'General',
                     readTime: p.readTime || '5 min read',
-                    featured: false,
-                    link: `/blog/${p.id}`,
-                    isNew: true,
                     date: p.publishDate || p.date || new Date().toISOString()
                 })) : [];
 
-                console.log('Formatted posts:', formattedDynamicPosts);
-
-                // Now, only set the dynamically fetched posts
-                const combinedPosts = [...formattedDynamicPosts]; // No static posts anymore
-                console.log('Setting combined posts:', combinedPosts);
-                setPosts(combinedPosts);
+                setPosts(safePosts);
             } catch (error) {
-                console.warn("Failed to load dynamic blogs (displaying empty list):", error);
-                // Fallback to empty array if dynamic fetch fails
-                setPosts([]); 
+                console.error("Error loading blogs:", error);
+                setPosts([]); // Fail gracefully to empty list
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -54,103 +42,54 @@ const BlogsPage = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
-            {/* Hero Section */}
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
                 <div className="max-w-7xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                    >
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Data Engineering
-                            <span className="text-blue-400 block mt-2">
-                                Insights & Guides
-                            </span>
+                            Data Engineering Insights
                         </h1>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                            Learn how to build cost-effective data pipelines, optimize your infrastructure, 
-                            and save thousands on data tools.
+                            Practical guides on GA4, GTM, and BigQuery pipelines.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Blog Posts Grid */}
             <section className="py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {posts.map((post, index) => (
-                            <motion.div
-                                key={post.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className={`${post.featured ? 'md:col-span-2 lg:col-span-3' : ''}`}
-                            >
-                                <Link to={post.link} className="block group">
-                                    <div className={`bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${post.featured ? 'border-2 border-blue-500 shadow-md' : 'border border-gray-200 shadow-sm'}`}>
-                                        {post.featured && (
-                                            <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium uppercase tracking-wide">
-                                                Featured Guide
-                                            </div>
-                                        )}
-                                        
-                                        <div className="p-8">
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
-                                                    {post.category}
-                                                </span>
-                                                <span className="flex items-center gap-1 text-gray-500 text-sm">
-                                                    <HiClock className="w-4 h-4" />
-                                                    {post.readTime}
-                                                </span>
-                                                {post.isNew && (
-                                                    <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium border border-green-100 animate-pulse">
-                                                        NEW
-                                                    </span>
-                                                )}
-                                            </div>
-
-                                            <h2 className={`font-bold text-navy-900 mb-3 group-hover:text-blue-600 transition-colors ${post.featured ? 'text-3xl' : 'text-2xl'}`}>
-                                                {post.title}
-                                            </h2>
-
-                                            <p className={`text-gray-600 mb-6 leading-relaxed ${post.featured ? 'text-lg' : ''}`}>
-                                                {post.description}
-                                            </p>
-
-                                            {post.featured && post.highlights && (
-                                                <div className="grid md:grid-cols-2 gap-3 mb-6">
-                                                    {post.highlights.map((highlight, idx) => (
-                                                        <div key={idx} className="flex items-center gap-2">
-                                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                                            <span className="text-gray-700">{highlight}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-
-                                            <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all uppercase text-sm tracking-wide">
-                                                Read More
-                                                <HiArrowRight className="w-5 h-5" />
-                                            </div>
+                    {loading ? (
+                        <div className="text-center text-gray-500">Loading insights...</div>
+                    ) : posts.length === 0 ? (
+                        <div className="text-center text-gray-500">No posts found. Check back soon!</div>
+                    ) : (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {posts.map((post) => (
+                                <Link key={post.id} to={`/blog/${post.id}`} className="block group">
+                                    <div className="bg-white rounded-lg border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 h-full flex flex-col">
+                                        <div className="flex items-center gap-4 mb-4">
+                                            <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                                                {post.category}
+                                            </span>
+                                            <span className="flex items-center gap-1 text-gray-500 text-sm">
+                                                <HiClock className="w-4 h-4" />
+                                                {post.readTime}
+                                            </span>
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-navy-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                            {post.title}
+                                        </h2>
+                                        <p className="text-gray-600 mb-6 flex-grow">
+                                            {post.description}
+                                        </p>
+                                        <div className="flex items-center gap-2 text-blue-600 font-semibold uppercase text-sm tracking-wide mt-auto">
+                                            Read Article
+                                            <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </div>
                                 </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Coming Soon Section */}
-                    <div className="mt-16 text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-full mb-4">
-                            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm text-gray-600 font-medium">More Guides Coming Soon</span>
+                            ))}
                         </div>
-                        <p className="text-gray-500">
-                            Subscribe to get notified about new data engineering insights and cost-saving strategies
-                        </p>
-                    </div>
+                    )}
                 </div>
             </section>
         </div>
