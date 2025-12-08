@@ -17,113 +17,112 @@ import {
 const ServicesSection = () => {
     const services = [
         {
-            title: "Analytics & Tracking Implementation",
-            icon: HiChartBar,
-            // Using specific text/bg classes instead of dynamic 'color' prop
-            iconColor: "text-blue-600",
-            bgColor: "bg-blue-50",
-            borderColor: "hover:border-blue-400",
-            buttonColor: "bg-blue-600 hover:bg-blue-700",
-            description: "End-to-end tracking setup that captures every customer touchpoint with precision and privacy compliance.",
+            title: "Full Tracking & Attribution Fix",
+            icon: HiCheckCircle, // Changed icon to reflect 'fix'
+            iconColor: "text-red-600",
+            bgColor: "bg-red-50",
+            borderColor: "hover:border-red-400",
+            buttonColor: "bg-red-600 hover:bg-red-700",
+            description: "Stop revenue leaks. Get 100% accurate tracking for marketing spend, ensuring every dollar is attributed correctly.",
             features: [
-                "GA4 & GTM complete setup",
-                "Meta Pixel & Conversions API",
-                "Server-side tagging (First-party data)",
-                "Enhanced eCommerce tracking",
-                "Cross-domain tracking",
-                "Cookie consent & GDPR/CCPA compliance"
+                "Comprehensive GA4 Audit & Setup",
+                "Server-Side GTM Build (First-Party Data)",
+                "Meta CAPI & Google Ads Conversions API Integration",
+                "TikTok Events API & Shopify Checkout Tracking",
+                "Advanced Cross-Channel Attribution Models",
+                "Real-time Validation Dashboard & Alerts"
             ],
             deliverables: [
-                "Full tracking documentation",
-                "Custom dataLayer implementation",
-                "QA testing & debugging",
-                "30-day support post-launch"
+                "Fully deployed tracking infrastructure",
+                "Custom dataLayer & consent mode setup",
+                "SOP documentation & team training",
+                "30-day post-launch support & QA"
             ],
-            pricing: "Starting at $2,500",
-            timeline: "5-10 days"
+            pricing: "$3,000 – $7,500 (one-time)",
+            timeline: "2-4 weeks"
         },
         {
-            title: "Marketing Data Engineering",
+            title: "Data Pipeline & Reporting Infrastructure",
             icon: HiDatabase,
             iconColor: "text-blue-600",
             bgColor: "bg-blue-50",
             borderColor: "hover:border-blue-400",
             buttonColor: "bg-blue-600 hover:bg-blue-700",
-            description: "Transform scattered marketing data into a unified, AI-ready data warehouse with automated pipelines.",
+            description: "Build a single source of truth for all marketing data, powering executive-level insights and automated reporting.",
             features: [
-                "All marketing channels → BigQuery",
-                "Automated data pipelines (Shopify, Meta, Google)",
-                "Custom attribution models",
-                "ML-powered predictions (LTV, churn)",
-                "Real-time reporting dashboards",
-                "Data quality monitoring"
+                "GA4 → BigQuery Real-time Pipeline",
+                "Shopify/CRM → BigQuery ETL",
+                "Automated Attribution & LTV SQL Models",
+                "Custom Executive Dashboards (Looker Studio/PowerBI)",
+                "Proactive Data Quality Monitoring & Alerts",
+                "AI-Driven Anomaly Detection & Insights"
             ],
             deliverables: [
-                "Complete data infrastructure",
-                "Looker Studio dashboards",
-                "Documentation & training",
-                "Monthly optimization"
+                "Production-ready BigQuery data warehouse",
+                "Custom SQL transformations & models",
+                "Automated reporting dashboards",
+                "Documentation & ongoing optimization plan"
             ],
-            pricing: "Starting at $5,000 + $500/mo",
-            timeline: "2-3 weeks"
+            pricing: "$5,000 – $15,000 (one-time)",
+            timeline: "4-8 weeks"
         },
         {
-            title: "AI & Automation Solutions",
-            icon: HiLightningBolt,
-            iconColor: "text-blue-600", // Unified accent color
-            bgColor: "bg-blue-50",
-            borderColor: "hover:border-blue-400",
-            buttonColor: "bg-blue-600 hover:bg-blue-700",
-            description: "Cutting-edge AI integration with MCP servers and GenAI to automate your marketing operations.",
+            title: "Monthly Technical Retainer",
+            icon: HiLightningBolt, // Reusing existing icon, but could be HiSupport
+            iconColor: "text-green-600", // Using green for ongoing
+            bgColor: "bg-green-50",
+            borderColor: "hover:border-green-400",
+            buttonColor: "bg-green-600 hover:bg-green-700",
+            description: "Ongoing partnership for continuous optimization, incident response, and strategic evolution of your MarTech stack.",
             features: [
-                "MCP servers for GTM/GA4 automation",
-                "AI-powered tag debugging",
-                "Automated reporting with insights",
-                "ChatGPT/Claude integration for analytics",
-                "Predictive analytics models",
-                "Anomaly detection & alerts"
+                "Proactive Monitoring & Incident Response",
+                "Continuous GTM & GA4 Updates",
+                "New Event Tracking & Parameter Implementation",
+                "ETL Pipeline Maintenance & Expansion",
+                "Monthly Performance Reporting & Insights",
+                "AI Automation Workflows & Experimentation"
             ],
             deliverables: [
-                "Custom MCP server deployment",
-                "AI workflow automation",
-                "Training & documentation",
-                "Ongoing AI optimization"
+                "Dedicated technical support & SLA",
+                "Monthly strategy & optimization calls",
+                "Access to proprietary tools & templates",
+                "Proactive recommendations for growth"
             ],
-            pricing: "Starting at $10,000",
-            timeline: "3-4 weeks"
+            pricing: "$2,000 – $6,000/month",
+            timeline: "Ongoing"
         }
     ];
 
     const additionalServices = [
         {
             icon: HiTag,
-            title: "Google Ads & DV360",
-            description: "Campaign setup, optimization, and advanced bidding strategies"
+            title: "Google Ads & DV360 Management",
+            description: "Advanced campaign strategy, optimization, and bidding for maximum ROAS."
         },
         {
             icon: HiShieldCheck,
-            title: "Privacy & Compliance",
-            description: "GDPR/CCPA audits, consent management, data governance"
+            title: "Privacy & Compliance Consulting",
+            description: "GDPR/CCPA audits, consent management, and data governance strategy."
         },
         {
             icon: HiCog,
-            title: "Marketing Automation",
-            description: "Workflow automation, lead scoring, customer journey mapping"
+            title: "Custom AI Automation Workflows",
+            description: "Leverage AI for tasks like anomaly detection, forecasting, and content generation."
         },
         {
             icon: HiChip,
-            title: "Custom Integrations",
-            description: "API development, webhook setup, third-party connections"
+            title: "Custom API & Webhook Integrations",
+            description: "Build bespoke connections between your marketing tools and data platforms."
         },
         {
             icon: HiGlobeAlt,
-            title: "Multi-region Setup",
-            description: "International tracking, multi-currency, language handling"
+            title: "Multi-Region & Global Rollouts",
+            description: "Expand your tracking and data infrastructure to new markets and languages."
         },
         {
             icon: HiPresentationChartLine,
-            title: "Executive Dashboards",
-            description: "C-suite reporting, KPI monitoring, business intelligence"
+            title: "Executive-Level BI Dashboards",
+            description: "Design and implement actionable dashboards for C-suite decision-making."
         }
     ];
 
