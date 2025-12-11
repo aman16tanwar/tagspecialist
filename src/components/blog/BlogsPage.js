@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowRight, HiClock } from 'react-icons/hi';
+import SEOHead from '../seo/SEOHead';
 
 const BlogsPage = () => {
     const [posts, setPosts] = useState([]);
@@ -42,6 +43,11 @@ const BlogsPage = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <SEOHead
+                title="Blog | Data Engineering & Marketing Analytics Insights"
+                description="Practical guides and insights on GA4, GTM, BigQuery pipelines, Google Ads, and marketing automation from Tag Specialist."
+                canonicalUrl="https://tagspecialist.com/blogs"
+            />
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
                 <div className="max-w-7xl mx-auto text-center">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
