@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { HiArrowLeft, HiShieldCheck, HiLockClosed } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import SEOHead from '../seo/SEOHead';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -9,6 +10,11 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-white pt-20">
+      <SEOHead 
+        title="Privacy Policy | Tag Specialist"
+        description="Our commitment to protecting your privacy. Learn how Tag Specialist collects, uses, and safeguards your data in compliance with GDPR and CCPA."
+        canonicalUrl="https://tagspecialist.com/privacy-policy"
+      />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
           <HiArrowLeft className="w-5 h-5 mr-2" />
