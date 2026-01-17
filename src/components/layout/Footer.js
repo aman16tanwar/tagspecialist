@@ -65,9 +65,7 @@ const Footer = () => {
                 { name: 'About Us', link: '/about' },
                 { name: 'Case Studies', link: '/case-studies' },
                 { name: 'Blog', link: '/blogs' },
-                { name: 'Privacy Policy', link: '/privacy-policy' },
-                { name: 'Terms of Service', link: '/terms-of-service' },
-                { name: 'Refund Policy', link: '/refund-policy' }
+                { name: 'Agency Partners', link: '/partners' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link to={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">

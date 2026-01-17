@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX, HiCheckCircle, HiArrowRight } from 'react-icons/hi';
 
-const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMessage = '' }) => {
+const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMessage = '', leadType = 'Client' }) => {
   const [isOpen, setIsOpen] = useState(propIsOpen || false);
   const [formData, setFormData] = useState({
     name: '',
@@ -69,9 +69,9 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
           access_key: '281edfc6-1b7f-429f-a500-da5b83ede63e',
           name: formData.name,
           email: formData.email,
-          subject: `New Contact from ${formData.name} - Tag Specialist`,
+          subject: `NEW ${leadType.toUpperCase()} INQUIRY: ${formData.name}`,
           from_email: 'developer@tagspecialist.ca',
-          message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nServices: ${formData.services.join(', ') || 'None selected'}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
+          message: `LEAD TYPE: ${leadType}\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nServices: ${formData.services.join(', ') || 'None selected'}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
         }),
       });
       
@@ -119,8 +119,10 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
             {/* Header */}
             <div className="relative p-10 pb-0 flex justify-between items-start">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">
-                    <HiCheckCircle /> Professional Consultation
+                <div className="flex gap-2 mb-4">
+                    <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${leadType === 'Partner' ? 'bg-purple-50 text-purple-600 border border-purple-100' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}>
+                        <HiCheckCircle /> {leadType === 'Partner' ? 'Agency Partnership' : 'Direct Consultation'}
+                    </div>
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-black text-navy-900 uppercase tracking-tighter leading-none mb-2">Let's Talk Data</h3>
                 <p className="text-gray-500 font-bold text-sm tracking-tight">Tell us about your infrastructure challenges.</p>

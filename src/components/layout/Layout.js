@@ -8,10 +8,15 @@ const Layout = ({ children }) => {
     const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
     const [formMessage, setFormMessage] = useState('');
+    const [leadType, setLeadType] = useState('Client'); // Default to Client
 
     useEffect(() => {
       const handleOpenContact = (event) => {
         setIsContactFormOpen(true);
+        // Set lead type if specified in event, otherwise infer from service name
+        const type = event.detail?.leadType || (event.detail?.service?.includes('Partner') ? 'Partner' : 'Client');
+        setLeadType(type);
+
         if (event.detail?.message) {
           setFormMessage(event.detail.message);
         } else if (event.detail?.service) {
@@ -31,6 +36,7 @@ const Layout = ({ children }) => {
     const handleCloseContact = () => {
       setIsContactFormOpen(false);
       setFormMessage('');
+      setLeadType('Client');
     };
 
     return (
@@ -45,6 +51,7 @@ const Layout = ({ children }) => {
           onClose={handleCloseContact}
           onSubmitSuccess={handleContactFormSuccess}
           initialMessage={formMessage}
+          leadType={leadType}
         />
         <SuccessModal 
           isOpen={isSuccessModalOpen} 

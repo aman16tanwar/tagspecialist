@@ -14,6 +14,7 @@ import RefundPolicy from './components/legal/RefundPolicy';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import PartnersPage from './pages/PartnersPage';
 import BlogsPage from './components/blog/BlogsPage';
 import BlogPost from './components/blog/BlogPost';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
         
         {/* Landing Pages */}
         <Route path="/shopify-bigquery" element={<ShopifyBigQueryLanding />} />
