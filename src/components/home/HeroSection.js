@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { HiArrowRight, HiCheckCircle, HiSparkles } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-import ContactForm from '../ContactForm/ContactForm';
 
 const HeroSection = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -161,7 +159,7 @@ const HeroSection = () => {
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
                     >
                         <button
-                            onClick={() => setIsContactFormOpen(true)}
+                            onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Strategy Call' } }))}
                             className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2"
                         >
                             <span>Book Your Strategy Call</span>
@@ -206,9 +204,6 @@ const HeroSection = () => {
                     <div className="w-1 h-2 bg-gray-600 rounded-full mx-auto animate-bounce" />
                 </div>
             </motion.div>
-
-            {/* Contact Form Modal */}
-            <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
         </section>
     );
 };

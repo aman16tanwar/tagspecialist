@@ -19,13 +19,6 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Listen for custom event to open form
-  useEffect(() => {
-    const handleOpenForm = () => setIsOpen(true);
-    window.addEventListener('openContactForm', handleOpenForm);
-    return () => window.removeEventListener('openContactForm', handleOpenForm);
-  }, []);
-
   // Sync with prop
   useEffect(() => {
     if (propIsOpen !== undefined) {
@@ -64,7 +57,7 @@ const ContactForm = ({ isOpen: propIsOpen, onClose, onSubmitSuccess, initialMess
           name: formData.name,
           email: formData.email,
           subject: `New Contact from ${formData.name} - Tag Specialist`,
-          from_email: 'developer@tagspecialist.com',
+          from_email: 'developer@tagspecialist.ca',
           message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nService: ${formData.service}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
         }),
       });

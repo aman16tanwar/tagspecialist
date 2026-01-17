@@ -6,14 +6,11 @@ import {
 } from 'react-icons/hi';
 import { FaShopify } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import ContactForm from '../ContactForm/ContactForm';
 import StripeCheckoutModal from '../StripeCheckout/StripeCheckoutModal';
 import { productConfig } from '../../config/products.config';
 
 const ProductsSection = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     const [isStripeModalOpen, setIsStripeModalOpen] = useState(false);
-    const [selectedPackage, setSelectedPackage] = useState(null);
     const [stripeConfig, setStripeConfig] = useState(null);
     
     const handlePackageClick = (product, pkg) => {
@@ -33,21 +30,16 @@ const ProductsSection = () => {
             // Direct calendar booking link
             window.open(config.url, '_blank');
         } else if (config?.type === 'contact_form') {
-            // Open contact form with pre-filled message
-            setSelectedPackage({ 
-                product: product.name, 
-                package: pkg.name, 
-                price: pkg.price,
-                message: config.message || ''
-            });
-            setIsContactFormOpen(true);
+            // Open global contact form with pre-filled message
+            const message = config.message || `I'm interested in the ${product.name} - ${pkg.name} (${pkg.price})`;
+            window.dispatchEvent(new CustomEvent('openContactForm', { detail: { message } }));
         } else if (productConfig.bookingLinks?.[pkg.name]) {
             // Alternative: Direct calendar booking
             window.open(productConfig.bookingLinks[pkg.name], '_blank');
         } else {
-            // Fallback: Open contact form
-            setSelectedPackage({ product: product.name, package: pkg.name, price: pkg.price });
-            setIsContactFormOpen(true);
+            // Fallback: Open global contact form
+            const message = `I'm interested in the ${product.name} - ${pkg.name} (${pkg.price})`;
+            window.dispatchEvent(new CustomEvent('openContactForm', { detail: { message } }));
         }
     };
     const products = [
@@ -304,21 +296,6 @@ const ProductsSection = () => {
                     </a>
                 </div>
             </div>
-            
-            {/* Contact Form Modal */}
-            {isContactFormOpen && (
-                <ContactForm 
-                    isOpen={isContactFormOpen}
-                    onClose={() => {
-                        setIsContactFormOpen(false);
-                        setSelectedPackage(null);
-                    }}
-                    initialMessage={selectedPackage ? 
-                        selectedPackage.message || `I'm interested in the ${selectedPackage.product} - ${selectedPackage.package} (${selectedPackage.price})` : 
-                        ''
-                    }
-                />
-            )}
             
             {/* Stripe Checkout Modal */}
             {isStripeModalOpen && stripeConfig && (

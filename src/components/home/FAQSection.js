@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -48,33 +49,45 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-6 uppercase tracking-tighter">
+            Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
+          <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            Everything you need to know about our engineering process and high-performance data systems.
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+            <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <button
-                className="w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-white transition-colors text-left focus:outline-none"
+                className="w-full flex items-center justify-between p-6 text-left focus:outline-none transition-colors hover:bg-gray-50"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-semibold text-navy-900 text-lg">{faq.question}</span>
+                <span className="font-bold text-navy-900 text-lg pr-8">{faq.question}</span>
                 {openIndex === index ? (
-                  <FaChevronUp className="text-gray-500" />
+                  <HiChevronUp className="text-blue-600 flex-shrink-0" />
                 ) : (
-                  <FaChevronDown className="text-gray-500" />
+                  <HiChevronDown className="text-gray-400 flex-shrink-0" />
                 )}
               </button>
-              {openIndex === index && (
-                <div className="p-6 bg-white text-gray-700 border-t border-gray-200 leading-relaxed">
-                  {faq.answer}
-                </div>
-              )}
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="border-t border-gray-100"
+                  >
+                    <div className="p-6 text-gray-600 font-medium leading-relaxed bg-gray-50/50">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>

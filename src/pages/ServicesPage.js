@@ -1,17 +1,12 @@
 import React from 'react';
 import SEOHead from '../components/seo/SEOHead';
 import ServicesSection from '../components/services/ServicesSection';
-import ContactForm from '../components/ContactForm/ContactForm';
+import PricingSection from '../components/pricing/PricingSection';
+import RetainerServices from '../components/services/RetainerServices';
+import CapabilitiesSection from '../components/services/CapabilitiesSection';
+import TestimonialsSection from '../components/testimonials/TestimonialsSection';
 
 const ServicesPage = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = React.useState(false);
-
-    React.useEffect(() => {
-        const handleOpenContact = () => setIsContactFormOpen(true);
-        window.addEventListener('openContactForm', handleOpenContact);
-        return () => window.removeEventListener('openContactForm', handleOpenContact);
-    }, []);
-
     return (
         <>
             <SEOHead
@@ -20,8 +15,11 @@ const ServicesPage = () => {
             />
             <div className="pt-20">
                 <ServicesSection />
+                <CapabilitiesSection />
+                <PricingSection />
+                <RetainerServices />
+                <TestimonialsSection />
             </div>
-            <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
         </>
     );
 };

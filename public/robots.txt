@@ -5,7 +5,7 @@ Disallow: /api/
 Disallow: /admin/
 
 # Sitemaps
-Sitemap: https://tagspecialist.com/sitemap.xml
+Sitemap: https://tagspecialist.ca/sitemap.xml
 
 # Priority for Search Engines
 User-agent: Googlebot

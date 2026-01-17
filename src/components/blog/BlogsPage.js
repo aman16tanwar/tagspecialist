@@ -46,7 +46,7 @@ const BlogsPage = () => {
             <SEOHead
                 title="Blog | Data Engineering & Marketing Analytics Insights"
                 description="Practical guides and insights on GA4, GTM, BigQuery pipelines, Google Ads, and marketing automation from Tag Specialist."
-                canonicalUrl="https://tagspecialist.com/blogs"
+                canonicalUrl="https://tagspecialist.ca/blogs"
             />
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
                 <div className="max-w-7xl mx-auto text-center">

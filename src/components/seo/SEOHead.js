@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet-async';
 
 const SEOHead = ({ 
   title = "Tag Specialist | Data Engineering & Marketing Analytics Solutions",
-  description = "Enterprise data pipelines, marketing analytics, and AI-powered solutions. 8+ years experience, 70+ clients, 451% average ROAS. Google Ads, BigQuery, GA4, GTM expert.",
+  description = "Expert Google Tag Manager, GA4, and BigQuery implementation services. We build server-side tracking and real-time data pipelines for Shopify and enterprise brands.",
   keywords = "data engineering, BigQuery pipeline, Google Ads API, SA360, DV360, GA4 migration, GTM server-side, marketing analytics, ETL pipeline, cloud functions, airflow, data automation",
-  canonicalUrl = "https://tagspecialist.com",
-  ogImage = "https://tagspecialist.com/og-image.png",
+  canonicalUrl = "https://tagspecialist.ca",
+  ogImage = "https://tagspecialist.ca/og-image.png",
   structuredData = null
 }) => {
   
@@ -15,8 +15,8 @@ const SEOHead = ({
     "@type": "ProfessionalService",
     "name": "Tag Specialist",
     "description": "Enterprise data engineering and marketing analytics solutions",
-    "url": "https://tagspecialist.com",
-    "email": "developer@tagspecialist.com",
+    "url": "https://tagspecialist.ca",
+    "email": "aman@tagspecialist.ca",
     "telephone": "+1-236-668-8922",
     "address": {
       "@type": "PostalAddress",
@@ -29,7 +29,7 @@ const SEOHead = ({
       "latitude": 49.2827,
       "longitude": -123.1207
     },
-    "priceRange": "$4,997 - $24,997+",
+    "priceRange": "$2,500 - $15,000+",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -44,24 +44,24 @@ const SEOHead = ({
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Data Pipeline Development",
-            "description": "ETL/ELT pipelines for Google Ads, Meta, SA360, DV360 to BigQuery"
+            "name": "Shopify to BigQuery Pipeline",
+            "description": "Real-time, unlimited row data pipeline for Shopify"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Analytics Implementation",
-            "description": "GA4, GTM server-side tracking, Meta Conversions API"
+            "name": "Server-Side Tracking",
+            "description": "GA4, GTM server-side tracking, Meta CAPI"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Marketing Automation",
-            "description": "Campaign optimization, bid management, AI-powered insights"
+            "name": "Monthly Retainer",
+            "description": "Ongoing analytics and GTM support"
           }
         }
       ]
@@ -111,7 +111,6 @@ const SEOHead = ({
 
       {/* Additional SEO Tags */}
       <meta name="google-site-verification" content="your-verification-code" />
-      <meta name="msvalidate.01" content="your-bing-code" />
     </Helmet>
   );
 };

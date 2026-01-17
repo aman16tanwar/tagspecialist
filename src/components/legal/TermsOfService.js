@@ -212,7 +212,7 @@ const TermsOfService = () => {
                 </p>
                 <div className="space-y-2 text-gray-700">
                   <p><strong className="text-navy-900">Tag Specialist</strong></p>
-                  <p>Email: developer@tagspecialist.com</p>
+                  <p>Email: developer@tagspecialist.ca</p>
                   <p>Phone: +1 (236) 668-8922</p>
                   <p>Address: Vancouver, BC, Canada</p>
                   <p>Business Registration: BC1234567</p>

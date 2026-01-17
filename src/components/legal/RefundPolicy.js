@@ -95,7 +95,7 @@ const RefundPolicy = () => {
 
              <div className="border-t border-gray-200 pt-8 mt-8">
                 <p className="text-gray-600 text-sm">
-                    To request a cancellation or refund, email <a href="mailto:developer@tagspecialist.com" className="text-blue-600 hover:underline">developer@tagspecialist.com</a>.
+                    To request a cancellation or refund, email <a href="mailto:developer@tagspecialist.ca" className="text-blue-600 hover:underline">developer@tagspecialist.ca</a>.
                 </p>
             </div>
 

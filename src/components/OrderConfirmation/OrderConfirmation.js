@@ -130,10 +130,10 @@ const OrderConfirmation = () => {
               Our support team is here to help you get started
             </p>
             <a
-              href="mailto:support@tagspecialist.com"
+              href="mailto:support@tagspecialist.ca"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
-              support@tagspecialist.com
+              support@tagspecialist.ca
               <HiArrowRight className="w-4 h-4" />
             </a>
           </div>

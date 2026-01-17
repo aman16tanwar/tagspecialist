@@ -5,10 +5,8 @@ import {
     HiCheckCircle, HiXCircle, HiArrowRight, HiExclamation,
     HiSparkles
 } from 'react-icons/hi';
-import ContactForm from '../ContactForm/ContactForm';
 
 const ShopifyPipelineComparison = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     const [selectedTool, setSelectedTool] = useState('fivetran');
     
     useEffect(() => {
@@ -509,7 +507,7 @@ const ShopifyPipelineComparison = () => {
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <button
-                            onClick={() => setIsContactFormOpen(true)}
+                            onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Start Free Pipeline' } }))}
                             className="group px-8 py-4 bg-blue-600 text-white font-semibold rounded-sm shadow-lg hover:bg-blue-700 transition-all uppercase text-sm tracking-wide flex items-center gap-2"
                         >
                             <HiSparkles className="w-5 h-5" />
@@ -530,9 +528,6 @@ const ShopifyPipelineComparison = () => {
                     </p>
                 </div>
             </section>
-
-            {/* Contact Form Modal */}
-            <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
         </div>
     );
 };

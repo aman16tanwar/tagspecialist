@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
       <SEOHead 
         title="Privacy Policy | Tag Specialist"
         description="Our commitment to protecting your privacy. Learn how Tag Specialist collects, uses, and safeguards your data in compliance with GDPR and CCPA."
-        canonicalUrl="https://tagspecialist.com/privacy-policy"
+        canonicalUrl="https://tagspecialist.ca/privacy-policy"
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
@@ -163,7 +163,7 @@ const PrivacyPolicy = () => {
                   For any questions or concerns about this Privacy Policy or our data practices, please contact:
                 </p>
                 <div className="space-y-2 text-gray-700">
-                  <p><strong className="text-navy-900">Email:</strong> developer@tagspecialist.com</p>
+                  <p><strong className="text-navy-900">Email:</strong> developer@tagspecialist.ca</p>
                   <p><strong className="text-navy-900">Phone:</strong> +1 (236) 668-8922</p>
                   <p><strong className="text-navy-900">Address:</strong> Vancouver, BC, Canada</p>
                 </div>

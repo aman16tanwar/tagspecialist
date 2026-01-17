@@ -106,7 +106,7 @@ const DataSecurity = () => {
 
             <div className="border-t border-gray-200 pt-8 mt-8">
                 <p className="text-gray-600 text-sm">
-                    For security audits or vendor questionnaires, please contact <a href="mailto:security@tagspecialist.com" className="text-blue-600 hover:underline">security@tagspecialist.com</a>.
+                    For security audits or vendor questionnaires, please contact <a href="mailto:security@tagspecialist.ca" className="text-blue-600 hover:underline">security@tagspecialist.ca</a>.
                 </p>
             </div>
 

@@ -57,7 +57,7 @@ const NewsletterPopup = () => {
                     email: email,
                     subject: 'New Newsletter Subscription - Tag Specialist Blog',
                     message: `New subscriber email: ${email}`,
-                    from_email: 'developer@tagspecialist.com', // Optional: where the email appears to come from
+                    from_email: 'developer@tagspecialist.ca', // Optional: where the email appears to come from
                 }),
             });
             

@@ -1,233 +1,188 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { 
     HiDatabase, 
-    HiLightningBolt,
-    HiCheckCircle,
     HiArrowRight,
-    HiTag,
-    HiShieldCheck,
-    HiCog,
-    HiChip,
-    HiGlobeAlt,
-    HiPresentationChartLine
+    HiLightningBolt,
+    HiStar,
+    HiCheckCircle,
+    HiShieldCheck
 } from 'react-icons/hi';
 
 const ServicesSection = () => {
     const services = [
         {
-            title: "Full Tracking & Attribution Fix",
-            icon: HiCheckCircle, // Changed icon to reflect 'fix'
-            iconColor: "text-red-600",
-            bgColor: "bg-red-50",
-            borderColor: "hover:border-red-400",
-            buttonColor: "bg-red-600 hover:bg-red-700",
-            description: "Stop revenue leaks. Get 100% accurate tracking for marketing spend, ensuring every dollar is attributed correctly.",
-            features: [
-                "Comprehensive GA4 Audit & Setup",
-                "Server-Side GTM Build (First-Party Data)",
-                "Meta CAPI & Google Ads Conversions API Integration",
-                "TikTok Events API & Shopify Checkout Tracking",
-                "Advanced Cross-Channel Attribution Models",
-                "Real-time Validation Dashboard & Alerts"
-            ],
-            deliverables: [
-                "Fully deployed tracking infrastructure",
-                "Custom dataLayer & consent mode setup",
-                "SOP documentation & team training",
-                "30-day post-launch support & QA"
-            ],
-            pricing: "$3,000 – $7,500 (one-time)",
-            timeline: "2-4 weeks"
-        },
-        {
-            title: "Data Pipeline & Reporting Infrastructure",
-            icon: HiDatabase,
+            title: "Server-Side & Attribution Engine",
+            icon: HiLightningBolt,
             iconColor: "text-blue-600",
             bgColor: "bg-blue-50",
             borderColor: "hover:border-blue-400",
             buttonColor: "bg-blue-600 hover:bg-blue-700",
-            description: "Build a single source of truth for all marketing data, powering executive-level insights and automated reporting.",
+            popular: true,
+            popularTag: "Most Popular for DTC Brands",
+            value: "Captures 30-40% more conversion data you're currently losing. If you spend $50K/month on ads, that's $15K-20K in previously invisible conversions.",
+            description: "Stop revenue leaks. Get 100% accurate tracking for marketing spend, ensuring every dollar is attributed correctly with server-side accuracy.",
+            features: [
+                "Full Server-Side GTM Infrastructure",
+                "Facebook CAPI & Google Ads Enhanced Conversions",
+                "Ad blocker bypass (20-40% more data)",
+                "First-Party Identity Stitching",
+                "Advanced Cross-Channel Attribution",
+                "Consent Mode v2 Implementation"
+            ],
+            deliverables: [
+                "Fully deployed tracking infrastructure",
+                "Custom dataLayer & custom subdomain setup",
+                "SOP documentation & team training",
+                "30-day post-launch support & QA"
+            ],
+            pricing: "$18,500 (one-time)",
+            timeline: "3-4 weeks"
+        },
+        {
+            title: "Enterprise Data & AI Warehouse",
+            icon: HiDatabase,
+            iconColor: "text-purple-600",
+            bgColor: "bg-purple-50",
+            borderColor: "hover:border-purple-400",
+            buttonColor: "bg-purple-600 hover:bg-purple-700",
+            value: "One client went from 2.1x to 9.5x ROAS in 6 months—$200K+ additional monthly revenue from better attribution and optimization.",
+            description: "Build a single source of truth for all marketing data, powering executive-level insights and automated GenAI reporting.",
             features: [
                 "GA4 → BigQuery Real-time Pipeline",
-                "Shopify/CRM → BigQuery ETL",
-                "Automated Attribution & LTV SQL Models",
-                "Custom Executive Dashboards (Looker Studio/PowerBI)",
-                "Proactive Data Quality Monitoring & Alerts",
-                "AI-Driven Anomaly Detection & Insights"
+                "CRM & Shopify → BigQuery ETL",
+                "Custom SQL Attribution & LTV Models",
+                "GenAI Analytics Agent Integration",
+                "Automated Anomaly Detection Alerts",
+                "Executive Dashboards (Looker/PowerBI)"
             ],
             deliverables: [
                 "Production-ready BigQuery data warehouse",
-                "Custom SQL transformations & models",
-                "Automated reporting dashboards",
+                "Custom SQL transformations & views",
+                "GenAI natural language query interface",
                 "Documentation & ongoing optimization plan"
             ],
-            pricing: "$5,000 – $15,000 (one-time)",
-            timeline: "4-8 weeks"
-        },
-        {
-            title: "Monthly Technical Retainer",
-            icon: HiLightningBolt, // Reusing existing icon, but could be HiSupport
-            iconColor: "text-green-600", // Using green for ongoing
-            bgColor: "bg-green-50",
-            borderColor: "hover:border-green-400",
-            buttonColor: "bg-green-600 hover:bg-green-700",
-            description: "Ongoing partnership for continuous optimization, incident response, and strategic evolution of your MarTech stack.",
-            features: [
-                "Proactive Monitoring & Incident Response",
-                "Continuous GTM & GA4 Updates",
-                "New Event Tracking & Parameter Implementation",
-                "ETL Pipeline Maintenance & Expansion",
-                "Monthly Performance Reporting & Insights",
-                "AI Automation Workflows & Experimentation"
-            ],
-            deliverables: [
-                "Dedicated technical support & SLA",
-                "Monthly strategy & optimization calls",
-                "Access to proprietary tools & templates",
-                "Proactive recommendations for growth"
-            ],
-            pricing: "$2,000 – $6,000/month",
-            timeline: "Ongoing"
+            pricing: "$28,000 (one-time)",
+            timeline: "5-6 weeks"
         }
     ];
-
-    const additionalServices = [
-        {
-            icon: HiTag,
-            title: "Google Ads & DV360 Management",
-            description: "Advanced campaign strategy, optimization, and bidding for maximum ROAS."
-        },
-        {
-            icon: HiShieldCheck,
-            title: "Privacy & Compliance Consulting",
-            description: "GDPR/CCPA audits, consent management, and data governance strategy."
-        },
-        {
-            icon: HiCog,
-            title: "Custom AI Automation Workflows",
-            description: "Leverage AI for tasks like anomaly detection, forecasting, and content generation."
-        },
-        {
-            icon: HiChip,
-            title: "Custom API & Webhook Integrations",
-            description: "Build bespoke connections between your marketing tools and data platforms."
-        },
-        {
-            icon: HiGlobeAlt,
-            title: "Multi-Region & Global Rollouts",
-            description: "Expand your tracking and data infrastructure to new markets and languages."
-        },
-        {
-            icon: HiPresentationChartLine,
-            title: "Executive-Level BI Dashboards",
-            description: "Design and implement actionable dashboards for C-suite decision-making."
-        }
-    ];
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5
-            }
-        }
-    };
 
     return (
-        <section id="services" className="py-20 bg-white">
+        <section id="services" className="pt-20 pb-10 bg-white">
             <div className="container mx-auto px-4">
                 {/* Section Header */}
-                <motion.div 
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
-                        Technical Marketing Services
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-4 uppercase tracking-tighter">
+                        Flagship Data Solutions
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        From tracking implementation to AI automation. Choose standalone services or combine them for a complete marketing technology stack.
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        High-performance data infrastructure engineered for 8-figure brands. We build the systems that turn your data into profitable growth.
                     </p>
-                </motion.div>
+                </div>
 
-                {/* Main Services Grid */}
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid lg:grid-cols-3 gap-8 mb-16"
-                >
+                {/* Social Proof Stats Bar */}
+                <div className="max-w-5xl mx-auto mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="text-4xl font-black text-blue-600 mb-1">451%</div>
+                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Average ROAS Delivered</div>
+                        </div>
+                        <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="text-4xl font-black text-blue-600 mb-1">30-40%</div>
+                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">More Data Captured</div>
+                        </div>
+                        <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="text-4xl font-black text-blue-600 mb-1">50+</div>
+                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Brands Served</div>
+                        </div>
+                    </div>
+
+                    <div className="bg-brand-highlight border border-blue-100 rounded-3xl p-8 lg:p-10 shadow-sm relative overflow-hidden">
+                        <div className="relative z-10 flex flex-col items-center text-center">
+                            <div className="flex gap-1 mb-4 text-yellow-400">
+                                {[...Array(5)].map((_, i) => <HiStar key={i} className="w-6 h-6" />)}
+                            </div>
+                            <p className="text-gray-600 italic text-xl lg:text-2xl leading-relaxed max-w-3xl mb-6">
+                                "TagSpecialist transformed our data infrastructure. For the first time in two years, we finally know exactly where our next dollar should be spent. The ROI was immediate and massive."
+                            </p>
+                            <span className="block font-black text-navy-900 text-sm uppercase tracking-widest">
+                                — VP of Marketing, $50M+ DTC Fashion Brand
+                            </span>
+                        </div>
+                        <HiStar className="absolute -bottom-10 -right-10 w-48 h-48 text-blue-600/5 rotate-12" />
+                    </div>
+                </div>
+
+                {/* Main Services Grid - Removed Motion wrapper to fix gap issues */}
+                <div className="grid lg:grid-cols-2 lg:max-w-6xl mx-auto gap-8 mb-8">
                     {services.map((service, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            variants={itemVariants}
-                            className={`bg-gray-50 rounded-lg p-6 border border-gray-200 ${service.borderColor} transition-all duration-300 group`}
+                            className={`bg-gray-50 rounded-3xl p-8 border-2 ${service.popular ? 'border-blue-600 shadow-xl lg:scale-105 z-10' : 'border-gray-200'} transition-all duration-300 group hover:shadow-xl hover:bg-white flex flex-col relative`}
                         >
-                            {/* Service Header */}
-                            <div className="flex items-start justify-between mb-4">
-                                <div className={`p-3 ${service.bgColor} rounded-lg border border-gray-200`}>
+                            {service.popular && (
+                                <div className="bg-blue-600 text-white text-center py-2 text-[10px] font-black uppercase tracking-[0.2em] rounded-t-xl absolute top-0 left-0 right-0">
+                                    {service.popularTag}
+                                </div>
+                            )}
+                            
+                            <div className={`flex items-start justify-between ${service.popular ? 'mt-6' : ''} mb-6`}>
+                                <div className={`p-4 ${service.bgColor} rounded-2xl border border-gray-200 group-hover:scale-110 transition-transform`}>
                                     <service.icon className={`w-8 h-8 ${service.iconColor}`} />
                                 </div>
-                                <span className={`text-sm font-semibold ${service.iconColor}`}>
+                                <span className={`text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full ${service.bgColor} ${service.iconColor}`}>
                                     {service.timeline}
                                 </span>
                             </div>
 
-                            {/* Service Title & Description */}
-                            <h3 className="text-2xl font-bold text-navy-900 mb-3">
+                            <h3 className="text-2xl font-black text-navy-900 mb-4 leading-tight">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-600 mb-6">
+                            <p className="text-gray-600 mb-8 leading-relaxed font-medium text-sm">
                                 {service.description}
                             </p>
 
-                            {/* Features List */}
-                            <div className="mb-6">
-                                <h4 className="text-sm font-semibold text-gray-500 uppercase mb-3">What's Included</h4>
-                                <ul className="space-y-2">
+                            <div className="mb-8">
+                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Core Capabilities</h4>
+                                <ul className="space-y-3">
                                     {service.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-2">
+                                        <li key={idx} className="flex items-start gap-3">
                                             <HiCheckCircle className={`w-5 h-5 ${service.iconColor} mt-0.5 flex-shrink-0`} />
-                                            <span className="text-sm text-gray-700">{feature}</span>
+                                            <span className="text-sm text-navy-900 font-bold">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            {/* Deliverables */}
-                            <div className="mb-6">
-                                <h4 className="text-sm font-semibold text-gray-500 uppercase mb-3">Deliverables</h4>
-                                <ul className="space-y-1">
+                            <div className="mb-10">
+                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Strategic Deliverables</h4>
+                                <ul className="space-y-2">
                                     {service.deliverables.map((deliverable, idx) => (
-                                        <li key={idx} className="text-sm text-gray-600">
+                                        <li key={idx} className="text-xs text-gray-500 font-bold italic">
                                             • {deliverable}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            {/* Pricing & CTA */}
-                            <div className="pt-4 border-t border-gray-200">
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="text-2xl font-bold text-navy-900">
-                                        {service.pricing}
-                                    </span>
+                            <div className="pt-8 border-t border-gray-200 mt-auto">
+                                <div className="mb-6">
+                                    <div className="flex items-baseline justify-between mb-2">
+                                        <span className="text-3xl font-black text-navy-900 tracking-tighter">
+                                            {service.pricing}
+                                        </span>
+                                    </div>
+                                    <div className="p-3 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+                                        <p className="text-xs font-bold text-blue-800 leading-relaxed">
+                                            <span className="text-blue-600">💰 VALUE:</span> {service.value}
+                                        </p>
+                                    </div>
                                 </div>
+
+                                <div className="flex items-center gap-2 text-[10px] text-gray-500 mb-4 justify-center font-bold uppercase tracking-widest">
+                                    <HiShieldCheck className="text-green-500 text-base" />
+                                    <span>30-Day Satisfaction Guarantee</span>
+                                </div>
+
                                 <button
                                     onClick={() => {
                                         const event = new CustomEvent('openContactForm', { 
@@ -235,76 +190,15 @@ const ServicesSection = () => {
                                         });
                                         window.dispatchEvent(event);
                                     }}
-                                    className={`w-full px-4 py-3 ${service.buttonColor} text-white font-semibold rounded-sm transition-all duration-200 flex items-center justify-center gap-2 group uppercase text-sm tracking-wide`}
+                                    className={`w-full py-4 ${service.buttonColor} text-white font-black rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group uppercase text-xs tracking-[0.2em] shadow-lg hover:shadow-blue-500/25`}
                                 >
-                                    <span>Get Started</span>
+                                    <span>Reserve Your Build Slot</span>
                                     <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                {/* Additional Services */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-50 rounded-lg p-8 border border-gray-200"
-                >
-                    <h3 className="text-2xl font-bold text-navy-900 mb-6 text-center">
-                        Additional Services & Capabilities
-                    </h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {additionalServices.map((service, index) => (
-                            <div key={index} className="flex gap-3">
-                                <div className="p-2 bg-white border border-gray-200 rounded-lg h-fit">
-                                    <service.icon className="w-6 h-6 text-blue-600" />
-                                </div>
-                                <div>
-                                    <h4 className="text-navy-900 font-semibold mb-1">{service.title}</h4>
-                                    <p className="text-sm text-gray-600">{service.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* Service Packages CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-12 text-center"
-                >
-                    <div className="bg-navy-50 rounded-lg p-8 border border-navy-100">
-                        <h3 className="text-2xl font-bold text-navy-900 mb-4">
-                            Looking for a Complete Solution?
-                        </h3>
-                        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                            Combine services for a full marketing technology transformation. Get custom packages tailored to your business needs.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                onClick={() => {
-                                    const event = new CustomEvent('openContactForm', { 
-                                        detail: { service: 'Custom Package' } 
-                                    });
-                                    window.dispatchEvent(event);
-                                }}
-                                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-sm transition-all duration-200 uppercase text-sm tracking-wide"
-                            >
-                                Get Custom Quote
-                            </button>
-                            <a
-                                href="/case-studies"
-                                className="px-6 py-3 bg-white hover:bg-gray-50 text-navy-900 font-semibold rounded-sm border border-gray-300 transition-all duration-200 uppercase text-sm tracking-wide"
-                            >
-                                View Case Studies
-                            </a>
                         </div>
-                    </div>
-                </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

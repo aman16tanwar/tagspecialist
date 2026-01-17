@@ -12,39 +12,43 @@ const TaggingSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-highlight border-t border-gray-200">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">
-            Tracking & Tagging Foundation
+    <section className="py-24 bg-gray-50 border-t border-gray-100 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-6 uppercase tracking-tighter">
+            Tracking & Tagging <span className="text-blue-600">Foundation</span>
           </h2>
-          <p className="text-xl text-text-main max-w-2xl mx-auto">
-            Before you analyze, you must track accurately. We handle your entire tracking infrastructure.
+          <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
+            Before you analyze, you must track accurately. We engineer the entire infrastructure required to capture every signal with 100% precision.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-brand-accent transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-brand-accent">
-                <feature.icon className="w-6 h-6" />
+            <div key={index} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:border-blue-500/30 transition-all group shadow-sm hover:shadow-2xl">
+              <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <feature.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-brand-primary mb-3">{feature.title}</h3>
-              <p className="text-text-main leading-relaxed">
+              <h3 className="text-xl font-black text-navy-900 mb-4 uppercase tracking-tight">{feature.title}</h3>
+              <p className="text-gray-600 font-medium leading-relaxed text-sm">
                 {feature.desc}
               </p>
             </div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-           <ul className="inline-block text-left space-y-2">
-             <li className="flex items-center text-text-main"><span className="w-2 h-2 bg-brand-accent rounded-full mr-3"></span>Advanced funnel tracking</li>
-             <li className="flex items-center text-text-main"><span className="w-2 h-2 bg-brand-accent rounded-full mr-3"></span>Custom event schemas</li>
-             <li className="flex items-center text-text-main"><span className="w-2 h-2 bg-brand-accent rounded-full mr-3"></span>Deduplication & offline imports</li>
-           </ul>
+        <div className="mt-16 text-center">
+           <div className="inline-flex flex-wrap justify-center gap-8 px-10 py-6 bg-white rounded-full border border-gray-100 shadow-sm">
+             <div className="flex items-center text-navy-900 font-bold uppercase text-xs tracking-widest"><span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>Advanced Funnels</div>
+             <div className="flex items-center text-navy-900 font-bold uppercase text-xs tracking-widest"><span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>Custom Schemas</div>
+             <div className="flex items-center text-navy-900 font-bold uppercase text-xs tracking-widest"><span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>Deduplication</div>
+           </div>
         </div>
       </div>
+      
+      {/* Subtle Background Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.02] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#0A1A2F 2px, transparent 2px)', backgroundSize: '40px 40px' }}></div>
     </section>
   );
 };

@@ -19,74 +19,79 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-highlight">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">
-            What TagSpecialist Delivers
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-6 uppercase tracking-tighter">
+            What <span className="text-blue-600">TagSpecialist</span> Delivers
           </h2>
-          <p className="text-xl text-text-main max-w-2xl mx-auto">
-            A complete DO-IT-FOR-YOU setup. No more manual exports. No more broken pixels.
+          <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
+            A complete DO-IT-FOR-YOU engineering setup. No more manual exports. No more broken pixels. Just pure, actionable data.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           
           {/* Left: List of deliverables */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {solutions.map((item, index) => (
-              <div key={index} className="flex items-start">
-                <FaCheckCircle className="w-6 h-6 text-brand-accent mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-lg text-brand-secondary">{item}</span>
+              <div key={index} className="flex items-start group">
+                <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-600 transition-colors">
+                    <FaCheckCircle className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors flex-shrink-0" />
+                </div>
+                <span className="text-xl text-navy-900 font-bold tracking-tight">{item}</span>
               </div>
             ))}
           </div>
 
           {/* Right: Visual Representation (Abstract) */}
-          <div className="bg-white p-8 rounded-lg border border-gray-200 relative overflow-hidden shadow-sm">
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex items-center gap-3 justify-center border border-gray-200">
-                <FaGoogle className="text-red-600 w-6 h-6" /> <span className="font-semibold text-gray-700">Google Ads</span>
+          <div className="bg-gray-50 p-10 lg:p-12 rounded-[3rem] border border-gray-100 relative overflow-hidden shadow-2xl">
+            <div className="grid grid-cols-2 gap-6 mb-10 relative z-10">
+              <div className="bg-white p-5 rounded-2xl shadow-sm flex items-center gap-4 justify-center border border-gray-100 hover:border-blue-400 transition-colors">
+                <FaGoogle className="text-red-600 w-6 h-6" /> <span className="font-black text-navy-900 uppercase text-xs tracking-widest">Google Ads</span>
               </div>
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex items-center gap-3 justify-center border border-gray-200">
-                <SiMeta className="text-blue-600 w-6 h-6" /> <span className="font-semibold text-gray-700">Meta</span>
+              <div className="bg-white p-5 rounded-2xl shadow-sm flex items-center gap-4 justify-center border border-gray-100 hover:border-blue-400 transition-colors">
+                <SiMeta className="text-blue-600 w-6 h-6" /> <span className="font-black text-navy-900 uppercase text-xs tracking-widest">Meta</span>
               </div>
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex items-center gap-3 justify-center border border-gray-200">
-                <FaShopify className="text-green-600 w-6 h-6" /> <span className="font-semibold text-gray-700">Shopify</span>
+              <div className="bg-white p-5 rounded-2xl shadow-sm flex items-center gap-4 justify-center border border-gray-100 hover:border-blue-400 transition-colors">
+                <FaShopify className="text-green-600 w-6 h-6" /> <span className="font-black text-navy-900 uppercase text-xs tracking-widest">Shopify</span>
               </div>
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex items-center gap-3 justify-center border border-gray-200">
-                <SiTiktok className="text-black w-6 h-6" /> <span className="font-semibold text-gray-700">TikTok</span>
+              <div className="bg-white p-5 rounded-2xl shadow-sm flex items-center gap-4 justify-center border border-gray-100 hover:border-blue-400 transition-colors">
+                <SiTiktok className="text-black w-6 h-6" /> <span className="font-black text-navy-900 uppercase text-xs tracking-widest">TikTok</span>
               </div>
             </div>
 
-            <div className="flex justify-center mb-8">
-               <div className="h-16 w-0.5 bg-gray-300 relative">
-                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2">
-                    <span className="text-xs font-bold text-gray-500">ETL</span>
+            <div className="flex justify-center mb-10 relative z-10">
+               <div className="h-20 w-1 bg-gradient-to-b from-blue-600 to-indigo-600 relative rounded-full">
+                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-navy-900 text-white rounded-full px-4 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-white">
+                    ETL Pipeline
                  </div>
                </div>
             </div>
 
-            <div className="bg-white text-brand-primary p-6 rounded-lg text-center mb-8 shadow-md relative z-10 border-2 border-brand-accent">
-               <FaDatabase className="w-10 h-10 mx-auto mb-2 text-brand-accent" />
-               <h3 className="text-xl font-bold">BigQuery Data Warehouse</h3>
-               <p className="text-text-main text-sm">Unified, Clean, Single Source of Truth</p>
+            <div className="bg-navy-900 text-white p-8 rounded-3xl text-center mb-10 shadow-2xl relative z-10 border-2 border-blue-600/30">
+               <FaDatabase className="w-12 h-12 mx-auto mb-4 text-blue-400" />
+               <h3 className="text-2xl font-black uppercase tracking-widest mb-2">BigQuery Data Warehouse</h3>
+               <p className="text-blue-200 font-bold uppercase text-[10px] tracking-[0.2em]">Unified • Clean • Single Source of Truth</p>
             </div>
 
-             <div className="flex justify-center mb-8">
-               <div className="h-16 w-0.5 bg-gray-300"></div>
+             <div className="flex justify-center mb-10 relative z-10">
+               <div className="h-20 w-1 bg-gradient-to-b from-navy-900 to-transparent relative rounded-full"></div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex flex-col items-center justify-center border border-gray-200 text-center">
-                <FaChartLine className="text-brand-accent w-6 h-6 mb-2" /> 
-                <span className="font-semibold text-gray-700 text-sm">Looker Dashboards</span>
+            <div className="grid grid-cols-2 gap-6 relative z-10">
+              <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center justify-center border border-gray-100 hover:border-blue-400 transition-colors text-center group">
+                <FaChartLine className="text-blue-600 w-8 h-8 mb-3 group-hover:scale-110 transition-transform" /> 
+                <span className="font-black text-navy-900 uppercase text-[10px] tracking-widest">Looker Dashboards</span>
               </div>
-              <div className="bg-gray-50 p-4 rounded shadow-sm flex flex-col items-center justify-center border border-gray-200 text-center">
-                <FaRobot className="text-purple-600 w-6 h-6 mb-2" /> 
-                <span className="font-semibold text-gray-700 text-sm">AI Insights</span>
+              <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center justify-center border border-gray-100 hover:border-purple-400 transition-colors text-center group">
+                <FaRobot className="text-purple-600 w-8 h-8 mb-3 group-hover:scale-110 transition-transform" /> 
+                <span className="font-black text-navy-900 uppercase text-[10px] tracking-widest">GenAI Analytics</span>
               </div>
             </div>
+
+            {/* Background Decor */}
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
           </div>
 
         </div>

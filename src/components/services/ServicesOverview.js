@@ -10,6 +10,7 @@ import {
   Cpu,
   Globe
 } from 'lucide-react';
+import { HiCheckCircle } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 
 const ServicesOverview = () => {
@@ -173,25 +174,40 @@ const ServicesOverview = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-16 max-w-4xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
-              Not Sure Where to Start?
-            </h3>
-            <p className="text-xl mb-8 opacity-90">
-              Let's discuss your challenges and find the perfect solution for your business.
-            </p>
-            <button
-              onClick={() => {
-                const event = new CustomEvent('openContactForm');
-                window.dispatchEvent(event);
-              }}
-              className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-200 inline-flex items-center gap-2"
-            >
-              Schedule a Consultation
-              <ArrowRight className="w-5 h-5" />
-            </button>
+          <div className="bg-gradient-to-r from-navy-900 to-blue-900 rounded-3xl p-10 lg:p-16 text-white shadow-2xl relative overflow-hidden">
+            <div className="relative z-10">
+                <h3 className="text-3xl lg:text-4xl font-black mb-6">
+                Not Sure Where to Start?
+                </h3>
+                <p className="text-xl mb-10 text-blue-100 max-w-2xl mx-auto">
+                Book a FREE 15-minute audit to identify your biggest tracking gaps and ROI opportunities.
+                </p>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+                    <div className="flex items-center gap-3 text-sm font-bold text-blue-200">
+                        <HiCheckCircle className="text-green-400 text-xl" /> Tracking Gap Analysis
+                    </div>
+                    <div className="flex items-center gap-3 text-sm font-bold text-blue-200">
+                        <HiCheckCircle className="text-green-400 text-xl" /> ROI Opportunity Sizing
+                    </div>
+                    <div className="flex items-center gap-3 text-sm font-bold text-blue-200">
+                        <HiCheckCircle className="text-green-400 text-xl" /> Package Recommendation
+                    </div>
+                </div>
+                <button
+                onClick={() => {
+                    const event = new CustomEvent('openContactForm', { detail: { service: 'Free Audit' } });
+                    window.dispatchEvent(event);
+                }}
+                className="px-10 py-5 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-500 transition-all duration-200 inline-flex items-center gap-3 uppercase tracking-widest shadow-xl hover:shadow-blue-500/25"
+                >
+                Book Free 15-Min Audit
+                <ArrowRight className="w-5 h-5" />
+                </button>
+            </div>
+            {/* Decorative */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
           </div>
         </motion.div>
       </div>

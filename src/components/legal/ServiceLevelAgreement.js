@@ -85,7 +85,7 @@ const ServiceLevelAgreement = () => {
                   <div>
                       <h3 className="text-navy-900 font-bold mb-2">Standard Support</h3>
                       <ul className="text-gray-600 space-y-2 text-sm">
-                          <li><strong>Email:</strong> developer@tagspecialist.com</li>
+                          <li><strong>Email:</strong> developer@tagspecialist.ca</li>
                           <li><strong>Slack:</strong> Dedicated Channel (Retainer only)</li>
                           <li><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM (PST)</li>
                       </ul>

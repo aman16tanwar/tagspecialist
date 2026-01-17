@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiMenu, HiX, HiChevronDown, HiArrowRight, HiCheckCircle } from 'react-icons/hi';
+import { useNavigate, Link } from 'react-router-dom';
+import Logo from '../brand/Logo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,51 +19,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavigation = (item) => {
-    setIsMobileMenuOpen(false);
+  const setupPackages = [
+    { name: 'Analytics Foundation', price: '$12,000', desc: 'GA4 + GTM setup for growing businesses', timeline: '2-3 weeks', icon: '📊', id: 'analytics-foundation' },
+    { name: 'Server-Side Infrastructure', price: '$18,500', desc: 'Bypass ad blockers, capture 30-40% more data', timeline: '3-4 weeks', icon: '⚡', id: 'server-side', popular: true },
+    { name: 'Complete Data Infrastructure', price: '$28,000', desc: 'BigQuery warehouse + AI-powered insights', timeline: '5-6 weeks', icon: '🗄️', id: 'complete-data' }
+  ];
 
-    if (item.id === 'contact') {
-      window.dispatchEvent(new CustomEvent('openContactForm'));
-      return;
-    }
-
-    // If it's a route navigation (like blogs)
-    if (item.route) {
-      navigate(item.route);
-      return;
-    }
-
-    // If we're on the homepage, just scroll to section
-    if (location.pathname === '/') {
-      const section = document.getElementById(item.id);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } else {
-      // If we're on another page, navigate to homepage then scroll
-      navigate('/');
-      // Wait for navigation to complete then scroll
-      setTimeout(() => {
-        const section = document.getElementById(item.id);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    }
-  };
-
-  const menuItems = [
-    { name: 'Services', route: '/services' },
-    { name: 'Case Studies', route: '/case-studies' },
-    { name: 'Blog', route: '/blogs' }, // Added Blog link
-    { name: 'About', route: '/about' },
-    { name: 'Contact', id: 'contact' }
+  const retainers = [
+    { name: 'Essentials Retainer', price: '$3,500/mo', desc: 'Monitoring, troubleshooting & peace of mind', hours: 'Up to 10 hrs/mo', icon: '🔧', id: 'essentials' },
+    { name: 'Growth Retainer', price: '$7,500/mo', desc: 'Proactive optimization for scaling brands', hours: 'Up to 25 hrs/mo', icon: '📈', id: 'growth', featured: true },
+    { name: 'Scale Retainer', price: '$14,000/mo', desc: 'Your technical co-founder for data', hours: 'Up to 50 hrs/mo', icon: '🚀', id: 'scale' }
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' : 'bg-transparent'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' : 'bg-transparent'}`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -74,75 +44,138 @@ const Navbar = () => {
             className="flex items-center cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <div className="text-2xl font-semibold tracking-tight">
-              <span className="text-brand-primary">Tag</span>
-              <span className="text-brand-accent">Specialist</span>
-            </div>
+            <Logo variant="full" theme="dark" />
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-12">
-            {menuItems.map((item, index) => (
-              item.submenu ? (
-                <div key={item.name} className="relative">
-                  <motion.button
-                    initial={{ opacity: 0, y: -20 }}
+          <div className="hidden lg:flex items-center space-x-10">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsMegaMenuOpen(true)}
+              onMouseLeave={() => setIsMegaMenuOpen(false)}
+            >
+              <button className="text-text-main hover:text-blue-600 transition-colors duration-300 font-black text-xs uppercase tracking-[0.2em] flex items-center gap-1 py-4">
+                Services <HiChevronDown className={`transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {isMegaMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onMouseEnter={() => setOpenDropdown(item.name)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    className="text-text-main hover:text-brand-primary transition-colors duration-300 font-medium relative group flex items-center text-sm uppercase tracking-wide"
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[1000px] bg-white border border-gray-200 rounded-3xl shadow-2xl p-8 grid grid-cols-12 gap-8"
                   >
-                    {item.name}
-                    <HiChevronDown className="ml-1 w-4 h-4" />
-                  </motion.button>
-                  {openDropdown === item.name && (
-                    <div
-                      className="absolute top-full mt-2 bg-white border border-gray-200 rounded-sm shadow-xl py-2 min-w-[180px]"
-                      onMouseEnter={() => setOpenDropdown(item.name)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      {item.submenu.map((subItem) => (
-                        <button
-                          key={subItem.name}
-                          onClick={() => navigate(subItem.route)}
-                          className="block w-full text-left px-4 py-2 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors text-sm"
-                        >
-                          {subItem.name}
-                        </button>
-                      ))}
+                    {/* Column 1: Setups */}
+                    <div className="col-span-4 border-r border-gray-100 pr-8">
+                      <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] mb-6">One-Time Setup Packages</h3>
+                      <div className="space-y-4">
+                        {setupPackages.map((pkg) => (
+                          <Link 
+                            key={pkg.id}
+                            to={`/services#${pkg.id}`}
+                            className={`block p-4 rounded-2xl transition-all border ${pkg.popular ? 'bg-blue-50/50 border-blue-100' : 'hover:bg-gray-50 border-transparent'}`}
+                            onClick={() => setIsMegaMenuOpen(false)}
+                          >
+                            <div className="flex justify-between items-start mb-1">
+                              <span className="text-lg">{pkg.icon}</span>
+                              <span className="font-black text-navy-900 text-sm tracking-tight">{pkg.price}</span>
+                            </div>
+                            <div className="font-black text-navy-900 text-sm mb-1 uppercase tracking-tight flex items-center gap-2">
+                              {pkg.name}
+                              {pkg.popular && <span className="bg-blue-600 text-white text-[8px] px-2 py-0.5 rounded-full">POPULAR</span>}
+                            </div>
+                            <p className="text-[11px] text-gray-500 font-bold leading-tight mb-2">{pkg.desc}</p>
+                            <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">{pkg.timeline}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  )}
-                </div>
-              ) : (
-                <motion.button
-                  key={item.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => handleNavigation(item)}
-                  className="text-text-main hover:text-brand-primary transition-colors duration-300 font-medium relative group text-sm uppercase tracking-wide"
-                >
-                  <span className="flex items-center gap-2">
-                    {item.name}
-                  </span>
-                </motion.button>
-              )
-            ))}
+
+                    {/* Column 2: Retainers */}
+                    <div className="col-span-4 border-r border-gray-100 pr-8">
+                      <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] mb-6">Monthly Retainers</h3>
+                      <div className="space-y-4">
+                        {retainers.map((pkg) => (
+                          <Link 
+                            key={pkg.id}
+                            to={`/services#${pkg.id}`}
+                            className={`block p-4 rounded-2xl transition-all border ${pkg.featured ? 'bg-indigo-50/50 border-indigo-100' : 'hover:bg-gray-50 border-transparent'}`}
+                            onClick={() => setIsMegaMenuOpen(false)}
+                          >
+                            <div className="flex justify-between items-start mb-1">
+                              <span className="text-lg">{pkg.icon}</span>
+                              <span className="font-black text-navy-900 text-sm tracking-tight">{pkg.price}</span>
+                            </div>
+                            <div className="font-black text-navy-900 text-sm mb-1 uppercase tracking-tight flex items-center gap-2">
+                              {pkg.name}
+                              {pkg.featured && <span className="bg-indigo-600 text-white text-[8px] px-2 py-0.5 rounded-full">BEST VALUE</span>}
+                            </div>
+                            <p className="text-[11px] text-gray-500 font-bold leading-tight mb-2">{pkg.desc}</p>
+                            <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest">{pkg.hours}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Column 3: CTA Box */}
+                    <div className="col-span-4">
+                      <div className="bg-navy-900 rounded-3xl p-6 text-white h-full flex flex-col">
+                        <div className="text-2xl mb-4">🎯</div>
+                        <h4 className="font-black text-lg mb-2 uppercase tracking-tighter">Not sure where to start?</h4>
+                        <p className="text-blue-200 text-xs font-bold leading-relaxed mb-6">Get a free 15-minute audit and custom package recommendation for your business.</p>
+                        <ul className="space-y-2 mb-8">
+                          <li className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-100">
+                            <HiCheckCircle className="text-green-400 text-sm" /> Identify Gaps
+                          </li>
+                          <li className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-100">
+                            <HiCheckCircle className="text-green-400 text-sm" /> ROI Opportunity
+                          </li>
+                        </ul>
+                        <button 
+                          onClick={() => {
+                            setIsMegaMenuOpen(false);
+                            window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Free Audit' } }));
+                          }}
+                          className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-xl transition-all uppercase text-[10px] tracking-widest shadow-lg"
+                        >
+                          Book Free Audit →
+                        </button>
+                        
+                        <div className="mt-auto pt-6 space-y-3 border-t border-white/10">
+                          <Link to="/services" className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-blue-300 hover:text-white transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                            Detailed Pricing <HiArrowRight />
+                          </Link>
+                          <Link to="/case-studies" className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-blue-300 hover:text-white transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                            Client Results <HiArrowRight />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <Link to="/services#pricing" className="text-text-main hover:text-blue-600 transition-colors duration-300 font-black text-xs uppercase tracking-[0.2em]">Pricing</Link>
+            <Link to="/case-studies" className="text-text-main hover:text-blue-600 transition-colors duration-300 font-black text-xs uppercase tracking-[0.2em]">Case Studies</Link>
+            <Link to="/blogs" className="text-text-main hover:text-blue-600 transition-colors duration-300 font-black text-xs uppercase tracking-[0.2em]">Blog</Link>
+            <Link to="/about" className="text-text-main hover:text-blue-600 transition-colors duration-300 font-black text-xs uppercase tracking-[0.2em]">About</Link>
+            
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 }}
-              onClick={() => window.dispatchEvent(new CustomEvent('openContactForm'))}
-              className="btn-primary"
+              onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Free Audit' } }))}
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 uppercase text-[10px] tracking-widest"
             >
-              Get Started
+              Book Free Audit
             </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-brand-primary"
+            className="lg:hidden text-brand-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
@@ -150,53 +183,51 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 py-4 bg-white border border-gray-200 rounded-lg shadow-lg"
-          >
-            {menuItems.map((item) => (
-              item.submenu ? (
-                <div key={item.name}>
-                  <div className="px-4 py-3 text-text-dark font-semibold text-sm uppercase">{item.name}</div>
-                  {item.submenu.map((subItem) => (
-                    <button
-                      key={subItem.name}
-                      onClick={() => {
-                        navigate(subItem.route);
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className="block w-full text-left px-8 py-2 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors duration-300 text-sm"
-                    >
-                      {subItem.name}
-                    </button>
-                  ))}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden mt-4 bg-white border border-gray-200 rounded-[2rem] shadow-2xl overflow-hidden"
+            >
+              <div className="p-6 space-y-6">
+                <div>
+                  <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4">Services</h3>
+                  <div className="grid grid-cols-1 gap-3">
+                    <Link to="/services#analytics-foundation" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Analytics Foundation ($12k)</Link>
+                    <Link to="/services#server-side" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Server-Side Infra ($18.5k) ⭐</Link>
+                    <Link to="/services#complete-data" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Complete Data ($28k)</Link>
+                  </div>
                 </div>
-              ) : (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavigation(item)}
-                  className="block w-full text-left px-4 py-3 text-text-main hover:text-brand-accent hover:bg-gray-50 transition-colors duration-300 text-sm uppercase"
-                >
-                  {item.name}
-                </button>
-              )
-            ))}
-            <div className="mt-4 px-4">
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  window.dispatchEvent(new CustomEvent('openContactForm'));
-                }}
-                className="block w-full text-center px-6 py-3 bg-brand-accent hover:bg-blue-600 text-white font-semibold rounded-sm uppercase text-sm tracking-wider"
-              >
-                Get Started
-              </button>
-            </div>
-          </motion.div>
-        )}
+
+                <div className="space-y-4">
+                  <Link to="/services#pricing" onClick={() => setIsMobileMenuOpen(false)} className="block font-black text-sm uppercase tracking-widest text-navy-900">Pricing</Link>
+                  <Link to="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="block font-black text-sm uppercase tracking-widest text-navy-900">Case Studies</Link>
+                  <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="block font-black text-sm uppercase tracking-widest text-navy-900">Blog</Link>
+                  <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block font-black text-sm uppercase tracking-widest text-navy-900">About</Link>
+                </div>
+
+                <div className="pt-6 border-t border-gray-100">
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Free Audit' } }));
+                    }}
+                    className="w-full py-4 bg-blue-600 text-white font-black rounded-xl uppercase text-xs tracking-widest shadow-lg"
+                  >
+                    📅 Book Free Audit
+                  </button>
+                </div>
+
+                <div className="text-center space-y-2 pb-4">
+                  <a href="mailto:hello@tagspecialist.ca" className="block text-[10px] font-black text-gray-400 uppercase tracking-widest">hello@tagspecialist.ca</a>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">📍 Vancouver, BC, Canada</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

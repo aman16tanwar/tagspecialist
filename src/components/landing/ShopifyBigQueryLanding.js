@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -8,10 +8,9 @@ import {
 } from 'react-icons/hi';
 import { FaShopify } from 'react-icons/fa';
 import { SiGooglecloud } from 'react-icons/si';
-import ContactForm from '../ContactForm/ContactForm';
+import SEOHead from '../seo/SEOHead';
 
 const ShopifyBigQueryLanding = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -42,7 +41,14 @@ const ShopifyBigQueryLanding = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white pt-20">
+        <>
+            <SEOHead
+                title="Shopify to BigQuery Pipeline | No Row Limits | Tag Specialist"
+                description="The only Shopify to BigQuery connector with NO row limits. Real-time data sync, 5-minute setup, and you own the infrastructure. Save $1,200+/year vs Fivetran."
+                keywords="shopify to bigquery, shopify data pipeline, shopify bigquery connector, bigquery shopify integration, shopify data warehouse, unlimited rows shopify, fivetran alternative"
+                canonicalUrl="https://tagspecialist.ca/shopify-bigquery"
+            />
+            <div className="min-h-screen bg-white pt-20">
             {/* Hero Section */}
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-navy-900">
                 <div className="max-w-6xl mx-auto">
@@ -72,7 +78,7 @@ const ShopifyBigQueryLanding = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                             <button
-                                onClick={() => setIsContactFormOpen(true)}
+                                onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Shopify BigQuery Pipeline' } }))}
                                 className="group px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-sm shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2 uppercase text-sm tracking-wide"
                             >
                                 <HiSparkles className="w-5 h-5" />
@@ -341,7 +347,7 @@ const ShopifyBigQueryLanding = () => {
                     </div>
                     
                     <button
-                        onClick={() => setIsContactFormOpen(true)}
+                        onClick={() => window.dispatchEvent(new CustomEvent('openContactForm', { detail: { service: 'Shopify BigQuery Pipeline' } }))}
                         className="group px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-sm shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2 mx-auto uppercase text-sm tracking-wide"
                     >
                         <HiSparkles className="w-5 h-5" />
@@ -356,8 +362,8 @@ const ShopifyBigQueryLanding = () => {
             </section>
 
             {/* Contact Form Modal */}
-            <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
         </div>
+        </>
     );
 };
 

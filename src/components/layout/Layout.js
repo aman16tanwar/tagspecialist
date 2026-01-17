@@ -7,9 +7,17 @@ import SuccessModal from '../SuccessModal/SuccessModal';
 const Layout = ({ children }) => {
     const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+    const [formMessage, setFormMessage] = useState('');
 
     useEffect(() => {
-      const handleOpenContact = () => setIsContactFormOpen(true);
+      const handleOpenContact = (event) => {
+        setIsContactFormOpen(true);
+        if (event.detail?.message) {
+          setFormMessage(event.detail.message);
+        } else if (event.detail?.service) {
+          setFormMessage(`I'm interested in: ${event.detail.service}`);
+        }
+      };
       window.addEventListener('openContactForm', handleOpenContact);
       return () => window.removeEventListener('openContactForm', handleOpenContact);
     }, []);
@@ -17,6 +25,12 @@ const Layout = ({ children }) => {
     const handleContactFormSuccess = () => {
       setIsContactFormOpen(false);
       setIsSuccessModalOpen(true);
+      setFormMessage('');
+    };
+
+    const handleCloseContact = () => {
+      setIsContactFormOpen(false);
+      setFormMessage('');
     };
 
     return (
@@ -28,8 +42,9 @@ const Layout = ({ children }) => {
         <Footer />
         <ContactForm 
           isOpen={isContactFormOpen} 
-          onClose={() => setIsContactFormOpen(false)}
+          onClose={handleCloseContact}
           onSubmitSuccess={handleContactFormSuccess}
+          initialMessage={formMessage}
         />
         <SuccessModal 
           isOpen={isSuccessModalOpen} 

@@ -14,87 +14,64 @@ const NewLandingPage = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Shopify to BigQuery Automated Pipeline",
+    "name": "Automated Marketing Data Warehouse",
     "applicationCategory": "DataManagementApplication",
     "operatingSystem": "Web-based",
-    "description": "Automated Shopify to BigQuery data pipeline with no row limits. Break free from Fivetran's 500K row limit. 5-minute web UI setup, own your infrastructure for $50/month total.",
-    "url": "https://tagspecialist.ca/shopify-bigquery",
+    "description": "Enterprise-grade data infrastructure for marketing analytics. GA4, GTM Server-side, and BigQuery automation for 8-figure brands.",
+    "url": "https://tagspecialist.ca",
     "featureList": [
-      "UNLIMITED data rows (no 500K/5M limits)",
-      "5-minute web-based setup",
-      "Own your infrastructure ($50/mo hosting)",
-      "No vendor lock-in",
-      "Automated daily syncs",
-      "4 BigQuery tables (customers, orders, products, order items)",
-      "No coding required",
-      "Free for up to 3 Shopify stores",
-      "Multi-store support",
-      "Web-based onboarding UI",
-      "Automatic Cloud Run deployment",
-      "Built-in monitoring dashboard"
+      "Server-side GTM Infrastructure",
+      "BigQuery Data Warehouse Automation",
+      "GA4 Enterprise Implementation",
+      "First-Party Data Identity Stitching",
+      "Automated Daily ETL Pipelines",
+      "No row limits, total infrastructure ownership"
     ],
-    "screenshot": "https://tagspecialist.ca/shopify-bigquery-screenshot.png",
-    "softwareVersion": "2.0",
+    "screenshot": "https://tagspecialist.ca/og-image.png",
+    "softwareVersion": "2026.1",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "243"
+      "ratingValue": "5.0",
+      "reviewCount": "70"
     },
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "0",
-      "highPrice": "10000",
+      "lowPrice": "3500",
+      "highPrice": "28000",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2025-12-31",
       "offers": [
         {
           "@type": "Offer",
-          "name": "Free Plan",
-          "price": "0",
-          "priceCurrency": "USD",
-          "description": "Up to 3 Shopify stores, unlimited rows, no credit card required"
+          "name": "Analytics Foundation",
+          "price": "12000",
+          "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
-          "name": "Additional Stores",
-          "price": "47",
-          "priceCurrency": "USD",
-          "description": "Per store per month after 3 stores"
+          "name": "Server-Side Infrastructure",
+          "price": "18500",
+          "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
-          "name": "DIY Source Code",
-          "price": "497",
-          "priceCurrency": "USD",
-          "description": "Python source code for self-hosting"
+          "name": "Complete Data Infrastructure",
+          "price": "28000",
+          "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
-          "name": "Enterprise Setup",
-          "price": "2997",
-          "priceCurrency": "USD",
-          "description": "Done-for-you setup with custom integrations"
+          "name": "Essentials Retainer",
+          "price": "3500",
+          "priceCurrency": "USD"
         }
       ]
     },
     "author": {
       "@type": "Organization",
-      "name": "Tag Specialist",
+      "name": "TagSpecialist",
       "url": "https://tagspecialist.ca"
-    },
-    "competitor": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "Fivetran",
-        "description": "Limited to 500K rows/month on free tier"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Stitch Data",
-        "description": "Limited to 5M rows/month on free tier"
-      }
-    ]
+    }
   };
 
   return (

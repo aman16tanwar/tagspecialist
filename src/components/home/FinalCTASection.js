@@ -1,31 +1,56 @@
 import React from 'react';
-import { HiArrowRight } from 'react-icons/hi';
+import { HiArrowRight, HiCheckCircle, HiLightningBolt } from 'react-icons/hi';
 
 const FinalCTASection = () => {
   return (
-    <section className="py-20 bg-white text-center border-t border-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-8">
-          Turn Your Tracking + Data Into a <br />
+    <section className="py-32 bg-brand-highlight text-center relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600/10 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-600/20 uppercase">
+            <HiLightningBolt /> Direct Access to Lead Engineers
+        </div>
+        <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-8 leading-tight uppercase tracking-tighter">
+          Turn Your Data Into <br className="hidden md:block" />
           <span className="text-brand-accent">
-             Competitive Advantage
+             A Competitive Advantage
           </span>
         </h2>
+
+        <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+            One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Let's discuss what we can do for you.
+        </p>
         
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
            <button
              onClick={() => window.dispatchEvent(new CustomEvent('openContactForm'))}
-             className="btn-primary text-xl px-10 py-5 uppercase tracking-wide transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+             className="btn-primary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 shadow-2xl hover:shadow-blue-500/40"
            >
              Book a 15-Minute Call
-             <HiArrowRight className="ml-2 inline-block" />
+             <HiArrowRight className="ml-3 inline-block" />
            </button>
+           <a 
+             href="/case-studies"
+             className="btn-secondary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 bg-white hover:bg-gray-50 border-gray-200"
+           >
+             View Proven Results
+           </a>
         </div>
         
-        <p className="mt-8 text-gray-500 text-sm">
-          No pressure sales. Just technical consultation.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-gray-200 pt-12">
+            <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
+                <HiCheckCircle className="text-green-500 text-lg" /> No Account Managers
+            </div>
+            <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
+                <HiCheckCircle className="text-green-500 text-lg" /> ROI-First Approach
+            </div>
+            <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest text-red-600/60">
+                <HiCheckCircle className="text-red-500 text-lg" /> Selective Onboarding
+            </div>
+        </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] -ml-48 -mt-48"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-[100px] -mr-48 -mb-48"></div>
     </section>
   );
 };
