@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   HiMail, HiLocationMarker, HiChevronRight
 } from 'react-icons/hi';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import Logo from '../brand/Logo';
 
 const Footer = () => {
@@ -65,9 +65,9 @@ const Footer = () => {
                 { name: 'About Us', link: '/about' },
                 { name: 'Case Studies', link: '/case-studies' },
                 { name: 'Blog', link: '/blogs' },
-                { name: 'Careers', link: '/#' },
-                { name: 'Agency Partners', link: '/#' },
-                { name: 'Contact', link: '/#' }
+                { name: 'Privacy Policy', link: '/privacy-policy' },
+                { name: 'Terms of Service', link: '/terms-of-service' },
+                { name: 'Refund Policy', link: '/refund-policy' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link to={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">
@@ -84,13 +84,13 @@ const Footer = () => {
             <h4 className="text-sm font-black text-navy-900 mb-8 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Get in Touch</h4>
             <ul className="space-y-6 mb-10">
               <li>
-                <a href="mailto:hello@tagspecialist.ca" className="flex items-start gap-4 group">
+                <a href="mailto:developer@tagspecialist.ca" className="flex items-start gap-4 group">
                   <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                     <HiMail size={20} />
                   </div>
                   <div>
                     <span className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Email Us</span>
-                    <span className="text-navy-900 font-bold text-sm">hello@tagspecialist.ca</span>
+                    <span className="text-navy-900 font-bold text-sm">developer@tagspecialist.ca</span>
                   </div>
                 </a>
               </li>
@@ -117,12 +117,6 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com/company/tagspecialist" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
-                <FaLinkedin size={18} />
-              </a>
-              <a href="https://twitter.com/tagspecialist" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition-all shadow-sm">
-                <FaTwitter size={18} />
-              </a>
               <a href="https://github.com/tagspecialist" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-navy-900 hover:text-white transition-all shadow-sm">
                 <FaGithub size={18} />
               </a>
