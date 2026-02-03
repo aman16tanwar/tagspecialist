@@ -1,13 +1,15 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
     HiDatabase,
     HiArrowRight,
     HiLightningBolt,
     HiStar,
     HiCheckCircle,
-    HiShieldCheck
+    HiShieldCheck,
+    HiBookOpen
 } from 'react-icons/hi';
 import { useModal } from '@/contexts/ModalContext';
 import { IconType } from 'react-icons';
@@ -27,6 +29,8 @@ interface Service {
     deliverables: string[];
     pricing: string;
     timeline: string;
+    guideLink?: string;
+    guideLinkText?: string;
 }
 
 const ServicesSection: React.FC = () => {
@@ -59,7 +63,9 @@ const ServicesSection: React.FC = () => {
                 "30-day post-launch support & QA"
             ],
             pricing: "$18,500 (one-time)",
-            timeline: "3-4 weeks"
+            timeline: "3-4 weeks",
+            guideLink: "/server-side-tagging-guide",
+            guideLinkText: "Read Our Complete Server-Side Tagging Guide"
         },
         {
             title: "Enterprise Data & AI Warehouse",
@@ -187,6 +193,16 @@ const ServicesSection: React.FC = () => {
                                             </li>
                                         ))}
                                     </ul>
+                                    {service.guideLink && (
+                                        <Link
+                                            href={service.guideLink}
+                                            className="inline-flex items-center gap-2 mt-4 text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+                                        >
+                                            <HiBookOpen className="w-4 h-4" />
+                                            <span className="underline underline-offset-2">{service.guideLinkText}</span>
+                                            <HiArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                                        </Link>
+                                    )}
                                 </div>
 
                                 <div className="pt-8 border-t border-gray-200 mt-auto">

@@ -74,6 +74,21 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+
+            <h4 className="text-sm font-black text-navy-900 mt-10 mb-6 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Resources</h4>
+            <ul className="space-y-4">
+              {[
+                { name: 'Server-Side Tagging Guide', link: '/server-side-tagging-guide' },
+                { name: 'Data Security', link: '/data-security' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">
+                    <HiChevronRight className="mr-1 group-hover:translate-x-1 transition-transform" />
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>
