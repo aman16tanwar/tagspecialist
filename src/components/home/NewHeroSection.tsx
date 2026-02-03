@@ -69,7 +69,7 @@ const NewHeroSection: React.FC = () => {
              </ul>
 
              <Link
-               href="/book-audit"
+               href="/book-audit?service=tracking"
                className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors w-full sm:w-auto shadow-lg hover:shadow-orange-500/25"
              >
                Fix My Tracking
@@ -116,8 +116,8 @@ const NewHeroSection: React.FC = () => {
              </ul>
 
              <Link
-               href="/book-audit"
-               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors w-full sm:w-auto shadow-lg hover:shadow-orange-500/25"
+               href="/book-audit?service=data-engineering"
+               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto shadow-lg hover:shadow-blue-500/25"
              >
                Build My Pipeline
                <HiArrowRight className="ml-2 w-5 h-5" />
