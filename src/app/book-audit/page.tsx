@@ -5,8 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HiCheck, HiArrowRight, HiLightningBolt, HiDatabase } from 'react-icons/hi';
 import { useModal } from '@/contexts/ModalContext';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 
 type ServiceType = 'tracking' | 'data-engineering';
 
@@ -198,7 +196,6 @@ function BookAuditContent() {
 
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-white pt-24">
         <div className="content-container section-padding">
           {/* Service Type Selector */}
@@ -494,7 +491,6 @@ function BookAuditContent() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
