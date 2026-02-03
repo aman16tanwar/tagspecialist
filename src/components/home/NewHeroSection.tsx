@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { HiArrowRight, HiLightningBolt, HiDatabase } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import { useModal } from '@/contexts/ModalContext';
 
 const NewHeroSection: React.FC = () => {
-  const { openContactForm } = useModal();
 
   return (
     <section className="relative bg-brand-highlight pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -69,13 +68,13 @@ const NewHeroSection: React.FC = () => {
                </li>
              </ul>
 
-             <button
-               onClick={() => openContactForm({ service: 'Analytics & Tracking' })}
-               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto"
+             <Link
+               href="/book-audit"
+               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors w-full sm:w-auto shadow-lg hover:shadow-orange-500/25"
              >
                Fix My Tracking
                <HiArrowRight className="ml-2 w-5 h-5" />
-             </button>
+             </Link>
           </motion.div>
 
           {/* Right Column: Data Engineering */}
@@ -86,10 +85,10 @@ const NewHeroSection: React.FC = () => {
             className="bg-navy-900 rounded-2xl p-8 lg:p-12 border border-navy-800 shadow-lg hover:shadow-xl transition-shadow flex flex-col items-start text-left relative overflow-hidden group"
           >
              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <HiDatabase className="w-32 h-32 text-green-400" />
+                <HiDatabase className="w-32 h-32 text-blue-400" />
              </div>
 
-             <div className="bg-navy-800 p-3 rounded-lg mb-6 text-green-400">
+             <div className="bg-navy-800 p-3 rounded-lg mb-6 text-blue-400">
                <HiDatabase className="w-8 h-8" />
              </div>
 
@@ -103,26 +102,26 @@ const NewHeroSection: React.FC = () => {
 
              <ul className="space-y-3 mb-8 text-white font-bold uppercase text-[10px] tracking-widest">
                <li className="flex items-center gap-2">
-                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
                  Shopify to BigQuery Pipelines
                </li>
                <li className="flex items-center gap-2">
-                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
                  Custom ETL/ELT (Python/SQL)
                </li>
                <li className="flex items-center gap-2">
-                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
                  AI Analytics Agents (LangChain)
                </li>
              </ul>
 
-             <button
-               onClick={() => openContactForm({ service: 'Data Engineering' })}
-               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-green-500 text-navy-900 font-bold rounded-lg hover:bg-green-400 transition-colors w-full sm:w-auto"
+             <Link
+               href="/book-audit"
+               className="mt-auto inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors w-full sm:w-auto shadow-lg hover:shadow-orange-500/25"
              >
                Build My Pipeline
                <HiArrowRight className="ml-2 w-5 h-5" />
-             </button>
+             </Link>
           </motion.div>
 
         </div>

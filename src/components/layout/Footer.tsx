@@ -1,13 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import { HiMail, HiLocationMarker, HiChevronRight } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 import Logo from '../brand/Logo';
-import { useModal } from '@/contexts/ModalContext';
 
 const Footer = () => {
-  const { openContactForm } = useModal();
 
   return (
     <footer className="bg-white border-t border-gray-100">
@@ -30,7 +26,7 @@ const Footer = () => {
                 <span className="text-blue-500 text-lg leading-none">🏷️</span> GTM Expert
               </div>
               <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
-                <span className="text-green-500 text-lg leading-none">🔒</span> GDPR Compliant
+                <span className="text-blue-500 text-lg leading-none">🔒</span> GDPR Compliant
               </div>
             </div>
           </div>
@@ -119,12 +115,12 @@ const Footer = () => {
             </ul>
 
             <div className="mb-8">
-              <button
-                onClick={() => openContactForm()}
-                className="w-full py-4 bg-blue-600 text-white font-black rounded-xl uppercase text-xs tracking-widest hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/25"
+              <Link
+                href="/book-audit"
+                className="block w-full py-4 bg-orange-500 text-white font-black rounded-xl uppercase text-xs tracking-widest hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 text-center"
               >
                 Book Free Audit →
-              </button>
+              </Link>
             </div>
 
             <div className="flex items-center gap-4">

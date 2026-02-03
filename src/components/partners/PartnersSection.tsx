@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import {
     HiShieldCheck,
     HiTrendingUp,
@@ -12,7 +13,6 @@ import {
     HiCheckCircle
 } from 'react-icons/hi';
 import { IconType } from 'react-icons';
-import { useModal } from '@/contexts/ModalContext';
 
 interface PartnerModel {
     title: string;
@@ -30,7 +30,6 @@ interface Capability {
 }
 
 const PartnersSection: React.FC = () => {
-    const { openContactForm } = useModal();
 
     const models: PartnerModel[] = [
         {
@@ -125,15 +124,12 @@ const PartnersSection: React.FC = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <button
-                                    onClick={() => openContactForm({
-                                        service: `Partner - ${model.title}`,
-                                        leadType: 'Partner'
-                                    })}
-                                    className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest transition-all ${model.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20' : 'bg-navy-900 text-white hover:bg-navy-800 shadow-lg shadow-navy-900/20'}`}
+                                <Link
+                                    href="/book-audit"
+                                    className={`block w-full py-5 rounded-2xl font-black uppercase tracking-widest transition-all text-center ${model.color === 'blue' ? 'bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20' : 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg shadow-orange-500/20'}`}
                                 >
                                     Apply to Partner
-                                </button>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
@@ -147,12 +143,12 @@ const PartnersSection: React.FC = () => {
                     <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
                         Schedule a partner discovery call. We&apos;ll show you how we&apos;ve helped agencies deliver 451% ROAS under their own brand.
                     </p>
-                    <button
-                        onClick={() => openContactForm({ service: 'Partner Discovery Call' })}
-                        className="btn-primary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black shadow-xl"
+                    <Link
+                        href="/book-audit"
+                        className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-md uppercase tracking-[0.2em] font-black shadow-xl hover:shadow-orange-500/25 inline-flex items-center transition-all"
                     >
                         Book Partner Call <HiArrowRight className="inline-block ml-2" />
-                    </button>
+                    </Link>
                     {/* Decorative */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
                 </div>

@@ -11,7 +11,6 @@ import {
     HiShieldCheck,
     HiBookOpen
 } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
 import { IconType } from 'react-icons';
 
 interface Service {
@@ -34,7 +33,6 @@ interface Service {
 }
 
 const ServicesSection: React.FC = () => {
-    const { openContactForm } = useModal();
 
     const services: Service[] = [
         {
@@ -220,17 +218,17 @@ const ServicesSection: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-center gap-2 text-[10px] text-gray-500 mb-4 justify-center font-bold uppercase tracking-widest">
-                                        <HiShieldCheck className="text-green-500 text-base" />
+                                        <HiShieldCheck className="text-blue-500 text-base" />
                                         <span>30-Day Satisfaction Guarantee</span>
                                     </div>
 
-                                    <button
-                                        onClick={() => openContactForm({ service: service.title })}
-                                        className={`w-full py-4 ${service.buttonColor} text-white font-black rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group uppercase text-xs tracking-[0.2em] shadow-lg hover:shadow-blue-500/25`}
+                                    <Link
+                                        href="/book-audit"
+                                        className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group uppercase text-xs tracking-[0.2em] shadow-lg hover:shadow-orange-500/25"
                                     >
                                         <span>Reserve Your Build Slot</span>
                                         <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         );

@@ -36,8 +36,8 @@ const CapabilitiesSection: React.FC = () => {
         {
             icon: HiChartBar,
             title: "ANALYTICS",
-            color: "text-green-600",
-            bg: "bg-green-50",
+            color: "text-blue-600",
+            bg: "bg-blue-50",
             features: ["Attribution", "LTV Modeling", "ML Insights", "Exec Dashboards"]
         },
         {

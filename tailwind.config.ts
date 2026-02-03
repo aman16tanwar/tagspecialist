@@ -8,6 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Open Sans', 'sans-serif'],
+      },
+      fontSize: {
+        // Fluid typography scale
+        'h1-mobile': ['32px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'h1-desktop': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'h2-mobile': ['26px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'h2-desktop': ['36px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'h3-mobile': ['22px', { lineHeight: '1.3', fontWeight: '700' }],
+        'h3-desktop': ['28px', { lineHeight: '1.3', fontWeight: '700' }],
+        'body': ['18px', { lineHeight: '1.6' }],
+        'body-sm': ['16px', { lineHeight: '1.6' }],
+      },
+      spacing: {
+        // Section spacing
+        'section-mobile': '40px',
+        'section-desktop': '80px',
+        'section-gap': '60px',
+      },
+      maxWidth: {
+        'content': '1200px',
+      },
       colors: {
         navy: {
           50: '#f0f4f8',

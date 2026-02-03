@@ -13,7 +13,7 @@ import {
   HiChevronDown,
   HiChevronUp
 } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
+import Link from 'next/link';
 
 interface PricingTier {
   name: string;
@@ -39,7 +39,6 @@ interface Stat {
 export default function ManagedTrackingLanding() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [adSpend, setAdSpend] = useState<number>(5000);
-  const { openContactForm } = useModal();
 
   const stats: Stat[] = [
     { value: '40-70%', label: 'Conversion data lost to blockers', source: 'Industry Average' },
@@ -171,12 +170,12 @@ export default function ManagedTrackingLanding() {
                 Ad blockers and iOS privacy are killing your campaign performance. We fix it with server-side tracking - fully managed, so you can focus on growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => openContactForm({ service: 'Managed Tracking' })}
-                  className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 text-lg"
+                <Link
+                  href="/book-audit"
+                  className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
                   Get Started - From $99/mo
-                </button>
+                </Link>
                 <a
                   href="#calculator"
                   className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all border border-white/20 text-lg"
@@ -210,7 +209,7 @@ export default function ManagedTrackingLanding() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-navy-900 text-center mb-12">
-              Your Ads Are Optimizing on <span className="text-red-500">Incomplete Data</span>
+              Your Ads Are Optimizing on <span className="text-orange-500">Incomplete Data</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -352,11 +351,11 @@ export default function ManagedTrackingLanding() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <div className="text-3xl font-black text-red-400 mb-2">~{missedConversions}</div>
+                  <div className="text-3xl font-black text-orange-400 mb-2">~{missedConversions}</div>
                   <div className="text-sm text-blue-200">Conversions you&apos;re missing/month</div>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <div className="text-3xl font-black text-green-400 mb-2">${cpaSavings.toLocaleString()}</div>
+                  <div className="text-3xl font-black text-blue-400 mb-2">${cpaSavings.toLocaleString()}</div>
                   <div className="text-sm text-blue-200">Potential CPA savings (15%)</div>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
@@ -366,12 +365,12 @@ export default function ManagedTrackingLanding() {
               </div>
 
               <div className="text-center">
-                <button
-                  onClick={() => openContactForm({ service: 'Managed Tracking - ROI Calculator' })}
-                  className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
+                <Link
+                  href="/book-audit"
+                  className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
                   Get Your Custom Analysis
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -411,26 +410,26 @@ export default function ManagedTrackingLanding() {
                     <span className="text-gray-500">/month</span>
                   </div>
                   <p className="text-sm text-gray-500 mb-6">
-                    Setup: {tier.setupFee} <span className="text-green-600 font-semibold">(free w/ annual)</span>
+                    Setup: {tier.setupFee} <span className="text-blue-600 font-semibold">(free w/ annual)</span>
                   </p>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm">
-                        <HiCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <HiCheck className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => openContactForm({ service: `Managed Tracking - ${tier.name}` })}
-                    className={`w-full py-4 rounded-xl font-bold transition-all ${
+                  <Link
+                    href="/book-audit"
+                    className={`block w-full py-4 rounded-xl font-bold transition-all text-center ${
                       tier.popular
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/25'
                         : 'bg-navy-900 text-white hover:bg-navy-800'
                     }`}
                   >
                     Get Started
-                  </button>
+                  </Link>
                   <p className="text-xs text-gray-500 text-center mt-4">Best for: {tier.bestFor}</p>
                 </div>
               </div>
@@ -438,18 +437,18 @@ export default function ManagedTrackingLanding() {
           </div>
 
           <div className="mt-12 text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-green-50 border border-green-200 rounded-full">
-              <HiShieldCheck className="w-5 h-5 text-green-600" />
-              <span className="text-green-800 font-semibold">30-Day Performance Guarantee</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-50 border border-blue-200 rounded-full">
+              <HiShieldCheck className="w-5 h-5 text-blue-600" />
+              <span className="text-blue-800 font-semibold">30-Day Performance Guarantee</span>
             </div>
             <p className="text-gray-500 text-sm">
               Need more? Overage: $50 per additional 500K pageviews. <br />
-              <button
-                onClick={() => openContactForm({ service: 'Managed Tracking - Enterprise' })}
+              <Link
+                href="/book-audit"
                 className="text-blue-600 font-semibold hover:underline"
               >
                 Contact us for Enterprise pricing
-              </button> (6+ domains or 1M+ pageviews).
+              </Link> (6+ domains or 1M+ pageviews).
             </p>
           </div>
         </div>
@@ -470,8 +469,8 @@ export default function ManagedTrackingLanding() {
               {/* Included in Setup */}
               <div className="bg-white rounded-2xl border-2 border-gray-200 p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                    <HiCheck className="w-6 h-6 text-green-600" />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <HiCheck className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-navy-900">Included in Setup Fee</h3>
                 </div>
@@ -490,7 +489,7 @@ export default function ManagedTrackingLanding() {
                     'Handover documentation',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
-                      <HiCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <HiCheck className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -539,12 +538,12 @@ export default function ManagedTrackingLanding() {
                   <p className="text-sm text-gray-600 mb-4">
                     <span className="font-semibold">Timeline:</span> 5-10 business days
                   </p>
-                  <button
-                    onClick={() => openContactForm({ service: 'Managed Tracking - Full Implementation' })}
-                    className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all text-sm"
+                  <Link
+                    href="/book-audit"
+                    className="block w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all text-sm text-center shadow-lg hover:shadow-orange-500/25"
                   >
                     Get Implementation Quote
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -595,12 +594,12 @@ export default function ManagedTrackingLanding() {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Join businesses capturing 40-70% more conversion data. Setup takes just 1-5 days.
           </p>
-          <button
-            onClick={() => openContactForm({ service: 'Managed Tracking' })}
-            className="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
+          <Link
+            href="/book-audit"
+            className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
           >
             Start Your Free Consultation
-          </button>
+          </Link>
           <p className="mt-6 text-blue-300 text-sm">
             No commitment required. We&apos;ll analyze your current setup and show you exactly what you&apos;re missing.
           </p>

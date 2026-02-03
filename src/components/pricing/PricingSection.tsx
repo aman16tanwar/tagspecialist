@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { HiCheck, HiPlus, HiShieldCheck, HiChevronDown, HiChevronUp } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useModal } from '@/contexts/ModalContext';
 
 interface SetupPackage {
   name: string;
@@ -29,7 +29,6 @@ interface Addon {
 
 const PricingSection: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const { openContactForm } = useModal();
 
   const setupPackages: SetupPackage[] = [
     {
@@ -164,7 +163,7 @@ const PricingSection: React.FC = () => {
                   <ul className="space-y-4">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-text-main">
-                        <HiCheck className="w-5 h-5 text-green-600 mr-3 mt-1 flex-shrink-0" />
+                        <HiCheck className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-sm font-bold text-navy-900">{feature}</span>
                       </li>
                     ))}
@@ -172,15 +171,15 @@ const PricingSection: React.FC = () => {
                 </div>
                 <div className="p-8 pt-0">
                   <div className="flex items-center gap-2 text-[10px] text-gray-500 mb-4 justify-center font-black uppercase tracking-widest">
-                      <HiShieldCheck className="text-green-500 text-base" />
+                      <HiShieldCheck className="text-blue-500 text-base" />
                       <span>30-Day Satisfaction Guarantee</span>
                   </div>
-                  <button
-                    onClick={() => openContactForm({ service: plan.name })}
-                    className={`w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all ${plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-500/25' : 'bg-navy-900 text-white hover:bg-navy-800'}`}
+                  <Link
+                    href="/book-audit"
+                    className={`block w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all text-center ${plan.popular ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/25' : 'bg-navy-900 text-white hover:bg-navy-800'}`}
                   >
                     Book Setup Call
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
@@ -198,24 +197,24 @@ const PricingSection: React.FC = () => {
                         <h4 className="text-blue-400 font-black uppercase text-[10px] tracking-[0.2em] mb-4">Our 15-Minute Audit Covers:</h4>
                         <ul className="space-y-3 mb-10">
                             <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
-                                <HiCheck className="text-green-400 text-xl" /> Current tracking gaps & data quality issues
+                                <HiCheck className="text-blue-400 text-xl" /> Current tracking gaps & data quality issues
                             </li>
                             <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
-                                <HiCheck className="text-green-400 text-xl" /> ROI opportunity sizing
+                                <HiCheck className="text-blue-400 text-xl" /> ROI opportunity sizing
                             </li>
                             <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
-                                <HiCheck className="text-green-400 text-xl" /> Custom package recommendation
+                                <HiCheck className="text-blue-400 text-xl" /> Custom package recommendation
                             </li>
                         </ul>
 
                         <p className="text-blue-300 text-[10px] font-black uppercase tracking-widest mb-8">Free. No obligation. No sales pitch.</p>
 
-                        <button
-                            onClick={() => openContactForm({ service: 'Free Audit' })}
-                            className="bg-blue-600 hover:bg-blue-500 text-white font-black px-10 py-5 rounded-xl transition-all shadow-xl uppercase tracking-widest text-sm"
+                        <Link
+                            href="/book-audit"
+                            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-black px-10 py-5 rounded-xl transition-all shadow-xl hover:shadow-orange-500/25 uppercase tracking-widest text-sm"
                         >
                             Book Free 15-Min Audit
-                        </button>
+                        </Link>
                     </div>
 
                     <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
@@ -232,7 +231,7 @@ const PricingSection: React.FC = () => {
                                     <div>
                                         <div className="font-black text-sm uppercase tracking-wide">{item.label}</div>
                                         <div className="text-blue-300 text-xs font-bold">{item.meta}</div>
-                                        <div className="text-green-400 text-[11px] font-black mt-1 uppercase">{item.rec}</div>
+                                        <div className="text-blue-400 text-[11px] font-black mt-1 uppercase">{item.rec}</div>
                                     </div>
                                 </div>
                             ))}

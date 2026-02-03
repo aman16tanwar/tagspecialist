@@ -3,10 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { HiArrowRight, HiCheckCircle, HiLightningBolt } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
 
 const FinalCTASection: React.FC = () => {
-  const { openContactForm } = useModal();
 
   return (
     <section className="py-32 bg-brand-highlight text-center relative overflow-hidden">
@@ -26,13 +24,13 @@ const FinalCTASection: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-           <button
-             onClick={() => openContactForm()}
-             className="btn-primary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 shadow-2xl hover:shadow-blue-500/40"
+           <Link
+             href="/book-audit"
+             className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-md uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/40 inline-flex items-center transition-all"
            >
              Book a 15-Minute Call
              <HiArrowRight className="ml-3 inline-block" />
-           </button>
+           </Link>
            <Link
              href="/case-studies"
              className="btn-secondary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 bg-white hover:bg-gray-50 border-gray-200"
@@ -43,13 +41,13 @@ const FinalCTASection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-gray-200 pt-12">
             <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
-                <HiCheckCircle className="text-green-500 text-lg" /> No Account Managers
+                <HiCheckCircle className="text-blue-500 text-lg" /> No Account Managers
             </div>
             <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
-                <HiCheckCircle className="text-green-500 text-lg" /> ROI-First Approach
+                <HiCheckCircle className="text-blue-500 text-lg" /> ROI-First Approach
             </div>
-            <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest text-red-600/60">
-                <HiCheckCircle className="text-red-500 text-lg" /> Selective Onboarding
+            <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
+                <HiCheckCircle className="text-blue-500 text-lg" /> Selective Onboarding
             </div>
         </div>
       </div>

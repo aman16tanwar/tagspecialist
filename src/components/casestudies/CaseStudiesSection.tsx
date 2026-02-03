@@ -12,7 +12,6 @@ import {
     HiCheckCircle
 } from 'react-icons/hi';
 import { IconType } from 'react-icons';
-import { useModal } from '@/contexts/ModalContext';
 
 interface CaseResult {
     label: string;
@@ -43,7 +42,6 @@ interface SupportingCase {
 }
 
 const CaseStudiesSection: React.FC = () => {
-    const { openContactForm } = useModal();
 
     const mainCase: MainCase = {
         client: "$50M DTC Fashion Brand",
@@ -56,7 +54,7 @@ const CaseStudiesSection: React.FC = () => {
             "Deployed server-side conversion tracking to bypass iOS 14.5 limitations"
         ],
         results: [
-            { label: "ROAS Increase", value: "451%", icon: HiTrendingUp, color: "text-green-600" },
+            { label: "ROAS Increase", value: "451%", icon: HiTrendingUp, color: "text-blue-600" },
             { label: "Attribution Accuracy", value: "+38%", icon: HiShieldCheck, color: "text-blue-600" },
             { label: "Monthly Revenue", value: "+$200K", icon: HiChartBar, color: "text-purple-600" }
         ],
@@ -194,12 +192,12 @@ const CaseStudiesSection: React.FC = () => {
                                 </div>
                             </div>
                         ))}
-                        <button
-                            onClick={() => openContactForm({ service: 'Attribution Infrastructure' })}
-                            className="mt-4 w-full py-5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-3 uppercase tracking-wider text-sm"
+                        <Link
+                            href="/book-audit"
+                            className="mt-4 w-full py-5 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-3 uppercase tracking-wider text-sm"
                         >
                             Get Similar Results <HiArrowRight className="text-xl" />
-                        </button>
+                        </Link>
                     </div>
                 </motion.div>
 
@@ -212,7 +210,7 @@ const CaseStudiesSection: React.FC = () => {
                         <div className="h-px w-full md:h-12 md:w-px bg-gray-300"></div>
                         {trustBadges.map((badge, i) => (
                             <div key={i} className="flex items-center gap-2 text-navy-900 font-bold">
-                                <HiCheckCircle className="text-green-500 text-xl" />
+                                <HiCheckCircle className="text-blue-500 text-xl" />
                                 <span>{badge}</span>
                             </div>
                         ))}
@@ -249,7 +247,7 @@ const CaseStudiesSection: React.FC = () => {
                             <div className="pt-6 border-t border-gray-100 mt-auto space-y-3">
                                 {item.results.map((res, i) => (
                                     <div key={i} className="flex items-start gap-2">
-                                        <HiCheckCircle className="text-green-500 w-4 h-4 mt-0.5 flex-shrink-0" />
+                                        <HiCheckCircle className="text-blue-500 w-4 h-4 mt-0.5 flex-shrink-0" />
                                         <span className="text-navy-900 font-bold text-[13px] leading-tight italic">
                                             {res}
                                         </span>
@@ -267,12 +265,12 @@ const CaseStudiesSection: React.FC = () => {
                         Every case study started with a 15-minute discovery call. We&apos;ll audit your current setup, identify quick wins, and show you exactly how we&apos;d approach your data challenges.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button
-                            onClick={() => openContactForm()}
-                            className="btn-primary"
+                        <Link
+                            href="/book-audit"
+                            className="bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-semibold transition-all shadow-sm hover:shadow-orange-500/25 inline-block"
                         >
                             Book Your Data Audit
-                        </button>
+                        </Link>
                         <Link href="/services#pricing" className="btn-secondary">
                             See Our Pricing
                         </Link>

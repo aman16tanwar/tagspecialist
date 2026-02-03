@@ -7,7 +7,6 @@ import {
     HiCheckCircle,
     HiLightningBolt
 } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
 
 interface RetainerPackage {
     name: string;
@@ -23,7 +22,6 @@ interface RetainerPackage {
 }
 
 const RetainerServices: React.FC = () => {
-    const { openContactForm } = useModal();
 
     const packages: RetainerPackage[] = [
         {
@@ -132,9 +130,9 @@ const RetainerServices: React.FC = () => {
                                     <div className="text-blue-600 font-black text-xs mb-4 uppercase tracking-[0.2em]">
                                         {pkg.hours}
                                     </div>
-                                    <div className="p-3 bg-green-50 border-l-4 border-green-500 rounded-r-lg mb-4 text-left">
-                                        <p className="text-[10px] font-black text-green-800 leading-relaxed uppercase mb-1">ROI / Value</p>
-                                        <p className="text-[11px] font-bold text-green-700 leading-tight">{pkg.value}</p>
+                                    <div className="p-3 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg mb-4 text-left">
+                                        <p className="text-[10px] font-black text-blue-800 leading-relaxed uppercase mb-1">ROI / Value</p>
+                                        <p className="text-[11px] font-bold text-blue-700 leading-tight">{pkg.value}</p>
                                     </div>
                                     <p className="text-[11px] text-gray-500 font-bold italic px-4 leading-normal">
                                         {pkg.description}
@@ -144,22 +142,22 @@ const RetainerServices: React.FC = () => {
                                 <ul className="space-y-4 mb-8 flex-grow border-t border-gray-100 pt-8">
                                     {pkg.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-3">
-                                            <HiCheckCircle className={`w-5 h-5 flex-shrink-0 ${pkg.recommended ? 'text-blue-600' : 'text-green-500'}`} />
+                                            <HiCheckCircle className={`w-5 h-5 flex-shrink-0 ${pkg.recommended ? 'text-blue-600' : 'text-blue-500'}`} />
                                             <span className="text-sm text-navy-900 font-bold leading-snug">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <button
-                                    onClick={() => openContactForm({ service: pkg.name })}
-                                    className={`w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all duration-200 ${
+                                <Link
+                                    href="/book-audit"
+                                    className={`block w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all duration-200 text-center ${
                                         pkg.recommended
-                                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-500/25'
+                                        ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/25'
                                         : 'bg-navy-900 text-white hover:bg-navy-800 shadow-md'
                                     }`}
                                 >
                                     Book Consultation
-                                </button>
+                                </Link>
                             </motion.div>
                         );
                     })}
@@ -183,12 +181,12 @@ const RetainerServices: React.FC = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                            <button
-                                onClick={() => openContactForm({ service: 'Retainer Consultation' })}
-                                className="px-12 py-6 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-500/40 uppercase tracking-[0.2em] text-sm"
+                            <Link
+                                href="/book-audit"
+                                className="inline-block px-12 py-6 bg-orange-500 text-white font-black rounded-xl hover:bg-orange-600 transition-all shadow-xl hover:shadow-orange-500/40 uppercase tracking-[0.2em] text-sm"
                             >
                                 Book Free Data Audit
-                            </button>
+                            </Link>
                             <Link
                                 href="/case-studies"
                                 className="px-12 py-6 bg-white/5 text-white font-black rounded-xl hover:bg-white/10 transition-all border border-white/20 uppercase tracking-[0.2em] text-sm backdrop-blur-sm"
@@ -199,13 +197,13 @@ const RetainerServices: React.FC = () => {
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-xs font-black uppercase tracking-[0.2em] text-blue-200/40 border-t border-white/10 pt-12">
                             <div className="flex items-center justify-center gap-2">
-                                <HiCheckCircle className="text-green-500 text-lg" /> 15-Min Consultation
+                                <HiCheckCircle className="text-blue-400 text-lg" /> 15-Min Consultation
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <HiCheckCircle className="text-green-500 text-lg" /> No sales pitch
+                                <HiCheckCircle className="text-blue-400 text-lg" /> No sales pitch
                             </div>
-                            <div className="flex items-center justify-center gap-2 text-red-400/60">
-                                <HiCheckCircle className="text-red-500 text-lg" /> Limited Q1 spots
+                            <div className="flex items-center justify-center gap-2">
+                                <HiCheckCircle className="text-blue-400 text-lg" /> Direct Expert Access
                             </div>
                         </div>
                     </div>

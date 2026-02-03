@@ -9,7 +9,6 @@ import {
 } from 'react-icons/hi';
 import { FaShopify } from 'react-icons/fa';
 import { SiGooglecloud } from 'react-icons/si';
-import { useModal } from '@/contexts/ModalContext';
 import { IconType } from 'react-icons';
 
 interface Feature {
@@ -31,8 +30,6 @@ interface FAQ {
 }
 
 const ShopifyBigQueryLanding = () => {
-    const { openContactForm } = useModal();
-
     const features: Feature[] = [
         {
             icon: HiDatabase,
@@ -56,9 +53,7 @@ const ShopifyBigQueryLanding = () => {
         }
     ];
 
-    const handleOpenContactForm = () => {
-        openContactForm({ service: 'Shopify BigQuery Pipeline' });
-    };
+    const bookAuditLink = "/book-audit";
 
     return (
         <>
@@ -73,7 +68,7 @@ const ShopifyBigQueryLanding = () => {
                     >
                         {/* Logos */}
                         <div className="flex items-center justify-center gap-4 mb-8">
-                            <FaShopify className="w-12 h-12 text-green-500" />
+                            <FaShopify className="w-12 h-12 text-blue-500" />
                             <HiArrowRight className="w-8 h-8 text-gray-400" />
                             <SiGooglecloud className="w-12 h-12 text-blue-500" />
                         </div>
@@ -91,14 +86,14 @@ const ShopifyBigQueryLanding = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                            <button
-                                onClick={handleOpenContactForm}
-                                className="group px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-sm shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2 uppercase text-sm tracking-wide"
+                            <Link
+                                href={bookAuditLink}
+                                className="group px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transform transition-all duration-200 hover:scale-105 flex items-center gap-2 uppercase text-sm tracking-wide"
                             >
                                 <HiSparkles className="w-5 h-5" />
                                 Start Free (3 Stores)
                                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </Link>
 
                             <Link
                                 href="/blog/shopify-bigquery-pipeline-tutorial"
@@ -176,52 +171,52 @@ const ShopifyBigQueryLanding = () => {
                                     <th className="text-left py-4 px-6 text-navy-900 font-semibold"></th>
                                     <th className="text-center py-4 px-6 text-navy-900 font-semibold">Fivetran</th>
                                     <th className="text-center py-4 px-6 text-navy-900 font-semibold">Stitch Data</th>
-                                    <th className="text-center py-4 px-6 text-green-600 font-semibold">Our Solution</th>
+                                    <th className="text-center py-4 px-6 text-blue-600 font-semibold">Our Solution</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr className="border-t border-gray-200">
                                     <td className="py-4 px-6 text-gray-700 font-medium">Free Tier Limit</td>
-                                    <td className="py-4 px-6 text-center text-red-600">500K rows/mo</td>
+                                    <td className="py-4 px-6 text-center text-gray-500">500K rows/mo</td>
                                     <td className="py-4 px-6 text-center text-orange-600">5M rows/mo</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-semibold">UNLIMITED</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-semibold">UNLIMITED</td>
                                 </tr>
                                 <tr className="border-t border-gray-200 bg-gray-50">
                                     <td className="py-4 px-6 text-gray-700 font-medium">Reality Check</td>
                                     <td className="py-4 px-6 text-center text-gray-600">= 1 week of data</td>
                                     <td className="py-4 px-6 text-center text-gray-600">= 1 month of data</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-medium">All your data</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-medium">All your data</td>
                                 </tr>
                                 <tr className="border-t border-gray-200">
                                     <td className="py-4 px-6 text-gray-700 font-medium">After &quot;Free&quot; Tier</td>
-                                    <td className="py-4 px-6 text-center text-red-600">$120-500/mo</td>
+                                    <td className="py-4 px-6 text-center text-gray-500">$120-500/mo</td>
                                     <td className="py-4 px-6 text-center text-orange-600">$100-300/mo</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-medium">$50/mo hosting</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-medium">$50/mo hosting</td>
                                 </tr>
                                 <tr className="border-t border-gray-200 bg-gray-50">
                                     <td className="py-4 px-6 text-gray-700 font-medium">Annual Cost</td>
-                                    <td className="py-4 px-6 text-center text-red-600">$1,440-6,000</td>
+                                    <td className="py-4 px-6 text-center text-gray-500">$1,440-6,000</td>
                                     <td className="py-4 px-6 text-center text-orange-600">$1,200-3,600</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-bold">$600 total</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-bold">$600 total</td>
                                 </tr>
                                 <tr className="border-t border-gray-200">
                                     <td className="py-4 px-6 text-gray-700 font-medium">Infrastructure</td>
                                     <td className="py-4 px-6 text-center text-gray-600">Their cloud</td>
                                     <td className="py-4 px-6 text-center text-gray-600">Their cloud</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-medium">YOUR cloud</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-medium">YOUR cloud</td>
                                 </tr>
                                 <tr className="border-t border-gray-200 bg-gray-50">
                                     <td className="py-4 px-6 text-gray-700 font-medium">Vendor Lock-in</td>
-                                    <td className="py-4 px-6 text-center text-red-600">High</td>
+                                    <td className="py-4 px-6 text-center text-gray-500">High</td>
                                     <td className="py-4 px-6 text-center text-orange-600">High</td>
-                                    <td className="py-4 px-6 text-center text-green-600 font-medium">None</td>
+                                    <td className="py-4 px-6 text-center text-blue-600 font-medium">None</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                        <p className="text-green-800 text-lg">
+                    <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                        <p className="text-blue-800 text-lg">
                             <strong>You save $1,200-5,400 per year</strong> while getting unlimited data
                         </p>
                     </div>
@@ -346,7 +341,7 @@ const ShopifyBigQueryLanding = () => {
                     <div className="bg-white/5 rounded-lg p-8 border border-white/10 mb-8">
                         <div className="grid md:grid-cols-3 gap-6 text-center">
                             <div>
-                                <div className="text-4xl font-bold text-green-400 mb-2">$0</div>
+                                <div className="text-4xl font-bold text-blue-400 mb-2">$0</div>
                                 <p className="text-gray-400">For up to 3 stores</p>
                             </div>
                             <div>
@@ -360,14 +355,14 @@ const ShopifyBigQueryLanding = () => {
                         </div>
                     </div>
 
-                    <button
-                        onClick={handleOpenContactForm}
-                        className="group px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-sm shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 flex items-center gap-2 mx-auto uppercase text-sm tracking-wide"
+                    <Link
+                        href={bookAuditLink}
+                        className="group px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transform transition-all duration-200 hover:scale-105 flex items-center gap-2 mx-auto uppercase text-sm tracking-wide"
                     >
                         <HiSparkles className="w-5 h-5" />
                         Start Your Free Pipeline Now
                         <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
 
                     <p className="text-sm text-gray-400 mt-4">
                         No credit card - No hidden fees - Cancel anytime

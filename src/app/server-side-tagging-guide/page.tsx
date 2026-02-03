@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { HiCheckCircle, HiCheck, HiShieldCheck, HiChevronDown } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
 
 const navItems = [
   { id: 'executive-summary', label: 'Executive Summary' },
@@ -23,7 +23,6 @@ export default function ServerSideTaggingGuidePage() {
   const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
   const [activeSection, setActiveSection] = useState('executive-summary');
   const [visitedSections, setVisitedSections] = useState<Set<string>>(new Set(['executive-summary']));
-  const { openContactForm } = useModal();
 
   // ROI Calculator state
   const [monthlyTraffic, setMonthlyTraffic] = useState(100000);
@@ -680,11 +679,11 @@ export default function ServerSideTaggingGuidePage() {
                               </ul>
                             </div>
                             <div>
-                              <h4 className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">CONS</h4>
+                              <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">CONS</h4>
                               <ul className="space-y-1 text-sm text-gray-600">
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Requires technical expertise</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Self-managed infrastructure</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Limited native support for non-Google vendors</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Requires technical expertise</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Self-managed infrastructure</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Limited native support for non-Google vendors</li>
                               </ul>
                             </div>
                           </div>
@@ -760,11 +759,11 @@ export default function ServerSideTaggingGuidePage() {
                               </ul>
                             </div>
                             <div>
-                              <h4 className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">CONS</h4>
+                              <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">CONS</h4>
                               <ul className="space-y-1 text-sm text-gray-600">
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Higher cost at scale</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Learning curve</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Vendor lock-in concerns</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Higher cost at scale</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Learning curve</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Vendor lock-in concerns</li>
                               </ul>
                             </div>
                           </div>
@@ -839,11 +838,11 @@ export default function ServerSideTaggingGuidePage() {
                               </ul>
                             </div>
                             <div>
-                              <h4 className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">CONS</h4>
+                              <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">CONS</h4>
                               <ul className="space-y-1 text-sm text-gray-600">
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Less customization</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Third-party dependency</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Limited enterprise features</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Less customization</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Third-party dependency</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Limited enterprise features</li>
                               </ul>
                             </div>
                           </div>
@@ -918,11 +917,11 @@ export default function ServerSideTaggingGuidePage() {
                               </ul>
                             </div>
                             <div>
-                              <h4 className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">CONS</h4>
+                              <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">CONS</h4>
                               <ul className="space-y-1 text-sm text-gray-600">
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> High cost</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Complex implementation</li>
-                                <li className="flex items-start gap-1"><span className="text-red-500">-</span> Long sales cycle</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> High cost</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Complex implementation</li>
+                                <li className="flex items-start gap-1"><span className="text-gray-400">-</span> Long sales cycle</li>
                               </ul>
                             </div>
                           </div>
@@ -1654,18 +1653,18 @@ export default function ServerSideTaggingGuidePage() {
                 </p>
 
                 <div className="flex gap-4">
-                  <button
-                    onClick={() => openContactForm({ service: 'Server-Side Tagging' })}
-                    className="px-6 py-3 bg-[#2563eb] text-white font-semibold rounded-lg hover:bg-[#1d4ed8] transition-colors"
+                  <Link
+                    href="/book-audit"
+                    className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-500/25"
                   >
                     Get Started Today
-                  </button>
-                  <button
-                    onClick={() => openContactForm({ service: 'Server-Side Tagging Consultation' })}
-                    className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-50 transition-colors border border-[#bfdbfe]"
+                  </Link>
+                  <Link
+                    href="/book-audit"
+                    className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-50 transition-colors border border-gray-200"
                   >
                     Schedule Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
               </div>

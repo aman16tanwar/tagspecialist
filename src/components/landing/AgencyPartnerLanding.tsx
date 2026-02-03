@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import {
   HiCheck,
   HiCurrencyDollar,
@@ -10,7 +11,6 @@ import {
   HiTrendingUp,
   HiShieldCheck,
 } from 'react-icons/hi';
-import { useModal } from '@/contexts/ModalContext';
 
 interface PartnerTier {
   name: string;
@@ -21,7 +21,6 @@ interface PartnerTier {
 }
 
 export default function AgencyPartnerLanding() {
-  const { openContactForm } = useModal();
 
   const partnerTiers: PartnerTier[] = [
     {
@@ -123,22 +122,22 @@ export default function AgencyPartnerLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-2 bg-green-500/20 border border-green-400/30 rounded-full text-green-300 text-sm font-bold uppercase tracking-wider mb-6">
+              <span className="inline-block px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-bold uppercase tracking-wider mb-6">
                 Agency Partner Program
               </span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
-                Add <span className="text-green-400">$500-2,000/mo</span> to Your Agency Revenue
+                Add <span className="text-blue-400">$500-2,000/mo</span> to Your Agency Revenue
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
                 Offer server-side tracking to your clients. We handle the tech, you keep the margin. White-label available.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => openContactForm({ service: 'Agency Partner Program', leadType: 'Partner' })}
-                  className="px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-green-500/25 text-lg"
+                <Link
+                  href="/book-audit"
+                  className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
                   Apply for Partnership
-                </button>
+                </Link>
                 <a
                   href="#calculator"
                   className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all border border-white/20 text-lg"
@@ -165,8 +164,8 @@ export default function AgencyPartnerLanding() {
             <div className="grid md:grid-cols-3 gap-8">
               {benefits.map((benefit, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                    <benefit.icon className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <benefit.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="font-bold text-navy-900 mb-2">{benefit.title}</h3>
                   <p className="text-gray-600 text-sm">{benefit.desc}</p>
@@ -178,48 +177,48 @@ export default function AgencyPartnerLanding() {
       </section>
 
       {/* Earnings Calculator */}
-      <section id="calculator" className="py-20 bg-gradient-to-br from-green-900 to-green-800 text-white">
+      <section id="calculator" className="py-20 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-center mb-4 text-white">
               Partner Earnings Calculator
             </h2>
-            <p className="text-xl text-green-100 text-center mb-12">
+            <p className="text-xl text-blue-100 text-center mb-12">
               See what you could earn as a Tag Specialist partner
             </p>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
               <div className="text-center mb-8">
-                <p className="text-green-200 mb-2">Example: 10 clients on Growth tier ($199/mo)</p>
-                <p className="text-green-200 mb-4">Your cost: $149/mo per client (25% partner discount)</p>
+                <p className="text-blue-200 mb-2">Example: 10 clients on Growth tier ($199/mo)</p>
+                <p className="text-blue-200 mb-4">Your cost: $149/mo per client (25% partner discount)</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <div className="text-4xl font-black text-green-400 mb-2">${earnings.monthly}</div>
-                  <div className="text-sm text-green-200">Monthly Profit</div>
+                  <div className="text-4xl font-black text-blue-400 mb-2">${earnings.monthly}</div>
+                  <div className="text-sm text-blue-200">Monthly Profit</div>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <div className="text-4xl font-black text-green-400 mb-2">${earnings.annual.toLocaleString()}</div>
-                  <div className="text-sm text-green-200">Annual Profit</div>
+                  <div className="text-4xl font-black text-blue-400 mb-2">${earnings.annual.toLocaleString()}</div>
+                  <div className="text-sm text-blue-200">Annual Profit</div>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <div className="text-4xl font-black text-green-400 mb-2">0 hrs</div>
-                  <div className="text-sm text-green-200">Technical Work</div>
+                  <div className="text-4xl font-black text-blue-400 mb-2">0 hrs</div>
+                  <div className="text-sm text-blue-200">Technical Work</div>
                 </div>
               </div>
 
-              <div className="text-center text-green-200 text-sm mb-8">
+              <div className="text-center text-blue-200 text-sm mb-8">
                 * Actual margins vary by tier and volume. Enterprise partners can negotiate custom rates.
               </div>
 
               <div className="text-center">
-                <button
-                  onClick={() => openContactForm({ service: 'Agency Partner - Custom Quote', leadType: 'Partner' })}
-                  className="px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
+                <Link
+                  href="/book-audit"
+                  className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
                   Get Your Custom Partner Quote
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -243,11 +242,11 @@ export default function AgencyPartnerLanding() {
               <div
                 key={i}
                 className={`bg-white rounded-2xl shadow-lg border-2 ${
-                  i === 1 ? 'border-green-600 scale-105 relative z-10' : 'border-gray-200'
+                  i === 1 ? 'border-blue-600 scale-105 relative z-10' : 'border-gray-200'
                 } overflow-hidden`}
               >
                 {i === 1 && (
-                  <div className="bg-green-600 text-white text-center py-2 text-xs font-bold uppercase tracking-wider">
+                  <div className="bg-blue-600 text-white text-center py-2 text-xs font-bold uppercase tracking-wider">
                     Most Popular
                   </div>
                 )}
@@ -255,30 +254,30 @@ export default function AgencyPartnerLanding() {
                   <h3 className="text-2xl font-bold text-navy-900 mb-2">{tier.name}</h3>
                   <p className="text-gray-500 text-sm mb-4">{tier.clients}</p>
                   <div className="mb-4">
-                    <span className="text-3xl font-black text-green-600">{tier.discount}</span>
+                    <span className="text-3xl font-black text-blue-600">{tier.discount}</span>
                     <span className="text-gray-500 ml-2">all tiers</span>
                   </div>
-                  <p className="text-sm text-green-700 font-semibold mb-6 bg-green-50 px-3 py-2 rounded-lg">
+                  <p className="text-sm text-blue-700 font-semibold mb-6 bg-blue-50 px-3 py-2 rounded-lg">
                     {tier.margin}/mo
                   </p>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm">
-                        <HiCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <HiCheck className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => openContactForm({ service: `Agency Partner - ${tier.name}`, leadType: 'Partner' })}
-                    className={`w-full py-4 rounded-xl font-bold transition-all ${
+                  <Link
+                    href="/book-audit"
+                    className={`block w-full py-4 rounded-xl font-bold transition-all text-center ${
                       i === 1
-                        ? 'bg-green-600 text-white hover:bg-green-700'
+                        ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/25'
                         : 'bg-navy-900 text-white hover:bg-navy-800'
                     }`}
                   >
                     Apply Now
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -318,7 +317,7 @@ export default function AgencyPartnerLanding() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-lg">{item.step}</span>
                   </div>
                   <div>
@@ -341,12 +340,12 @@ export default function AgencyPartnerLanding() {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Join agencies earning $500-2,000+/month in passive revenue. No technical expertise required.
           </p>
-          <button
-            onClick={() => openContactForm({ service: 'Agency Partner Program', leadType: 'Partner' })}
-            className="px-10 py-5 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
+          <Link
+            href="/book-audit"
+            className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
           >
             Apply for Partnership
-          </button>
+          </Link>
           <p className="mt-6 text-blue-300 text-sm">
             No commitment to apply. We&apos;ll schedule a call to discuss if it&apos;s a good fit.
           </p>

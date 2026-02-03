@@ -145,7 +145,7 @@ const TestimonialsSection: React.FC = () => {
                         <p className="text-sm text-gray-500">
                             {testimonial.role} - {testimonial.company}
                         </p>
-                        <p className="text-xs text-green-600 mt-1 font-medium">
+                        <p className="text-xs text-blue-600 mt-1 font-medium">
                             Verified Client
                         </p>
                     </div>

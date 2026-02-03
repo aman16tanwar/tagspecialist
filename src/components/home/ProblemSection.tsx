@@ -29,7 +29,7 @@ const ProblemSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-6 uppercase tracking-tighter">
-            Why Leading Brands <span className="text-red-600 underline decoration-red-600/20 underline-offset-8">Struggle</span>
+            Why Leading Brands <span className="text-gray-500 underline decoration-gray-400/20 underline-offset-8">Struggle</span>
           </h2>
           <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
             Data engineering is difficult. Most marketing teams are flying blind with broken attribution, inconsistent tracking, and manual reporting.
@@ -40,8 +40,8 @@ const ProblemSection: React.FC = () => {
           {problems.map((item, index) => {
             const IconComponent = item.icon;
             return (
-              <div key={index} className="flex items-start p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-red-500/30 transition-all shadow-sm hover:shadow-xl group">
-                <div className="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mr-6 group-hover:bg-red-600 group-hover:text-white transition-colors text-red-600">
+              <div key={index} className="flex items-start p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-6 group-hover:bg-navy-900 group-hover:text-white transition-colors text-gray-500">
                   <IconComponent className="w-6 h-6" />
                 </div>
                 <p className="text-navy-900 font-bold text-lg leading-snug pt-1">{item.text}</p>
