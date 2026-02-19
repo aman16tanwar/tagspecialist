@@ -142,34 +142,30 @@ function BookAuditContent() {
     setIsSubmitting(true);
 
     const isTracking = serviceType === 'tracking';
-    const subject = isTracking
-      ? `TRACKING AUDIT REQUEST: ${formData.name} - ${formData.company}`
-      : `DATA ENGINEERING INQUIRY: ${formData.name} - ${formData.company}`;
-
-    const message = isTracking
-      ? `TRACKING AUDIT REQUEST\n\nService: Marketing Analytics & Tracking\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nMonthly Ad Spend: ${formData.adSpend}\n\nBiggest Tracking Challenge:\n${formData.trackingChallenge}`
-      : `DATA ENGINEERING INQUIRY\n\nService: Data Engineering & AI\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nPrimary Data Source: ${formData.dataSource}\nProject Scope: ${formData.projectScope}\n\nProject Details:\n${formData.engineeringChallenge}`;
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '281edfc6-1b7f-429f-a500-da5b83ede63e',
           name: formData.name,
           email: formData.email,
-          subject: subject,
-          from_email: 'developer@tagspecialist.ca',
-          message: message
+          company: formData.company,
+          service_type: serviceType,
+          budget: isTracking ? formData.adSpend : null,
+          pain_point: isTracking ? formData.trackingChallenge : formData.engineeringChallenge,
+          message: isTracking 
+            ? `Data Source: ${formData.dataSource || 'N/A'}, Project Scope: ${formData.projectScope || 'N/A'}`
+            : null,
+          source: 'book_audit_page',
+          lead_type: 'Client'
         }),
       });
 
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Network response was not ok');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
 
       setFormData({
