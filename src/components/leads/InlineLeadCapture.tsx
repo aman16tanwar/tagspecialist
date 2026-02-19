@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiArrowRight, HiCheckCircle, HiLightningBolt } from 'react-icons/hi';
 
+const WEB3FORMS_KEY = '281edfc6-1b7f-429f-a500-da5b83ede63e';
+
 interface InlineLeadCaptureProps {
   variant?: 'light' | 'dark';
   title?: string;
@@ -32,6 +34,7 @@ const InlineLeadCapture: React.FC<InlineLeadCaptureProps> = ({
     setError(null);
 
     try {
+      // Save to database
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -46,6 +49,20 @@ const InlineLeadCapture: React.FC<InlineLeadCaptureProps> = ({
       if (!response.ok) {
         throw new Error('Failed to submit');
       }
+
+      // Send email notification via Web3Forms
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: `🔔 NEW LEAD: ${formData.name} via inline_capture`,
+          from_name: 'TagSpecialist Lead System',
+          message: `NEW LEAD (Quick Capture)\n\nName: ${formData.name}\nEmail: ${formData.email}\nSource: Inline CTA Form`
+        }),
+      });
 
       setFormData({ name: '', email: '' });
       onSuccess();
