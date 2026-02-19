@@ -83,6 +83,7 @@ export default function RootLayout({
             <Footer />
             <ContactForm />
             <SuccessModal />
+            <LeadCaptureProvider />
           </div>
         </ModalProvider>
       </body>
