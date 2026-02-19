@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cd /app && npm run dev",
-    "build": "cd /app && npm run build"
+    "start": "cd /app && npx next dev -p 3000 -H 0.0.0.0"
   }
 }
