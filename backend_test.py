@@ -192,16 +192,24 @@ class LeadAPITester:
         # Test missing required fields
         invalid_data = {"name": "Test"}  # Missing email
         
-        response, success = self.run_request('POST', 'api/leads', invalid_data, 422)
-        passed = not success and response and response.status_code == 422
-        self.log_test("Validation - Missing Email", passed, f"Got status code: {response.status_code if response else 'None'}")
+        try:
+            response = requests.post(f"{self.base_url}/api/leads", json=invalid_data, 
+                                   headers={'Content-Type': 'application/json'}, timeout=10)
+            passed = response.status_code == 422
+            self.log_test("Validation - Missing Email", passed, f"Got status code: {response.status_code}")
+        except Exception as e:
+            self.log_test("Validation - Missing Email", False, f"Request failed: {str(e)}")
 
         # Test invalid email format
         invalid_email_data = {"name": "Test", "email": "invalid-email"}
         
-        response, success = self.run_request('POST', 'api/leads', invalid_email_data, 422)
-        passed = not success and response and response.status_code == 422
-        self.log_test("Validation - Invalid Email", passed, f"Got status code: {response.status_code if response else 'None'}")
+        try:
+            response = requests.post(f"{self.base_url}/api/leads", json=invalid_email_data,
+                                   headers={'Content-Type': 'application/json'}, timeout=10)
+            passed = response.status_code == 422
+            self.log_test("Validation - Invalid Email", passed, f"Got status code: {response.status_code}")
+        except Exception as e:
+            self.log_test("Validation - Invalid Email", False, f"Request failed: {str(e)}")
 
     def run_all_tests(self):
         """Run all tests in sequence"""
