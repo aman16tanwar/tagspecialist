@@ -1,0 +1,9 @@
+{
+  "name": "tagspecialist-frontend-wrapper",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd /app && npm run dev",
+    "build": "cd /app && npm run build"
+  }
+}
