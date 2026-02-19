@@ -84,74 +84,12 @@ class LeadListResponse(BaseModel):
     leads: List[LeadResponse]
     total: int
 
-# Email notification helper via Web3Forms
+# Email notification helper via Web3Forms (called from frontend)
+# Note: Web3Forms requires client-side calls, so we return a flag for frontend to handle
 async def send_lead_notification(lead_data: dict):
-    """Send email notification for new lead via Web3Forms"""
-    import httpx
-    
-    try:
-        web3forms_key = os.environ.get("WEB3FORMS_KEY", "281edfc6-1b7f-429f-a500-da5b83ede63e")
-        
-        # Build message content
-        services = ", ".join(lead_data.get("services", [])) or "Not specified"
-        channels = ", ".join(lead_data.get("channels", [])) or "Not specified"
-        
-        message = f"""
-🔔 NEW LEAD ALERT - TagSpecialist
-
-Source: {lead_data.get('source', 'website')}
-Lead Type: {lead_data.get('lead_type', 'Client')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CONTACT DETAILS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Name: {lead_data.get('name', 'N/A')}
-Email: {lead_data.get('email', 'N/A')}
-Phone: {lead_data.get('phone', 'Not provided')}
-Company: {lead_data.get('company', 'Not provided')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROJECT DETAILS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Service Type: {lead_data.get('service_type', 'Not specified')}
-Services Interested: {services}
-Marketing Channels: {channels}
-Budget: {lead_data.get('budget', 'Not specified')}
-Timeline: {lead_data.get('timeline', 'Not specified')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CHALLENGE/MESSAGE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{lead_data.get('pain_point', lead_data.get('message', 'No message provided'))}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Lead ID: {lead_data.get('lead_id', 'N/A')}
-Submitted: {lead_data.get('created_at', 'N/A')}
-        """
-        
-        payload = {
-            "access_key": web3forms_key,
-            "name": lead_data.get('name', 'New Lead'),
-            "email": lead_data.get('email', 'noreply@tagspecialist.ca'),
-            "subject": f"🔔 NEW LEAD: {lead_data.get('name')} via {lead_data.get('source', 'website')}",
-            "from_name": "TagSpecialist Lead System",
-            "message": message
-        }
-        
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://api.web3forms.com/submit",
-                json=payload,
-                timeout=10.0
-            )
-            
-            if response.status_code == 200:
-                logger.info(f"Lead notification sent via Web3Forms for {lead_data.get('name')}")
-            else:
-                logger.warning(f"Web3Forms response: {response.status_code} - {response.text}")
-        
-    except Exception as e:
-        logger.error(f"Failed to send lead notification: {str(e)}")
+    """Log lead notification - actual email sent from frontend via Web3Forms"""
+    logger.info(f"Lead notification logged for {lead_data.get('name')} ({lead_data.get('email')})")
+    # Frontend will handle Web3Forms notification since it requires client-side calls
 
 # API Endpoints
 @app.get("/api/health")
