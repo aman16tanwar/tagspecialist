@@ -54,25 +54,29 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '281edfc6-1b7f-429f-a500-da5b83ede63e',
           name: formData.name,
           email: formData.email,
-          subject: `NEW ${leadType.toUpperCase()} INQUIRY: ${formData.name}`,
-          from_email: 'developer@tagspecialist.ca',
-          message: `LEAD TYPE: ${leadType}\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nServices: ${formData.services.join(', ') || 'None selected'}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
+          phone: formData.phone || null,
+          company: formData.company,
+          services: formData.services,
+          channels: formData.channels,
+          pain_point: formData.painPoint,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          message: formData.message,
+          source: 'contact_modal',
+          lead_type: leadType
         }),
       });
 
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Network response was not ok');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
 
       setFormData({ name: '', email: '', phone: '', company: '', website: '', services: [], channels: [], painPoint: '', budget: '', timeline: '', message: '' });
