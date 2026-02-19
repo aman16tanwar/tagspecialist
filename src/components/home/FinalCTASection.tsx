@@ -3,8 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { HiArrowRight, HiCheckCircle, HiLightningBolt } from 'react-icons/hi';
+import { useModal } from '@/contexts/ModalContext';
+import InlineLeadCapture from '@/components/leads/InlineLeadCapture';
 
 const FinalCTASection: React.FC = () => {
+  const { openSuccessModal } = useModal();
 
   return (
     <section className="py-32 bg-brand-highlight text-center relative overflow-hidden">
@@ -23,10 +26,20 @@ const FinalCTASection: React.FC = () => {
             One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Let&apos;s discuss what we can do for you.
         </p>
 
+        {/* Inline Lead Capture Form */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <InlineLeadCapture 
+            title="Start With a Free Tracking Audit"
+            subtitle="Get personalized recommendations in 15 minutes"
+            onSuccess={openSuccessModal}
+          />
+        </div>
+
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
            <Link
              href="/book-audit"
              className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-md uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/40 inline-flex items-center transition-all"
+             data-testid="final-cta-book-btn"
            >
              Book a 15-Minute Call
              <HiArrowRight className="ml-3 inline-block" />
@@ -34,6 +47,7 @@ const FinalCTASection: React.FC = () => {
            <Link
              href="/case-studies"
              className="btn-secondary text-xl px-12 py-6 uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 bg-white hover:bg-gray-50 border-gray-200"
+             data-testid="final-cta-results-btn"
            >
              View Proven Results
            </Link>
