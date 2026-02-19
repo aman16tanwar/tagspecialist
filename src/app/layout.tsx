@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/modals/ContactForm";
 import SuccessModal from "@/components/modals/SuccessModal";
+import LeadCaptureProvider from "@/components/leads/LeadCaptureProvider";
 
 const GTM_ID = "GTM-PTBVKBHB";
 
