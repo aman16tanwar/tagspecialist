@@ -84,67 +84,71 @@ class LeadListResponse(BaseModel):
     leads: List[LeadResponse]
     total: int
 
-# Email notification helper
+# Email notification helper via Web3Forms
 async def send_lead_notification(lead_data: dict):
-    """Send email notification for new lead (if Resend API key is configured)"""
+    """Send email notification for new lead via Web3Forms"""
+    import httpx
+    
     try:
-        import resend
-        api_key = os.environ.get("RESEND_API_KEY")
-        sender_email = os.environ.get("SENDER_EMAIL", "onboarding@resend.dev")
-        notification_email = os.environ.get("NOTIFICATION_EMAIL", "aman16tanwar@gmail.com")
+        web3forms_key = os.environ.get("WEB3FORMS_KEY", "281edfc6-1b7f-429f-a500-da5b83ede63e")
         
-        if not api_key:
-            logger.warning("RESEND_API_KEY not configured, skipping email notification")
-            return
-        
-        resend.api_key = api_key
-        
-        # Build email HTML
+        # Build message content
         services = ", ".join(lead_data.get("services", [])) or "Not specified"
         channels = ", ".join(lead_data.get("channels", [])) or "Not specified"
         
-        html_content = f"""
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <div style="background: #0a192f; padding: 20px; text-align: center;">
-                <h1 style="color: white; margin: 0;">🔔 New Lead Alert</h1>
-            </div>
-            <div style="padding: 30px; background: #f9fafb;">
-                <h2 style="color: #0a192f; margin-top: 0;">Lead Details</h2>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Name:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('name', 'N/A')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Email:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><a href="mailto:{lead_data.get('email', '')}">{lead_data.get('email', 'N/A')}</a></td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Phone:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('phone', 'Not provided')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Company:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('company', 'Not provided')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Service Type:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('service_type', 'Not specified')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Services Interested:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{services}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Marketing Channels:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{channels}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Budget:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('budget', 'Not specified')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Timeline:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('timeline', 'Not specified')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Source:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('source', 'website')}</td></tr>
-                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>Lead Type:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">{lead_data.get('lead_type', 'Client')}</td></tr>
-                </table>
-                
-                <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #2563eb;">
-                    <strong>Challenge/Message:</strong>
-                    <p style="margin: 10px 0 0 0; color: #4b5563;">{lead_data.get('pain_point', lead_data.get('message', 'No message provided'))}</p>
-                </div>
-            </div>
-            <div style="background: #0a192f; padding: 15px; text-align: center;">
-                <p style="color: #9ca3af; margin: 0; font-size: 12px;">TagSpecialist Lead Management System</p>
-            </div>
-        </div>
+        message = f"""
+🔔 NEW LEAD ALERT - TagSpecialist
+
+Source: {lead_data.get('source', 'website')}
+Lead Type: {lead_data.get('lead_type', 'Client')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTACT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name: {lead_data.get('name', 'N/A')}
+Email: {lead_data.get('email', 'N/A')}
+Phone: {lead_data.get('phone', 'Not provided')}
+Company: {lead_data.get('company', 'Not provided')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROJECT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Service Type: {lead_data.get('service_type', 'Not specified')}
+Services Interested: {services}
+Marketing Channels: {channels}
+Budget: {lead_data.get('budget', 'Not specified')}
+Timeline: {lead_data.get('timeline', 'Not specified')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHALLENGE/MESSAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{lead_data.get('pain_point', lead_data.get('message', 'No message provided'))}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lead ID: {lead_data.get('lead_id', 'N/A')}
+Submitted: {lead_data.get('created_at', 'N/A')}
         """
         
-        params = {
-            "from": sender_email,
-            "to": [notification_email],
-            "subject": f"🔔 New Lead: {lead_data.get('name')} ({lead_data.get('source', 'website')})",
-            "html": html_content
+        payload = {
+            "access_key": web3forms_key,
+            "name": lead_data.get('name', 'New Lead'),
+            "email": lead_data.get('email', 'noreply@tagspecialist.ca'),
+            "subject": f"🔔 NEW LEAD: {lead_data.get('name')} via {lead_data.get('source', 'website')}",
+            "from_name": "TagSpecialist Lead System",
+            "message": message
         }
         
-        # Run sync SDK in thread to keep non-blocking
-        await asyncio.to_thread(resend.Emails.send, params)
-        logger.info(f"Lead notification email sent to {notification_email}")
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                "https://api.web3forms.com/submit",
+                json=payload,
+                timeout=10.0
+            )
+            
+            if response.status_code == 200:
+                logger.info(f"Lead notification sent via Web3Forms for {lead_data.get('name')}")
+            else:
+                logger.warning(f"Web3Forms response: {response.status_code} - {response.text}")
         
     except Exception as e:
         logger.error(f"Failed to send lead notification: {str(e)}")
