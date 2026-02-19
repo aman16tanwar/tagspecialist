@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX, HiArrowRight, HiGift } from 'react-icons/hi';
 
+const WEB3FORMS_KEY = '281edfc6-1b7f-429f-a500-da5b83ede63e';
+
 interface ExitIntentPopupProps {
   onSuccess: () => void;
 }
@@ -57,6 +59,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onSuccess }) => {
     setError(null);
 
     try {
+      // Save to database
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -72,6 +75,20 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onSuccess }) => {
       if (!response.ok) {
         throw new Error('Failed to submit');
       }
+
+      // Send email notification via Web3Forms
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: `🔔 NEW LEAD: ${formData.name} via exit_intent`,
+          from_name: 'TagSpecialist Lead System',
+          message: `NEW LEAD (Exit Intent Popup)\n\nName: ${formData.name}\nEmail: ${formData.email}\nSource: Exit Intent Popup\nInterest: Free Tracking Checklist`
+        }),
+      });
 
       setFormData({ name: '', email: '' });
       handleClose();
