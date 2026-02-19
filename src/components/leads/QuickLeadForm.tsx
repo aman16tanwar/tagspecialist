@@ -4,6 +4,34 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX, HiArrowRight, HiMail, HiPhone, HiCheckCircle } from 'react-icons/hi';
 
+const WEB3FORMS_KEY = '281edfc6-1b7f-429f-a500-da5b83ede63e';
+
+// Helper to send Web3Forms notification
+async function sendWeb3FormsNotification(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  challenge?: string;
+  source: string;
+}) {
+  try {
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        name: data.name,
+        email: data.email,
+        subject: `🔔 NEW LEAD: ${data.name} via ${data.source}`,
+        from_name: 'TagSpecialist Lead System',
+        message: `NEW LEAD ALERT\n\nSource: ${data.source}\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\n\nChallenge/Message:\n${data.challenge || 'No message provided'}`
+      }),
+    });
+  } catch (e) {
+    console.error('Web3Forms notification failed:', e);
+  }
+}
+
 interface QuickLeadFormProps {
   isOpen: boolean;
   onClose: () => void;
@@ -32,6 +60,7 @@ const QuickLeadForm: React.FC<QuickLeadFormProps> = ({ isOpen, onClose, onSucces
     setError(null);
 
     try {
+      // Save to database
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -48,6 +77,15 @@ const QuickLeadForm: React.FC<QuickLeadFormProps> = ({ isOpen, onClose, onSucces
       if (!response.ok) {
         throw new Error('Failed to submit');
       }
+
+      // Send email notification via Web3Forms
+      await sendWeb3FormsNotification({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        challenge: formData.challenge,
+        source: source
+      });
 
       setFormData({ name: '', email: '', phone: '', challenge: '' });
       onSuccess();
