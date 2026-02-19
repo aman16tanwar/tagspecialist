@@ -173,15 +173,19 @@ class LeadAPITester:
             return
             
         lead_id = self.created_lead_ids[0]
-        data = {"status": "contacted"}
+        # Use query parameter instead of body for status update
+        url = f"{self.base_url}/api/leads/{lead_id}/status?status=contacted"
         
-        response, success = self.run_request('PATCH', f'api/leads/{lead_id}/status', data)
-        if success and response:
-            result = response.json()
-            passed = result.get('new_status') == 'contacted'
-            self.log_test("Update Lead Status", passed, f"Updated lead {lead_id} to 'contacted'")
-        else:
-            self.log_test("Update Lead Status", False, f"Failed to update lead {lead_id}")
+        try:
+            response = requests.patch(url, headers={'Content-Type': 'application/json'}, timeout=10)
+            if response.status_code == 200:
+                result = response.json()
+                passed = result.get('new_status') == 'contacted'
+                self.log_test("Update Lead Status", passed, f"Updated lead {lead_id} to 'contacted'")
+            else:
+                self.log_test("Update Lead Status", False, f"Got status code: {response.status_code}")
+        except Exception as e:
+            self.log_test("Update Lead Status", False, f"Request failed: {str(e)}")
 
     def test_invalid_lead_data(self):
         """Test API validation with invalid data"""
