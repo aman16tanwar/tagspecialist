@@ -21,10 +21,10 @@ const NewHeroSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-primary tracking-tighter mb-6 uppercase">
-            Two Paths to <span className="text-blue-600">Data Mastery</span>
+            Your Ad Platforms Are <span className="text-blue-600">Claiming Credit</span> for the Same Conversions
           </h1>
-          <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
-            Whether you need 100% accurate tracking today or a custom data infrastructure for tomorrow, we provide the senior engineering expertise you need.
+          <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
+            Google says 50 conversions. Meta says 45. Your CRM says 30. We build the tracking infrastructure and data pipelines that show you what&apos;s actually happening.
           </p>
         </div>
 
