@@ -35,12 +35,12 @@ const Footer = () => {
             <h4 className="text-sm font-black text-navy-900 mb-8 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Services</h4>
             <ul className="space-y-4">
               {[
-                { name: 'Tracking Audit', link: '/services#tracking-audit' },
-                { name: 'Analytics Foundation', link: '/services#analytics-foundation' },
-                { name: 'Server-Side Infrastructure', link: '/services#server-side' },
-                { name: 'Complete Data Infrastructure', link: '/services#complete-data' },
+                { name: 'All Services & Pricing', link: '/services' },
                 { name: 'Managed Tracking', link: '/managed-tracking' },
-                { name: 'View All Pricing', link: '/services#pricing' }
+                { name: 'GTM Specialist', link: '/google-tag-manager-specialist' },
+                { name: 'Shopify to BigQuery', link: '/shopify-bigquery' },
+                { name: 'Agency Partners', link: '/agency-partners' },
+                { name: 'Book Free Audit', link: '/book-audit' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">
@@ -53,14 +53,15 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-black text-navy-900 mb-8 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Company</h4>
+            <h4 className="text-sm font-black text-navy-900 mb-8 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Resources</h4>
             <ul className="space-y-4">
               {[
-                { name: 'About Us', link: '/about' },
+                { name: 'Server-Side Tagging Guide', link: '/server-side-tagging-guide' },
+                { name: 'Benefits of Server-Side Tagging', link: '/benefits-of-server-side-tagging' },
+                { name: 'Unified Data Platform Guide', link: '/unified-data-platform-guide' },
                 { name: 'Case Studies', link: '/case-studies' },
                 { name: 'Blog', link: '/blogs' },
-                { name: 'Partners', link: '/partners' },
-                { name: 'Agency Program', link: '/agency-partners' }
+                { name: 'Data Security', link: '/data-security' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">
@@ -71,11 +72,11 @@ const Footer = () => {
               ))}
             </ul>
 
-            <h4 className="text-sm font-black text-navy-900 mt-10 mb-6 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Resources</h4>
+            <h4 className="text-sm font-black text-navy-900 mt-10 mb-6 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Company</h4>
             <ul className="space-y-4">
               {[
-                { name: 'Server-Side Tagging Guide', link: '/server-side-tagging-guide' },
-                { name: 'Data Security', link: '/data-security' }
+                { name: 'About Us', link: '/about' },
+                { name: 'Partners', link: '/partners' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">

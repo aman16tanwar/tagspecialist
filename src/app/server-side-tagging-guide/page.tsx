@@ -1666,6 +1666,24 @@ export default function ServerSideTaggingGuidePage() {
                     Schedule Consultation
                   </Link>
                 </div>
+
+                <div className="mt-10 pt-8 border-t border-[#bfdbfe]">
+                  <h3 className="font-bold text-gray-900 mb-4">Continue Reading</h3>
+                  <div className="grid sm:grid-cols-3 gap-3">
+                    <Link href="/benefits-of-server-side-tagging" className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-400 transition-all">
+                      <p className="font-semibold text-gray-900 text-sm">Benefits of Server-Side Tagging</p>
+                      <p className="text-gray-500 text-xs mt-1">The business case for switching</p>
+                    </Link>
+                    <Link href="/google-tag-manager-specialist" className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-400 transition-all">
+                      <p className="font-semibold text-gray-900 text-sm">GTM Specialist Services</p>
+                      <p className="text-gray-500 text-xs mt-1">Expert implementation & audit</p>
+                    </Link>
+                    <Link href="/unified-data-platform-guide" className="block p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-400 transition-all">
+                      <p className="font-semibold text-gray-900 text-sm">Unified Data Platform Guide</p>
+                      <p className="text-gray-500 text-xs mt-1">BigQuery, attribution & ML</p>
+                    </Link>
+                  </div>
+                </div>
               </div>
               </div>
             </section>

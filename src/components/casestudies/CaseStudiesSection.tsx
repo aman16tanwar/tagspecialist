@@ -33,81 +33,205 @@ interface MainCase {
     };
 }
 
-interface SupportingCase {
+interface PortfolioProject {
+    category: string;
     title: string;
-    subtitle: string;
+    industry: string;
     problem: string;
     solution: string;
-    results: string[];
+    highlights: string[];
+    tools: string[];
 }
 
 const CaseStudiesSection: React.FC = () => {
 
     const mainCase: MainCase = {
-        client: "$50M DTC Fashion Brand",
-        title: "451% ROAS Increase via Attribution Infrastructure",
-        problem: "$50M DTC Fashion Brand was hemorrhaging $50K monthly due to broken attribution. Their marketing team was flying blind—Meta and Google Ads both claimed credit for the same conversions, making it impossible to optimize spend or scale profitably.",
+        client: "Multi-Resort Ski Group",
+        title: "Unified Data Platform & Multi-Touch Attribution for Ski Resort Group",
+        problem: "A ski resort group running paid campaigns across Google Ads, Meta, and DV360 through an agency had no way to connect ad spend to actual bookings or track customer journeys across products (lift tickets, rentals, ski school, lodging). Revenue attribution was blind — budget allocation was based on last-click data only, with zero cross-sell visibility.",
         solution: [
-            "Implemented First-Party data stitching to map the complete customer journey",
-            "Created cross-platform attribution models using BigQuery ML",
-            "Built real-time dashboards showing true incremental lift by channel",
-            "Deployed server-side conversion tracking to bypass iOS 14.5 limitations"
+            "Built a full unified data platform in BigQuery integrating GA4 analytics, CRM transaction data (Ascent360 ski-industry CDP), and all three ad platforms",
+            "Architected Medallion structure (Bronze → Silver → Gold layers) with incremental daily pipelines, partitioned tables, and MERGE-based refreshes",
+            "Implemented SHA-256 hashed User ID matching to join GA4 behavioural data with CRM purchases without exposing PII",
+            "Built deduplicated conversion path journeys by source/medium — clearly separating awareness campaigns from converting campaigns",
+            "Created user value segmentation (high / medium / low) by joining CRM lifetime value with GA4 behavioural data at the user level",
+            "Identified churn-risk user lists from CRM + GA4 drop-off signals for re-engagement targeting",
+            "Delivered Looker Studio dashboards for campaign performance, geo reporting, and cross-sell analysis",
+            "Deployed server-side Enhanced Conversions (Google) and Meta CAPI for improved signal quality"
         ],
         results: [
-            { label: "ROAS Increase", value: "451%", icon: HiTrendingUp, color: "text-blue-600" },
-            { label: "Attribution Accuracy", value: "+38%", icon: HiShieldCheck, color: "text-blue-600" },
-            { label: "Monthly Revenue", value: "+$200K", icon: HiChartBar, color: "text-purple-600" }
+            { label: "Data Sources Unified", value: "6+", icon: HiTrendingUp, color: "text-blue-600" },
+            { label: "User Segmentation", value: "High/Med/Low", icon: HiShieldCheck, color: "text-blue-600" },
+            { label: "Attribution", value: "Deduplicated", icon: HiChartBar, color: "text-purple-600" }
         ],
         testimonial: {
-            text: "Tag Specialist transformed our data infrastructure. For the first time in two years, we finally know exactly where our next dollar should be spent. The ROI was immediate and massive.",
-            author: "VP of Marketing",
-            company: "$50M+ DTC Fashion Brand"
+            text: "For the first time, we can see the actual conversion path — which campaigns drive awareness vs which close the sale. Plus the user segmentation from CRM + GA4 showed us exactly where our high-value customers come from and who's at risk of churning.",
+            author: "Director of Marketing",
+            company: "Multi-Resort Ski Group"
         }
     };
 
-    const supportingCases: SupportingCase[] = [
+    const portfolioProjects: PortfolioProject[] = [
         {
-            title: "Scaled Agency to 70+ Clients (Zero Data Team Overhead)",
-            subtitle: "DATA WAREHOUSE AUTOMATION",
-            problem: "Growing agency was spending 2 days per client on monthly reporting. Hiring more analysts was eating all margins. Client churn was increasing due to slow insights.",
-            solution: "Built automated BigQuery data lake pulling from Google Ads, Meta, GA4, Shopify, and CRM. Created templated Looker Studio dashboards with automated alerts.",
-            results: [
-                "100+ hours saved monthly on reporting",
-                "Reporting down from 2 days to 2 hours per client",
-                "Enabled agency to scale from 45 to 70+ clients with same team",
-                "$180K annual cost savings vs. hiring 2 analysts"
-            ]
+            category: "REVENUE TRACKING FIX",
+            title: "Fixed 54% Revenue Tracking Gap for SaaS Platform",
+            industry: "SaaS / Subscriptions",
+            problem: "A 54% discrepancy between GA4 ($31K) and actual revenue ($52K via Stripe + RevenueCat). Missing purchase events across subscription and credit plan flows meant the marketing team was optimizing against incomplete data.",
+            solution: "Audited the full GTM container, implemented a Stripe-to-dataLayer fix distinguishing purchase types, built new conversion tags for Meta, Google Ads, and TikTok with full QA, then extended with server-side Meta CAPI.",
+            highlights: [
+                "$21K in missing conversions recovered",
+                "Tracking accuracy: 54% → 99%",
+                "3 ad platforms fixed (Meta, Google, TikTok)",
+                "Complete Notion documentation for handoff"
+            ],
+            tools: ["GTM", "GA4", "Stripe", "RevenueCat", "Meta Pixel", "TikTok Pixel", "Google Ads"]
         },
         {
-            title: "AI-Driven Insights for Global Resort Brand",
-            subtitle: "GENAI ANALYTICS AGENT",
-            problem: "Executive team couldn't get answers from data without waiting 48 hours for a data analyst. Strategic decisions were being delayed by data access bottlenecks.",
-            solution: "Built custom AI analytics agent powered by BigQuery + OpenAI. Natural language interface allows executives to ask questions and get instant visualizations.",
-            results: [
-                "30% faster strategic decision making",
-                "Instant data accessibility for entire leadership team",
-                "90% reduction in 'data request' tickets to analytics team",
-                "$120K saved in analyst time redirected to strategic projects"
-            ]
+            category: "SERVER-SIDE TRACKING",
+            title: "Server-Side Meta CAPI for SaaS Subscription Platform",
+            industry: "SaaS / Subscriptions",
+            problem: "After fixing the revenue tracking gap, the client needed server-side tracking to recover conversion signals lost to ad blockers and iOS privacy restrictions.",
+            solution: "Built full server-side Meta CAPI implementation with Cloud Run infrastructure, Stripe webhook integration, client/server event deduplication, and first-party GTM hosting on a custom subdomain.",
+            highlights: [
+                "Cloud Run server-side infrastructure deployed",
+                "Stripe webhook → Meta CAPI pipeline",
+                "Client-side + server-side event deduplication",
+                "First-party subdomain for ad blocker bypass"
+            ],
+            tools: ["Meta CAPI", "GCP Cloud Run", "GTM Server-Side", "Stripe"]
         },
         {
-            title: "First-Party Data Strategy for B2B SaaS",
-            subtitle: "SERVER-SIDE TAGGING FIX",
-            problem: "iOS 14.5 and ad-blockers caused 40% signal loss on LinkedIn and Meta campaigns. Cost per qualified lead jumped 60% in 6 months. Attribution was broken.",
-            solution: "Migrated to server-side GTM with custom subdomain setup. Implemented enhanced conversions and CAPI. Built first-party identity graph in BigQuery.",
-            results: [
-                "40% increase in conversion signal capture",
-                "CPL decreased 35% after better optimization",
-                "$15K monthly saved in wasted ad spend",
-                "Full compliance with GDPR and privacy regulations"
-            ]
-        }
+            category: "DATA LAYER ARCHITECTURE",
+            title: "Complete DataLayer Spec & GTM Build for Fintech SaaS",
+            industry: "Fintech / SaaS",
+            problem: "GTM was installed but zero dataLayer values were being passed — GA4 received no useful event data. Marketing had no visibility into the user journey from signup through purchase.",
+            solution: "Wrote a complete 5-event dataLayer specification covering the full user journey, with dynamic vs. static field mapping and developer handoff documentation.",
+            highlights: [
+                "5-event dataLayer spec (view_item_list → purchase)",
+                "Dynamic vs. static field mapping defined",
+                "Developer handoff documentation via Notion",
+                "GTM tag architecture prepared for implementation"
+            ],
+            tools: ["GTM", "GA4", "Stripe Checkout", "Next.js"]
+        },
+        {
+            category: "TRACKING DIAGNOSIS",
+            title: "Pinterest Pixel Conflict Resolution for Luxury Hospitality Brand",
+            industry: "Luxury Hospitality",
+            problem: "Pinterest lead conversion events were consistently attributing to the wrong ad account. The agency team couldn't identify why conversions were being misattributed despite a correctly configured GTM pixel.",
+            solution: "Identified root cause as a legacy Pinterest pixel loaded via Adobe Launch conflicting with the GTM pixel. Produced a full investigation report with call stack analysis and Loom walkthrough for the agency team.",
+            highlights: [
+                "Root cause: legacy pixel conflict (Adobe Launch vs GTM)",
+                "Call stack analysis confirming dual-fire issue",
+                "Full investigation report with resolution steps",
+                "Loom walkthrough for agency team handoff"
+            ],
+            tools: ["GTM", "Pinterest Ads", "Adobe Launch"]
+        },
+        {
+            category: "COMPLIANCE AUDIT",
+            title: "Full Pixel Compliance Audit for Luxury Hospitality Brand",
+            industry: "Luxury Hospitality",
+            problem: "Pre-migration compliance review needed for a luxury brand preparing to launch a new booking engine. Existing pixel setup had unclear data processing agreements and consent gaps.",
+            solution: "Conducted a comprehensive compliance audit covering GDPR data transfer obligations, Meta and Google Ads DPAs, dataset category configuration, third-party integrations, and cookie consent requirements.",
+            highlights: [
+                "GDPR data transfer obligation review",
+                "Meta & Google Ads DPA verification",
+                "Meta Dataset Category configuration audit",
+                "Pre-launch compliance checklist for booking engine migration"
+            ],
+            tools: ["Meta Pixel", "Google Ads", "GTM", "GDPR Framework"]
+        },
+        {
+            category: "TECHNICAL ASSESSMENT",
+            title: "Google Hotel Ads Activation Assessment for Hospitality Agency",
+            industry: "Hospitality / Agency",
+            problem: "A hospitality agency wanted to activate Google Hotel Ads for multiple clients but lacked clarity on technical requirements, connectivity partners, and per-property readiness.",
+            solution: "Delivered a full technical assessment covering Hotel Center access pathways, connectivity partner requirements, agency capability scope, and per-property readiness evaluation with clear next steps.",
+            highlights: [
+                "Hotel Center access pathway analysis",
+                "Connectivity partner requirements defined",
+                "Per-property readiness evaluation",
+                "Clear next steps for each property"
+            ],
+            tools: ["Google Hotel Center", "Google Ads"]
+        },
+        {
+            category: "GA4 IMPLEMENTATION",
+            title: "GA4 Tracking Implementation for Australian Pet Marketplace",
+            industry: "E-Commerce / Marketplace",
+            problem: "An Australian e-commerce marketplace needed a data collection strategy and full GA4 event tracking setup built from scratch to understand user behavior across their platform.",
+            solution: "Designed the complete data collection strategy and implemented full GA4 event tracking through GTM, covering the marketplace's unique buyer and seller journeys.",
+            highlights: [
+                "Complete data collection strategy designed",
+                "Full GA4 event tracking via GTM",
+                "Marketplace-specific event taxonomy",
+                "Buyer and seller journey tracking"
+            ],
+            tools: ["GA4", "GTM"]
+        },
+        {
+            category: "DATA PIPELINE",
+            title: "Multi-Store Shopify-to-BigQuery Pipeline for Nordic Agency",
+            industry: "E-Commerce / Agency",
+            problem: "A Nordic e-commerce agency serving marketplace sellers needed a scalable data pipeline handling multiple stores, multi-currency normalization, and tenant isolation — at minimal cost.",
+            solution: "Built a production-grade multi-store Shopify pipeline on GCP with incremental loads, retry logic, tenant isolation, and multi-currency normalization. Runs on Cloud Run with Cloud Scheduler.",
+            highlights: [
+                "Multi-store architecture with tenant isolation",
+                "Multi-currency normalization pipeline",
+                "Incremental loads with retry logic",
+                "Minimal GCP operating cost"
+            ],
+            tools: ["Python", "GCP Cloud Run", "Cloud Scheduler", "BigQuery", "Shopify API"]
+        },
+        {
+            category: "DATA PIPELINE",
+            title: "Cross-Channel Ad Data Unification for Field Services Agency",
+            industry: "Home Services / Agency",
+            problem: "An agency managing Google Ads and Meta Ads for field service businesses using Jobber had no way to connect ad spend to actual job revenue. Reporting was manual and couldn't attribute which channel drove real bookings.",
+            solution: "Built a unified data pipeline pulling Google Ads, Meta Ads, and Jobber CRM data into BigQuery. Created cross-channel attribution models linking ad clicks to booked jobs and completed revenue.",
+            highlights: [
+                "Google Ads + Meta Ads → BigQuery pipeline",
+                "Jobber CRM integration for job-level revenue",
+                "Cross-channel attribution (ad click → booked job)",
+                "Unified reporting dashboard for agency clients"
+            ],
+            tools: ["Python", "BigQuery", "Google Ads API", "Meta Ads API", "Jobber API", "GCP Cloud Run"]
+        },
+        {
+            category: "DATA ENGINEERING",
+            title: "GA4 + CRM User-Level Data Warehouse for E-Commerce Brand",
+            industry: "E-Commerce",
+            problem: "An e-commerce business had GA4 data in BigQuery and CRM data in a separate system with no linkage. They couldn't connect website behavior to actual customer records, making LTV analysis and personalization impossible.",
+            solution: "Built a full data warehouse linking GA4 BigQuery export with CRM data at the user level using dbt for transformations, Cloud Run for orchestration, and Cloud Scheduler for automated runs.",
+            highlights: [
+                "GA4 BigQuery export + CRM data linked at user level",
+                "dbt transformation layer for clean data models",
+                "Cloud Run + Cloud Scheduler orchestration",
+                "User-level journey from first visit to repeat purchase"
+            ],
+            tools: ["BigQuery", "dbt", "GCP Cloud Run", "Cloud Scheduler", "GA4", "CRM Integration"]
+        },
+        {
+            category: "E-COMMERCE TRACKING",
+            title: "Shopify Conversion Tracking for Multiple DTC Brands",
+            industry: "E-Commerce / Multi-Vertical",
+            problem: "Multiple Shopify brands across coaching, health, and retail verticals needed proper conversion tracking — from GTM setup through GA4 e-commerce events and server-side implementations.",
+            solution: "Delivered end-to-end tracking implementations across multiple brands including GTM container setup, GA4 e-commerce events, Meta Pixel, Google Ads conversions, and server-side GTM.",
+            highlights: [
+                "Multi-brand GTM container architecture",
+                "Full GA4 e-commerce event tracking",
+                "Meta Pixel + Google Ads conversion setup",
+                "Server-side GTM for ad blocker bypass"
+            ],
+            tools: ["GTM", "GA4", "Meta Pixel", "Google Ads", "Shopify", "Server-Side GTM"]
+        },
     ];
 
     const trustBadges: string[] = [
-        "3 eight-figure e-commerce brands",
-        "5 performance marketing agencies",
-        "2 B2B SaaS companies scaling to IPO"
+        "10+ client implementations delivered",
+        "SaaS, E-Commerce, Hospitality, Fintech",
+        "6 countries across 3 continents"
     ];
 
     return (
@@ -116,10 +240,10 @@ const CaseStudiesSection: React.FC = () => {
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6">
-                        Real Clients. <span className="text-blue-600">Real Revenue Growth.</span>
+                        Real Projects. <span className="text-blue-600">Real Implementation Details.</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        We build data infrastructure that directly impacts your bottom line—not just dashboards that look pretty. Every system we engineer is designed to increase attribution accuracy, reduce wasted ad spend, and scale your data operations.
+                        Every project below was delivered by our team — no outsourcing, no templates. From revenue tracking fixes to full data pipelines, here&apos;s the work we actually ship.
                     </p>
                 </div>
 
@@ -132,9 +256,9 @@ const CaseStudiesSection: React.FC = () => {
                 >
                     <div className="lg:w-3/5 p-8 lg:p-12 text-white">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-bold mb-6 uppercase tracking-wider border border-blue-500/30">
-                            <HiLightningBolt /> Featured Result
+                            <HiLightningBolt /> Featured Project
                         </div>
-                        <h3 className="text-3xl lg:text-4xl font-bold mb-8 leading-tight">
+                        <h3 className="text-3xl lg:text-4xl font-bold mb-8 leading-tight text-white">
                             {mainCase.title}
                         </h3>
 
@@ -147,7 +271,7 @@ const CaseStudiesSection: React.FC = () => {
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-bold uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
-                                    <span className="w-8 h-px bg-blue-400/30"></span> The Solution
+                                    <span className="w-8 h-px bg-blue-400/30"></span> What We Implemented
                                 </h4>
                                 <ul className="space-y-2">
                                     {mainCase.solution.map((item, i) => (
@@ -166,7 +290,7 @@ const CaseStudiesSection: React.FC = () => {
                             </p>
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
-                                    VM
+                                    DM
                                 </div>
                                 <div>
                                     <div className="font-bold text-white text-base">— {mainCase.testimonial.author}</div>
@@ -205,7 +329,7 @@ const CaseStudiesSection: React.FC = () => {
                 <div className="max-w-6xl mx-auto mb-24 px-8 py-10 bg-gray-50 rounded-2xl border border-gray-100">
                     <div className="flex flex-col md:flex-row items-center justify-around gap-8 text-center">
                         <div className="text-navy-900 font-bold text-sm uppercase tracking-widest md:w-1/4">
-                            Trusted by high-growth brands and agencies managing $50M+ in annual ad spend
+                            Trusted by brands and agencies across SaaS, E-Commerce, and Hospitality
                         </div>
                         <div className="h-px w-full md:h-12 md:w-px bg-gray-300"></div>
                         {trustBadges.map((badge, i) => (
@@ -217,41 +341,60 @@ const CaseStudiesSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Supporting Cases Grid */}
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {supportingCases.map((item, index) => (
+                {/* Portfolio Grid */}
+                <div className="max-w-6xl mx-auto mb-8">
+                    <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">Full Project Portfolio</h3>
+                    <p className="text-gray-600 text-center mb-12">Every project delivered — from tracking audits to production data pipelines.</p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    {portfolioProjects.map((project, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-400 transition-all flex flex-col group shadow-sm hover:shadow-xl"
+                            transition={{ delay: index * 0.05 }}
+                            className="bg-white rounded-2xl p-7 border border-gray-200 hover:border-blue-400 transition-all flex flex-col group shadow-sm hover:shadow-xl"
                         >
-                            <h4 className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4">
-                                {item.subtitle}
-                            </h4>
-                            <h3 className="text-xl font-bold text-navy-900 mb-4 group-hover:text-blue-700 transition-colors leading-tight">
-                                {item.title}
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.2em]">
+                                    {project.category}
+                                </span>
+                                <span className="text-gray-400 text-[10px] uppercase tracking-wider font-semibold">
+                                    {project.industry}
+                                </span>
+                            </div>
+                            <h3 className="text-lg font-bold text-navy-900 mb-3 group-hover:text-blue-700 transition-colors leading-tight">
+                                {project.title}
                             </h3>
-                            <div className="space-y-4 mb-8 flex-grow">
+                            <div className="space-y-3 mb-6 flex-grow">
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    <span className="font-bold text-navy-900 uppercase text-[10px] block mb-1">Problem:</span>
-                                    {item.problem}
+                                    <span className="font-bold text-navy-900 uppercase text-[10px] block mb-1">Challenge:</span>
+                                    {project.problem}
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     <span className="font-bold text-navy-900 uppercase text-[10px] block mb-1">Solution:</span>
-                                    {item.solution}
+                                    {project.solution}
                                 </p>
                             </div>
-                            <div className="pt-6 border-t border-gray-100 mt-auto space-y-3">
-                                {item.results.map((res, i) => (
+                            <div className="pt-4 border-t border-gray-100 mt-auto space-y-2 mb-4">
+                                {project.highlights.map((item, i) => (
                                     <div key={i} className="flex items-start gap-2">
-                                        <HiCheckCircle className="text-blue-500 w-4 h-4 mt-0.5 flex-shrink-0" />
-                                        <span className="text-navy-900 font-bold text-[13px] leading-tight italic">
-                                            {res}
+                                        <HiCheckCircle className="text-blue-500 w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                                        <span className="text-navy-900 font-semibold text-xs leading-tight">
+                                            {item}
                                         </span>
                                     </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                                {project.tools.map((tool) => (
+                                    <span
+                                        key={tool}
+                                        className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-[10px] font-semibold"
+                                    >
+                                        {tool}
+                                    </span>
                                 ))}
                             </div>
                         </motion.div>
@@ -260,23 +403,23 @@ const CaseStudiesSection: React.FC = () => {
 
                 {/* Bottom CTA */}
                 <div className="mt-24 text-center bg-gray-50 rounded-3xl p-12 border border-gray-100 max-w-4xl mx-auto">
-                    <h3 className="text-3xl font-bold text-navy-900 mb-4">Ready to Transform Your Marketing Data?</h3>
+                    <h3 className="text-3xl font-bold text-navy-900 mb-4">Ready to Fix Your Tracking?</h3>
                     <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-medium">
-                        Every case study started with a 15-minute discovery call. We&apos;ll audit your current setup, identify quick wins, and show you exactly how we&apos;d approach your data challenges.
+                        Every project above started with a 15-minute discovery call. We&apos;ll audit your current setup, identify quick wins, and show you exactly how we&apos;d approach your data challenges.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Link
                             href="/book-audit"
                             className="bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-semibold transition-all shadow-sm hover:shadow-orange-500/25 inline-block"
                         >
-                            Book Your Data Audit
+                            Book Your Free Audit
                         </Link>
-                        <Link href="/services#pricing" className="btn-secondary">
-                            See Our Pricing
+                        <Link href="/services" className="btn-secondary">
+                            See Our Services
                         </Link>
                     </div>
                     <p className="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest">
-                        *Detailed performance metrics and client references available under NDA for qualified leads.
+                        *Additional project details and client references available under NDA for qualified leads.
                     </p>
                 </div>
             </div>

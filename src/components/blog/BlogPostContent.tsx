@@ -55,6 +55,25 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
             {displayContent}
           </ReactMarkdown>
         </div>
+
+        {/* Related Resources */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <h3 className="text-lg font-bold text-navy-900 mb-6">Related Resources</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link href="/benefits-of-server-side-tagging" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+              <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Benefits of Server-Side Tagging</p>
+              <p className="text-gray-500 text-xs mt-1">Why leading brands are making the switch</p>
+            </Link>
+            <Link href="/google-tag-manager-specialist" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+              <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">GTM Specialist Services</p>
+              <p className="text-gray-500 text-xs mt-1">Expert implementation & audit</p>
+            </Link>
+            <Link href="/unified-data-platform-guide" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+              <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Unified Data Platform Guide</p>
+              <p className="text-gray-500 text-xs mt-1">BigQuery, attribution & ML activation</p>
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   );

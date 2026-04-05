@@ -27,11 +27,11 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "What is server-side tagging and why do I need it?",
-      answer: "Browser tracking is dying due to cookies and ad blockers. Server-side tagging sends data directly from your server to ad platforms (CAPI), restoring lost signal."
+      answer: "Browser tracking is dying due to cookies and ad blockers. Server-side tagging sends data directly from your server to ad platforms (CAPI), restoring lost signal. Read our complete guide on the benefits of server-side tagging."
     },
     {
       question: "Can you handle GA4 migration problems?",
-      answer: "Yes, we specialize in fixing broken GA4 setups, including cross-domain tracking, missing events, and thresholding issues."
+      answer: "Yes, we specialize in fixing broken GA4 setups, including cross-domain tracking, missing events, and thresholding issues. See our GTM specialist services for details."
     },
     {
       question: "Do you maintain tracking + pipelines?",
@@ -43,7 +43,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "What if I don't have BigQuery yet?",
-      answer: "We set it up for you completely in your own Google Cloud account. You own the data forever."
+      answer: "We set it up for you completely in your own Google Cloud account. You own the data forever. Learn more in our unified data platform guide."
     },
     {
       question: "Do I get dashboards included?",
