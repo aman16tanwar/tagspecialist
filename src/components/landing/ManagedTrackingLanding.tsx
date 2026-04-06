@@ -50,7 +50,7 @@ export default function ManagedTrackingLanding() {
   const pricingTiers: PricingTier[] = [
     {
       name: 'Starter',
-      price: '$99',
+      price: '$150',
       setupFee: '$500',
       description: '1 domain, up to 100K pageviews/mo',
       bestFor: 'Small businesses, single brand DTC',
@@ -68,7 +68,7 @@ export default function ManagedTrackingLanding() {
     },
     {
       name: 'Growth',
-      price: '$199',
+      price: '$250',
       setupFee: '$750',
       description: 'Up to 3 domains, 500K pageviews/mo',
       bestFor: 'Agencies, multi-brand businesses',
@@ -87,7 +87,7 @@ export default function ManagedTrackingLanding() {
     },
     {
       name: 'Scale',
-      price: '$299',
+      price: '$350',
       setupFee: '$1,000',
       description: 'Up to 5 domains, 1M pageviews/mo',
       bestFor: 'Enterprise, booking engines, marketplaces',
@@ -111,8 +111,8 @@ export default function ManagedTrackingLanding() {
       a: 'Setting up server-side tracking requires cloud infrastructure expertise, ongoing maintenance, and monitoring. We handle all of this - you just see better data in your ad platforms. No technical knowledge required.',
     },
     {
-      q: 'Do I need the Full Implementation add-on?',
-      a: 'If you already have Google Tag Manager with conversion tracking set up on your website, you just need the standard setup fee - we connect your existing tags to server-side. If you have no tracking or need to rebuild from scratch (new website, major platform change, or broken implementation), you need the Full Implementation add-on ($2,500-$4,000).',
+      q: 'What if I don\'t have tracking set up yet?',
+      a: 'Managed tracking covers the ongoing server-side hosting and maintenance. If you need a full tracking build from scratch (GTM setup, GA4 configuration, data layer, conversion tracking), that requires a one-time implementation package first. See our full pricing and setup packages at tagspecialist.ca/services for details.',
     },
     {
       q: 'Do I own the tracking infrastructure?',
@@ -145,7 +145,7 @@ export default function ManagedTrackingLanding() {
   const recoveredValue = missedConversions * 50;
   const cpaSavings = Math.round(adSpend * 0.15);
   const totalBenefit = recoveredValue + cpaSavings;
-  const roi = Math.round(totalBenefit / 199);
+  const roi = Math.round(totalBenefit / 250);
 
   return (
     <div className="min-h-screen bg-white">
@@ -167,14 +167,14 @@ export default function ManagedTrackingLanding() {
                 Stop Losing <span className="text-blue-400">40-70%</span> of Your Conversion Data
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Ad blockers and iOS privacy are killing your campaign performance. We fix it with server-side tracking - fully managed, so you can focus on growth.
+                You shouldn&apos;t have to manage cloud servers, monitor infrastructure health, or debug tracking pipelines. We own and maintain the entire server-side tracking stack — you focus on your business, we keep the data flowing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/book-audit"
                   className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
-                  Get Started - From $99/mo
+                  Get Started - From $150/mo
                 </Link>
                 <a
                   href="#calculator"
@@ -360,7 +360,7 @@ export default function ManagedTrackingLanding() {
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
                   <div className="text-3xl font-black text-blue-400 mb-2">{roi}x</div>
-                  <div className="text-sm text-blue-200">Potential ROI on $199/mo</div>
+                  <div className="text-sm text-blue-200">Potential ROI on $250/mo</div>
                 </div>
               </div>
 
@@ -462,7 +462,7 @@ export default function ManagedTrackingLanding() {
               What&apos;s Included
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12">
-              Setup fee covers migration to server-side. Need full implementation? We&apos;ve got you covered.
+              Setup fee covers connecting your existing tracking to server-side. Don&apos;t have tracking yet? See our one-time setup packages.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -501,32 +501,29 @@ export default function ManagedTrackingLanding() {
                 </div>
               </div>
 
-              {/* Full Implementation Add-on */}
+              {/* Need Full Build? */}
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border-2 border-blue-200 p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
                     <HiServer className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-navy-900">Full Implementation</h3>
-                    <span className="text-sm font-semibold text-blue-600">Add-on: $2,500 - $4,000</span>
+                    <h3 className="text-xl font-bold text-navy-900">Need a Full Build First?</h3>
                   </div>
                 </div>
                 <p className="text-gray-600 text-sm mb-6">
-                  For businesses starting from scratch or needing complete tracking overhaul.
+                  If you&apos;re starting from scratch or need a complete tracking overhaul (GTM, GA4, data layer, conversion tracking), you&apos;ll need a one-time implementation package first. Then managed tracking keeps it running.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    'Web GTM container build from scratch',
-                    'Data layer implementation',
-                    'Full conversion tracking setup',
+                    'GTM container build + data layer',
+                    'GA4 configuration + custom events',
+                    'Full conversion tracking (all platforms)',
                     'eCommerce event tracking',
-                    'Custom event creation',
-                    'Cross-domain tracking setup',
-                    'Form & lead tracking',
-                    'Complete server-side setup',
-                    'GA4 configuration',
-                    'Testing across all platforms',
+                    'Server-side GTM + CAPI setup',
+                    'Cross-domain tracking',
+                    'Testing & QA across all platforms',
+                    'Documentation & handoff',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
                       <HiCheck className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -536,13 +533,13 @@ export default function ManagedTrackingLanding() {
                 </ul>
                 <div className="mt-6 pt-6 border-t border-blue-200">
                   <p className="text-sm text-gray-600 mb-4">
-                    <span className="font-semibold">Timeline:</span> 5-10 business days
+                    Then add managed hosting from <span className="font-semibold text-blue-600">$150/month</span> to keep it running.
                   </p>
                   <Link
-                    href="/book-audit"
+                    href="/services"
                     className="block w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all text-sm text-center shadow-lg hover:shadow-orange-500/25"
                   >
-                    Get Implementation Quote
+                    View Setup Packages & Pricing →
                   </Link>
                 </div>
               </div>

@@ -4,11 +4,11 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Managed Server-Side Tracking | Tag Specialist',
-  description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking for Google Ads, Meta CAPI, and more. From $99/month.',
+  description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking for Google Ads, Meta CAPI, and more. From $150/month.',
   keywords: 'server-side tracking, Google Tag Manager server, Meta CAPI, conversion API, ad blocker bypass, managed tracking',
   openGraph: {
     title: 'Managed Server-Side Tracking | Tag Specialist',
-    description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking from $99/month.',
+    description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking from $150/month.',
     type: 'website',
     url: 'https://tagspecialist.ca/managed-tracking',
   },
@@ -32,11 +32,11 @@ export default function ManagedTrackingPage() {
           {
             '@type': 'Offer',
             name: 'Starter',
-            price: '99',
+            price: '150',
             priceCurrency: 'USD',
             priceSpecification: {
               '@type': 'UnitPriceSpecification',
-              price: '99',
+              price: '150',
               priceCurrency: 'USD',
               billingDuration: 'P1M',
             },
@@ -44,11 +44,11 @@ export default function ManagedTrackingPage() {
           {
             '@type': 'Offer',
             name: 'Growth',
-            price: '199',
+            price: '250',
             priceCurrency: 'USD',
             priceSpecification: {
               '@type': 'UnitPriceSpecification',
-              price: '199',
+              price: '250',
               priceCurrency: 'USD',
               billingDuration: 'P1M',
             },
@@ -56,11 +56,11 @@ export default function ManagedTrackingPage() {
           {
             '@type': 'Offer',
             name: 'Scale',
-            price: '299',
+            price: '350',
             priceCurrency: 'USD',
             priceSpecification: {
               '@type': 'UnitPriceSpecification',
-              price: '299',
+              price: '350',
               priceCurrency: 'USD',
               billingDuration: 'P1M',
             },
@@ -75,7 +75,7 @@ export default function ManagedTrackingPage() {
             name: 'How much does managed server-side tracking cost?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Managed server-side tracking starts at $99/month (Starter: 1 domain, 100K pageviews). Growth plan is $199/month (3 domains, 500K pageviews) and Scale is $299/month (5 domains, 1M pageviews). One-time setup fees range from $500-$1,000.',
+              text: 'Managed server-side tracking starts at $150/month (Starter: 1 domain, 100K pageviews). Growth plan is $250/month (3 domains, 500K pageviews) and Scale is $350/month (5 domains, 1M pageviews). One-time setup fees range from $500-$1,000.',
             },
           },
           {

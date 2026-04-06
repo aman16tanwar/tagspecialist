@@ -189,8 +189,8 @@ export default function AgencyPartnerLanding() {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
               <div className="text-center mb-8">
-                <p className="text-blue-200 mb-2">Example: 10 clients on Growth tier ($199/mo)</p>
-                <p className="text-blue-200 mb-4">Your cost: $149/mo per client (25% partner discount)</p>
+                <p className="text-blue-200 mb-2">Example: 10 clients on Growth tier ($250/mo)</p>
+                <p className="text-blue-200 mb-4">Your cost: $187/mo per client (25% partner discount)</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">

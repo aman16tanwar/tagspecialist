@@ -67,8 +67,8 @@ const PricingSection: React.FC = () => {
     {
       name: "Server-Side Infrastructure",
       price: "Starting at $18,500",
-      roi: "30-40% More Conversion Data Captured",
-      value: "Captures 30-40% more conversion data you're currently losing. If you spend $50K/month on ads, that's $15K-20K in previously invisible conversions.",
+      roi: "Recover Missing Conversion Signal",
+      value: "Browser restrictions and JavaScript failures silently drop conversion data. Server-side tracking captures what client-side misses — giving your ad platforms the complete signal they need to optimize.",
       note: "One-time setup. 3-4 week timeline.",
       size: "$5M - $20M Revenue",
       features: [
@@ -77,8 +77,9 @@ const PricingSection: React.FC = () => {
         "Meta (Facebook) CAPI implementation",
         "Google Ads Enhanced Conversions",
         "TikTok Pixel server-side tracking",
-        "Ad blocker bypass (20-40% more data)",
-        "Advanced deduplication logic"
+        "First-party cookie domain setup",
+        "Advanced deduplication logic",
+        "→ Then maintain from $150/mo"
       ],
       popular: true,
       popularTag: "Most Popular for DTC Brands"
@@ -86,18 +87,19 @@ const PricingSection: React.FC = () => {
     {
       name: "Complete Data Infrastructure",
       price: "Starting at $28,000",
-      roi: "9.5x ROAS Potential",
-      value: "One client went from 2.1x to 9.5x ROAS in 6 months—$200K+ additional monthly revenue from better attribution and optimization.",
+      roi: "Full Visibility Across Channels & CRM",
+      value: "Unify GA4, CRM, and ad platform data in BigQuery. See deduplicated conversion paths, user-level segmentation, and which campaigns drive awareness vs actual revenue.",
       note: "One-time setup. 5-6 week timeline.",
       size: "$20M - $100M+ Revenue",
       features: [
         "Everything in Server-Side Infrastructure",
         "BigQuery data warehouse setup",
         "Automated data pipelines (all sources)",
-        "Cross-platform attribution modeling",
-        "Lifetime value (LTV) tracking",
-        "AI-powered insights setup",
-        "30-day post-launch support"
+        "Deduplicated attribution modeling",
+        "User-level CRM + GA4 segmentation",
+        "Churn identification & LTV tracking",
+        "30-day post-launch support",
+        "→ Then maintain from $250/mo"
       ]
     }
   ];
@@ -105,7 +107,7 @@ const PricingSection: React.FC = () => {
   const faqs: FAQ[] = [
     {
       q: "Why are you more expensive than Upwork freelancers?",
-      a: "Freelancers set up tags. We engineer business-grade data infrastructure. You're getting direct access to lead engineers who deliver 451% average ROAS, not just someone who knows how to use GTM. Our systems are built to scale to $100M+ revenue."
+      a: "Freelancers set up tags. We engineer business-grade data infrastructure — server-side tracking, BigQuery pipelines, CRM integrations, and attribution modeling. You get direct access to lead engineers, not junior tag placers. Our systems are built to scale to $100M+ revenue."
     },
     {
       q: "What's included in post-launch support?",
@@ -135,7 +137,7 @@ const PricingSection: React.FC = () => {
             Investment Structure
           </h2>
           <p className="text-xl text-text-main max-w-3xl mx-auto">
-            We don&apos;t sell hours. We sell business transformation and infrastructure that delivers 451% average ROAS.
+            One-time setup packages to build your tracking and data infrastructure. Then optional managed hosting to keep it running.
           </p>
         </div>
 
@@ -184,6 +186,20 @@ const PricingSection: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Managed Tracking Callout */}
+        <div className="max-w-4xl mx-auto mb-20 bg-blue-50 border border-blue-200 rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-black text-navy-900 uppercase tracking-tight mb-2">Don&apos;t Need a Full Build?</h3>
+            <p className="text-gray-600 font-medium text-sm">Already have GTM + GA4 set up? Our managed server-side tracking starts at <span className="font-black text-blue-600">$150/month</span> — we host and maintain the infrastructure, you get better data.</p>
+          </div>
+          <Link
+            href="/managed-tracking"
+            className="flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white font-black px-8 py-4 rounded-xl transition-all uppercase text-xs tracking-widest shadow-lg"
+          >
+            See Managed Plans →
+          </Link>
         </div>
 
         {/* Selection Guide Section */}

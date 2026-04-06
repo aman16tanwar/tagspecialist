@@ -145,7 +145,7 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'How much does it cost to hire a Google Tag Manager expert?',
-      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs starts at $12,000-$18,500. Ongoing managed tracking plans start at $99/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
+      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs starts at $12,000-$18,500. Ongoing managed tracking plans start at $150/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
     },
     {
       q: 'Do I need a GTM specialist or can I do it myself?',

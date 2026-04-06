@@ -8,7 +8,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Server-Side Tracking & Data Engineering Services',
-  description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services. From $99/month managed tracking to full enterprise data infrastructure.',
+  description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services. From $150/month managed tracking to full enterprise data infrastructure.',
   keywords: 'server-side tracking services, GA4 implementation, BigQuery data warehouse, GTM specialist services, conversion tracking, Meta CAPI, data engineering services',
   openGraph: {
     title: 'Server-Side Tracking & Data Engineering Services | Tag Specialist',
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             name: 'How much do your data engineering services cost?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Our Enterprise Data & AI Warehouse starts at $28,000 (one-time, 5-6 week timeline) and includes GA4 to BigQuery pipelines, CRM & Shopify ETL, custom attribution models, and AI analytics. Managed tracking plans start at $99/month for ongoing server-side tracking.',
+              text: 'Our Enterprise Data & AI Warehouse starts at $28,000 (one-time, 5-6 week timeline) and includes GA4 to BigQuery pipelines, CRM & Shopify ETL, custom attribution models, and AI analytics. Managed tracking plans start at $150/month for ongoing server-side tracking.',
             },
           },
           {
