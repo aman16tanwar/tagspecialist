@@ -5,14 +5,12 @@ import {
   HiCheck,
   HiArrowRight,
   HiShieldCheck,
-  HiLightningBolt,
-  HiChartBar,
-  HiCode,
   HiServer,
   HiCog,
   HiChevronDown,
   HiChevronUp,
   HiCheckCircle,
+  HiGlobe,
 } from 'react-icons/hi';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -27,145 +25,148 @@ const fadeIn = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function GTMSpecialistLanding() {
+export default function SSTSpecialistLanding() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const services = [
     {
-      icon: HiCog,
-      title: 'GTM Audit & Fix',
-      description:
-        'Comprehensive audit of your existing GTM setup. We identify broken tags, duplicate fires, missing conversions, data layer issues, and consent gaps — then fix everything.',
-      deliverables: [
-        'Full container health check',
-        'Broken tag identification & repair',
-        'Data layer validation',
-        'Consent Mode v2 compliance',
-        'Documentation of all changes',
-      ],
-    },
-    {
       icon: HiServer,
-      title: 'Server-Side GTM Implementation',
+      title: 'Server-Side GTM Setup',
       description:
-        'Full server-side Google Tag Manager setup with conversion APIs. Capture 30-40% more conversions by bypassing ad blockers and ITP restrictions.',
+        'Full server-side Google Tag Manager deployment on Google Cloud Run with custom domain, first-party cookies, and ad blocker bypass. The foundation of modern tracking infrastructure.',
       deliverables: [
-        'Server-side GTM container (Cloud Run)',
-        'Google Ads Enhanced Conversions',
-        'Meta Conversion API (CAPI)',
-        'First-party cookie domain',
+        'Cloud Run container deployment',
+        'Custom domain & SSL configuration',
+        'First-party cookie setup',
         'Ad blocker bypass configuration',
+        'Health monitoring & alerting',
       ],
     },
     {
-      icon: HiChartBar,
-      title: 'GA4 + GTM Migration',
+      icon: HiGlobe,
+      title: 'Conversion API Integration',
       description:
-        'Complete GA4 implementation through GTM with custom events, e-commerce tracking, and enhanced measurement — built properly from day one.',
+        'Server-to-server conversion tracking for every major ad platform. Send deduplicated, enriched events directly from your server — no browser limitations.',
       deliverables: [
-        'GA4 property setup & configuration',
-        'Custom event tracking',
-        'E-commerce data layer',
-        'Cross-domain tracking',
-        'BigQuery export configuration',
+        'Meta Conversion API (CAPI)',
+        'Google Ads Enhanced Conversions',
+        'TikTok Events API',
+        'Pinterest Conversion API',
+        'Event deduplication & enrichment',
       ],
     },
     {
-      icon: HiCode,
-      title: 'E-Commerce Tracking',
+      icon: HiCog,
+      title: 'Server-Side Migration',
       description:
-        'Full e-commerce tracking implementation for Shopify, WooCommerce, Magento, or custom platforms. Every product view, add-to-cart, and purchase captured accurately.',
+        'Seamlessly migrate your existing client-side tracking to a server-side architecture. We run parallel tracking to validate data accuracy before full cutover.',
       deliverables: [
-        'Complete data layer implementation',
-        'Product impression & click tracking',
-        'Cart & checkout funnel tracking',
-        'Revenue & transaction tracking',
-        'Cross-platform attribution',
+        'Current setup audit & migration plan',
+        'Parallel client + server tracking',
+        'Data accuracy validation',
+        'Gradual traffic migration',
+        'Post-migration QA & documentation',
       ],
     },
     {
       icon: HiShieldCheck,
-      title: 'Consent Mode v2 Setup',
+      title: 'Managed Server-Side Tracking',
       description:
-        'Implement Google Consent Mode v2 with your CMP to maintain ad targeting while respecting privacy. Required for EU/EEA advertising since March 2024.',
+        'Ongoing monitoring, maintenance, and optimization of your server-side tracking infrastructure. Starting at $150/mo — we handle everything so you can focus on growth.',
       deliverables: [
-        'CMP integration (Cookiebot, OneTrust, etc.)',
-        'Google Consent Mode v2 configuration',
-        'Consent state testing & validation',
-        'Advanced vs Basic consent mode setup',
-        'Geo-targeted consent flows',
-      ],
-    },
-    {
-      icon: HiLightningBolt,
-      title: 'Conversion API Integrations',
-      description:
-        'Direct server-to-server conversion tracking for Meta, TikTok, Pinterest, LinkedIn, and Snapchat. Send deduplicated, enriched conversion events through APIs.',
-      deliverables: [
-        'Meta Conversion API (CAPI)',
-        'TikTok Events API',
-        'Pinterest Conversion API',
-        'LinkedIn Conversions API',
-        'Event deduplication setup',
+        'Infrastructure monitoring & uptime',
+        'Tag & event maintenance',
+        'Monthly performance reports',
+        'Platform API updates & fixes',
+        'Priority support & escalation',
       ],
     },
   ];
 
-  const whyUs = [
+  const whyChoose = [
     {
       title: '15+ Years of Tracking Experience',
-      description: 'Not a generalist agency — we\'re data engineers who specialize exclusively in GTM, GA4, and server-side tracking.',
-    },
-    {
-      title: 'Direct Access to Engineers',
-      description: 'No account managers or middlemen. You work directly with the people writing your tags and building your pipelines.',
-    },
-    {
-      title: '451% Average ROAS Improvement',
-      description: 'Our implementations don\'t just track data — they recover conversion signal that directly improves ad platform performance.',
-    },
-    {
-      title: 'Enterprise-Grade, Boutique Service',
-      description: 'We build on Google Cloud Platform with the same infrastructure as enterprise brands, but with the responsiveness of a small team.',
-    },
-    {
-      title: 'End-to-End Data Ownership',
-      description: 'Everything we build, you own. No vendor lock-in, no proprietary platforms, no recurring license traps.',
+      description:
+        'Not a generalist agency. We are data engineers who specialize exclusively in server-side tagging, GTM, and conversion APIs.',
     },
     {
       title: '70+ Successful Implementations',
-      description: 'From DTC Shopify brands to $50M enterprise advertisers — proven results across industries and scales.',
+      description:
+        'From DTC Shopify stores to enterprise advertisers spending $50M+ annually — proven results across every scale.',
+    },
+    {
+      title: 'Direct Specialist Access',
+      description:
+        'No account managers, no middlemen. You work directly with the engineer building and maintaining your server-side setup.',
+    },
+    {
+      title: '30-40% More Data Captured',
+      description:
+        'Server-side tagging bypasses ad blockers and ITP restrictions, recovering conversion data that client-side tracking simply cannot see.',
+    },
+    {
+      title: 'ROI-First Approach',
+      description:
+        'Every implementation is designed to improve ad platform signal quality. Our clients average 451% ROAS improvement after going server-side.',
+    },
+    {
+      title: 'Managed Infrastructure Included',
+      description:
+        'We deploy on Google Cloud Platform and handle monitoring, scaling, and maintenance. Enterprise-grade reliability without the DevOps overhead.',
+    },
+  ];
+
+  const steps = [
+    {
+      step: '1',
+      title: 'Audit Current Setup',
+      description:
+        'We analyze your existing tracking, identify data gaps, and quantify how much conversion signal you are losing to ad blockers and browser restrictions.',
+    },
+    {
+      step: '2',
+      title: 'Design Architecture',
+      description:
+        'Custom server-side architecture tailored to your platforms, ad channels, and data requirements. Fixed-price quote with clear deliverables.',
+    },
+    {
+      step: '3',
+      title: 'Implement & Test',
+      description:
+        'We deploy your server-side container, configure conversion APIs, and run parallel tracking to validate data accuracy before cutover.',
+    },
+    {
+      step: '4',
+      title: 'Launch & Monitor',
+      description:
+        'Full production launch with monitoring, documentation, and ongoing support. Your tracking runs reliably with zero maintenance on your end.',
     },
   ];
 
   const faqs: FAQ[] = [
     {
-      q: 'What does a Google Tag Manager specialist do?',
-      a: 'A GTM specialist implements and manages all tracking tags, conversion pixels, and analytics scripts on your website through Google Tag Manager. This includes GA4 setup, conversion tracking for Google Ads and Meta, e-commerce tracking, server-side tagging, consent management, and ensuring data accuracy across all marketing platforms. We go beyond basic tag placement — we architect your entire measurement infrastructure.',
+      q: 'What does a server-side tagging specialist do?',
+      a: 'A server-side tagging specialist designs, implements, and maintains server-side tracking infrastructure that processes analytics and advertising tags on a cloud server instead of in the visitor\'s browser. This includes deploying server-side GTM containers on Google Cloud Run, configuring first-party cookie domains, integrating conversion APIs for platforms like Meta, Google Ads, and TikTok, and ensuring event deduplication between client-side and server-side streams. As a server-side tagging specialist, we go beyond basic setup — we architect measurement systems that recover the 30-40% of conversion data lost to ad blockers and browser privacy restrictions.',
     },
     {
-      q: 'How much does it cost to hire a Google Tag Manager expert?',
-      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs starts at $12,000-$18,500. Ongoing managed tracking plans start at $150/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
+      q: 'How much does server-side tagging implementation cost?',
+      a: 'Server-side tagging implementation typically ranges from $8,000 to $18,500 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $8,000-$12,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $12,000-$18,500. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote from our server-side tagging specialist team.',
     },
     {
-      q: 'Do I need a GTM specialist or can I do it myself?',
-      a: 'Basic GTM is doable DIY, but you need a specialist for: server-side tagging, conversion API integrations (Meta CAPI, TikTok Events API), complex e-commerce tracking, cross-domain tracking, Consent Mode v2, and any setup where data accuracy directly impacts ad spend. A misconfigured GTM container silently loses conversion data — and your ad platforms optimize on bad signals.',
+      q: 'How much more data will server-side tagging capture?',
+      a: 'Most clients see a 30-40% increase in tracked conversions after moving to server-side tagging. The exact improvement depends on your audience — sites with tech-savvy visitors (who use ad blockers at higher rates) often see even larger gains. Server-side tagging bypasses browser-based ad blockers, extends cookie lifetimes beyond Safari\'s 7-day ITP limit using first-party domains, and sends conversion events directly from server to ad platform via conversion APIs. One client saw a 46% increase in Google Ads reported conversions and 451% ROAS improvement after our server-side tagging specialist implemented their full server-side setup.',
     },
     {
-      q: 'What results can I expect?',
-      a: 'Clients typically see: 30-40% more conversion data captured, +46% increase in Google Ads reported conversions, up to 451% ROAS improvement through better attribution, and 15-20% lower CPA from improved signal quality. Results vary by setup and ad spend, but we guarantee measurable improvement or we work at no additional cost until you see it.',
+      q: 'How long does server-side tagging implementation take?',
+      a: 'A typical server-side tagging implementation takes 2-4 weeks from kickoff to full production launch. Week one covers server deployment, custom domain setup, and Cloud Run configuration. Weeks two and three focus on conversion API integrations, event mapping, and parallel tracking validation. Week four is for final QA, data accuracy verification, and production cutover. Simpler setups (single CAPI integration) can be completed in 1-2 weeks. Our server-side tagging specialist team provides regular updates throughout the process and handles all the infrastructure complexity.',
     },
     {
-      q: 'How long does a GTM implementation take?',
-      a: 'GTM audit & fix: 3-5 business days. GA4 + GTM setup: 1-2 weeks. Full server-side implementation with CAPI: 3-4 weeks. We work in sprints and provide regular updates. Emergency/rush implementations are available.',
+      q: 'Do I need to replace my existing GTM setup?',
+      a: 'No — server-side tagging works alongside your existing client-side GTM container, not as a replacement. We deploy a separate server-side GTM container that receives events from your client-side container and forwards them to ad platforms and analytics tools via server-to-server connections. Your existing tags continue to work during and after the migration. We run both in parallel to validate data accuracy before shifting traffic to the server-side path. This approach means zero downtime and no disruption to your current tracking during implementation.',
     },
     {
-      q: 'Do you work with Shopify, WooCommerce, and custom platforms?',
-      a: 'Yes — we work with all major platforms including Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, Squarespace, WordPress, and fully custom-built sites. We\'ve implemented tracking for headless commerce setups, SPAs, and complex multi-domain architectures.',
-    },
-    {
-      q: 'What\'s the difference between a GTM specialist and a marketing agency?',
-      a: 'Most marketing agencies outsource tracking to junior developers or use pre-built templates. A GTM specialist designs custom measurement architecture tailored to your business. We understand both the marketing KPIs and the technical implementation — no telephone game between teams.',
+      q: 'What platforms do you support for server-side tracking?',
+      a: 'We support all major advertising and analytics platforms for server-side tracking: Google Ads Enhanced Conversions, Meta Conversion API (CAPI), Google Analytics 4, TikTok Events API, Pinterest Conversion API, LinkedIn Conversions API, Snapchat Conversions API, and Microsoft Ads UET. On the e-commerce side, we work with Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, and fully custom-built platforms. As your server-side tagging specialist, we configure each platform\'s conversion API with proper event mapping, deduplication, and data enrichment to maximize signal quality.',
     },
   ];
 
@@ -186,22 +187,22 @@ export default function GTMSpecialistLanding() {
             className="max-w-4xl mx-auto text-center"
           >
             <p className="text-orange-400 font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Certified GTM Expert
+              Server-Side Tracking Expert
             </p>
             <h1 className="text-white text-[32px] lg:text-[52px] leading-[1.1] tracking-tight mb-6">
-              Google Tag Manager Specialist:{' '}
-              <span className="text-orange-400">Expert GTM Implementation That Drives Results</span>
+              Server-Side Tagging Specialist:{' '}
+              <span className="text-orange-400">Expert Implementation for Better Data & Higher ROAS</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Stop losing conversions to broken tags and incomplete tracking. Our GTM specialists have 15+ years
-              experience building measurement infrastructure for DTC brands, agencies, and enterprises.
+              Ad blockers and browser restrictions are silently killing 30-40% of your conversion data. Our server-side
+              tagging specialists recover that lost signal — so your ad platforms optimize on complete, accurate data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=tracking"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free GTM Audit
+                Book a Free Tracking Audit
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -236,7 +237,7 @@ export default function GTMSpecialistLanding() {
         <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <p className="text-gray-700 text-base leading-relaxed">
-              <strong>A Google Tag Manager specialist</strong> implements and manages tracking tags, conversion pixels, and analytics scripts across your website using GTM. Services include GTM container audits and fixes, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking for Shopify and WooCommerce, Consent Mode v2 setup, and cross-domain tracking. Professional GTM implementation typically results in <strong>30-40% more conversion data captured</strong>, up to <strong>451% ROAS improvement</strong>, and <strong>15-20% lower CPA</strong>. A GTM audit costs <strong>$1,500-$5,000</strong>, full server-side implementation starts at <strong>$12,000-$18,500</strong>, and managed tracking plans start at <strong>$150/month</strong>.
+              <strong>A server-side tagging specialist</strong> implements and manages server-side tracking infrastructure that routes data through your own server instead of relying on browser-based scripts. This includes deploying GTM server containers on Google Cloud Run, integrating conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), configuring custom domains for first-party cookies, and bypassing ad blockers. Server-side tagging typically recovers <strong>30-40% of conversion data</strong> lost to ad blockers and browser restrictions like ITP. Implementation takes <strong>2-4 weeks</strong> and costs between <strong>$8,000 and $18,500</strong>, with ongoing managed tracking available from <strong>$150/month</strong>.
             </p>
           </div>
         </div>
@@ -252,13 +253,13 @@ export default function GTMSpecialistLanding() {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <h2>GTM Specialist Services</h2>
+            <h2>Server-Side Tagging Services</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              From quick audits to full server-side implementations — we handle every aspect of Google Tag Manager.
+              End-to-end server-side tracking — from initial deployment to ongoing managed infrastructure.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -298,14 +299,15 @@ export default function GTMSpecialistLanding() {
             variants={fadeIn}
             className="text-center mb-12"
           >
-            <h2>Why Choose TagSpecialist as Your GTM Expert</h2>
+            <h2>Why Choose TagSpecialist for Server-Side Tagging</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              We&apos;re not a generalist agency — we&apos;re data engineers who specialize in measurement infrastructure.
+              We&apos;re not a generalist agency — we&apos;re data engineers who build server-side tracking
+              infrastructure every day.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {whyUs.map((item, index) => (
+            {whyChoose.map((item, index) => (
               <motion.div
                 key={item.title}
                 initial="hidden"
@@ -326,7 +328,7 @@ export default function GTMSpecialistLanding() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* How It Works */}
       <section className="section-padding bg-white">
         <div className="content-container">
           <motion.div
@@ -338,33 +340,12 @@ export default function GTMSpecialistLanding() {
           >
             <h2>How It Works</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              A straightforward process from audit to implementation to results.
+              From audit to production launch in 2-4 weeks — a proven process with zero disruption to your live tracking.
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'Free Audit Call',
-                description: 'We review your current tracking setup and identify what\'s broken, missing, or underperforming.',
-              },
-              {
-                step: '2',
-                title: 'Custom Proposal',
-                description: 'Fixed-price quote with clear scope, timeline, and expected results. No surprises.',
-              },
-              {
-                step: '3',
-                title: 'Implementation',
-                description: 'We build and deploy your tracking infrastructure. You get regular updates and full transparency.',
-              },
-              {
-                step: '4',
-                title: 'Validation & Handoff',
-                description: 'Thorough QA, documentation, and knowledge transfer. Your tracking runs perfectly, with ongoing support available.',
-              },
-            ].map((step, i) => (
+            {steps.map((step, i) => (
               <motion.div
                 key={step.step}
                 initial="hidden"
@@ -395,7 +376,7 @@ export default function GTMSpecialistLanding() {
             variants={fadeIn}
             className="text-center mb-12"
           >
-            <h2>Google Tag Manager Specialist FAQ</h2>
+            <h2>Server-Side Tagging Specialist FAQ</h2>
           </motion.div>
 
           <div className="space-y-3">
@@ -431,7 +412,7 @@ export default function GTMSpecialistLanding() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Final CTA Section */}
       <section className="section-padding bg-gradient-to-r from-navy-900 to-navy-800 text-white">
         <div className="content-container text-center">
           <motion.div
@@ -440,17 +421,17 @@ export default function GTMSpecialistLanding() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-white mb-4">Stop Losing Conversions to Broken Tracking</h2>
+            <h2 className="text-white mb-4">Stop Losing 30-40% of Your Conversion Data</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. We&apos;ll show you what&apos;s broken, what&apos;s missing, and exactly how to fix it —
-              no sales pressure, just engineering expertise.
+              Book a free 15-minute audit. We&apos;ll show you exactly how much conversion data you&apos;re losing to ad
+              blockers and browser restrictions — and how server-side tagging recovers it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=tracking"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free GTM Audit
+                Book Your Free Tracking Audit
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

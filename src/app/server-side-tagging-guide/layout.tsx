@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Server-Side Tagging Guide 2025 | Complete Implementation Guide',
+  title: 'Server-Side Tagging Guide 2026 | Complete Implementation Guide',
   description: 'Comprehensive server-side tagging guide covering GTM server containers, data recovery (30-40%), privacy compliance (GDPR, CCPA), platform comparison, and ROI calculator. Learn how to implement server-side tracking for better data accuracy.',
   keywords: [
     'server-side tagging',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'conversion API'
   ],
   openGraph: {
-    title: 'Server-Side Tagging Guide 2025 | Complete Implementation Guide',
+    title: 'Server-Side Tagging Guide 2026 | Complete Implementation Guide',
     description: 'Learn how server-side tagging recovers 30-40% of lost conversion data, improves site speed by 40-60%, and ensures privacy compliance. Includes ROI calculator and platform comparison.',
     type: 'article',
     url: 'https://tagspecialist.ca/server-side-tagging-guide',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Server-Side Tagging Guide 2025 | TagSpecialist',
+    title: 'Server-Side Tagging Guide 2026 | TagSpecialist',
     description: 'Recover 30-40% lost data, improve site speed 40-60%, ensure GDPR/CCPA compliance with server-side tagging.'
   },
   alternates: {
@@ -57,7 +57,7 @@ const jsonLd = {
     {
       '@type': 'Article',
       '@id': 'https://tagspecialist.ca/server-side-tagging-guide#article',
-      headline: 'Server-Side Tagging Guide 2025: Complete Implementation Guide',
+      headline: 'Server-Side Tagging Guide 2026: Complete Implementation Guide',
       description: 'Comprehensive guide to server-side tagging covering implementation, benefits, platform comparison, and ROI calculation.',
       author: {
         '@type': 'Organization',
@@ -72,7 +72,7 @@ const jsonLd = {
           url: 'https://tagspecialist.ca/logo.png'
         }
       },
-      datePublished: '2025-01-01',
+      datePublished: '2026-01-01',
       dateModified: new Date().toISOString().split('T')[0],
       mainEntityOfPage: 'https://tagspecialist.ca/server-side-tagging-guide'
     },

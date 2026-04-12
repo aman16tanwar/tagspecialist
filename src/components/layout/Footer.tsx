@@ -38,6 +38,7 @@ const Footer = () => {
                 { name: 'All Services & Pricing', link: '/services' },
                 { name: 'Managed Tracking', link: '/managed-tracking' },
                 { name: 'GTM Specialist', link: '/google-tag-manager-specialist' },
+                { name: 'Server-Side Tagging', link: '/server-side-tagging-specialist' },
                 { name: 'Shopify to BigQuery', link: '/shopify-bigquery' },
                 { name: 'Agency Partners', link: '/agency-partners' },
                 { name: 'Book Free Audit', link: '/book-audit' },

@@ -11,45 +11,86 @@ import FinalCTASection from '@/components/home/FinalCTASection';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'TagSpecialist | Marketing Data Warehouse & Tracking Infrastructure',
-  description: 'Automated marketing data warehouse, ETL pipelines, server-side tagging, and AI analytics for agencies and brands.',
+  title: 'TagSpecialist | Server-Side Tracking & Data Engineering Experts',
+  description: 'Hire server-side tagging specialists and data engineers. GTM server-side implementation, GA4 setup, BigQuery data warehouses, and AI analytics for agencies and brands.',
+  keywords: 'server-side tagging specialist, tag manager expert, GTM specialist, google tag manager expert, tagging specialist, server-side tracking, data engineering services, BigQuery consultant, GA4 implementation, conversion tracking expert',
 };
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Automated Marketing Data Warehouse",
-  "applicationCategory": "DataManagementApplication",
-  "operatingSystem": "Web-based",
-  "description": "Enterprise-grade data infrastructure for marketing analytics. GA4, GTM Server-side, and BigQuery automation for 8-figure brands.",
-  "url": "https://tagspecialist.ca",
-  "featureList": [
-    "Server-side GTM Infrastructure",
-    "BigQuery Data Warehouse Automation",
-    "GA4 Enterprise Implementation",
-    "First-Party Data Identity Stitching",
-    "Automated Daily ETL Pipelines",
-    "No row limits, total infrastructure ownership"
-  ],
-  "screenshot": "https://tagspecialist.ca/og-image.png",
-  "softwareVersion": "2026.1",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "70"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "lowPrice": "3500",
-    "highPrice": "28000",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "TagSpecialist",
-    "url": "https://tagspecialist.ca"
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "TagSpecialist",
+      "description": "Expert server-side tagging specialists and data engineers. We build tracking infrastructure, GTM server-side implementations, BigQuery data warehouses, and AI analytics for agencies and brands.",
+      "url": "https://tagspecialist.ca",
+      "logo": "https://tagspecialist.ca/logo.png",
+      "image": "https://tagspecialist.ca/og-image.png",
+      "priceRange": "$3,500 - $28,000",
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Server-Side Tagging",
+        "Google Tag Manager",
+        "GA4 Implementation",
+        "BigQuery Data Warehouses",
+        "Data Engineering",
+        "Meta Conversion API",
+        "Conversion Tracking",
+        "Marketing Analytics"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TagSpecialist Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Server-Side Tracking & Attribution Engine",
+              "description": "Full server-side GTM infrastructure, Meta CAPI, Google Ads Enhanced Conversions, ad blocker bypass, and cross-channel attribution."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Engineering & AI Warehouse",
+              "description": "BigQuery data warehouse, ETL pipelines, custom SQL attribution models, GenAI analytics agents, and executive dashboards."
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "70",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "TagSpecialist",
+      "url": "https://tagspecialist.ca",
+      "logo": "https://tagspecialist.ca/logo.png",
+      "sameAs": ["https://github.com/tagspecialist"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "developer@tagspecialist.ca",
+        "contactType": "sales",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
+      "url": "https://tagspecialist.ca",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero-description", ".solution-summary"]
+      },
+      "description": "TagSpecialist is a boutique consultancy specializing in server-side tagging implementation and data engineering. We recover 30-40% of lost conversion data through server-side GTM, build BigQuery data warehouses, and provide managed tracking infrastructure for e-commerce brands and agencies worldwide. Our clients see an average 451% ROAS improvement."
+    }
+  ]
 };
 
 export default function HomePage() {

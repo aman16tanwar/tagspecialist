@@ -3,15 +3,15 @@ import GTMSpecialistLanding from '@/components/landing/GTMSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Google Tag Manager Specialist | Certified GTM Expert',
-  description: 'Hire a Google Tag Manager specialist with 15+ years experience. Expert GTM implementation, server-side tagging, GA4 migration, Meta CAPI, and conversion tracking. Results-driven.',
-  keywords: 'google tag manager specialist, google tag manager expert, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management specialist, google tag manager implementation',
+  title: 'Google Tag Manager Specialist | Tag Manager Expert for Hire',
+  description: 'Hire a Google Tag Manager specialist and tag manager expert with 15+ years experience. Expert GTM implementation, server-side tagging, GA4 migration, Meta CAPI, and conversion tracking.',
+  keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation',
   alternates: {
     canonical: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },
   openGraph: {
-    title: 'Google Tag Manager Specialist | Certified GTM Expert',
-    description: 'Hire a Google Tag Manager specialist with 15+ years experience. Expert GTM implementation, server-side tagging, and conversion tracking.',
+    title: 'Google Tag Manager Specialist | Tag Manager Expert for Hire',
+    description: 'Hire a Google Tag Manager specialist and tag manager expert with 15+ years experience. Expert GTM implementation, server-side tagging, and conversion tracking.',
     type: 'website',
     url: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },
@@ -122,6 +122,16 @@ export default function GTMSpecialistPage() {
             item: 'https://tagspecialist.ca/google-tag-manager-specialist',
           },
         ],
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Google Tag Manager Specialist',
+        url: 'https://tagspecialist.ca/google-tag-manager-specialist',
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', '[data-speakable]'],
+        },
+        description: 'A Google Tag Manager specialist implements and manages tracking tags, conversion pixels, and analytics scripts. Services include GTM audit and fix, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking, and Consent Mode v2. Professional GTM implementation typically results in 30-40% more conversion data captured and up to 451% ROAS improvement.',
       },
     ],
   };

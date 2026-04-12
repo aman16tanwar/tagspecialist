@@ -1,0 +1,53 @@
+# TagSpecialist
+
+> TagSpecialist is a boutique data engineering and server-side tracking consultancy based in Vancouver, Canada. We implement server-side tagging (GTM), build BigQuery data warehouses, and provide managed tracking infrastructure for e-commerce brands and agencies worldwide.
+
+## Services
+
+- [Server-Side Tagging Specialist](https://tagspecialist.ca/server-side-tagging-specialist): Expert server-side GTM implementation, Meta CAPI, Google Ads Enhanced Conversions, ad blocker bypass, and managed tracking infrastructure. Recovers 30-40% of lost conversion data.
+- [Google Tag Manager Specialist](https://tagspecialist.ca/google-tag-manager-specialist): GTM audit and fix, server-side GTM setup, GA4 migration, e-commerce tracking, Consent Mode v2 implementation.
+- [Managed Server-Side Tracking](https://tagspecialist.ca/managed-tracking): Fully managed server-side tracking from $150/month. Includes GTM server container, Google Ads Enhanced Conversions, Meta CAPI, custom domain, monitoring.
+- [Data Engineering & AI Warehouse](https://tagspecialist.ca/services): BigQuery data warehouse, ETL pipelines (GA4, Google Ads, Meta, Shopify, CRM), custom SQL attribution models, GenAI analytics agents.
+- [Shopify to BigQuery Pipeline](https://tagspecialist.ca/shopify-bigquery): Shopify data connector with no row limits at $50/month. Syncs customers, orders, products, order items.
+- [Agency Partner Program](https://tagspecialist.ca/agency-partners): White-label server-side tracking for agencies. Earn $500-2,000/month passive revenue.
+
+## Pricing
+
+- Tracking Audit & Strategy: Starting at $3,500 (1-2 weeks)
+- Analytics Foundation: Starting at $12,000 (2-3 weeks)
+- Server-Side Infrastructure: Starting at $18,500 (3-4 weeks)
+- Complete Data Infrastructure: Starting at $28,000 (5-6 weeks)
+- Managed Tracking: $150-$350/month
+- Monthly Retainers: $3,500-$14,000/month
+- Shopify to BigQuery: $50/month
+
+## Guides & Resources
+
+- [Server-Side Tagging Guide 2026](https://tagspecialist.ca/server-side-tagging-guide): Comprehensive guide covering GTM server containers, data recovery, privacy compliance (GDPR, CCPA, PIPEDA), platform comparison (Google sGTM, Segment, Stape, Tealium), ROI calculator, and country-specific implementation playbooks.
+- [Benefits of Server-Side Tagging](https://tagspecialist.ca/benefits-of-server-side-tagging): 7 key benefits including 30-40% more conversions, ad blocker bypass, faster page loads, privacy compliance, better ad performance, extended cookie lifespan, server-level data enrichment.
+- [Unified Data Platform Guide](https://tagspecialist.ca/unified-data-platform-guide): Guide to building a marketing data warehouse with BigQuery, medallion architecture, multi-touch attribution, identity resolution, and AI activation.
+- [Case Studies](https://tagspecialist.ca/case-studies): 12 real project implementations including 451% ROAS improvement, 54% revenue tracking gap fix, multi-touch attribution for ski resort group.
+- [Blog](https://tagspecialist.ca/blogs): 41 technical articles on server-side GA4, BigQuery data warehouses, GTM transformations, consent management, and data engineering.
+
+## Key Facts
+
+- Founded by lead data engineers with 15+ years combined experience
+- 70+ brand implementations across 6 countries and 3 continents
+- Industries: E-commerce (DTC, Shopify), SaaS, Hospitality, Fintech, Agencies
+- Average client ROAS improvement: 451%
+- Server-side tracking recovers 30-40% of conversion data lost to ad blockers
+- 5.0 client rating
+- GCP Certified, GA4 Certified, GTM Expert
+- Direct specialist access (no account managers)
+- 30-day satisfaction guarantee
+
+## Contact
+
+- Website: https://tagspecialist.ca
+- Email: developer@tagspecialist.ca
+- Location: Vancouver, BC, Canada
+- Book Consultation: https://tagspecialist.ca/book-audit
+
+## Detailed Content
+
+For comprehensive content including all service details, FAQs, blog summaries, and technical documentation, see [llms-full.txt](https://tagspecialist.ca/llms-full.txt).

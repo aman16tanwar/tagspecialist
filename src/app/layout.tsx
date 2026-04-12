@@ -12,10 +12,10 @@ const GTM_ID = "GTM-PTBVKBHB";
 
 export const metadata: Metadata = {
   title: {
-    default: "TagSpecialist | Marketing Data Warehouse & Tracking Infrastructure",
+    default: "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
     template: "%s | Tag Specialist"
   },
-  description: "Automated marketing data warehouse, ETL pipelines, server-side tagging, and AI analytics for agencies and brands.",
+  description: "Expert server-side tagging, GTM implementation, and data engineering services. We build tracking infrastructure and BigQuery data warehouses for agencies and brands.",
   metadataBase: new URL("https://tagspecialist.ca"),
   openGraph: {
     type: "website",
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "TagSpecialist - Marketing Data Infrastructure"
+        alt: "TagSpecialist - Server-Side Tracking & Data Engineering Experts"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "TagSpecialist | Marketing Data Infrastructure",
-    description: "Automated marketing data warehouse, ETL pipelines, server-side tagging, and AI analytics for agencies and brands."
+    title: "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
+    description: "Expert server-side tagging, GTM implementation, and data engineering services. We build tracking infrastructure and BigQuery data warehouses for agencies and brands."
   },
   robots: {
     index: true,
