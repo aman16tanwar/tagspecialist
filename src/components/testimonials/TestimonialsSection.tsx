@@ -164,10 +164,10 @@ const TestimonialsSection: React.FC = () => {
     );
 
     const stats: Stat[] = [
-        { number: "70+", label: "Happy Clients" },
-        { number: "8+", label: "Years Experience" },
+        { number: "94+", label: "Completed Projects" },
+        { number: "70+", label: "5-Star Reviews" },
         { number: "5.0", label: "Average Rating" },
-        { number: "451%", label: "Average ROAS" }
+        { number: "8+", label: "Years Experience" }
     ];
 
     return (

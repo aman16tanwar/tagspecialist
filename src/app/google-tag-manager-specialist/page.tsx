@@ -3,15 +3,15 @@ import GTMSpecialistLanding from '@/components/landing/GTMSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Google Tag Manager Specialist | Tag Manager Expert for Hire',
-  description: 'Hire a Google Tag Manager specialist and tag manager expert with 15+ years experience. Expert GTM implementation, server-side tagging, GA4 migration, Meta CAPI, and conversion tracking.',
-  keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation',
+  title: 'Google Tag Manager Specialist for Hire | GTM Audits from $1,500',
+  description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Audits from $1,500, server-side GTM, GA4, Meta CAPI. Book a free call.',
+  keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation, google tag manager cost, hire google tag manager expert',
   alternates: {
     canonical: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },
   openGraph: {
-    title: 'Google Tag Manager Specialist | Tag Manager Expert for Hire',
-    description: 'Hire a Google Tag Manager specialist and tag manager expert with 15+ years experience. Expert GTM implementation, server-side tagging, and conversion tracking.',
+    title: 'Google Tag Manager Specialist for Hire | GTM Audits from $1,500',
+    description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Audits from $1,500, server-side GTM, GA4, Meta CAPI.',
     type: 'website',
     url: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },
@@ -36,6 +36,43 @@ export default function GTMSpecialistPage() {
             bestRating: '5',
           },
         },
+        review: [
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-02-26',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: "Hands down the best Google and Meta tracking specialist I've ever worked with. Deep expertise, problem-solving skills, and attention to detail make an absolute game-changer.",
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-09-08',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Excellent job as a Google Meta Tracking Specialist — clear communication and accurate tracking setups. Everything delivered on time.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2024-01-22',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, and Facebook Ads Manager. Would highly recommend and will gladly rehire.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2022-07-21',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites. Will definitely work again and be referring others.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2022-10-18',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Great and knowledgeable. A great communicator too. Highly recommended.',
+          },
+        ],
         serviceType: 'Google Tag Manager Implementation',
         areaServed: 'Worldwide',
         hasOfferCatalog: {

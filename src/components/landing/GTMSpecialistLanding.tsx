@@ -16,6 +16,7 @@ import {
 } from 'react-icons/hi';
 import Link from 'next/link';
 import { useState } from 'react';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 
 interface FAQ {
   q: string;
@@ -384,6 +385,9 @@ export default function GTMSpecialistLanding() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50">

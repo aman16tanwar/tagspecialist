@@ -3,15 +3,15 @@ import SSTSpecialistLanding from '@/components/landing/SSTSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Server-Side Tagging Specialist | Expert Implementation & Managed Tracking',
-  description: 'Hire a server-side tagging specialist with 15+ years experience. Expert GTM server-side implementation, Meta CAPI, Google Ads Enhanced Conversions, and managed tracking infrastructure. Recover 30-40% lost conversion data.',
-  keywords: 'server-side tagging specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist',
+  title: 'Server-Side Tagging Specialist for Hire | Recover 30–40% Lost Data',
+  description: 'Hire a server-side tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. Recover lost conversions. Free audit.',
+  keywords: 'server-side tagging specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist, tagging specialist, server-side tagging agency',
   alternates: {
     canonical: 'https://tagspecialist.ca/server-side-tagging-specialist',
   },
   openGraph: {
-    title: 'Server-Side Tagging Specialist | Expert Implementation & Managed Tracking',
-    description: 'Hire a server-side tagging specialist with 15+ years experience. Recover 30-40% lost conversion data with expert GTM server-side implementation.',
+    title: 'Server-Side Tagging Specialist for Hire | Recover 30–40% Lost Data',
+    description: 'Hire a server-side tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. Recover lost conversions. Free audit.',
     type: 'website',
     url: 'https://tagspecialist.ca/server-side-tagging-specialist',
   },
@@ -36,6 +36,43 @@ export default function SSTSpecialistPage() {
             bestRating: '5',
           },
         },
+        review: [
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-01-11',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Incredibly skilled with Facebook attribution. Thorough in troubleshooting and solving issues even on checkout software he wasn’t already familiar with.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2024-01-22',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Excellent troubleshooting and testing for Meta CAPI setup. Professional and knowledgeable with Google Analytics, Tag Manager, and Facebook Ads Manager.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-12-28',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Built ETL pipelines for my company. Works perfectly. Took the initiative and suggested ways to improve the setup. Super reactive.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-09-26',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Skilled and responsive data engineer with deep GCP experience. Highly recommend.',
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Verified Client' },
+            datePublished: '2025-02-26',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: 'Hands down the best Google and Meta tracking specialist I’ve ever worked with. Deep expertise and attention to detail.',
+          },
+        ],
         serviceType: 'Server-Side Tagging Implementation',
         areaServed: 'Worldwide',
         hasOfferCatalog: {

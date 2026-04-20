@@ -14,6 +14,7 @@ import {
 } from 'react-icons/hi';
 import Link from 'next/link';
 import { useState } from 'react';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 
 interface FAQ {
   q: string;
@@ -367,6 +368,9 @@ export default function SSTSpecialistLanding() {
       </section>
 
       {/* FAQ Section */}
+      {/* Testimonials */}
+      <TestimonialsSection />
+
       <section className="section-padding bg-gray-50">
         <div className="content-container max-w-3xl">
           <motion.div
