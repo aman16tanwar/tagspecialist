@@ -64,7 +64,7 @@ const ContactForm = () => {
           name: formData.name,
           email: formData.email,
           subject: `NEW ${leadType.toUpperCase()} INQUIRY: ${formData.name}`,
-          from_email: 'developer@tagspecialist.ca',
+          botcheck: '',
           message: `LEAD TYPE: ${leadType}\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company}\nWebsite: ${formData.website || 'N/A'}\nServices: ${formData.services.join(', ') || 'None selected'}\nChannels: ${formData.channels.join(', ') || 'None selected'}\nPain Point: ${formData.painPoint}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline || 'Not specified'}\n\nAdditional Details:\n${formData.message || 'None provided'}`
         }),
       });
@@ -79,7 +79,8 @@ const ContactForm = () => {
       openSuccessModal();
     } catch (error) {
       console.error('Error:', error);
-      alert('Thank you for reaching out. There was an issue submitting your message, but we have likely received it. Our team will contact you shortly.');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      alert(`Submission failed: ${errorMessage}\n\nPlease email us directly at developer@tagspecialist.ca`);
     } finally {
       setIsSubmitting(false);
     }
@@ -127,6 +128,7 @@ const ContactForm = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="p-10 space-y-8">
+              <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClasses}>Contact Name *</label>

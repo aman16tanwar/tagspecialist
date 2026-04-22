@@ -161,7 +161,7 @@ function BookAuditContent() {
           name: formData.name,
           email: formData.email,
           subject: subject,
-          from_email: 'developer@tagspecialist.ca',
+          botcheck: '',
           message: message
         }),
       });
@@ -185,7 +185,8 @@ function BookAuditContent() {
       openSuccessModal();
     } catch (error) {
       console.error('Error:', error);
-      alert('Thank you for your interest. There was an issue submitting your request, but we may have received it. Our team will contact you shortly.');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      alert(`Submission failed: ${errorMessage}\n\nPlease email us directly at developer@tagspecialist.ca`);
     } finally {
       setIsSubmitting(false);
     }
@@ -323,6 +324,7 @@ function BookAuditContent() {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
                 <div>
                   <label className={labelClasses}>
                     Full Name <span className="text-red-500">*</span>
