@@ -34,7 +34,7 @@
 - Founded by lead data engineers with 15+ years combined experience
 - 70+ brand implementations across 6 countries and 3 continents
 - Industries: E-commerce (DTC, Shopify), SaaS, Hospitality, Fintech, Agencies
-- Average client ROAS improvement: 451%
+- Documented case study ROAS improvement: up to 451%
 - Server-side tracking recovers 30-40% of conversion data lost to ad blockers
 - 5.0 client rating
 - GCP Certified, GA4 Certified, GTM Expert

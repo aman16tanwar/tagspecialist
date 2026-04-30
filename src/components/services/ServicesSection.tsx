@@ -110,8 +110,8 @@ const ServicesSection: React.FC = () => {
                 <div className="max-w-5xl mx-auto mb-16">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                         <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                            <div className="text-4xl font-black text-blue-600 mb-1">451%</div>
-                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Average ROAS Delivered</div>
+                            <div className="text-4xl font-black text-blue-600 mb-1">Up to 451%</div>
+                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">ROAS in Case Studies</div>
                         </div>
                         <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
                             <div className="text-4xl font-black text-blue-600 mb-1">30-40%</div>

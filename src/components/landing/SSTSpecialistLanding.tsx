@@ -108,7 +108,7 @@ export default function SSTSpecialistLanding() {
     {
       title: 'ROI-First Approach',
       description:
-        'Every implementation is designed to improve ad platform signal quality. Our clients average 451% ROAS improvement after going server-side.',
+        'Every implementation is designed to improve ad platform signal quality. Documented case studies show up to 451% ROAS improvement after going server-side.',
     },
     {
       title: 'Managed Infrastructure Included',
@@ -220,7 +220,7 @@ export default function SSTSpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> 70+ implementations
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 451% avg ROAS improvement
+                <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 15+ years experience

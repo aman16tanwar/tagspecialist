@@ -12,7 +12,7 @@ TagSpecialist is a boutique consultancy founded by lead data engineers who speci
 - Direct access to senior specialists (no account managers)
 - 15+ years combined technical experience
 - 70+ brand implementations across 6 countries
-- Average client ROAS improvement: 451%
+- Documented case study ROAS improvement: up to 451%
 - 30-day satisfaction guarantee
 - GCP Certified, GA4 Certified, GTM Expert
 

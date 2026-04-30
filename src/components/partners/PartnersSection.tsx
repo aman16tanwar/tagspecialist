@@ -141,7 +141,7 @@ const PartnersSection: React.FC = () => {
                         Stop Losing Clients To <br /> Broken Attribution.
                     </h2>
                     <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
-                        Schedule a partner discovery call. We&apos;ll show you how we&apos;ve helped agencies deliver 451% ROAS under their own brand.
+                        Schedule a partner discovery call. We&apos;ll show you how we&apos;ve helped agencies deliver server-side tracking with up to 451% ROAS in documented case studies — under their own brand.
                     </p>
                     <Link
                         href="/book-audit"

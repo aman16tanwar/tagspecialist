@@ -122,7 +122,7 @@ export default function GTMSpecialistLanding() {
       description: 'No account managers or middlemen. You work directly with the people writing your tags and building your pipelines.',
     },
     {
-      title: '451% Average ROAS Improvement',
+      title: 'Up to 451% ROAS Improvement',
       description: 'Our implementations don\'t just track data — they recover conversion signal that directly improves ad platform performance.',
     },
     {
@@ -219,7 +219,7 @@ export default function GTMSpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> 70+ implementations
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 451% avg ROAS improvement
+                <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 15+ years experience

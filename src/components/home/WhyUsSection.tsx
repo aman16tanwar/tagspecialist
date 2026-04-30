@@ -7,7 +7,7 @@ const WhyUsSection: React.FC = () => {
     "Founded by 2 Lead Data Engineers",
     "15+ Years Combined Technical Experience",
     "Direct Access to Experts (No Account Managers)",
-    "Proven Results: 451% Average ROAS",
+    "Proven Results: 30-40% More Conversions Captured",
     "Enterprise-Grade Engineering (GCP/BigQuery)",
     "No Vendor Lock-in (Own Your Data)",
     "Custom SA360, DV360, and Floodlight integrations",

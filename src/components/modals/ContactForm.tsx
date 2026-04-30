@@ -275,7 +275,7 @@ const ContactForm = () => {
               <div className="pt-6 border-t border-gray-100">
                 <div className="text-center mb-6">
                   <p className="text-blue-600 font-black text-xs uppercase tracking-[0.2em]">
-                    ⭐⭐⭐⭐⭐ Trusted by 70+ businesses | 451% Average ROAS
+                    ⭐⭐⭐⭐⭐ Trusted by 70+ businesses | Up to 451% ROAS
                   </p>
                 </div>
 
