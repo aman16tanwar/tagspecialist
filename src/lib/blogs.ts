@@ -13,17 +13,19 @@ export interface BlogPost {
 }
 
 export async function getBlogs(): Promise<BlogPost[]> {
-  return blogsData.map((blog: Partial<BlogPost>) => ({
-    id: blog.id || '',
-    title: blog.title || 'Untitled',
-    slug: blog.slug || '',
-    description: blog.description || '',
-    content: blog.content || '',
-    category: blog.category || 'General',
-    tags: blog.tags || [],
-    publishDate: blog.publishDate || '',
-    author: blog.author || 'Tag Specialist',
-  }));
+  return blogsData
+    .map((blog: Partial<BlogPost>) => ({
+      id: blog.id || '',
+      title: blog.title || 'Untitled',
+      slug: blog.slug || '',
+      description: blog.description || '',
+      content: blog.content || '',
+      category: blog.category || 'General',
+      tags: blog.tags || [],
+      publishDate: blog.publishDate || '',
+      author: blog.author || 'Tag Specialist',
+    }))
+    .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 }
 
 export async function getBlogById(id: string): Promise<BlogPost | null> {
