@@ -186,7 +186,7 @@ A: BigQuery allows granular data ownership, complex SQL transformations, histori
 
 ---
 
-## Blog Topics (41 articles)
+## Blog Topics (47 articles)
 
 Our blog covers deep technical topics in server-side tracking and data engineering:
 
@@ -206,6 +206,12 @@ Our blog covers deep technical topics in server-side tracking and data engineeri
 - Custom attribution modeling in BigQuery
 - BigQuery security (row-level, column-level, dynamic masking)
 - Shopify server-side tracking comparison (GTM vs Elevar vs Stape)
+- Server-Side Tagging Best Practices 2026 (10 best practices, sGTM v3.2 migration, Consent Mode v2, Meta CAPI EMQ targets) — https://tagspecialist.ca/blog/1776000000001
+- Google Ads Enhanced Conversions Unification June 2026 (migration from legacy GCLID-based offline imports to Enhanced Conversions for Leads via Data Manager API, 63-day upload window, daily sync requirement) — https://tagspecialist.ca/blog/1778500000001
+- Meta CAPI in 2026: Pixel-Only Tracking Costs 20-40% of Conversions (dual-tracking architecture with shared event_id, EMQ 8.0+ target, hashing requirements, consent gating, common audit failures) — https://tagspecialist.ca/blog/1778600000001
+- Hosted vs. Self-Hosted Server-Side GTM in 2026: Stape vs. Cloud Run (decision framework comparing managed hosting and self-hosted sGTM, cost models for both paths, when each wins, migration patterns between them, common architectural mistakes) — https://tagspecialist.ca/blog/1778700000001
+- Cross-Device Attribution for SaaS: iOS App Discovery to Desktop Stripe Conversions Without SKAdNetwork (Stripe client_reference_id pattern, Universal Links setup, email-fallback matching, webhook reconciliation, recovers 40-70% more attributed revenue for mobile-discovered SaaS) — https://tagspecialist.ca/blog/1778800000001
+- Consent-Compliant Server-Side Tracking in 2026 (Consent Mode v2 + certified CMP + server-side gating architecture, GDPR risk for non-gated CAPI tags, server-container consent variable patterns, EEA enforcement realities, audit pitfalls) — https://tagspecialist.ca/blog/1778900000001
 
 ---
 
