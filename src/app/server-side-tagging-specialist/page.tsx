@@ -3,15 +3,15 @@ import SSTSpecialistLanding from '@/components/landing/SSTSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Server-Side Tagging Specialist for Hire | Recover 30–40% Lost Data',
-  description: 'Hire a server-side tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. Recover lost conversions. Free audit.',
-  keywords: 'server-side tagging specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist, tagging specialist, server-side tagging agency',
+  title: 'Server-Side Tagging & Tracking Specialist for Hire | Recover 30–40% Lost Data',
+  description: 'Hire a server-side tagging specialist (server-side tracking specialist). GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. Free audit.',
+  keywords: 'server-side tagging specialist, server-side tracking specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist, tagging specialist, server-side tagging agency',
   alternates: {
     canonical: 'https://tagspecialist.ca/server-side-tagging-specialist',
   },
   openGraph: {
-    title: 'Server-Side Tagging Specialist for Hire | Recover 30–40% Lost Data',
-    description: 'Hire a server-side tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. Recover lost conversions. Free audit.',
+    title: 'Server-Side Tagging & Tracking Specialist for Hire | Recover 30–40% Lost Data',
+    description: 'Hire a server-side tagging specialist (also called server-side tracking specialist). GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run.',
     type: 'website',
     url: 'https://tagspecialist.ca/server-side-tagging-specialist',
   },
@@ -115,6 +115,14 @@ export default function SSTSpecialistPage() {
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'A server-side tagging specialist implements and manages server-side tracking infrastructure. This includes deploying GTM server containers on cloud platforms, setting up Conversion APIs for Meta, Google, and TikTok, configuring custom domains for first-party cookies, and bypassing ad blockers to capture 30-40% more conversion data that client-side tracking misses.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is a server-side tracking specialist the same as a server-side tagging specialist?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. "Server-side tracking specialist" and "server-side tagging specialist" describe the same role. Both implement server-side GTM, conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), first-party cookie configuration, and ad blocker bypass. Marketing teams typically say "tracking specialist" while engineering teams say "tagging specialist," but the deliverables are identical.',
             },
           },
           {

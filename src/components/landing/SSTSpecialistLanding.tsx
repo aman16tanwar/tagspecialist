@@ -150,6 +150,10 @@ export default function SSTSpecialistLanding() {
       a: 'A server-side tagging specialist designs, implements, and maintains server-side tracking infrastructure that processes analytics and advertising tags on a cloud server instead of in the visitor\'s browser. This includes deploying server-side GTM containers on Google Cloud Run, configuring first-party cookie domains, integrating conversion APIs for platforms like Meta, Google Ads, and TikTok, and ensuring event deduplication between client-side and server-side streams. As a server-side tagging specialist, we go beyond basic setup — we architect measurement systems that recover the 30-40% of conversion data lost to ad blockers and browser privacy restrictions.',
     },
     {
+      q: 'Is a server-side tracking specialist the same as a server-side tagging specialist?',
+      a: 'Yes — "server-side tracking specialist" and "server-side tagging specialist" describe the same role with different terminology. Both implement server-side tag management (typically Google Tag Manager Server-Side on Cloud Run), conversion API integrations (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), first-party cookie configuration, and ad blocker bypass. Marketing teams often say "server-side tracking specialist" while engineering teams say "server-side tagging specialist," but the deliverables are identical: capture 30-40% more conversions and feed cleaner data to your ad platforms.',
+    },
+    {
       q: 'How much does server-side tagging implementation cost?',
       a: 'Server-side tagging implementation typically ranges from $8,000 to $18,500 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $8,000-$12,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $12,000-$18,500. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote from our server-side tagging specialist team.',
     },
@@ -238,7 +242,14 @@ export default function SSTSpecialistLanding() {
         <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <p className="text-gray-700 text-base leading-relaxed">
-              <strong>A server-side tagging specialist</strong> implements and manages server-side tracking infrastructure that routes data through your own server instead of relying on browser-based scripts. This includes deploying GTM server containers on Google Cloud Run, integrating conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), configuring custom domains for first-party cookies, and bypassing ad blockers. Server-side tagging typically recovers <strong>30-40% of conversion data</strong> lost to ad blockers and browser restrictions like ITP. Implementation takes <strong>2-4 weeks</strong> and costs between <strong>$8,000 and $18,500</strong>, with ongoing managed tracking available from <strong>$150/month</strong>.
+              <strong>A server-side tagging specialist</strong> — also called a <strong>server-side tracking specialist</strong> —
+              implements and manages server-side tracking infrastructure that routes data through your own server instead of
+              relying on browser-based scripts. This includes deploying GTM server containers on Google Cloud Run, integrating
+              conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), configuring custom domains for
+              first-party cookies, and bypassing ad blockers. As of 2026, server-side tracking typically recovers
+              <strong> 30-40% of conversion data</strong> lost to ad blockers and browser restrictions like ITP. Implementation
+              takes <strong>2-4 weeks</strong> and costs between <strong>$8,000 and $18,500</strong>, with ongoing managed
+              tracking available from <strong>$150/month</strong>.
             </p>
           </div>
         </div>

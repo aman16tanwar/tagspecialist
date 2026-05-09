@@ -327,8 +327,93 @@ export default function GTMSpecialistLanding() {
         </div>
       </section>
 
+      {/* Pricing — targets "how much does it cost to hire a google tag manager expert" */}
+      <section className="section-padding bg-white" data-speakable="true">
+        <div className="content-container max-w-5xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="text-center mb-10"
+          >
+            <h2>How Much Does It Cost to Hire a Google Tag Manager Expert?</h2>
+            <p className="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">
+              The cost to hire a Google Tag Manager expert depends on scope — from a one-time audit to a full server-side
+              implementation. As of 2026, here&apos;s exactly what each engagement costs at TagSpecialist, with fixed pricing
+              and no hourly billing surprises.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="overflow-x-auto"
+          >
+            <table className="w-full bg-white rounded-xl shadow-sm border border-gray-200">
+              <thead>
+                <tr className="bg-navy-900 text-white">
+                  <th className="text-left px-6 py-4 font-heading font-semibold rounded-tl-xl">Engagement Type</th>
+                  <th className="text-left px-6 py-4 font-heading font-semibold">Price Range</th>
+                  <th className="text-left px-6 py-4 font-heading font-semibold">Timeline</th>
+                  <th className="text-left px-6 py-4 font-heading font-semibold rounded-tr-xl">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white">
+                  <td className="px-6 py-4 font-semibold text-navy-900">GTM Audit &amp; Fix</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">$1,500 – $5,000</td>
+                  <td className="px-6 py-4 text-gray-700 whitespace-nowrap">3–5 business days</td>
+                  <td className="px-6 py-4 text-gray-600">Diagnosing broken tracking and missing conversions</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="px-6 py-4 font-semibold text-navy-900">GA4 + GTM Setup</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">$3,500 – $7,500</td>
+                  <td className="px-6 py-4 text-gray-700 whitespace-nowrap">1–2 weeks</td>
+                  <td className="px-6 py-4 text-gray-600">New GA4 migration and e-commerce tracking</td>
+                </tr>
+                <tr className="bg-white">
+                  <td className="px-6 py-4 font-semibold text-navy-900">Server-Side GTM (Full)</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">$12,000 – $18,500</td>
+                  <td className="px-6 py-4 text-gray-700 whitespace-nowrap">3–4 weeks</td>
+                  <td className="px-6 py-4 text-gray-600">Meta CAPI, Enhanced Conversions, ad blocker bypass</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="px-6 py-4 font-semibold text-navy-900">Managed Tracking</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">From $150/month</td>
+                  <td className="px-6 py-4 text-gray-700 whitespace-nowrap">Ongoing</td>
+                  <td className="px-6 py-4 text-gray-600">Monitoring, maintenance, monthly fixes</td>
+                </tr>
+              </tbody>
+            </table>
+          </motion.div>
+
+          <div className="mt-8 max-w-3xl mx-auto bg-blue-50 border border-blue-100 rounded-xl p-6">
+            <p className="text-gray-700 leading-relaxed">
+              <strong>Why GTM expert pricing varies:</strong> A focused audit costs less than a full server-side build because
+              the latter requires Cloud Run deployment, conversion API integration (Meta CAPI, Google Ads Enhanced Conversions,
+              TikTok Events API), parallel testing, and post-launch validation. Hourly GTM consultants typically charge
+              $150–$300/hour, but a typical implementation runs 60–100+ hours — fixed-price engagements end up cheaper and
+              more predictable than billing the hours.
+            </p>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/book-audit?service=tracking"
+              className="btn-primary inline-flex items-center justify-center gap-2 group"
+            >
+              Get a Fixed-Price Quote
+              <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-50">
         <div className="content-container">
           <motion.div
             initial="hidden"
