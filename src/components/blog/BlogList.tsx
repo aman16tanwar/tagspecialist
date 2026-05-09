@@ -18,7 +18,7 @@ export default function BlogList({ posts }: BlogListProps) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {posts.map((post) => (
-        <Link key={post.id} href={`/blog/${post.id}`} className="block group">
+        <Link key={post.id} href={`/blog/${post.slug}`} className="block group">
           <div className="bg-white rounded-lg border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 h-full flex flex-col">
             <div className="flex items-center gap-4 mb-4">
               <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
