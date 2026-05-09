@@ -70,6 +70,20 @@ Ongoing managed tracking infrastructure starting at $150/month:
 - Runs in your own Google Cloud project
 - Save $1,200+/year vs Fivetran
 
+### BigQuery Specialist Services ($1,500 – $35,000)
+Marketing data warehouse engineering on Google Cloud. Page: https://tagspecialist.ca/bigquery-specialist
+- BigQuery Audit & Cost Optimization ($1,500 – $5,000, 3–5 days) — query patterns, table design, slot consumption; typical 30–60% cost reduction
+- Marketing Pipeline Build ($5,000 – $12,000, 2–3 weeks) — server-side GA4 → BigQuery, Google Ads + Meta CAPI ingestion
+- Full Marketing Data Warehouse ($18,000 – $35,000, 5–8 weeks) — dbt models (staging/intermediate/marts), identity resolution, BigQuery ML, reverse ETL
+- Managed Pipeline Operations (from $300/month) — monitoring, dbt updates, schema evolution
+
+### Google ADK Specialist Services ($5,000 – $60,000)
+Production AI agents built with Google's Agent Development Kit, deployed on Vertex AI Agent Engine. Page: https://tagspecialist.ca/google-adk-specialist
+- Agent Prototype ($5,000 – $12,000, 2–3 weeks) — validate a use case with an end-to-end agent + basic eval set
+- Marketing Analytics Agent ($8,000 – $18,000, 3–5 weeks) — BigQuery-grounded single-agent (NL → SQL, anomaly detection, change explanation)
+- Production Multi-Agent System ($25,000 – $60,000, 6–10 weeks) — multi-agent orchestration with evals, observability, deployment pipeline
+- Managed Agent Operations (from $400/month) — eval runs, prompt updates, model upgrades, on-call response
+
 ---
 
 ## Pricing Structure
@@ -212,6 +226,10 @@ Our blog covers deep technical topics in server-side tracking and data engineeri
 - Hosted vs. Self-Hosted Server-Side GTM in 2026: Stape vs. Cloud Run (decision framework comparing managed hosting and self-hosted sGTM, cost models for both paths, when each wins, migration patterns between them, common architectural mistakes) — https://tagspecialist.ca/blog/stape-vs-cloud-run-server-side-gtm-2026
 - Cross-Device Attribution for SaaS: iOS App Discovery to Desktop Stripe Conversions Without SKAdNetwork (Stripe client_reference_id pattern, Universal Links setup, email-fallback matching, webhook reconciliation, recovers 40-70% more attributed revenue for mobile-discovered SaaS) — https://tagspecialist.ca/blog/cross-device-attribution-saas-stripe-client-reference-id-2026
 - Consent-Compliant Server-Side Tracking in 2026 (Consent Mode v2 + certified CMP + server-side gating architecture, GDPR risk for non-gated CAPI tags, server-container consent variable patterns, EEA enforcement realities, audit pitfalls) — https://tagspecialist.ca/blog/consent-compliant-server-side-tracking-gdpr-2026
+- Stape vs Addingwell vs Self-Hosted Server-Side GTM: An Honest 2026 Comparison (managed SaaS vs Cloud Run, total cost of ownership including engineering hours, decision framework, when each wins, migration patterns) — https://tagspecialist.ca/blog/stape-vs-addingwell-vs-self-hosted-server-side-gtm-2026
+- Server-Side GTM on Cloud Run in 2026: Production Architecture, Costs & Gotchas (full production architecture with Cloud Load Balancing, Cloud Armor WAF, sidecar enrichment services, BigQuery sinks, CI/CD, monitoring, and 8 production failure modes) — https://tagspecialist.ca/blog/server-side-gtm-cloud-run-production-architecture-2026
+- What Is Google's Agent Development Kit (ADK)? A 2026 Field Guide (practical guide to ADK: what it is, when to use vs LangChain/LangGraph/CrewAI, production architecture, Vertex AI Agent Engine deployment, multi-agent orchestration, evals) — https://tagspecialist.ca/blog/what-is-google-agent-development-kit-adk-2026-field-guide
+- Building a Marketing Analytics AI Agent with Google ADK + BigQuery (production reference architecture: three typed BigQuery tools, Vertex AI Agent Engine deployment, eval harness, observability, IAM scoping, 8 production failure modes) — https://tagspecialist.ca/blog/marketing-analytics-ai-agent-google-adk-bigquery-2026
 
 ---
 

@@ -48,6 +48,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/bigquery-specialist`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/google-adk-specialist`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/unified-data-platform-guide`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
