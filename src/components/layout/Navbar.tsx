@@ -140,6 +140,13 @@ const Navbar = () => {
                         </Link>
 
                         <div className="mt-auto pt-6 space-y-3 border-t border-white/10">
+                          <p className="text-[9px] font-black text-blue-400 uppercase tracking-[0.3em] mb-1">Hire a Specialist</p>
+                          <Link href="/server-side-tagging-specialist" className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-blue-300 hover:text-white transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                            Server-Side Tracking Specialist <HiArrowRight />
+                          </Link>
+                          <Link href="/google-tag-manager-specialist" className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-blue-300 hover:text-white transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                            Google Tag Manager Specialist <HiArrowRight />
+                          </Link>
                           <Link href="/services" className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-blue-300 hover:text-white transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
                             Detailed Pricing <HiArrowRight />
                           </Link>
@@ -195,6 +202,14 @@ const Navbar = () => {
                     <Link href="/services#analytics-foundation" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Analytics Foundation ($12k)</Link>
                     <Link href="/services#server-side" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Server-Side Infra ($18.5k) ⭐</Link>
                     <Link href="/services#complete-data" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Complete Data ($28k)</Link>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4">Hire a Specialist</h3>
+                  <div className="space-y-3">
+                    <Link href="/server-side-tagging-specialist" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Server-Side Tracking Specialist</Link>
+                    <Link href="/google-tag-manager-specialist" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Google Tag Manager Specialist</Link>
                   </div>
                 </div>
 

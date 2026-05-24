@@ -195,7 +195,7 @@ export default function SSTSpecialistLanding() {
               Server-Side Tracking Expert
             </p>
             <h1 className="text-white text-[32px] lg:text-[52px] leading-[1.1] tracking-tight mb-6">
-              Server-Side Tagging Specialist:{' '}
+              Server-Side Tracking Specialist:{' '}
               <span className="text-orange-400">Expert Implementation for Better Data & Higher ROAS</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -265,7 +265,7 @@ export default function SSTSpecialistLanding() {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <h2>Server-Side Tagging Services</h2>
+            <h2>Server-Side Tracking Services</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
               End-to-end server-side tracking — from initial deployment to ongoing managed infrastructure.
             </p>
@@ -311,7 +311,7 @@ export default function SSTSpecialistLanding() {
             variants={fadeIn}
             className="text-center mb-12"
           >
-            <h2>Why Choose TagSpecialist for Server-Side Tagging</h2>
+            <h2>Why Choose TagSpecialist for Server-Side Tracking</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
               We&apos;re not a generalist agency — we&apos;re data engineers who build server-side tracking
               infrastructure every day.

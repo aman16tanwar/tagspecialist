@@ -93,51 +93,29 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <h3 className="text-lg font-bold text-navy-900 mb-6">Related Resources</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {post.tags?.some(t => ['Server-Side Tracking', 'GTM Server Container'].includes(t)) ? (
-              <>
-                <Link href="/server-side-tagging-specialist" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Server-Side Tagging Specialist</p>
-                  <p className="text-gray-500 text-xs mt-1">Expert implementation & managed tracking</p>
-                </Link>
-                <Link href="/benefits-of-server-side-tagging" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Benefits of Server-Side Tagging</p>
-                  <p className="text-gray-500 text-xs mt-1">Why leading brands are making the switch</p>
-                </Link>
-                <Link href="/managed-tracking" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Managed Tracking Plans</p>
-                  <p className="text-gray-500 text-xs mt-1">From $150/mo — we handle the infrastructure</p>
-                </Link>
-              </>
-            ) : post.tags?.some(t => ['BigQuery', 'Data Engineering', 'Data Warehouse', 'Data Lake'].includes(t)) ? (
-              <>
-                <Link href="/unified-data-platform-guide" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Unified Data Platform Guide</p>
-                  <p className="text-gray-500 text-xs mt-1">BigQuery, attribution & ML activation</p>
-                </Link>
-                <Link href="/shopify-bigquery" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Shopify to BigQuery Pipeline</p>
-                  <p className="text-gray-500 text-xs mt-1">No row limits — $50/month</p>
-                </Link>
-                <Link href="/services" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Data Engineering Services</p>
-                  <p className="text-gray-500 text-xs mt-1">Custom BigQuery warehouses & ETL pipelines</p>
-                </Link>
-              </>
+            <Link href="/server-side-tagging-specialist" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+              <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Server-Side Tracking Specialist</p>
+              <p className="text-gray-500 text-xs mt-1">Expert implementation & managed tracking</p>
+            </Link>
+            <Link href="/google-tag-manager-specialist" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+              <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Google Tag Manager Specialist</p>
+              <p className="text-gray-500 text-xs mt-1">GTM audits, server-side & GA4 setup</p>
+            </Link>
+            {post.tags?.some(t => ['BigQuery', 'Data Engineering', 'Data Warehouse', 'Data Lake'].includes(t)) ? (
+              <Link href="/unified-data-platform-guide" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+                <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Unified Data Platform Guide</p>
+                <p className="text-gray-500 text-xs mt-1">BigQuery, attribution & ML activation</p>
+              </Link>
+            ) : post.tags?.some(t => ['Server-Side Tracking', 'GTM Server Container'].includes(t)) ? (
+              <Link href="/managed-tracking" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+                <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Managed Tracking Plans</p>
+                <p className="text-gray-500 text-xs mt-1">From $150/mo — we handle the infrastructure</p>
+              </Link>
             ) : (
-              <>
-                <Link href="/google-tag-manager-specialist" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">GTM Specialist Services</p>
-                  <p className="text-gray-500 text-xs mt-1">Expert implementation & audit</p>
-                </Link>
-                <Link href="/server-side-tagging-guide" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Server-Side Tagging Guide</p>
-                  <p className="text-gray-500 text-xs mt-1">Complete implementation guide for 2026</p>
-                </Link>
-                <Link href="/case-studies" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
-                  <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Case Studies</p>
-                  <p className="text-gray-500 text-xs mt-1">Real results from 70+ implementations</p>
-                </Link>
-              </>
+              <Link href="/case-studies" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
+                <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Case Studies</p>
+                <p className="text-gray-500 text-xs mt-1">Real results from 70+ implementations</p>
+              </Link>
             )}
           </div>
         </div>

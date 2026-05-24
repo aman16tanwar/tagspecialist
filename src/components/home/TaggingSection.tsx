@@ -29,8 +29,15 @@ const TaggingSection: React.FC = () => {
             Tracking & Tagging <span className="text-blue-600">Foundation</span>
           </h2>
           <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-            Before you analyze, you must track accurately. We engineer the entire infrastructure required to capture every signal with 100% precision.{' '}
-            <Link href="/benefits-of-server-side-tagging" className="text-blue-600 hover:underline">Learn why server-side tagging matters →</Link>
+            Before you analyze, you must track accurately. We engineer the entire infrastructure required to capture every signal with 100% precision.
+          </p>
+          <p className="text-base text-gray-600 font-medium max-w-3xl mx-auto mt-6 leading-relaxed">
+            Hire a{' '}
+            <Link href="/server-side-tagging-specialist" className="text-blue-600 hover:underline font-semibold">server-side tracking specialist</Link>
+            {' '}or a{' '}
+            <Link href="/google-tag-manager-specialist" className="text-blue-600 hover:underline font-semibold">Google Tag Manager specialist</Link>
+            {' '}—{' '}
+            <Link href="/benefits-of-server-side-tagging" className="text-blue-600 hover:underline">or learn why server-side tagging matters →</Link>
           </p>
         </div>
 

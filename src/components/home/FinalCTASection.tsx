@@ -39,6 +39,14 @@ const FinalCTASection: React.FC = () => {
            </Link>
         </div>
 
+        <p className="text-base text-gray-600 font-medium max-w-3xl mx-auto mb-16 leading-relaxed">
+          Or hire a{' '}
+          <Link href="/server-side-tagging-specialist" className="text-blue-600 hover:underline font-semibold">server-side tracking specialist</Link>
+          {' '}or{' '}
+          <Link href="/google-tag-manager-specialist" className="text-blue-600 hover:underline font-semibold">Google Tag Manager specialist</Link>
+          {' '}directly.
+        </p>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-gray-200 pt-12">
             <div className="flex items-center justify-center gap-3 text-xs font-black text-navy-900 uppercase tracking-widest">
                 <HiCheckCircle className="text-blue-500 text-lg" /> No Account Managers
