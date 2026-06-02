@@ -37,7 +37,7 @@ export default function BeforeAfterDashboard() {
     n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
   return (
-    <section className="section-padding bg-white">
+    <section id="estimate-recovery" className="section-padding bg-white scroll-mt-20">
       <div className="content-container">
         <motion.div
           initial="hidden"
@@ -62,7 +62,7 @@ export default function BeforeAfterDashboard() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="max-w-5xl mx-auto bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden"
+          className="max-w-5xl mx-auto bg-white rounded-2xl border-2 border-gray-300 shadow-2xl overflow-hidden ring-1 ring-orange-100"
         >
           {/* Inputs Strip */}
           <div className="bg-navy-900 text-white p-6 lg:p-8 border-b border-gray-200">
@@ -122,29 +122,29 @@ export default function BeforeAfterDashboard() {
           {/* Before / After Cards */}
           <div className="grid md:grid-cols-2 gap-px bg-gray-200">
             {/* Before */}
-            <div className="bg-gray-50 p-6 lg:p-10">
-              <div className="flex items-center gap-2 mb-6">
+            <div className="bg-gray-50 p-8 lg:p-12">
+              <div className="flex items-center gap-2 mb-8">
                 <span className="px-2.5 py-1 bg-gray-300 text-gray-700 text-xs font-bold uppercase tracking-widest rounded">
                   Before
                 </span>
                 <span className="text-gray-500 text-sm">Pixel only</span>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1 font-semibold">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-2 font-semibold">
                     Tracked Conversions
                   </p>
-                  <p className="text-4xl font-black text-gray-700">
+                  <p className="text-5xl lg:text-6xl font-black text-gray-500">
                     {conversions.toLocaleString()}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1 font-semibold">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-2 font-semibold">
                     Reported CPA
                   </p>
-                  <p className="text-4xl font-black text-gray-700">
+                  <p className="text-5xl lg:text-6xl font-black text-gray-500">
                     {formatCurrency(stats.beforeCPA)}
                   </p>
                 </div>
@@ -159,8 +159,8 @@ export default function BeforeAfterDashboard() {
             </div>
 
             {/* After */}
-            <div className="bg-gradient-to-br from-blue-50 to-white p-6 lg:p-10 relative">
-              <div className="flex items-center gap-2 mb-6">
+            <div className="bg-gradient-to-br from-green-50 via-blue-50 to-white p-8 lg:p-12 relative">
+              <div className="flex items-center gap-2 mb-8">
                 <span className="px-2.5 py-1 bg-green-500 text-white text-xs font-bold uppercase tracking-widest rounded">
                   After
                 </span>
@@ -169,37 +169,37 @@ export default function BeforeAfterDashboard() {
                 </span>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1 font-semibold">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-2 font-semibold">
                     Tracked Conversions
                   </p>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-4xl font-black text-navy-900">
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <p className="text-5xl lg:text-7xl font-black text-orange-500">
                       {stats.afterConversions.toLocaleString()}
                     </p>
-                    <span className="flex items-center gap-1 text-green-600 font-bold text-sm">
+                    <span className="flex items-center gap-1 text-green-600 font-bold text-base bg-green-100 px-2.5 py-1 rounded">
                       <HiTrendingUp /> +{stats.recoveredConversions.toLocaleString()}
                     </span>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1 font-semibold">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-2 font-semibold">
                     Reported CPA
                   </p>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-4xl font-black text-navy-900">
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <p className="text-5xl lg:text-7xl font-black text-orange-500">
                       {formatCurrency(stats.afterCPA)}
                     </p>
-                    <span className="flex items-center gap-1 text-green-600 font-bold text-sm">
+                    <span className="flex items-center gap-1 text-green-600 font-bold text-base bg-green-100 px-2.5 py-1 rounded">
                       <HiTrendingDown /> -{stats.cpaDropPct.toFixed(1)}%
                     </span>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-gray-200">
-                  <p className="text-sm text-gray-700 font-semibold">
+                  <p className="text-sm text-gray-800 font-semibold">
                     Your campaigns optimize on cleaner data. CPA drops by{' '}
                     {formatCurrency(stats.cpaDrop)} per conversion.
                   </p>

@@ -171,14 +171,14 @@ export default function MetaCAPILanding() {
                 href="/book-audit?service=conversion-api"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                See How Many Conversions You&apos;re Missing
+                Get a Free Tracking Diagnostic
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="#how-it-works"
-                className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center"
+                href="#estimate-recovery"
+                className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center inline-flex items-center justify-center gap-2"
               >
-                See How It Works
+                Estimate Your Recovery
               </Link>
             </div>
 
@@ -326,6 +326,89 @@ export default function MetaCAPILanding() {
       {/* Interactive Before/After Dashboard */}
       <BeforeAfterDashboard />
 
+      {/* Who This Is For — qualifying section */}
+      <section className="section-padding bg-gray-50">
+        <div className="content-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                Who This Is For
+              </p>
+              <h2>Is This the Right Fit for You?</h2>
+              <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
+                We don&apos;t want to waste your time or ours. Here&apos;s an honest read on who
+                this service is built for.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Best Fit */}
+              <div className="bg-white border-2 border-green-200 rounded-xl p-8">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="px-2.5 py-1 bg-green-500 text-white text-xs font-bold uppercase tracking-widest rounded">
+                    Best Fit
+                  </span>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'Spending $3-5k+/month on Meta or Google ads (sometimes both)',
+                    'Running Shopify, Shopify Plus, WooCommerce, or a custom-built store',
+                    'Lead gen / SaaS sending conversion events to Meta or Google Ads',
+                    'Already see GA4 / ad platform numbers not matching your backend',
+                    'Want cleaner signal so Meta and Google optimize on real conversions',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
+                      <HiCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Not the Right Fit */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="px-2.5 py-1 bg-gray-500 text-white text-xs font-bold uppercase tracking-widest rounded">
+                    Not the Right Fit
+                  </span>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'Spending under $1k/month on ads — the math won\'t justify the setup cost',
+                    'Running only organic / SEO traffic with no paid ad spend',
+                    'Need a fix in under 5 business days — we ship in one week, not 24 hours',
+                    'Want fully self-hosted on your own GCP / AWS account (we offer a separate migration service for that)',
+                    'Looking for a $99 / one-time fix — we run managed infra, not a side-gig setup',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
+                      <span className="text-gray-400 font-bold text-lg leading-none mt-0.5 flex-shrink-0">×</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-center text-gray-500 text-sm mt-8">
+              Not sure where you fall?{' '}
+              <Link
+                href="/book-audit?service=conversion-api"
+                className="text-blue-600 hover:underline font-semibold"
+              >
+                Book the free diagnostic
+              </Link>{' '}
+              — we&apos;ll tell you straight.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Objection Removal — right before Pricing */}
       <section className="section-padding bg-white">
         <div className="content-container">
@@ -379,8 +462,8 @@ export default function MetaCAPILanding() {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
-              Simple Bundled Pricing
+            <p className="text-orange-500 font-bold text-sm uppercase tracking-widest mb-3">
+              Recover Lost Conversions in 7 Days
             </p>
             <h2>Setup + Managed Hosting — One Package.</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
@@ -587,6 +670,68 @@ export default function MetaCAPILanding() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* What's Included in the Free Diagnostic */}
+      <section className="section-padding bg-white">
+        <div className="content-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                What&apos;s Free?
+              </p>
+              <h2>What&apos;s Included in Your Free Diagnostic</h2>
+              <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
+                A 15-minute screen-share call. You walk away with a clear picture of your tracking
+                gaps and what it would take to fix them — whether you hire us or not.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                {
+                  title: 'Live Setup Audit',
+                  desc: 'We screen-share through your current Meta Pixel, Google Ads tag, and any existing CAPI or Enhanced Conversions setup. You see exactly where the gaps are.',
+                },
+                {
+                  title: 'Lost-Conversion Estimate',
+                  desc: 'Based on your ad spend, traffic, and audience, we estimate how many conversions ad blockers and iOS 17 ATT are hiding from your campaigns each month.',
+                },
+                {
+                  title: 'Written Recovery Roadmap',
+                  desc: 'You leave with a sequenced fix list — what to do first, what is highest impact, and what is optional. Build it yourself or hire us. Your call.',
+                },
+                {
+                  title: 'Zero Sales Pitch',
+                  desc: 'If your setup is fine, we will tell you. If it is not, you decide what to do with the info. No follow-up emails, no pressure to buy anything.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-gray-50 border border-gray-200 rounded-xl p-6"
+                >
+                  <div className="flex items-start gap-3">
+                    <HiCheck className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-navy-900 mb-2">{item.title}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-gray-500 text-sm mt-8">
+              15-minute call · No credit card · No prerequisite · Email follow-up only if you ask
+            </p>
+          </motion.div>
         </div>
       </section>
 
