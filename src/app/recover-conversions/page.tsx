@@ -3,15 +3,15 @@ import MetaCAPILanding from '@/components/landing/MetaCAPILanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Recover 30% Lost Ad Conversions | Meta CAPI + Google Ads Setup — $1,500',
-  description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. Recover ~30% of conversions lost to ad blockers and iOS 17. We host the infrastructure — no GCP account needed. $1,500 flat, 1-week delivery.',
+  title: 'Meta CAPI + Google Ads Enhanced Conversions Setup | $1,500 + $150/mo',
+  description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup, bundled with managed hosting. Per Meta, CAPI users see 13% lower CPA and 8% more attributed conversions. $1,500 setup + $150/mo managed, delivered in 1 week.',
   keywords: 'meta conversion api setup, google ads enhanced conversions setup, conversion api implementation, server-side tracking setup, recover lost conversions, capi setup service, facebook conversion api setup, server side tagging service, fix ad tracking, conversion api expert',
   alternates: {
     canonical: 'https://tagspecialist.ca/recover-conversions',
   },
   openGraph: {
-    title: 'Recover 30% Lost Ad Conversions | Meta CAPI + Google Ads Setup — $1,500',
-    description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. Recover ~30% of lost conversions. $1,500 flat, 1-week delivery.',
+    title: 'Meta CAPI + Google Ads Enhanced Conversions Setup | $1,500 + $150/mo',
+    description: 'Done-for-you Meta CAPI + Google Ads Enhanced Conversions setup, bundled with managed hosting. $1,500 setup + $150/mo. Delivered in 1 week.',
     type: 'website',
     url: 'https://tagspecialist.ca/recover-conversions',
   },
@@ -54,7 +54,7 @@ export default function RecoverConversionsPage() {
             name: 'What is the Meta Conversion API?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The Meta Conversion API (also called CAPI) is a direct server-to-server connection between your website and Meta. It sends conversion data straight from your server to Facebook and Instagram ads, bypassing ad blockers and browser privacy restrictions like iOS 17. Meta uses this data to optimize your ad delivery and report accurate conversions — typically recovering 30-40% of conversions that pixel-only tracking misses.',
+              text: "The Meta Conversion API (also called CAPI) is a direct server-to-server connection between your website and Meta. It sends conversion data straight from your server to Facebook and Instagram ads, bypassing ad blockers and browser privacy restrictions like iOS 17 ATT. Per Meta's own published averages, advertisers running CAPI alongside the Pixel see a 13% lower cost per acquisition and 8% more attributed conversions on average. Recovery in tech-heavy or ad-blocker-heavy verticals can be substantially higher.",
             },
           },
           {
@@ -91,10 +91,10 @@ export default function RecoverConversionsPage() {
           },
           {
             '@type': 'Question',
-            name: 'What is the $150/month managed hosting for?',
+            name: 'Is the $150/month managed hosting required, or can I just pay the $1,500 setup?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The $150/month covers: cloud infrastructure hosting on Google Cloud Run, 24/7 uptime monitoring, automatic scaling for traffic spikes, alert routing if anything breaks, monthly performance review, and unlimited support for tracking issues. Equivalent to running your own infrastructure plus monitoring tools — without the operational headache.',
+              text: "Managed hosting is required — they're sold as one bundled package, not separate optional tiers. The $1,500 covers building your Meta CAPI and Google Ads Enhanced Conversions setup; the $150/mo covers what keeps it running: cloud infrastructure on Google Cloud Run, 24/7 uptime monitoring, automatic scaling for traffic spikes, alert routing, monthly performance reviews, and unlimited tracking-issue support. Without managed hosting, the infrastructure has nowhere to live and no one watching it.",
             },
           },
           {
@@ -102,7 +102,7 @@ export default function RecoverConversionsPage() {
             name: 'Why $1,500 — what is the catch?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'No catch. We can deliver in approximately 20 hours because we have done 70+ implementations and have a battle-tested process. Our revenue model is the recurring managed hosting and clients who later upgrade to more complex projects (data warehouses, attribution modeling). The $1,500 is our entry service — it gets you working Conversion APIs and lets you experience our work.',
+              text: "No catch — $1,500 covers about 20 hours of setup work, which is realistic because we've done 70+ Conversion API implementations and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.",
             },
           },
           {
@@ -130,7 +130,7 @@ export default function RecoverConversionsPage() {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],
         },
-        description: 'Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions setup. We deploy server-side tracking on our managed infrastructure — you do not need a Google Cloud account or any technical setup. 1-week delivery, $1,500 flat one-time fee, then $150/month managed hosting (1 site) or $220/month (2 sites). Recovers 30-40% of conversions lost to ad blockers and browser privacy restrictions.',
+        description: "Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions setup, bundled with managed hosting. We deploy server-side tracking on our managed Cloud Run infrastructure — no Google Cloud account needed. 1-week delivery, $1,500 setup + $150/month managed hosting (1 site) or $220/month (2 sites). Per Meta's published averages, advertisers using CAPI alongside the Pixel see a 13% lower CPA and 8% more attributed conversions; Google reports up to 17% conversion lift from Enhanced Conversions on Search.",
       },
     ],
   };

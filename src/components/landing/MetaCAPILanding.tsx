@@ -47,7 +47,7 @@ export default function MetaCAPILanding() {
       title: 'You Win',
       duration: '14-21 days',
       description:
-        'Meta and Google see ~30% more conversions. Your CPA drops. ROAS climbs. We monitor everything in the background for $150/month.',
+        'Meta and Google start receiving the conversion data they were missing. Per platform averages: lower CPA, more attributed conversions, higher reported ROAS. We monitor everything in the background as part of your managed hosting.',
     },
   ];
 
@@ -80,26 +80,26 @@ export default function MetaCAPILanding() {
 
   const outcomes = [
     {
-      stat: '~30%',
-      label: 'More conversions reported',
-      detail: 'Recovers data lost to ad blockers, iOS 17, and browser privacy restrictions.',
+      stat: '13%↓',
+      label: 'Lower CPA on Meta',
+      detail: "Meta's published average for advertisers using CAPI alongside the Pixel.",
     },
     {
-      stat: 'Lower',
-      label: 'Cost per acquisition',
-      detail: 'Meta and Google optimize on cleaner data — their algorithms find better customers.',
+      stat: '8%↑',
+      label: 'More attributed conversions',
+      detail: "Meta's published average lift when combining Pixel + Conversion API.",
     },
     {
-      stat: 'Higher',
-      label: 'Reported ROAS',
-      detail: 'Conversions that always happened now show up in your ad dashboards. Better numbers, better decisions.',
+      stat: '5-17%↑',
+      label: 'Google Search conversion lift',
+      detail: "Google's reported range for Enhanced Conversions — varies by vertical and audience.",
     },
   ];
 
   const faqs: FAQ[] = [
     {
       q: 'What is the Meta Conversion API?',
-      a: 'The Meta Conversion API (also called CAPI) is a direct server-to-server connection between your website and Meta. It sends conversion data straight from your server to Facebook and Instagram ads — bypassing ad blockers and browser privacy restrictions like iOS 17. Meta uses this data to optimize your ad delivery and report accurate conversions, typically recovering 30-40% of conversions that pixel-only tracking misses.',
+      a: 'The Meta Conversion API (also called CAPI) is a direct server-to-server connection between your website and Meta. It sends conversion data straight from your server to Facebook and Instagram ads — bypassing ad blockers and browser privacy restrictions like iOS 17 ATT. Meta uses this data to optimize ad delivery and report accurate conversions. Per Meta\'s own published averages, advertisers running CAPI alongside the Pixel see a 13% lower cost per acquisition and 8% more attributed conversions on average. Recovery in tech-heavy or ad-blocker-heavy verticals can be substantially higher.',
     },
     {
       q: 'Will this break my current Meta Pixel or Google Ads tracking?',
@@ -118,12 +118,12 @@ export default function MetaCAPILanding() {
       a: 'Ad platforms: Meta Conversion API (Facebook + Instagram), Google Ads Enhanced Conversions, GA4 server-side, TikTok Events API, Pinterest Conversion API, Snapchat CAPI, and LinkedIn Conversions API. E-commerce platforms: Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, and custom-built sites.',
     },
     {
-      q: 'What is the $150/month managed hosting for?',
-      a: 'The $150/month covers: cloud infrastructure hosting on Google Cloud Run, 24/7 uptime monitoring, automatic scaling for traffic spikes, alert routing if anything breaks, monthly performance review, and unlimited support for tracking issues. Equivalent to running your own infrastructure plus monitoring tools — without the operational headache.',
+      q: 'Is the $150/month managed hosting required, or can I just pay the $1,500 setup?',
+      a: 'Managed hosting is required — they\'re sold as one bundled package, not separate optional tiers. The $1,500 covers building your Meta CAPI and Google Ads Enhanced Conversions setup; the $150/mo covers what keeps it running: cloud infrastructure on Google Cloud Run, 24/7 uptime monitoring, automatic scaling for traffic spikes, alert routing, monthly performance reviews, and unlimited tracking-issue support. Without managed hosting, the infrastructure has nowhere to live and no one watching it.',
     },
     {
       q: 'Why $1,500 — what is the catch?',
-      a: 'No catch. We can deliver in approximately 20 hours because we have done 70+ implementations and have a battle-tested process. Our revenue model is the recurring managed hosting and clients who later upgrade to more complex projects (data warehouses, attribution modeling). The $1,500 is our entry service — it gets you working Conversion APIs and lets you experience our work.',
+      a: 'No catch — $1,500 covers about 20 hours of setup work, which is realistic because we\'ve done 70+ Conversion API implementations and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.',
     },
     {
       q: 'What if I want to cancel or move to my own setup later?',
@@ -151,17 +151,19 @@ export default function MetaCAPILanding() {
               Stop Losing Ad Conversions
             </p>
             <h1 className="text-white text-[32px] lg:text-[52px] leading-[1.1] tracking-tight mb-6">
-              Recover ~30% of Your{' '}
-              <span className="text-orange-400">Lost Meta & Google Ad Conversions</span>
+              Send Meta & Google the{' '}
+              <span className="text-orange-400">Conversion Data They&apos;re Missing</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-4 leading-relaxed">
               Done-for-you Meta Conversion API + Google Ads Enhanced Conversions setup.{' '}
-              <strong className="text-white">$1,500 flat, delivered in 1 week.</strong> No Google Cloud
-              account needed.
+              <strong className="text-white">$1,500 setup + $150/mo managed hosting.</strong> Delivered in
+              1 week, no Google Cloud account needed.
             </p>
             <p className="text-gray-400 text-base max-w-2xl mx-auto mb-8">
-              Ad blockers and iOS 17 are hiding 30%+ of your conversions from Meta and Google. We send the
-              data server-side so your campaigns optimize on the real numbers — lower CPA, higher ROAS.
+              Meta reports a <strong className="text-gray-200">13% lower CPA</strong> and{' '}
+              <strong className="text-gray-200">8% more attributed conversions</strong> for CAPI users.
+              Google reports up to <strong className="text-gray-200">17% conversion lift</strong> with
+              Enhanced Conversions. We&apos;ve seen up to 40% recovery in tech-heavy verticals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -285,7 +287,7 @@ export default function MetaCAPILanding() {
 
           {/* What's Included */}
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-center text-2xl mb-8">What&apos;s included in the $1,500 setup:</h3>
+            <h3 className="text-center text-2xl mb-8">What&apos;s included in every package:</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {included.map((item) => (
                 <div
@@ -315,74 +317,54 @@ export default function MetaCAPILanding() {
             className="text-center mb-16"
           >
             <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
-              Simple Pricing
+              Simple Bundled Pricing
             </p>
-            <h2>One Flat Setup Fee. Affordable Monthly Hosting.</h2>
+            <h2>Setup + Managed Hosting — One Package.</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              No hidden fees, no usage charges, no surprise invoices.
+              Setup gets your Conversion APIs live. Managed hosting keeps them running and your data
+              flowing. Both are required — pick the plan that matches your number of sites.
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-            {/* Setup */}
-            <div className="bg-navy-900 text-white rounded-2xl p-8 flex flex-col">
-              <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-3">
-                One-Time Setup
-              </p>
-              <div className="mb-4">
-                <span className="text-5xl font-black">$1,500</span>
-                <span className="text-gray-400 ml-2">flat</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                Everything in &quot;What&apos;s Included&quot; above. One-time fee, no recurring charges on the
-                setup itself.
-              </p>
-              <ul className="space-y-2 mb-8 flex-1">
-                <li className="flex items-center gap-2 text-sm text-gray-300">
-                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0" /> Delivered in 1 week
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-300">
-                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0" /> 30-day post-launch monitoring included
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-300">
-                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0" /> Full documentation handover
-                </li>
-              </ul>
-              <Link
-                href="/book-audit?service=conversion-api"
-                className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-md transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            {/* 1 Site Managed */}
-            <div className="bg-white border-2 border-blue-500 rounded-2xl p-8 flex flex-col relative">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            {/* Single Site Package */}
+            <div className="bg-white border-2 border-blue-500 rounded-2xl p-8 flex flex-col relative shadow-lg">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                 Most Popular
               </div>
               <p className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-3">
-                Managed Hosting (1 site)
+                Single Site Package
               </p>
-              <div className="mb-4">
-                <span className="text-5xl font-black text-navy-900">$150</span>
-                <span className="text-gray-500 ml-2">/month</span>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-navy-900">$1,500</span>
+                <span className="text-gray-500 ml-2">one-time setup</span>
+              </div>
+              <div className="mb-6 pb-6 border-b border-gray-200">
+                <span className="text-2xl font-bold text-navy-900">+ $150</span>
+                <span className="text-gray-500 ml-2">/mo managed hosting</span>
               </div>
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                We host, monitor, and maintain your Conversion API infrastructure. You never have to think about it.
+                Full Meta CAPI + Google Ads Enhanced Conversions setup for one site, plus ongoing managed
+                infrastructure so you never touch a server.
               </p>
               <ul className="space-y-2 mb-8 flex-1">
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> Hosted on our Cloud Run setup
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> 1-week setup delivery + 30-day post-launch monitoring
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> 24/7 uptime monitoring
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> Hosted on our managed Cloud Run setup
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> Unlimited support for tracking issues
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> 24/7 uptime monitoring + automatic scaling
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> 6-month service term included
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> Unlimited support for tracking issues
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> Full documentation handover
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-700">
+                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> 6-month minimum service term
                 </li>
               </ul>
               <Link
@@ -393,35 +375,43 @@ export default function MetaCAPILanding() {
               </Link>
             </div>
 
-            {/* 2 Sites Managed */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 flex flex-col">
-              <p className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-3">
-                Managed Hosting (2 sites)
+            {/* Multi-Site Package */}
+            <div className="bg-navy-900 text-white rounded-2xl p-8 flex flex-col">
+              <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-3">
+                Multi-Site Package
               </p>
-              <div className="mb-4">
-                <span className="text-5xl font-black text-navy-900">$220</span>
-                <span className="text-gray-500 ml-2">/month</span>
+              <div className="mb-2">
+                <span className="text-5xl font-black">$1,500</span>
+                <span className="text-gray-400 ml-2">one-time setup</span>
               </div>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                For brands or agencies running multiple stores. Save $80/mo vs. two separate plans.
+              <div className="mb-6 pb-6 border-b border-white/20">
+                <span className="text-2xl font-bold">+ $220</span>
+                <span className="text-gray-400 ml-2">/mo managed hosting</span>
+              </div>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                For brands or agencies running 2 sites. Same setup work covers both sites, hosted on one
+                unified plan. Saves $80/mo vs. two single-site plans.
               </p>
               <ul className="space-y-2 mb-8 flex-1">
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> Everything in single-site plan
+                <li className="flex items-start gap-2 text-sm text-gray-300">
+                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" /> Everything in Single Site Package
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> 2 sites covered on one plan
+                <li className="flex items-start gap-2 text-sm text-gray-300">
+                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" /> 2 sites configured + hosted on one plan
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> Unified monitoring dashboard
+                <li className="flex items-start gap-2 text-sm text-gray-300">
+                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" /> Unified monitoring dashboard across sites
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <HiCheck className="w-4 h-4 text-green-500 flex-shrink-0" /> 6-month service term included
+                <li className="flex items-start gap-2 text-sm text-gray-300">
+                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" /> Save $80/mo vs. two single-site plans
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-300">
+                  <HiCheck className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" /> 6-month minimum service term
                 </li>
               </ul>
               <Link
                 href="/book-audit?service=conversion-api"
-                className="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 rounded-md transition-colors"
+                className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-md transition-colors"
               >
                 Get Started
               </Link>
@@ -429,7 +419,10 @@ export default function MetaCAPILanding() {
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-8">
-            Running 3+ sites or an agency? <Link href="/book-audit?service=conversion-api" className="text-blue-600 hover:underline font-semibold">Let&apos;s chat about a volume plan.</Link>
+            Running 3+ sites or an agency?{' '}
+            <Link href="/book-audit?service=conversion-api" className="text-blue-600 hover:underline font-semibold">
+              Let&apos;s chat about a volume plan.
+            </Link>
           </p>
         </div>
       </section>
