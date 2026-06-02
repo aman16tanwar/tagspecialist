@@ -3,27 +3,27 @@ import MetaCAPILanding from '@/components/landing/MetaCAPILanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Meta Conversion API Setup Service | Done-for-You in 1 Week — $1,500',
-  description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. We host the infrastructure — no GCP account needed. $1,500 flat, 1-week delivery. 5.0 rated.',
-  keywords: 'meta conversion api setup, meta capi setup, facebook conversion api setup, google ads enhanced conversions setup, conversion api implementation, conversion api service, capi expert, facebook capi setup service, meta capi expert, hire conversion api specialist',
+  title: 'Recover 30% Lost Ad Conversions | Meta CAPI + Google Ads Setup — $1,500',
+  description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. Recover ~30% of conversions lost to ad blockers and iOS 17. We host the infrastructure — no GCP account needed. $1,500 flat, 1-week delivery.',
+  keywords: 'meta conversion api setup, google ads enhanced conversions setup, conversion api implementation, server-side tracking setup, recover lost conversions, capi setup service, facebook conversion api setup, server side tagging service, fix ad tracking, conversion api expert',
   alternates: {
-    canonical: 'https://tagspecialist.ca/meta-conversion-api-setup',
+    canonical: 'https://tagspecialist.ca/recover-conversions',
   },
   openGraph: {
-    title: 'Meta Conversion API Setup Service | Done-for-You in 1 Week — $1,500',
-    description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. We host the infrastructure — no GCP account needed. $1,500 flat, 1-week delivery.',
+    title: 'Recover 30% Lost Ad Conversions | Meta CAPI + Google Ads Setup — $1,500',
+    description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup. Recover ~30% of lost conversions. $1,500 flat, 1-week delivery.',
     type: 'website',
-    url: 'https://tagspecialist.ca/meta-conversion-api-setup',
+    url: 'https://tagspecialist.ca/recover-conversions',
   },
 };
 
-export default function MetaCAPISetupPage() {
+export default function RecoverConversionsPage() {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Service',
-        name: 'Meta Conversion API Setup Service',
+        name: 'Conversion API Setup for Meta & Google Ads',
         description: 'Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions implementation. We host the server-side infrastructure on managed Cloud Run. 1-week delivery, $1,500 flat.',
         provider: {
           '@type': 'Organization',
@@ -119,13 +119,13 @@ export default function MetaCAPISetupPage() {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Meta Conversion API Setup', item: 'https://tagspecialist.ca/meta-conversion-api-setup' },
+          { '@type': 'ListItem', position: 2, name: 'Recover Lost Ad Conversions', item: 'https://tagspecialist.ca/recover-conversions' },
         ],
       },
       {
         '@type': 'WebPage',
-        name: 'Meta Conversion API Setup Service',
-        url: 'https://tagspecialist.ca/meta-conversion-api-setup',
+        name: 'Recover Lost Ad Conversions — Meta CAPI + Google Ads Setup',
+        url: 'https://tagspecialist.ca/recover-conversions',
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

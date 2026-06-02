@@ -148,19 +148,20 @@ export default function MetaCAPILanding() {
             className="max-w-4xl mx-auto text-center"
           >
             <p className="text-orange-400 font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Done-for-You Setup
+              Stop Losing Ad Conversions
             </p>
             <h1 className="text-white text-[32px] lg:text-[52px] leading-[1.1] tracking-tight mb-6">
-              Meta or Google Ads Asking You to Set Up the{' '}
-              <span className="text-orange-400">Conversion API?</span>
+              Recover ~30% of Your{' '}
+              <span className="text-orange-400">Lost Meta & Google Ad Conversions</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-4 leading-relaxed">
-              We&apos;ll do it for you in 1 week. <strong className="text-white">$1,500 flat.</strong> No
-              Google Cloud account needed, no setup on your end.
+              Done-for-you Meta Conversion API + Google Ads Enhanced Conversions setup.{' '}
+              <strong className="text-white">$1,500 flat, delivered in 1 week.</strong> No Google Cloud
+              account needed.
             </p>
             <p className="text-gray-400 text-base max-w-2xl mx-auto mb-8">
-              Recover ~30% of conversions Meta isn&apos;t seeing today. Lower your CPA, raise your ROAS, and stop
-              the dashboard prompts asking you to integrate CAPI.
+              Ad blockers and iOS 17 are hiding 30%+ of your conversions from Meta and Google. We send the
+              data server-side so your campaigns optimize on the real numbers — lower CPA, higher ROAS.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
