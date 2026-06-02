@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'TagSpecialist | Server-Side Tracking & Data Engineering Experts',
   description: 'Hire server-side tagging specialists and data engineers. GTM server-side implementation, GA4 setup, BigQuery data warehouses, and AI analytics for agencies and brands.',
   keywords: 'server-side tagging specialist, tag manager expert, GTM specialist, google tag manager expert, tagging specialist, server-side tracking, data engineering services, BigQuery consultant, GA4 implementation, conversion tracking expert',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/',
+  },
 };
 
 const structuredData = {

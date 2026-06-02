@@ -5,6 +5,9 @@ import BlogList from '@/components/blog/BlogList';
 export const metadata: Metadata = {
   title: 'Blog | Data Engineering & Marketing Analytics Insights',
   description: 'Practical guides and insights on GA4, GTM, BigQuery pipelines, Google Ads, and marketing automation from Tag Specialist.',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/blogs',
+  },
 };
 
 export default async function BlogsPage() {

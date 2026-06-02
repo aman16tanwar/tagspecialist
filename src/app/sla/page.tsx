@@ -4,6 +4,9 @@ import ServiceLevelAgreement from '@/components/legal/ServiceLevelAgreement';
 export const metadata: Metadata = {
   title: 'Service Level Agreement',
   description: 'TagSpecialist SLA - Our commitment to service quality and uptime guarantees.',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/sla',
+  },
 };
 
 export default function SLAPage() {

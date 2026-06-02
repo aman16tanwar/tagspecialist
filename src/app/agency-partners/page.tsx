@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Agency Partner Program | Tag Specialist',
   description: 'Add $500-2,000/month to your agency revenue. White-label server-side tracking for agencies. We handle the tech, you keep the margin.',
   keywords: 'agency partner program, white label tracking, reseller program, server-side tracking partner, marketing agency partnership',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/agency-partners',
+  },
   openGraph: {
     title: 'Agency Partner Program | Tag Specialist',
     description: 'Add $500-2,000/month to your agency revenue with white-label server-side tracking.',

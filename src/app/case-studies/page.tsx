@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Case Studies | 451% ROAS Increase & Real Client Results',
   description: 'See how TagSpecialist helped brands achieve 451% ROAS increase, +38% attribution accuracy, and $200K+ monthly revenue growth through server-side tracking and data engineering.',
   keywords: 'google tag manager case studies, server-side tracking results, GTM implementation case study, conversion tracking results, attribution accuracy improvement',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/case-studies',
+  },
   openGraph: {
     title: 'Case Studies | 451% ROAS Increase & Real Client Results',
     description: 'See how TagSpecialist helped brands achieve 451% ROAS increase and $200K+ monthly revenue growth.',

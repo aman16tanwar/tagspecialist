@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Managed Server-Side Tracking | Tag Specialist',
   description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking for Google Ads, Meta CAPI, and more. From $150/month.',
   keywords: 'server-side tracking, Google Tag Manager server, Meta CAPI, conversion API, ad blocker bypass, managed tracking',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/managed-tracking',
+  },
   openGraph: {
     title: 'Managed Server-Side Tracking | Tag Specialist',
     description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking from $150/month.',

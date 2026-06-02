@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Shopify to BigQuery Pipeline | No Row Limits',
   description: 'The only Shopify to BigQuery connector with NO row limits. Real-time data sync, 5-minute setup, and you own the infrastructure. Save $1,200+/year vs Fivetran.',
   keywords: 'shopify to bigquery, shopify data pipeline, shopify bigquery connector, bigquery shopify integration, shopify data warehouse, unlimited rows shopify, fivetran alternative',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/shopify-bigquery',
+  },
   openGraph: {
     title: 'Shopify to BigQuery Pipeline | No Row Limits',
     description: 'The only Shopify to BigQuery connector with NO row limits. $50/month total. Save $1,200+/year vs Fivetran.',

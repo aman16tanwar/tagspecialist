@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Server-Side Tracking & Data Engineering Services',
   description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services. From $150/month managed tracking to full enterprise data infrastructure.',
   keywords: 'server-side tracking services, GA4 implementation, BigQuery data warehouse, GTM specialist services, conversion tracking, Meta CAPI, data engineering services',
+  alternates: {
+    canonical: 'https://tagspecialist.ca/services',
+  },
   openGraph: {
     title: 'Server-Side Tracking & Data Engineering Services | Tag Specialist',
     description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services.',
