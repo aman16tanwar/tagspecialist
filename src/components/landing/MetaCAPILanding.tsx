@@ -13,6 +13,7 @@ import {
 } from 'react-icons/hi';
 import Link from 'next/link';
 import { useState } from 'react';
+import BeforeAfterDashboard from '@/components/landing/BeforeAfterDashboard';
 
 interface FAQ {
   q: string;
@@ -170,7 +171,7 @@ export default function MetaCAPILanding() {
                 href="/book-audit?service=conversion-api"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free 15-Min Call
+                See How Many Conversions You&apos;re Missing
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -181,19 +182,35 @@ export default function MetaCAPILanding() {
               </Link>
             </div>
 
+            {/* Above-the-fold trust strip */}
+            <div className="mt-10 pt-8 border-t border-white/10">
+              <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">
+                Trusted by 70+ brands &amp; agencies
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-gray-300 text-sm font-semibold">
+                <span>Dayer Digital Agency</span>
+                <span className="text-gray-600">·</span>
+                <span>Willow Voice</span>
+                <span className="text-gray-600">·</span>
+                <span>Pets on Me</span>
+                <span className="text-gray-600">·</span>
+                <span className="text-gray-400">+ 67 more</span>
+              </div>
+            </div>
+
             {/* Trust Signals */}
-            <div className="flex flex-wrap gap-6 justify-center mt-12 text-gray-400 text-sm">
+            <div className="flex flex-wrap gap-6 justify-center mt-8 text-gray-400 text-sm">
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 70+ implementations
-              </span>
-              <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 5.0 client rating
+                <HiCheckCircle className="text-green-400" /> 5.0 on Upwork
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 1-week delivery
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 15+ years experience
+              </span>
+              <span className="flex items-center gap-2">
+                <HiCheckCircle className="text-green-400" /> 30-day money-back
               </span>
             </div>
           </motion.div>
@@ -306,8 +323,54 @@ export default function MetaCAPILanding() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Interactive Before/After Dashboard */}
+      <BeforeAfterDashboard />
+
+      {/* Objection Removal — right before Pricing */}
       <section className="section-padding bg-white">
+        <div className="content-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-10">
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                Common Concerns
+              </p>
+              <h2>What This Doesn&apos;t Require</h2>
+              <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
+                Server-side tracking sounds intimidating. We&apos;ve made the setup so you don&apos;t
+                need any of it on your end.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                'No Google Cloud, AWS, or Azure account on your side',
+                'No server, no SSH, no DevOps work',
+                'No developer hours from your team',
+                'No replacing or removing your existing Meta Pixel',
+                'No replacing or removing your existing Google Ads tag',
+                'No downtime to your live campaigns during setup',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3"
+                >
+                  <HiCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section-padding bg-gray-50">
         <div className="content-container">
           <motion.div
             initial="hidden"
@@ -551,7 +614,7 @@ export default function MetaCAPILanding() {
               href="/book-audit?service=conversion-api"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-5 rounded-md transition-all shadow-2xl hover:shadow-orange-500/40 group"
             >
-              Book a Free 15-Min Call
+              Get a Free Tracking Diagnostic
               <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
@@ -569,6 +632,26 @@ export default function MetaCAPILanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* Sticky Mobile CTA — only visible on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 p-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="font-bold text-sm text-navy-900 truncate">Recover Lost Conversions</p>
+            <p className="text-xs text-gray-500 truncate">$1,500 + $150/mo · 1-week delivery</p>
+          </div>
+          <Link
+            href="/book-audit?service=conversion-api"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2.5 rounded-md text-sm whitespace-nowrap flex items-center gap-1"
+          >
+            Free Diagnostic
+            <HiArrowRight className="text-xs" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Spacer so the sticky mobile bar doesn't obscure the final CTA */}
+      <div className="h-20 md:hidden" aria-hidden="true" />
     </>
   );
 }
