@@ -114,7 +114,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
             ) : (
               <Link href="/case-studies" className="block p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group">
                 <p className="font-bold text-navy-900 text-sm group-hover:text-blue-600 transition-colors">Case Studies</p>
-                <p className="text-gray-500 text-xs mt-1">Real results from 70+ implementations</p>
+                <p className="text-gray-500 text-xs mt-1">Real results from 10 years of implementations</p>
               </Link>
             )}
           </div>

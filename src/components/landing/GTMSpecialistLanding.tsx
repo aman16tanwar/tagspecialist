@@ -134,7 +134,7 @@ export default function GTMSpecialistLanding() {
       description: 'Everything we build, you own. No vendor lock-in, no proprietary platforms, no recurring license traps.',
     },
     {
-      title: '70+ Successful Implementations',
+      title: 'A Decade of Implementations',
       description: 'From DTC Shopify brands to $50M enterprise advertisers — proven results across industries and scales.',
     },
   ];
@@ -216,7 +216,7 @@ export default function GTMSpecialistLanding() {
             {/* Trust Signals */}
             <div className="flex flex-wrap gap-6 justify-center mt-12 text-gray-400 text-sm">
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 70+ implementations
+                <HiCheckCircle className="text-green-400" /> 10 years of implementations
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement

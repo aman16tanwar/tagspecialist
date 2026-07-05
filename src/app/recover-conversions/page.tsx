@@ -96,7 +96,7 @@ export default function RecoverConversionsPage() {
             name: 'Why $1,500 — what is the catch?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: "No catch — $1,500 covers about 20 hours of setup work, which is realistic because we've done 70+ Conversion API implementations and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.",
+              text: "No catch — $1,500 covers about 20 hours of setup work, which is realistic because we've built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.",
             },
           },
           {

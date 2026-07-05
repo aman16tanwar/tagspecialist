@@ -3,15 +3,15 @@ import GTMSpecialistLanding from '@/components/landing/GTMSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Google Tag Manager Specialist for Hire | 70+ Builds, 5.0 Rated',
-  description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 70+ builds, 5.0 rated. Free audit.',
+  title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
+  description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience. Free audit.',
   keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation, google tag manager cost, hire google tag manager expert',
   alternates: {
     canonical: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },
   openGraph: {
-    title: 'Google Tag Manager Specialist for Hire | 70+ Builds, 5.0 Rated',
-    description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 70+ builds, 5.0 rated.',
+    title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
+    description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience.',
     type: 'website',
     url: 'https://tagspecialist.ca/google-tag-manager-specialist',
   },

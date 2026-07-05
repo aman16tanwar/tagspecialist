@@ -124,7 +124,7 @@ export default function MetaCAPILanding() {
     },
     {
       q: 'Why $1,500 — what is the catch?',
-      a: 'No catch — $1,500 covers about 20 hours of setup work, which is realistic because we\'ve done 70+ Conversion API implementations and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.',
+      a: 'No catch — $1,500 covers about 20 hours of setup work, which is realistic because we\'ve built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.',
     },
     {
       q: 'What if I want to cancel or move to my own setup later?',
@@ -185,7 +185,7 @@ export default function MetaCAPILanding() {
             {/* Above-the-fold trust strip */}
             <div className="mt-10 pt-8 border-t border-white/10">
               <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">
-                Trusted by 70+ brands &amp; agencies
+                Built and run by a senior data engineer — 10 years in ad-tech
               </p>
               <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-gray-300 text-sm font-semibold">
                 <span>Dayer Digital Agency</span>
@@ -615,8 +615,8 @@ export default function MetaCAPILanding() {
           <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl p-8 text-center">
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 mb-4">
               <div>
-                <div className="text-3xl font-black text-navy-900">70+</div>
-                <div className="text-xs text-gray-500 uppercase tracking-wider">Implementations</div>
+                <div className="text-3xl font-black text-navy-900">10+</div>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Years of Engineering</div>
               </div>
               <div>
                 <div className="flex items-center gap-1 text-3xl text-orange-400">★★★★★</div>
@@ -771,7 +771,7 @@ export default function MetaCAPILanding() {
                 <HiShieldCheck className="text-blue-400" /> 30-day money-back guarantee
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-blue-400" /> 70+ implementations
+                <HiCheckCircle className="text-blue-400" /> 10 years of implementations
               </span>
             </div>
           </motion.div>

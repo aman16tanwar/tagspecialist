@@ -139,7 +139,7 @@ export default function BigQuerySpecialistLanding() {
         'Everything we build, you own. dbt repos, Cloud Run services, BigQuery datasets, IAM — all in your GCP project under your control.',
     },
     {
-      title: '70+ Successful Implementations',
+      title: 'A Decade of Implementations',
       description:
         'From DTC Shopify brands to enterprise advertisers spending $50M+ annually — proven results across industries and scales.',
     },
@@ -223,7 +223,7 @@ export default function BigQuerySpecialistLanding() {
             {/* Trust Signals */}
             <div className="flex flex-wrap gap-6 justify-center mt-12 text-gray-400 text-sm">
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 70+ implementations
+                <HiCheckCircle className="text-green-400" /> 10 years of implementations
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 30-60% lower BigQuery bills
@@ -249,7 +249,7 @@ export default function BigQuerySpecialistLanding() {
               attribution and identity resolution, and activating insights via BigQuery ML and reverse ETL. As of 2026,
               a typical engagement runs <strong>2-8 weeks</strong> and costs between{' '}
               <strong>$5,000 (single pipeline)</strong> and <strong>$35,000 (full marketing data warehouse)</strong>,
-              with managed pipeline operations from <strong>$300/month</strong>. The TagSpecialist team has shipped 70+
+              with managed pipeline operations from <strong>$300/month</strong>. TagSpecialist has spent a decade shipping
               BigQuery implementations for DTC brands, agencies, and enterprise advertisers.
             </p>
           </div>

@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <Logo variant="full" theme="dark" className="mb-6" />
             <p className="text-gray-600 text-sm font-medium leading-relaxed mb-8">
-              Enterprise data engineering and marketing analytics solutions. Serving 70+ brands worldwide with proven results.
+              Enterprise data engineering and marketing analytics solutions, built on a decade of hands-on experience with enterprise ad campaigns.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">

@@ -91,7 +91,7 @@ export default function SSTSpecialistLanding() {
         'Not a generalist agency. We are data engineers who specialize exclusively in server-side tagging, GTM, and conversion APIs.',
     },
     {
-      title: '70+ Successful Implementations',
+      title: 'A Decade of Implementations',
       description:
         'From DTC Shopify stores to enterprise advertisers spending $50M+ annually — proven results across every scale.',
     },
@@ -221,7 +221,7 @@ export default function SSTSpecialistLanding() {
             {/* Trust Signals */}
             <div className="flex flex-wrap gap-6 justify-center mt-12 text-gray-400 text-sm">
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 70+ implementations
+                <HiCheckCircle className="text-green-400" /> 10 years of implementations
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement
