@@ -58,11 +58,11 @@ const AboutSection: React.FC = () => {
                                 Tired of junior staff learning on your dime?
                             </h3>
                             <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                                TagSpecialist is a boutique consultancy founded by Lead Data Engineers who got tired of watching generalist agencies fumble complex implementations.
+                                TagSpecialist is a Vancouver-based boutique practice run by a senior data engineer with 10 years of experience building tracking and data infrastructure for enterprise advertising campaigns — after years of watching generalist agencies fumble complex implementations.
                             </p>
                             <p className="text-gray-600 font-medium leading-relaxed mb-6">
                                 <strong className="text-navy-900 uppercase text-sm tracking-widest">No account managers. No middlemen.</strong> <br />
-                                Just senior specialists who build enterprise-grade data infrastructure and actually know how to make GTM, BigQuery, and server-side tracking work together.
+                                The engineer who scopes your project is the engineer who builds it — and actually knows how to make GTM, BigQuery, and server-side tracking work together. Full background, r&eacute;sum&eacute;, and references are shared on our first call.
                             </p>
                             <div className="pt-6 border-t border-gray-100 mt-8">
                                 <p className="text-brand-accent font-black text-lg uppercase tracking-tighter">
@@ -73,7 +73,7 @@ const AboutSection: React.FC = () => {
 
                         <div className="bg-navy-900 p-8 rounded-2xl border border-navy-800 shadow-2xl relative overflow-hidden">
                              <p className="text-center text-blue-200 font-bold uppercase tracking-widest text-sm relative z-10">
-                                Trusted By Brands Managing <br />
+                                A Decade Supporting Brands Managing <br />
                                 <span className="text-white text-2xl font-black">$50M+ In Annual Ad Spend</span>
                              </p>
                              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl"></div>

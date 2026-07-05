@@ -23,10 +23,9 @@ const Navbar = () => {
   }, []);
 
   const setupPackages = [
-    { name: 'Tracking Audit & Strategy', price: 'Starting at $3,500', desc: 'Comprehensive audit with prioritized recommendations', timeline: '1 week', icon: '🔍', id: 'tracking-audit' },
-    { name: 'Analytics Foundation', price: 'Starting at $12,000', desc: 'GA4 + GTM setup for growing businesses', timeline: '2-3 weeks', icon: '📊', id: 'analytics-foundation' },
-    { name: 'Server-Side Infrastructure', price: 'Starting at $18,500', desc: 'Bypass ad blockers, capture 30-40% more data', timeline: '3-4 weeks', icon: '⚡', id: 'server-side', popular: true },
-    { name: 'Complete Data Infrastructure', price: 'Starting at $28,000', desc: 'BigQuery warehouse + AI-powered insights', timeline: '5-6 weeks', icon: '🗄️', id: 'complete-data' }
+    { name: 'Tracking Audit & Strategy', price: '$1,200 Fixed', desc: 'Complete diagnosis with prioritized fixes — credited toward implementation', timeline: '5 business days', icon: '🔍', id: 'tracking-audit', popular: true, href: '/book-audit' },
+    { name: 'Implementation', price: '$4K – $15K', desc: 'Server-side tracking, CAPI, BigQuery pipelines — fixed quote after your audit', timeline: '2-4 weeks', icon: '⚡', id: 'implementation', href: '/services' },
+    { name: 'Managed Tracking', price: 'From $150/mo', desc: 'We host, monitor & maintain your tracking infrastructure', timeline: 'Monthly', icon: '🗄️', id: 'managed-tracking', href: '/managed-tracking' }
   ];
 
   const retainers = [
@@ -74,7 +73,7 @@ const Navbar = () => {
                         {setupPackages.map((pkg) => (
                           <Link
                             key={pkg.id}
-                            href={`/services#${pkg.id}`}
+                            href={pkg.href}
                             className={`block p-4 rounded-2xl transition-all border ${pkg.popular ? 'bg-blue-50/50 border-blue-100' : 'hover:bg-gray-50 border-transparent'}`}
                             onClick={() => setIsMegaMenuOpen(false)}
                           >
@@ -198,10 +197,9 @@ const Navbar = () => {
                 <div>
                   <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4">Services</h3>
                   <div className="grid grid-cols-1 gap-3">
-                    <Link href="/services#tracking-audit" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Tracking Audit ($3.5k)</Link>
-                    <Link href="/services#analytics-foundation" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Analytics Foundation ($12k)</Link>
-                    <Link href="/services#server-side" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Server-Side Infra ($18.5k) ⭐</Link>
-                    <Link href="/services#complete-data" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Complete Data ($28k)</Link>
+                    <Link href="/book-audit" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Tracking Audit ($1.2k) ⭐</Link>
+                    <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Implementation ($4k–$15k)</Link>
+                    <Link href="/managed-tracking" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Managed Tracking (From $150/mo)</Link>
                   </div>
                 </div>
 

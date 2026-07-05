@@ -29,7 +29,7 @@ const structuredData = {
       "url": "https://tagspecialist.ca",
       "logo": "https://tagspecialist.ca/logo.png",
       "image": "https://tagspecialist.ca/og-image.png",
-      "priceRange": "$3,500 - $28,000",
+      "priceRange": "$1,200 - $15,000",
       "areaServed": "Worldwide",
       "knowsAbout": [
         "Server-Side Tagging",
@@ -63,11 +63,11 @@ const structuredData = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "70",
-        "bestRating": "5"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vancouver",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
       }
     },
     {

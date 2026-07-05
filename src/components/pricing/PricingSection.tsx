@@ -33,73 +33,55 @@ const PricingSection: React.FC = () => {
   const setupPackages: SetupPackage[] = [
     {
       name: "Tracking Audit & Strategy",
-      price: "Starting at $3,500",
+      price: "$1,200 Fixed Price",
       roi: "Know exactly what's broken and how to fix it",
-      value: "Stop guessing what's wrong with your tracking. Get a complete diagnosis with prioritized fixes and ROI projections before investing in implementation.",
-      note: "One-time audit. 1-2 week timeline.",
-      size: "Any Revenue Stage",
+      value: "Stop guessing what's wrong with your tracking. Get a complete diagnosis with prioritized fixes and ROI projections before investing in implementation. 100% credited toward implementation if you proceed.",
+      note: "Fixed scope. Delivered in 5 business days.",
+      size: "Every project starts here",
       features: [
         "Full tracking stack audit",
         "Data quality assessment",
-        "Gap analysis report",
+        "Written gap analysis report",
         "Prioritized fix recommendations",
         "ROI opportunity sizing",
-        "30-min strategy call"
-      ]
-    },
-    {
-      name: "Analytics Foundation",
-      price: "Starting at $12,000",
-      roi: "Eliminate 100% of 'data guesswork'",
-      value: "The cost of 1.5 months of wasted ad spend from inaccurate tracking. One client recovered $8K/month in misattributed conversions in week 1.",
-      note: "One-time setup. 2-3 week timeline.",
-      size: "$1M - $5M Revenue",
-      features: [
-        "GA4 implementation & configuration",
-        "Google Tag Manager setup (web)",
-        "10-15 essential event tracking setup",
-        "Conversion tracking for key actions",
-        "Custom dashboard in Looker Studio",
-        "UTM parameter framework",
-        "Documentation & training (2 hours)"
-      ]
-    },
-    {
-      name: "Server-Side Infrastructure",
-      price: "Starting at $18,500",
-      roi: "Recover Missing Conversion Signal",
-      value: "Browser restrictions and JavaScript failures silently drop conversion data. Server-side tracking captures what client-side misses — giving your ad platforms the complete signal they need to optimize.",
-      note: "One-time setup. 3-4 week timeline.",
-      size: "$5M - $20M Revenue",
-      features: [
-        "Everything in Analytics Foundation",
-        "Server-side GTM setup",
-        "Meta (Facebook) CAPI implementation",
-        "Google Ads Enhanced Conversions",
-        "TikTok Pixel server-side tracking",
-        "First-party cookie domain setup",
-        "Advanced deduplication logic",
-        "→ Then maintain from $150/mo"
+        "30-min strategy call",
+        "Fee credited toward implementation"
       ],
       popular: true,
-      popularTag: "Most Popular for DTC Brands"
+      popularTag: "Start Here"
     },
     {
-      name: "Complete Data Infrastructure",
-      price: "Starting at $28,000",
-      roi: "Full Visibility Across Channels & CRM",
-      value: "Unify GA4, CRM, and ad platform data in BigQuery. See deduplicated conversion paths, user-level segmentation, and which campaigns drive awareness vs actual revenue.",
-      note: "One-time setup. 5-6 week timeline.",
-      size: "$20M - $100M+ Revenue",
+      name: "Implementation",
+      price: "Typically $4K – $15K",
+      roi: "Fixed quote after your audit — no surprises",
+      value: "Scoped to exactly what your audit uncovers: from GA4 + GTM cleanups to full server-side tracking with BigQuery pipelines. You approve a fixed price before any work starts.",
+      note: "Fixed quote. 2-4 week timeline.",
+      size: "Scoped to your needs",
       features: [
-        "Everything in Server-Side Infrastructure",
-        "BigQuery data warehouse setup",
-        "Automated data pipelines (all sources)",
-        "Deduplicated attribution modeling",
-        "User-level CRM + GA4 segmentation",
-        "Churn identification & LTV tracking",
+        "GA4 & GTM foundation (as needed)",
+        "Server-side GTM setup",
+        "Meta CAPI & Google Enhanced Conversions",
+        "BigQuery pipelines & dashboards (as needed)",
+        "Advanced deduplication logic",
+        "Documentation & training",
         "30-day post-launch support",
-        "→ Then maintain from $250/mo"
+        "→ Audit fee credited toward this"
+      ]
+    },
+    {
+      name: "Managed Tracking",
+      price: "From $150/mo",
+      roi: "Your tracking stays accurate as platforms change",
+      value: "Ad platforms and browsers change constantly. We host and maintain your server-side infrastructure, monitor data quality, and fix breakage before it costs you conversions.",
+      note: "Monthly. No long-term contract.",
+      size: "After your build (or existing setup)",
+      features: [
+        "Server-side GTM hosting & maintenance",
+        "Uptime & data-flow monitoring",
+        "Tag and platform API updates",
+        "Consent & privacy compliance upkeep",
+        "Monthly data-quality check",
+        "Priority support"
       ]
     }
   ];
@@ -107,15 +89,15 @@ const PricingSection: React.FC = () => {
   const faqs: FAQ[] = [
     {
       q: "Why are you more expensive than Upwork freelancers?",
-      a: "Freelancers set up tags. We engineer business-grade data infrastructure — server-side tracking, BigQuery pipelines, CRM integrations, and attribution modeling. You get direct access to lead engineers, not junior tag placers. Our systems are built to scale to $100M+ revenue."
+      a: "Freelancers set up tags. We engineer business-grade data infrastructure — server-side tracking, BigQuery pipelines, CRM integrations, and attribution modeling. You work directly with a senior data engineer, not a junior tag placer. Our systems are built to scale to $100M+ revenue."
     },
     {
       q: "What's included in post-launch support?",
       a: "Every build includes 30 days of 'hyper-care' period where we monitor data flows, fix any edge-case bugs, and ensure your team is fully comfortable using the new dashboards."
     },
     {
-      q: "Can I pay monthly for setup packages?",
-      a: "We typically require a 50% deposit to begin and 50% upon completion. For the Complete Infrastructure package, we can discuss a 3-month milestone-based payment plan."
+      q: "How does payment work?",
+      a: "The $1,200 audit is paid upfront and fully credited toward implementation if you proceed. Implementation projects are 50% deposit to begin, 50% on completion. Managed tracking is billed monthly with no long-term contract."
     },
     {
       q: "How is this different from tools like Elevar or Littledata?",
@@ -137,12 +119,12 @@ const PricingSection: React.FC = () => {
             Investment Structure
           </h2>
           <p className="text-xl text-text-main max-w-3xl mx-auto">
-            One-time setup packages to build your tracking and data infrastructure. Then optional managed hosting to keep it running.
+            Every engagement starts with a fixed-price audit. Implementation is quoted from what the audit finds, and managed hosting keeps it running after launch.
           </p>
         </div>
 
         {/* Setup Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {setupPackages.map((plan, index) => {
             const id = plan.name.toLowerCase().replace(/ /g, '-').replace('-infrastructure', '').replace('&-', '');
             return (
@@ -177,29 +159,15 @@ const PricingSection: React.FC = () => {
                       <span>30-Day Satisfaction Guarantee</span>
                   </div>
                   <Link
-                    href="/book-audit"
+                    href={plan.name === "Managed Tracking" ? "/managed-tracking" : "/book-audit"}
                     className={`block w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all text-center ${plan.popular ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/25' : 'bg-navy-900 text-white hover:bg-navy-800'}`}
                   >
-                    Book Setup Call
+                    {plan.name === "Tracking Audit & Strategy" ? "Book Your Audit" : plan.name === "Implementation" ? "Start With an Audit" : "See Managed Plans"}
                   </Link>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Managed Tracking Callout */}
-        <div className="max-w-4xl mx-auto mb-20 bg-blue-50 border border-blue-200 rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-black text-navy-900 uppercase tracking-tight mb-2">Don&apos;t Need a Full Build?</h3>
-            <p className="text-gray-600 font-medium text-sm">Already have GTM + GA4 set up? Our managed server-side tracking starts at <span className="font-black text-blue-600">$150/month</span> — we host and maintain the infrastructure, you get better data.</p>
-          </div>
-          <Link
-            href="/managed-tracking"
-            className="flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white font-black px-8 py-4 rounded-xl transition-all uppercase text-xs tracking-widest shadow-lg"
-          >
-            See Managed Plans →
-          </Link>
         </div>
 
         {/* Selection Guide Section */}
@@ -237,13 +205,12 @@ const PricingSection: React.FC = () => {
                         <h3 className="text-xl font-black mb-8 uppercase tracking-widest text-center text-blue-400 underline decoration-blue-600 underline-offset-8">Selection Guide</h3>
                         <div className="space-y-6">
                             {[
-                                { icon: "Audit", label: "Not Sure Yet", meta: "Any revenue stage", rec: "Tracking Audit ($3.5K)" },
-                                { icon: "Small", label: "Small Business", meta: "$1M-5M revenue", rec: "Analytics Foundation ($12K)" },
-                                { icon: "Growth", label: "Growth Stage", meta: "$5M-20M revenue", rec: "Server-Side Infra ($18.5K)" },
-                                { icon: "Scale", label: "Scale Stage", meta: "$20M-100M+ revenue", rec: "Complete Data Infra ($28K)" }
+                                { icon: "Audit", label: "Not Sure What's Broken", meta: "Any revenue stage", rec: "Tracking Audit ($1.2K)" },
+                                { icon: "Growth", label: "Tracking Is Broken or Incomplete", meta: "Ready to fix it properly", rec: "Implementation ($4K-$15K)" },
+                                { icon: "Scale", label: "Setup Works, Needs Upkeep", meta: "Existing sGTM or new build", rec: "Managed Tracking ($150/mo)" }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 items-start">
-                                    <div className="text-2xl">{item.icon === "Audit" ? "🔍" : item.icon === "Small" ? "📊" : item.icon === "Growth" ? "📈" : "🚀"}</div>
+                                    <div className="text-2xl">{item.icon === "Audit" ? "🔍" : item.icon === "Growth" ? "📈" : "🚀"}</div>
                                     <div>
                                         <div className="font-black text-sm uppercase tracking-wide">{item.label}</div>
                                         <div className="text-blue-300 text-xs font-bold">{item.meta}</div>

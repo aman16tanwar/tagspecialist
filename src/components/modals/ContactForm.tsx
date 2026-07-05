@@ -169,7 +169,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div>
-                  <label className={labelClasses}>Company Name *</label>
+                  <label className={labelClasses}>Company Name (Optional)</label>
                   <input
                     type="text"
                     name="company"
@@ -177,7 +177,6 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="Your Company"
                     className={inputClasses}
-                    required
                   />
                 </div>
               </div>
@@ -215,13 +214,12 @@ const ContactForm = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className={labelClasses}>Estimated Monthly Ad Spend *</label>
+                  <label className={labelClasses}>Estimated Monthly Ad Spend (Optional)</label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
                     className={`${inputClasses} appearance-none cursor-pointer`}
-                    required
                   >
                     <option value="">Select Spend Range</option>
                     <option value="under-10k">Under $10k/mo</option>
@@ -248,7 +246,7 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className={labelClasses}>What services are required? *</label>
+                <label className={labelClasses}>What services are required? (Optional)</label>
                 <div className="flex flex-wrap gap-3">
                   {[
                     { id: 'server-side', label: 'Server-Side Tracking' },
@@ -275,7 +273,7 @@ const ContactForm = () => {
               <div className="pt-6 border-t border-gray-100">
                 <div className="text-center mb-6">
                   <p className="text-blue-600 font-black text-xs uppercase tracking-[0.2em]">
-                    ⭐⭐⭐⭐⭐ Trusted by 70+ businesses | Up to 451% ROAS
+                    Answered personally by a senior engineer within 1 business day
                   </p>
                 </div>
 

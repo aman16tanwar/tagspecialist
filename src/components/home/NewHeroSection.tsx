@@ -60,7 +60,7 @@ const NewHeroSection: React.FC = () => {
                </li>
                <li className="flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                 Managed Hosting (Starts at $80/mo)
+                 Managed Hosting (Starts at $150/mo)
                </li>
                <li className="flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>

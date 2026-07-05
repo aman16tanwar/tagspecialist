@@ -155,7 +155,7 @@ export default function SSTSpecialistLanding() {
     },
     {
       q: 'How much does server-side tagging implementation cost?',
-      a: 'Server-side tagging implementation typically ranges from $8,000 to $18,500 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $8,000-$12,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $12,000-$18,500. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote from our server-side tagging specialist team.',
+      a: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $4,000-$8,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $8,000-$15,000. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote from our server-side tagging specialist team.',
     },
     {
       q: 'How much more data will server-side tagging capture?',
@@ -248,7 +248,7 @@ export default function SSTSpecialistLanding() {
               conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), configuring custom domains for
               first-party cookies, and bypassing ad blockers. As of 2026, server-side tracking typically recovers
               <strong> 30-40% of conversion data</strong> lost to ad blockers and browser restrictions like ITP. Implementation
-              takes <strong>2-4 weeks</strong> and costs between <strong>$8,000 and $18,500</strong>, with ongoing managed
+              takes <strong>2-4 weeks</strong> and costs between <strong>$4,000 and $15,000</strong>, with ongoing managed
               tracking available from <strong>$150/month</strong>.
             </p>
           </div>

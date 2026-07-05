@@ -4,9 +4,9 @@ import React from 'react';
 
 const WhyUsSection: React.FC = () => {
   const points: string[] = [
-    "Founded by 2 Lead Data Engineers",
-    "15+ Years Combined Technical Experience",
-    "Direct Access to Experts (No Account Managers)",
+    "Run by a senior data engineer — not a sales team",
+    "10 years building tracking & data infrastructure for enterprise ad campaigns",
+    "You work directly with the engineer (No Account Managers)",
     "Proven Results: 30-40% More Conversions Captured",
     "Enterprise-Grade Engineering (GCP/BigQuery)",
     "No Vendor Lock-in (Own Your Data)",

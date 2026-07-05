@@ -29,12 +29,6 @@ export default function SSTSpecialistPage() {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '70',
-            bestRating: '5',
-          },
         },
         review: [
           {
@@ -130,7 +124,7 @@ export default function SSTSpecialistPage() {
             name: 'How much does server-side tagging implementation cost?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Server-side tagging implementation typically ranges from $8,000 to $18,500 depending on complexity. This includes the server container setup, conversion API integrations, custom domain configuration, and testing. Ongoing managed tracking starts at $150/month for infrastructure hosting and monitoring.',
+              text: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on complexity. This includes the server container setup, conversion API integrations, custom domain configuration, and testing. Ongoing managed tracking starts at $150/month for infrastructure hosting and monitoring.',
             },
           },
           {
@@ -166,7 +160,7 @@ export default function SSTSpecialistPage() {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],
         },
-        description: 'A server-side tagging specialist implements GTM server containers, conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), and managed tracking infrastructure. Server-side tagging recovers 30-40% of conversion data lost to ad blockers and browser restrictions. Implementation typically takes 2-4 weeks and costs $8,000-$18,500 with managed tracking from $150/month.',
+        description: 'A server-side tagging specialist implements GTM server containers, conversion APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API), and managed tracking infrastructure. Server-side tagging recovers 30-40% of conversion data lost to ad blockers and browser restrictions. Implementation typically takes 2-4 weeks and costs $4,000-$15,000 with managed tracking from $150/month.',
       },
     ],
   };

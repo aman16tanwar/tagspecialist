@@ -146,7 +146,7 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'How much does it cost to hire a Google Tag Manager expert?',
-      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs starts at $12,000-$18,500. Ongoing managed tracking plans start at $150/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
+      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs typically runs $4,000-$15,000. Ongoing managed tracking plans start at $150/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
     },
     {
       q: 'Do I need a GTM specialist or can I do it myself?',
@@ -237,7 +237,7 @@ export default function GTMSpecialistLanding() {
         <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <p className="text-gray-700 text-base leading-relaxed">
-              <strong>A Google Tag Manager specialist</strong> implements and manages tracking tags, conversion pixels, and analytics scripts across your website using GTM. Services include GTM container audits and fixes, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking for Shopify and WooCommerce, Consent Mode v2 setup, and cross-domain tracking. Professional GTM implementation typically results in <strong>30-40% more conversion data captured</strong>, up to <strong>451% ROAS improvement</strong>, and <strong>15-20% lower CPA</strong>. A GTM audit costs <strong>$1,500-$5,000</strong>, full server-side implementation starts at <strong>$12,000-$18,500</strong>, and managed tracking plans start at <strong>$150/month</strong>.
+              <strong>A Google Tag Manager specialist</strong> implements and manages tracking tags, conversion pixels, and analytics scripts across your website using GTM. Services include GTM container audits and fixes, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking for Shopify and WooCommerce, Consent Mode v2 setup, and cross-domain tracking. Professional GTM implementation typically results in <strong>30-40% more conversion data captured</strong>, up to <strong>451% ROAS improvement</strong>, and <strong>15-20% lower CPA</strong>. A GTM audit costs <strong>$1,500-$5,000</strong>, full server-side implementation typically runs <strong>$4,000-$15,000</strong>, and managed tracking plans start at <strong>$150/month</strong>.
             </p>
           </div>
         </div>
@@ -376,7 +376,7 @@ export default function GTMSpecialistLanding() {
                 </tr>
                 <tr className="bg-white">
                   <td className="px-6 py-4 font-semibold text-navy-900">Server-Side GTM (Full)</td>
-                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">$12,000 – $18,500</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold whitespace-nowrap">$4,000 – $15,000</td>
                   <td className="px-6 py-4 text-gray-700 whitespace-nowrap">3–4 weeks</td>
                   <td className="px-6 py-4 text-gray-600">Meta CAPI, Enhanced Conversions, ad blocker bypass</td>
                 </tr>

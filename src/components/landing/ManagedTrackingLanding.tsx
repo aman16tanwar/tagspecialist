@@ -116,7 +116,7 @@ export default function ManagedTrackingLanding() {
     },
     {
       q: 'Do I own the tracking infrastructure?',
-      a: 'The infrastructure runs on our managed cloud environment. This keeps costs low and ensures reliability. If you prefer to own your infrastructure, check out our one-time setup packages starting at $12,000.',
+      a: 'The infrastructure runs on our managed cloud environment. This keeps costs low and ensures reliability. If you prefer to own your infrastructure, check out our implementation projects starting at $4,000, scoped from a $1,200 audit.',
     },
     {
       q: 'What platforms do you support?',

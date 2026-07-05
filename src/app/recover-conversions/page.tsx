@@ -29,12 +29,6 @@ export default function RecoverConversionsPage() {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '70',
-            bestRating: '5',
-          },
         },
         offers: {
           '@type': 'Offer',

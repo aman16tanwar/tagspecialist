@@ -60,7 +60,7 @@ export default function ServicesPage() {
             name: 'What server-side tracking services do you offer?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'We offer full server-side GTM implementation including Google Ads Enhanced Conversions, Meta Conversion API (CAPI), ad blocker bypass, first-party identity stitching, cross-channel attribution, and Consent Mode v2. Our Server-Side & Attribution Engine package starts at $18,500 with a 3-4 week timeline.',
+              text: 'We offer full server-side GTM implementation including Google Ads Enhanced Conversions, Meta Conversion API (CAPI), ad blocker bypass, first-party identity stitching, cross-channel attribution, and Consent Mode v2. Implementation is fixed-quoted after a $1,200 audit and typically runs $4,000-$15,000 with a 2-4 week timeline.',
             },
           },
           {
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             name: 'How much do your data engineering services cost?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Our Enterprise Data & AI Warehouse starts at $28,000 (one-time, 5-6 week timeline) and includes GA4 to BigQuery pipelines, CRM & Shopify ETL, custom attribution models, and AI analytics. Managed tracking plans start at $150/month for ongoing server-side tracking.',
+              text: 'Our Enterprise Data & AI Warehouse is custom-quoted after an audit and includes GA4 to BigQuery pipelines, CRM & Shopify ETL, custom attribution models, and AI analytics. Managed tracking plans start at $150/month for ongoing server-side tracking.',
             },
           },
           {

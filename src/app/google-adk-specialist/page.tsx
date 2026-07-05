@@ -33,12 +33,6 @@ export default function GoogleADKSpecialistPage() {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '70',
-            bestRating: '5',
-          },
         },
         serviceType: 'AI Agent Development',
         areaServed: 'Worldwide',
