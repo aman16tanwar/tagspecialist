@@ -3,10 +3,12 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { HiCheck, HiArrowRight, HiLightningBolt, HiDatabase } from 'react-icons/hi';
+import { HiCheck, HiArrowRight, HiLightningBolt, HiDatabase, HiCalendar, HiMail } from 'react-icons/hi';
+import Cal, { getCalApi } from '@calcom/embed-react';
 import { useModal } from '@/contexts/ModalContext';
 
 type ServiceType = 'tracking' | 'data-engineering';
+type ContactMethod = 'call' | 'message';
 
 const trackingBenefits = [
   {
@@ -106,6 +108,7 @@ function BookAuditContent() {
   const { openSuccessModal } = useModal();
   const searchParams = useSearchParams();
   const [serviceType, setServiceType] = useState<ServiceType>('tracking');
+  const [contactMethod, setContactMethod] = useState<ContactMethod>('call');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -129,6 +132,18 @@ function BookAuditContent() {
       setServiceType('tracking');
     }
   }, [searchParams]);
+
+  // Configure Cal.com embed appearance
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi();
+      cal('ui', {
+        styles: { branding: { brandColor: '#2563eb' } },
+        hideEventTypeDetails: false,
+        layout: 'month_view'
+      });
+    })();
+  }, []);
 
   const benefits = serviceType === 'tracking' ? trackingBenefits : dataEngineeringBenefits;
   const testimonials = serviceType === 'tracking' ? trackingTestimonials : dataEngineeringTestimonials;
@@ -316,13 +331,55 @@ function BookAuditContent() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-10"
             >
-              <h2 className="font-heading text-blue-600 text-center mb-8">
-                {serviceType === 'tracking'
-                  ? 'Schedule Your Free Audit'
-                  : 'Start Your Data Project'
+              <h2 className="font-heading text-blue-600 text-center mb-6">
+                {contactMethod === 'call'
+                  ? 'Pick a Time That Works for You'
+                  : serviceType === 'tracking'
+                    ? 'Tell Us About Your Tracking'
+                    : 'Start Your Data Project'
                 }
               </h2>
 
+              {/* Call / Message toggle */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <button
+                  type="button"
+                  onClick={() => setContactMethod('call')}
+                  className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-heading font-bold text-sm transition-all ${
+                    contactMethod === 'call'
+                      ? 'border-blue-600 bg-blue-50 text-blue-600'
+                      : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
+                  }`}
+                >
+                  <HiCalendar className="w-5 h-5" /> Book a Call
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setContactMethod('message')}
+                  className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-heading font-bold text-sm transition-all ${
+                    contactMethod === 'message'
+                      ? 'border-blue-600 bg-blue-50 text-blue-600'
+                      : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
+                  }`}
+                >
+                  <HiMail className="w-5 h-5" /> Send a Message
+                </button>
+              </div>
+
+              {contactMethod === 'call' && (
+                <div className="min-h-[560px]">
+                  <Cal
+                    calLink="tagspecialist"
+                    style={{ width: '100%', height: '100%', overflow: 'auto' }}
+                    config={{ layout: 'month_view' }}
+                  />
+                  <p className="text-xs text-gray-400 text-center mt-4">
+                    Free 15-minute call. No sales pitch — just honest engineering advice.
+                  </p>
+                </div>
+              )}
+
+              {contactMethod === 'message' && (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
                 <div>
@@ -489,6 +546,7 @@ function BookAuditContent() {
                   By submitting, you agree to receive email communication. No spam, ever.
                 </p>
               </form>
+              )}
             </motion.div>
           </div>
         </div>
