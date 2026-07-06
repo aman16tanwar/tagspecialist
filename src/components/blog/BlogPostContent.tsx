@@ -56,8 +56,29 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
           </ReactMarkdown>
         </div>
 
+        {/* Debug Session CTA — for practitioners stuck mid-implementation */}
+        <div className="mt-16 p-8 bg-navy-900 rounded-xl text-white">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2">For Hands-On Implementers</p>
+              <h3 className="text-lg font-bold mb-1">Stuck on this? Get it fixed live on a call.</h3>
+              <p className="text-sm text-blue-100/80">
+                1-hour screen-share debug session with a senior tracking engineer — bring your broken GTM, sGTM, or GA4 setup and leave with it working. $150 USD. If we can&apos;t help in the first 10 minutes, full refund.
+              </p>
+            </div>
+            <a
+              href="https://cal.com/tagspecialist/tracking-debug-session"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md whitespace-nowrap"
+            >
+              Book Debug Session — $150
+            </a>
+          </div>
+        </div>
+
         {/* Service CTA */}
-        <div className="mt-16 p-8 bg-[#eff6ff] border border-[#bfdbfe] rounded-xl">
+        <div className="mt-8 p-8 bg-[#eff6ff] border border-[#bfdbfe] rounded-xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">
