@@ -138,7 +138,7 @@ function BookAuditContent() {
     (async () => {
       const cal = await getCalApi();
       cal('ui', {
-        styles: { branding: { brandColor: '#2563eb' } },
+        styles: { branding: { brandColor: '#1d4ed8' } },
         hideEventTypeDetails: false,
         layout: 'month_view'
       });
