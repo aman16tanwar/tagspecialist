@@ -369,9 +369,9 @@ function BookAuditContent() {
               {contactMethod === 'call' && (
                 <div className="min-h-[560px]">
                   <Cal
-                    calLink="tagspecialist"
+                    calLink="tagspecialist/free-15-minutes-tracking-audit"
                     style={{ width: '100%', height: '100%', overflow: 'auto' }}
-                    config={{ layout: 'month_view' }}
+                    config={{ layout: 'month_view', useSlotsViewOnSmallScreen: 'true' }}
                   />
                   <p className="text-xs text-gray-400 text-center mt-4">
                     Free 15-minute call. No sales pitch — just honest engineering advice.
