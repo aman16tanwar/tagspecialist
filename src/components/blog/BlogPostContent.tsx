@@ -67,7 +67,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               </p>
             </div>
             <a
-              href="https://cal.com/tagspecialist/tracking-debug-session"
+              href="https://cal.com/tagspecialist/1-hour-tracking-debug-session"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md whitespace-nowrap"
