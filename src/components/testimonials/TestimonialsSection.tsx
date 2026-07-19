@@ -2,23 +2,19 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { HiStar, HiChat } from 'react-icons/hi';
+import { HiStar, HiChat, HiBadgeCheck } from 'react-icons/hi';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 interface Testimonial {
     id: number;
-    name: string;
-    role: string;
-    company: string;
+    service: string;
     content: string;
     rating: number;
     highlight: string;
-    image: string;
 }
 
 interface TestimonialCardProps {
     testimonial: Testimonial;
-    index: number;
 }
 
 interface Stat {
@@ -30,63 +26,45 @@ const TestimonialsSection: React.FC = () => {
     const testimonials: Testimonial[] = [
         {
             id: 1,
-            name: "Marketing Director",
-            role: "Google/Meta Tracking",
-            company: "E-commerce Client",
+            service: "Google & Meta Tracking",
             content: "Aman is hands down the best Google and Meta tracking specialist I've ever worked with. His deep expertise, problem-solving skills, and attention to detail make him an absolute game-changer.",
             rating: 5,
-            highlight: "$2,314 project - 41 hours",
-            image: "MD",
+            highlight: "$2,314 project · 41 hours",
         },
         {
             id: 2,
-            name: "Business Owner",
-            role: "GA4 Implementation",
-            company: "E-commerce Brands",
+            service: "GA4 & GTM Implementation",
             content: "Aman did a fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites I have. I will definitely work with him again and be referring others to him.",
             rating: 5,
-            highlight: "$405 project - 7 hours",
-            image: "BO",
+            highlight: "$405 project · 7 hours",
         },
         {
             id: 3,
-            name: "Marketing Manager",
-            role: "Facebook Attribution",
-            company: "SaaS Company",
+            service: "Facebook Attribution",
             content: "Incredibly skilled with Facebook attribution, and was thorough in troubleshooting and solving my issue, even on my checkout software that he wasn't already familiar with.",
             rating: 5,
-            highlight: "$35 project - Quick fix",
-            image: "MM",
+            highlight: "Quick-fix engagement",
         },
         {
             id: 4,
-            name: "E-commerce Manager",
-            role: "CAPI Setup",
-            company: "ThriveCart User",
+            service: "Meta CAPI Setup",
             content: "Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, Facebook Ads Manager. Would highly recommend and will gladly rehire in future.",
             rating: 5,
-            highlight: "$70 project - 1 hour",
-            image: "EM",
+            highlight: "$70 project · 1 hour",
         },
         {
             id: 5,
-            name: "Growth Lead",
-            role: "GTM Implementation",
-            company: "Long-term Client",
+            service: "GTM Implementation",
             content: "Very good developer. Always did a good job. We've worked together for over 3 years with 172 hours logged. Aman has been instrumental in our tracking success.",
             rating: 5,
-            highlight: "$7,740 - 172 hours",
-            image: "GL",
+            highlight: "$7,740 · 172 hours over 3 years",
         },
         {
             id: 6,
-            name: "Analytics Manager",
-            role: "SA360 Account Audit",
-            company: "Digital Agency",
+            service: "SA360 Account Audit",
             content: "Aman is great and knowledgeable. He's a great communicator too. His audit helped us identify critical tracking gaps and improve our campaign performance significantly.",
             rating: 5,
-            highlight: "$366 project - 6 hours",
-            image: "AM",
+            highlight: "$366 project · 6 hours",
         }
     ];
 
@@ -132,31 +110,19 @@ const TestimonialsSection: React.FC = () => {
                     </span>
                 </div>
 
-                {/* Author */}
-                <div className="flex items-center gap-4">
-                    {/* Avatar */}
-                    <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center text-white font-bold border border-gray-200">
-                        {testimonial.image}
+                {/* Attribution */}
+                <div className="flex items-center gap-3 border-t border-gray-100 pt-5">
+                    <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                        <HiBadgeCheck className="w-6 h-6 text-emerald-500" />
                     </div>
-
-                    {/* Info */}
                     <div className="flex-1">
-                        <h4 className="text-navy-900 font-semibold">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-500">
-                            {testimonial.role} - {testimonial.company}
-                        </p>
-                        <p className="text-xs text-blue-600 mt-1 font-medium">
-                            Verified Client
-                        </p>
+                        <h4 className="text-navy-900 font-semibold text-sm">{testimonial.service}</h4>
+                        <p className="text-xs text-emerald-600 font-semibold">Verified Upwork Review</p>
                     </div>
-
-                    {/* Rating */}
-                    <div className="flex flex-col items-end">
-                        <div className="flex gap-0.5">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                                <HiStar key={i} className="w-4 h-4 text-yellow-400" />
-                            ))}
-                        </div>
+                    <div className="flex gap-0.5">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                            <HiStar key={i} className="w-4 h-4 text-yellow-400" />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -164,8 +130,8 @@ const TestimonialsSection: React.FC = () => {
     );
 
     const stats: Stat[] = [
-        { number: "10", label: "Years Engineering Experience" },
-        { number: "$50M+", label: "Annual Ad Spend Supported" },
+        { number: "Verified", label: "Upwork Client Reviews" },
+        { number: "3+ yrs", label: "Longest Client Engagement" },
         { number: "24h", label: "Response Time" },
         { number: "100%", label: "Senior-Level Delivery" }
     ];
@@ -183,20 +149,20 @@ const TestimonialsSection: React.FC = () => {
                     <motion.div variants={itemVariants} className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
                             <HiChat className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm text-blue-800 font-medium">Client Success Stories</span>
+                            <span className="text-sm text-blue-800 font-medium">Verified Client Reviews</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
                             Don&apos;t Just Take <span className="text-blue-600">My Word For It</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Hear from the businesses I&apos;ve helped transform their data operations
+                            Real reviews from paid client engagements — every project completed, logged, and rated on Upwork.
                         </p>
                     </motion.div>
 
                     {/* Testimonials Grid */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {testimonials.map((testimonial, index) => (
-                            <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
+                        {testimonials.map((testimonial) => (
+                            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
                         ))}
                     </div>
 
@@ -212,31 +178,31 @@ const TestimonialsSection: React.FC = () => {
                                     whileInView={{ scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
-                                    className="text-4xl md:text-5xl font-bold text-navy-900 mb-2"
+                                    className="text-3xl md:text-4xl font-bold text-navy-900 mb-2"
                                 >
                                     {stat.number}
                                 </motion.div>
-                                <p className="text-gray-600">{stat.label}</p>
+                                <p className="text-gray-600 text-sm">{stat.label}</p>
                             </div>
                         ))}
                     </motion.div>
 
-                    {/* Trust Badges */}
+                    {/* Trust Note */}
                     <motion.div
                         variants={itemVariants}
                         className="mt-16 flex flex-col items-center gap-6"
                     >
-                        <p className="text-gray-600 text-center">
-                            Testimonials from verified enterprise and agency clients.
+                        <p className="text-gray-600 text-center text-sm">
+                            Every review shown is from a verified, paid engagement on Upwork.
                         </p>
                         <div className="flex flex-wrap justify-center items-center gap-8">
-                             <div className="flex items-center gap-2 text-gray-500">
-                                <HiStar className="w-5 h-5 text-yellow-500" />
-                                <span>100% Client Satisfaction</span>
+                            <div className="flex items-center gap-2 text-gray-500">
+                                <HiBadgeCheck className="w-5 h-5 text-emerald-500" />
+                                <span>Verified Upwork Engagements</span>
                             </div>
                             <div className="flex items-center gap-2 text-gray-500">
                                 <HiStar className="w-5 h-5 text-yellow-500" />
-                                <span>Top Tier Engineering</span>
+                                <span>Direct Expert Access</span>
                             </div>
                         </div>
                     </motion.div>

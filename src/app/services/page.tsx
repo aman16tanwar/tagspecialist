@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ServicesSection from '@/components/services/ServicesSection';
+import TrustedBy from '@/components/home/TrustedBy';
 import CapabilitiesSection from '@/components/services/CapabilitiesSection';
 import PricingSection from '@/components/pricing/PricingSection';
 import RetainerServices from '@/components/services/RetainerServices';
@@ -39,15 +40,11 @@ export default function ServicesPage() {
           {
             '@type': 'Offer',
             name: 'Server-Side & Attribution Engine',
-            price: '18500',
-            priceCurrency: 'USD',
             description: 'Full server-side GTM, Meta CAPI, Google Ads Enhanced Conversions, ad blocker bypass, and cross-channel attribution.',
           },
           {
             '@type': 'Offer',
             name: 'Enterprise Data & AI Warehouse',
-            price: '28000',
-            priceCurrency: 'USD',
             description: 'GA4 to BigQuery pipeline, CRM & Shopify ETL, custom SQL attribution, GenAI analytics agent, and executive dashboards.',
           },
         ],
@@ -95,6 +92,7 @@ export default function ServicesPage() {
     <div className="pt-20">
       <JsonLd data={servicesSchema} />
       <ServicesSection />
+      <TrustedBy />
       <CapabilitiesSection />
       <PricingSection />
       <RetainerServices />

@@ -10,8 +10,6 @@ import {
 
 interface RetainerPackage {
     name: string;
-    price: string;
-    period: string;
     roi: string;
     value: string;
     description: string;
@@ -26,8 +24,6 @@ const RetainerServices: React.FC = () => {
     const packages: RetainerPackage[] = [
         {
             name: "Essentials Retainer",
-            price: "$3,500",
-            period: "USD/month",
             roi: "Ensure 100% data uptime",
             value: "The cost of 1 junior analyst, but you get two senior specialists monitoring your data 24/7 + world-class infrastructure.",
             description: "Best for: Businesses with stable tracking needs wanting ongoing peace of mind.",
@@ -43,8 +39,6 @@ const RetainerServices: React.FC = () => {
         },
         {
             name: "Growth Retainer",
-            price: "$7,500",
-            period: "USD/month",
             roi: "Designed to pay for itself in ad savings",
             value: "Less than one day of lost revenue from poor tracking decisions. Our proactive optimization typically pays for itself in week 1.",
             description: "Best for: High-growth brands launching regular campaigns and optimizing for scale.",
@@ -62,8 +56,6 @@ const RetainerServices: React.FC = () => {
         },
         {
             name: "Scale Retainer",
-            price: "$14,000",
-            period: "USD/month",
             roi: "Your Technical Co-founder for data",
             value: "Your technical co-founder for data—without equity or benefits. Full senior team for the cost of 1.5 hires.",
             description: "Best for: Enterprise organizations needing elite data engineering and strategic insight.",
@@ -122,13 +114,9 @@ const RetainerServices: React.FC = () => {
                                 )}
 
                                 <div className={`text-center mb-8 ${pkg.recommended ? 'pt-6' : ''}`}>
-                                    <h3 className="text-xl font-bold text-navy-900 mb-2 uppercase tracking-tight">{pkg.name}</h3>
-                                    <div className="flex items-end justify-center gap-1 mb-4">
-                                        <span className="text-5xl font-black text-navy-900">{pkg.price}</span>
-                                        <span className="text-gray-500 font-bold mb-1">{pkg.period}</span>
-                                    </div>
-                                    <div className="text-blue-600 font-black text-xs mb-4 uppercase tracking-[0.2em]">
-                                        {pkg.hours}
+                                    <h3 className="text-2xl font-black text-navy-900 mb-3 uppercase tracking-tight">{pkg.name}</h3>
+                                    <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-black text-xs mb-4 uppercase tracking-[0.2em]">
+                                        {pkg.hours} / month
                                     </div>
                                     <div className="p-3 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg mb-4 text-left">
                                         <p className="text-[10px] font-black text-blue-800 leading-relaxed uppercase mb-1">ROI / Value</p>
