@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import NewHeroSection from '@/components/home/NewHeroSection';
+import TrustedBy from '@/components/home/TrustedBy';
 import ProblemSection from '@/components/home/ProblemSection';
 import SolutionSection from '@/components/home/SolutionSection';
 import WhyUsSection from '@/components/home/WhyUsSection';
@@ -29,7 +30,6 @@ const structuredData = {
       "url": "https://tagspecialist.ca",
       "logo": "https://tagspecialist.ca/logo.png",
       "image": "https://tagspecialist.ca/og-image.png",
-      "priceRange": "$1,200 - $15,000",
       "areaServed": "Worldwide",
       "knowsAbout": [
         "Server-Side Tagging",
@@ -101,6 +101,7 @@ export default function HomePage() {
     <>
       <JsonLd data={structuredData} />
       <NewHeroSection />
+      <TrustedBy />
       <ProblemSection />
       <SolutionSection />
       <WhyUsSection />
