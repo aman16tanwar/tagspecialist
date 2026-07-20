@@ -10,7 +10,6 @@ interface Testimonial {
     service: string;
     content: string;
     rating: number;
-    highlight: string;
 }
 
 interface TestimonialCardProps {
@@ -29,42 +28,36 @@ const TestimonialsSection: React.FC = () => {
             service: "Google & Meta Tracking",
             content: "Aman is hands down the best Google and Meta tracking specialist I've ever worked with. His deep expertise, problem-solving skills, and attention to detail make him an absolute game-changer.",
             rating: 5,
-            highlight: "$2,314 project · 41 hours",
         },
         {
             id: 2,
             service: "GA4 & GTM Implementation",
             content: "Aman did a fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites I have. I will definitely work with him again and be referring others to him.",
             rating: 5,
-            highlight: "$405 project · 7 hours",
         },
         {
             id: 3,
             service: "Facebook Attribution",
             content: "Incredibly skilled with Facebook attribution, and was thorough in troubleshooting and solving my issue, even on my checkout software that he wasn't already familiar with.",
             rating: 5,
-            highlight: "Quick-fix engagement",
         },
         {
             id: 4,
             service: "Meta CAPI Setup",
             content: "Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, Facebook Ads Manager. Would highly recommend and will gladly rehire in future.",
             rating: 5,
-            highlight: "$70 project · 1 hour",
         },
         {
             id: 5,
             service: "GTM Implementation",
-            content: "Very good developer. Always did a good job. We've worked together for over 3 years with 172 hours logged. Aman has been instrumental in our tracking success.",
+            content: "Very good developer. Always did a good job. We've worked together for over 3 years. Aman has been instrumental in our tracking success.",
             rating: 5,
-            highlight: "$7,740 · 172 hours over 3 years",
         },
         {
             id: 6,
             service: "SA360 Account Audit",
             content: "Aman is great and knowledgeable. He's a great communicator too. His audit helped us identify critical tracking gaps and improve our campaign performance significantly.",
             rating: 5,
-            highlight: "$366 project · 6 hours",
         }
     ];
 
@@ -102,13 +95,6 @@ const TestimonialsSection: React.FC = () => {
 
                 {/* Content */}
                 <p className="text-gray-600 mb-6 flex-grow italic">&quot;{testimonial.content}&quot;</p>
-
-                {/* Highlight */}
-                <div className="inline-flex items-center mb-6">
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                        {testimonial.highlight}
-                    </span>
-                </div>
 
                 {/* Attribution */}
                 <div className="flex items-center gap-3 border-t border-gray-100 pt-5">
