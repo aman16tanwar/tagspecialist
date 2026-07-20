@@ -23,15 +23,15 @@ const Navbar = () => {
   }, []);
 
   const setupPackages = [
-    { name: 'Tracking Audit & Strategy', price: '$1,200 Fixed', desc: 'Complete diagnosis with prioritized fixes — credited toward implementation', timeline: '5 business days', icon: '🔍', id: 'tracking-audit', popular: true, href: '/book-audit' },
-    { name: 'Implementation', price: '$4K – $15K', desc: 'Server-side tracking, CAPI, BigQuery pipelines — fixed quote after your audit', timeline: '2-4 weeks', icon: '⚡', id: 'implementation', href: '/services' },
-    { name: 'Managed Tracking', price: 'From $150/mo', desc: 'We host, monitor & maintain your tracking infrastructure', timeline: 'Monthly', icon: '🗄️', id: 'managed-tracking', href: '/managed-tracking' }
+    { name: 'Tracking Audit & Strategy', desc: 'Complete diagnosis with prioritized fixes — credited toward implementation', timeline: '5 business days', icon: '🔍', id: 'tracking-audit', popular: true, href: '/book-audit' },
+    { name: 'Implementation', desc: 'Server-side tracking, CAPI, BigQuery pipelines — fixed quote after your audit', timeline: '2-4 weeks', icon: '⚡', id: 'implementation', href: '/services' },
+    { name: 'Managed Tracking', desc: 'We host, monitor & maintain your tracking infrastructure', timeline: 'Monthly', icon: '🗄️', id: 'managed-tracking', href: '/managed-tracking' }
   ];
 
   const retainers = [
-    { name: 'Essentials Retainer', price: '$3,500/mo', desc: 'Monitoring, troubleshooting & peace of mind', hours: 'Up to 10 hrs/mo', icon: '🔧', id: 'essentials' },
-    { name: 'Growth Retainer', price: '$7,500/mo', desc: 'Proactive optimization for scaling brands', hours: 'Up to 25 hrs/mo', icon: '📈', id: 'growth', featured: true },
-    { name: 'Scale Retainer', price: '$14,000/mo', desc: 'Your technical co-founder for data', hours: 'Up to 50 hrs/mo', icon: '🚀', id: 'scale' }
+    { name: 'Essentials Retainer', desc: 'Monitoring, troubleshooting & peace of mind', hours: 'Up to 10 hrs/mo', icon: '🔧', id: 'essentials' },
+    { name: 'Growth Retainer', desc: 'Proactive optimization for scaling brands', hours: 'Up to 25 hrs/mo', icon: '📈', id: 'growth', featured: true },
+    { name: 'Scale Retainer', desc: 'Your technical co-founder for data', hours: 'Up to 50 hrs/mo', icon: '🚀', id: 'scale' }
   ];
 
   return (
@@ -77,9 +77,8 @@ const Navbar = () => {
                             className={`block p-4 rounded-2xl transition-all border ${pkg.popular ? 'bg-blue-50/50 border-blue-100' : 'hover:bg-gray-50 border-transparent'}`}
                             onClick={() => setIsMegaMenuOpen(false)}
                           >
-                            <div className="flex justify-between items-start mb-1">
+                            <div className="mb-1">
                               <span className="text-lg">{pkg.icon}</span>
-                              <span className="font-black text-navy-900 text-sm tracking-tight">{pkg.price}</span>
                             </div>
                             <div className="font-black text-navy-900 text-sm mb-1 uppercase tracking-tight flex items-center gap-2">
                               {pkg.name}
@@ -102,9 +101,8 @@ const Navbar = () => {
                             className={`block p-4 rounded-2xl transition-all border ${pkg.featured ? 'bg-indigo-50/50 border-indigo-100' : 'hover:bg-gray-50 border-transparent'}`}
                             onClick={() => setIsMegaMenuOpen(false)}
                           >
-                            <div className="flex justify-between items-start mb-1">
+                            <div className="mb-1">
                               <span className="text-lg">{pkg.icon}</span>
-                              <span className="font-black text-navy-900 text-sm tracking-tight">{pkg.price}</span>
                             </div>
                             <div className="font-black text-navy-900 text-sm mb-1 uppercase tracking-tight flex items-center gap-2">
                               {pkg.name}
@@ -197,9 +195,9 @@ const Navbar = () => {
                 <div>
                   <h3 className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4">Services</h3>
                   <div className="grid grid-cols-1 gap-3">
-                    <Link href="/book-audit" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Tracking Audit ($1.2k) ⭐</Link>
-                    <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Implementation ($4k–$15k)</Link>
-                    <Link href="/managed-tracking" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Managed Tracking (From $150/mo)</Link>
+                    <Link href="/book-audit" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-blue-50 rounded-2xl font-black text-xs uppercase tracking-tight text-blue-700">Tracking Audit ⭐</Link>
+                    <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Implementation</Link>
+                    <Link href="/managed-tracking" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 bg-gray-50 rounded-2xl font-black text-xs uppercase tracking-tight">Managed Tracking</Link>
                   </div>
                 </div>
 
