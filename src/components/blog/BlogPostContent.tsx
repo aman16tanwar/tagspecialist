@@ -6,25 +6,57 @@ import { HiArrowLeft, HiCalendar, HiClock, HiTag } from 'react-icons/hi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeSlug from 'rehype-slug';
 import type { BlogPost } from '@/lib/blogs';
+import MermaidDiagram, { extractText } from './MermaidDiagram';
+import TableOfContents, { buildToc } from './TableOfContents';
+
+// ```mermaid fences arrive here as a <pre><code class="language-mermaid"> pair. They are
+// intercepted at the <pre> level so the diagram replaces the block entirely rather than
+// rendering an SVG inside a <pre>, which would inherit monospace and code-block styling.
+function isMermaidFence(children: React.ReactNode): boolean {
+  const child = Array.isArray(children) ? children[0] : children;
+  if (!child || typeof child !== 'object' || !('props' in child)) return false;
+  const className = (child as { props?: { className?: string } }).props?.className ?? '';
+  return className.split(/\s+/).includes('language-mermaid');
+}
 
 interface BlogPostContentProps {
   post: BlogPost;
 }
 
 export default function BlogPostContent({ post }: BlogPostContentProps) {
-  // Remove first H1 from content to avoid duplicate title
+  // Strip a leading H1/H2 that only restates the post title — the <h1> below already
+  // renders it. Compares normalized text rather than matching on heading level, since
+  // most posts open with `## <title>` while others open with a genuine section heading
+  // that must be preserved.
   let displayContent = post.content;
-  const firstH1Regex = /^#\s.*(?:\r?\n|$)/;
-  if (displayContent.match(firstH1Regex)) {
-    displayContent = displayContent.replace(firstH1Regex, '').trim();
+  const leadingHeading = displayContent.match(/^\s*#{1,2}\s+(.+?)(?:\r?\n|$)/);
+  if (leadingHeading) {
+    const normalize = (value: string) => value.replace(/[^a-z0-9]+/gi, '').toLowerCase();
+    const heading = normalize(leadingHeading[1]);
+    const title = normalize(post.title);
+    const restatesTitle =
+      heading === title ||
+      (heading.length >= 25 && title.length >= 25 && heading.slice(0, 25) === title.slice(0, 25));
+    if (restatesTitle) {
+      displayContent = displayContent.slice(leadingHeading[0].length).trim();
+    }
   }
 
   const displayDate = post.publishDate ? new Date(post.publishDate) : new Date();
 
+  // 225 wpm is a reasonable rate for technical reading. Derived from the post body so it
+  // stays accurate as content changes, rather than a fixed figure on every post.
+  const readingMinutes = Math.max(1, Math.round(post.content.trim().split(/\s+/).length / 225));
+
+  // Built from the same string handed to ReactMarkdown, so a stripped leading heading is
+  // excluded from the sidebar exactly as it is from the body.
+  const headings = buildToc(displayContent);
+
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
           <Link href="/blogs" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
             <HiArrowLeft className="mr-2 w-4 h-4" /> Back to Insights
@@ -38,7 +70,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               <HiCalendar className="w-4 h-4" /> {displayDate.toLocaleDateString()}
             </span>
             <span className="flex items-center gap-1">
-              <HiClock className="w-4 h-4" /> 5 min read
+              <HiClock className="w-4 h-4" /> {readingMinutes} min read
             </span>
           </div>
 
@@ -47,13 +79,38 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
           </h1>
         </motion.div>
 
-        <div className="prose prose-lg prose-blue max-w-none">
+        <div className="lg:flex lg:gap-14">
+          {/* Sidebar takes the left margin on wide screens; below lg it is dropped rather
+              than stacked, so mobile readers are not scrolling past a nav to reach the post. */}
+          <aside className="hidden lg:block lg:w-60 lg:flex-shrink-0">
+            <TableOfContents headings={headings} />
+          </aside>
+
+          {/* min-w-0 lets wide code blocks and tables scroll inside the flex child instead
+              of forcing the whole row wider. */}
+          <div className="prose prose-lg prose-blue max-w-none lg:min-w-0 lg:flex-1">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
+            rehypePlugins={[rehypeSlug, rehypeHighlight]}
+            components={{
+              pre: ({ children, ...props }) =>
+                isMermaidFence(children) ? (
+                  <MermaidDiagram chart={extractText(children).trim()} />
+                ) : (
+                  <pre {...props}>{children}</pre>
+                ),
+              // Wrapped so wide tables scroll horizontally on narrow screens instead
+              // of pushing the whole page sideways.
+              table: ({ children, ...props }) => (
+                <div className="overflow-x-auto">
+                  <table {...props}>{children}</table>
+                </div>
+              ),
+            }}
           >
-            {displayContent}
-          </ReactMarkdown>
+              {displayContent}
+            </ReactMarkdown>
+          </div>
         </div>
 
         {/* Debug Session CTA — for practitioners stuck mid-implementation */}
