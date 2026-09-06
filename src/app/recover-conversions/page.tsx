@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import MetaCAPILanding from '@/components/landing/MetaCAPILanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Meta CAPI + Google Ads Enhanced Conversions Setup | $1,500 + $150/mo',
   description: 'Done-for-you Meta Conversion API and Google Ads Enhanced Conversions setup, bundled with managed hosting. Per Meta, CAPI users see 13% lower CPA and 8% more attributed conversions. $1,500 setup + $150/mo managed, delivered in 1 week.',
   keywords: 'meta conversion api setup, google ads enhanced conversions setup, conversion api implementation, server-side tracking setup, recover lost conversions, capi setup service, facebook conversion api setup, server side tagging service, fix ad tracking, conversion api expert',
   alternates: {
-    canonical: 'https://tagspecialist.ca/recover-conversions',
+    canonical: '/recover-conversions',
   },
   openGraph: {
     title: 'Meta CAPI + Google Ads Enhanced Conversions Setup | $1,500 + $150/mo',
     description: 'Done-for-you Meta CAPI + Google Ads Enhanced Conversions setup, bundled with managed hosting. $1,500 setup + $150/mo. Delivered in 1 week.',
     type: 'website',
-    url: 'https://tagspecialist.ca/recover-conversions',
+    url: '/recover-conversions',
   },
 };
 
@@ -28,7 +29,7 @@ export default function RecoverConversionsPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         offers: {
           '@type': 'Offer',
@@ -112,14 +113,14 @@ export default function RecoverConversionsPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Recover Lost Ad Conversions', item: 'https://tagspecialist.ca/recover-conversions' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Recover Lost Ad Conversions', item: `${SITE_URL}/recover-conversions` },
         ],
       },
       {
         '@type': 'WebPage',
         name: 'Recover Lost Ad Conversions — Meta CAPI + Google Ads Setup',
-        url: 'https://tagspecialist.ca/recover-conversions',
+        url: `${SITE_URL}/recover-conversions`,
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

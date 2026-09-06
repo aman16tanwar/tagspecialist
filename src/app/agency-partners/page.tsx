@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import AgencyPartnerLanding from '@/components/landing/AgencyPartnerLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Agency Partner Program | Tag Specialist',
   description: 'Add $500-2,000/month to your agency revenue. White-label server-side tracking for agencies. We handle the tech, you keep the margin.',
   keywords: 'agency partner program, white label tracking, reseller program, server-side tracking partner, marketing agency partnership',
   alternates: {
-    canonical: 'https://tagspecialist.ca/agency-partners',
+    canonical: '/agency-partners',
   },
   openGraph: {
     title: 'Agency Partner Program | Tag Specialist',
     description: 'Add $500-2,000/month to your agency revenue with white-label server-side tracking.',
     type: 'website',
-    url: 'https://tagspecialist.ca/agency-partners',
+    url: '/agency-partners',
   },
 };
 
@@ -24,12 +25,12 @@ export default function AgencyPartnersPage() {
       {
         '@type': 'Organization',
         name: 'Tag Specialist',
-        url: 'https://tagspecialist.ca',
+        url: SITE_URL,
         description: 'Analytics and tracking specialists offering agency partnership programs.',
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'Partnership Inquiries',
-          url: 'https://tagspecialist.ca/agency-partners',
+          url: `${SITE_URL}/agency-partners`,
         },
       },
       {
@@ -64,8 +65,8 @@ export default function AgencyPartnersPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Agency Partners', item: 'https://tagspecialist.ca/agency-partners' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Agency Partners', item: `${SITE_URL}/agency-partners` },
         ],
       },
     ],

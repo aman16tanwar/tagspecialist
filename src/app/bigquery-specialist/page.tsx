@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import BigQuerySpecialistLanding from '@/components/landing/BigQuerySpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'BigQuery Specialist for Hire | Marketing Data Warehouse Engineer',
@@ -9,14 +10,14 @@ export const metadata: Metadata = {
   keywords:
     'BigQuery specialist, BigQuery consultant, BigQuery data engineer, hire BigQuery engineer, marketing data warehouse, BigQuery for marketing, GA4 BigQuery, server-side GA4 BigQuery, dbt BigQuery, BigQuery ML, BigQuery cost optimization, marketing data engineer',
   alternates: {
-    canonical: 'https://tagspecialist.ca/bigquery-specialist',
+    canonical: '/bigquery-specialist',
   },
   openGraph: {
     title: 'BigQuery Specialist for Hire | Marketing Data Warehouse Engineer',
     description:
       'Hire a BigQuery specialist to build production marketing data warehouses on Google Cloud. Server-side GA4 → BigQuery, dbt, identity resolution, BQML, reverse ETL.',
     type: 'website',
-    url: 'https://tagspecialist.ca/bigquery-specialist',
+    url: '/bigquery-specialist',
   },
 };
 
@@ -32,7 +33,7 @@ export default function BigQuerySpecialistPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'BigQuery Data Warehouse Implementation',
         areaServed: 'Worldwide',
@@ -119,19 +120,19 @@ export default function BigQuerySpecialistPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'BigQuery Specialist',
-            item: 'https://tagspecialist.ca/bigquery-specialist',
+            item: `${SITE_URL}/bigquery-specialist`,
           },
         ],
       },
       {
         '@type': 'WebPage',
         name: 'BigQuery Specialist',
-        url: 'https://tagspecialist.ca/bigquery-specialist',
+        url: `${SITE_URL}/bigquery-specialist`,
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

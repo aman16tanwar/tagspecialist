@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Server-Side Tagging Guide 2026 | Complete Implementation Guide',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Server-Side Tagging Guide 2026 | Complete Implementation Guide',
     description: 'Learn how server-side tagging recovers 30-40% of lost conversion data, improves site speed by 40-60%, and ensures privacy compliance. Includes ROI calculator and platform comparison.',
     type: 'article',
-    url: 'https://tagspecialist.ca/server-side-tagging-guide',
+    url: '/server-side-tagging-guide',
     images: [
       {
         url: '/og-server-side-tagging.png',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Recover 30-40% lost data, improve site speed 40-60%, ensure GDPR/CCPA compliance with server-side tagging.'
   },
   alternates: {
-    canonical: 'https://tagspecialist.ca/server-side-tagging-guide'
+    canonical: '/server-side-tagging-guide'
   },
   robots: {
     index: true,
@@ -56,29 +57,29 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Article',
-      '@id': 'https://tagspecialist.ca/server-side-tagging-guide#article',
+      '@id': `${SITE_URL}/server-side-tagging-guide#article`,
       headline: 'Server-Side Tagging Guide 2026: Complete Implementation Guide',
       description: 'Comprehensive guide to server-side tagging covering implementation, benefits, platform comparison, and ROI calculation.',
       author: {
         '@type': 'Organization',
         name: 'TagSpecialist',
-        url: 'https://tagspecialist.ca'
+        url: SITE_URL
       },
       publisher: {
         '@type': 'Organization',
         name: 'TagSpecialist',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://tagspecialist.ca/logo.png'
+          url: `${SITE_URL}/logo.png`
         }
       },
       datePublished: '2026-01-01',
       dateModified: new Date().toISOString().split('T')[0],
-      mainEntityOfPage: 'https://tagspecialist.ca/server-side-tagging-guide'
+      mainEntityOfPage: `${SITE_URL}/server-side-tagging-guide`
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://tagspecialist.ca/server-side-tagging-guide#faq',
+      '@id': `${SITE_URL}/server-side-tagging-guide#faq`,
       mainEntity: [
         {
           '@type': 'Question',
@@ -124,7 +125,7 @@ const jsonLd = {
     },
     {
       '@type': 'HowTo',
-      '@id': 'https://tagspecialist.ca/server-side-tagging-guide#howto',
+      '@id': `${SITE_URL}/server-side-tagging-guide#howto`,
       name: 'How to Implement Server-Side Tagging',
       description: 'Step-by-step guide to implementing server-side tagging for your website.',
       step: [
@@ -157,19 +158,19 @@ const jsonLd = {
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://tagspecialist.ca/server-side-tagging-guide#breadcrumb',
+      '@id': `${SITE_URL}/server-side-tagging-guide#breadcrumb`,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://tagspecialist.ca'
+          item: SITE_URL
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Server-Side Tagging Guide',
-          item: 'https://tagspecialist.ca/server-side-tagging-guide'
+          item: `${SITE_URL}/server-side-tagging-guide`
         }
       ]
     }

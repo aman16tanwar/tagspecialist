@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'TagSpecialist Terms of Service - Terms and conditions for using our services.',
   alternates: {
-    canonical: 'https://tagspecialist.ca/terms-of-service',
+    canonical: '/terms-of-service',
   },
 };
 

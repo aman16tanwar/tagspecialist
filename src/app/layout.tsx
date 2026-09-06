@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/modals/ContactForm";
 import SuccessModal from "@/components/modals/SuccessModal";
+import { SITE_URL } from '@/lib/site';
 
 const GTM_ID = "GTM-PTBVKBHB";
 
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
     template: "%s | Tag Specialist"
   },
   description: "Expert server-side tagging, GTM implementation, and data engineering services. We build tracking infrastructure and BigQuery data warehouses for agencies and brands.",
-  metadataBase: new URL("https://tagspecialist.ca"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://tagspecialist.ca",
+    url: "/",
     siteName: "TagSpecialist",
     images: [
       {

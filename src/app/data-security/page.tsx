@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Data Security',
   description: 'TagSpecialist Data Security - How we protect your data and maintain security standards.',
   alternates: {
-    canonical: 'https://tagspecialist.ca/data-security',
+    canonical: '/data-security',
   },
 };
 

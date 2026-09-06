@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'About Us',
   description: 'Meet the team behind Tag Specialist. Expert data engineers and campaign managers working together to grow your business.',
   alternates: {
-    canonical: 'https://tagspecialist.ca/about',
+    canonical: '/about',
   },
 };
 

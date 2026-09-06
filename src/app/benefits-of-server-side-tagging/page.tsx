@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import BenefitsOfServerSideTagging from '@/components/landing/BenefitsOfServerSideTagging';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Benefits & Advantages of Server-Side Tagging | Why Switch from Client-Side',
   description: 'The benefits and advantages of server-side tagging: 30-40% more conversion data, ad blocker bypass, faster page loads, GDPR/CCPA compliance, better attribution. Real results.',
   keywords: 'benefits of server side tagging, advantages of server side tagging, server side tagging benefits, server side tagging advantages, why server side tagging, server side vs client side tagging, server side GTM benefits, server side tracking advantages',
   alternates: {
-    canonical: 'https://tagspecialist.ca/benefits-of-server-side-tagging',
+    canonical: '/benefits-of-server-side-tagging',
   },
   openGraph: {
     title: 'Benefits & Advantages of Server-Side Tagging | Why Switch from Client-Side',
     description: 'The benefits and advantages of server-side tagging: 30-40% more conversion data, ad blocker bypass, faster page loads, and privacy compliance.',
     type: 'article',
-    url: 'https://tagspecialist.ca/benefits-of-server-side-tagging',
+    url: '/benefits-of-server-side-tagging',
   },
 };
 
@@ -28,16 +29,16 @@ export default function BenefitsOfServerSideTaggingPage() {
         author: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         publisher: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         datePublished: '2026-04-05',
         dateModified: '2026-05-08',
-        mainEntityOfPage: 'https://tagspecialist.ca/benefits-of-server-side-tagging',
+        mainEntityOfPage: `${SITE_URL}/benefits-of-server-side-tagging`,
       },
       {
         '@type': 'FAQPage',
@@ -99,13 +100,13 @@ export default function BenefitsOfServerSideTaggingPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://tagspecialist.ca',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Benefits of Server-Side Tagging',
-            item: 'https://tagspecialist.ca/benefits-of-server-side-tagging',
+            item: `${SITE_URL}/benefits-of-server-side-tagging`,
           },
         ],
       },

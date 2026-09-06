@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import SSTSpecialistLanding from '@/components/landing/SSTSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Server-Side Tracking Specialist for Hire | Senior Expert, 10 Years',
   description: 'Hire a server-side tracking & tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. 10 years of enterprise experience. Free audit.',
   keywords: 'server-side tagging specialist, server-side tracking specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist, tagging specialist, server-side tagging agency',
   alternates: {
-    canonical: 'https://tagspecialist.ca/server-side-tagging-specialist',
+    canonical: '/server-side-tagging-specialist',
   },
   openGraph: {
     title: 'Server-Side Tracking Specialist for Hire | Senior Expert, 10 Years',
     description: 'Hire a server-side tracking & tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. 10 years of enterprise experience.',
     type: 'website',
-    url: 'https://tagspecialist.ca/server-side-tagging-specialist',
+    url: '/server-side-tagging-specialist',
   },
 };
 
@@ -28,7 +29,7 @@ export default function SSTSpecialistPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'Server-Side Tagging Implementation',
         areaServed: 'Worldwide',
@@ -111,14 +112,14 @@ export default function SSTSpecialistPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Server-Side Tagging Specialist', item: 'https://tagspecialist.ca/server-side-tagging-specialist' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Server-Side Tagging Specialist', item: `${SITE_URL}/server-side-tagging-specialist` },
         ],
       },
       {
         '@type': 'WebPage',
         name: 'Server-Side Tagging Specialist',
-        url: 'https://tagspecialist.ca/server-side-tagging-specialist',
+        url: `${SITE_URL}/server-side-tagging-specialist`,
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

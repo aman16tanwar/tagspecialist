@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Refund Policy',
   description: 'TagSpecialist Refund Policy - Our refund and cancellation terms.',
   alternates: {
-    canonical: 'https://tagspecialist.ca/refund-policy',
+    canonical: '/refund-policy',
   },
 };
 

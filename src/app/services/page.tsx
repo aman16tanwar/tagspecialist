@@ -6,19 +6,20 @@ import PricingSection from '@/components/pricing/PricingSection';
 import RetainerServices from '@/components/services/RetainerServices';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Server-Side Tracking & Data Engineering Services',
   description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services. From $150/month managed tracking to full enterprise data infrastructure.',
   keywords: 'server-side tracking services, GA4 implementation, BigQuery data warehouse, GTM specialist services, conversion tracking, Meta CAPI, data engineering services',
   alternates: {
-    canonical: 'https://tagspecialist.ca/services',
+    canonical: '/services',
   },
   openGraph: {
     title: 'Server-Side Tracking & Data Engineering Services | Tag Specialist',
     description: 'Expert server-side tagging, GA4 implementation, BigQuery data warehousing, and AI analytics services.',
     type: 'website',
-    url: 'https://tagspecialist.ca/services',
+    url: '/services',
   },
 };
 
@@ -33,7 +34,7 @@ export default function ServicesPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'Marketing Analytics & Data Engineering',
         offers: [
@@ -81,8 +82,8 @@ export default function ServicesPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://tagspecialist.ca/services' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
         ],
       },
     ],

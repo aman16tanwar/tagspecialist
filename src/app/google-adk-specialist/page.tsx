@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import GoogleADKSpecialistLanding from '@/components/landing/GoogleADKSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Google ADK Specialist | Build AI Agents on Vertex AI & BigQuery',
@@ -9,14 +10,14 @@ export const metadata: Metadata = {
   keywords:
     'Google ADK specialist, Google Agent Development Kit, ADK consultant, hire ADK engineer, Vertex AI agent, Vertex AI Agent Engine, AI agent specialist, marketing AI agents, BigQuery AI agent, Gemini agent developer, agent development kit, AI agent for analytics, RAG specialist, multi-agent system',
   alternates: {
-    canonical: 'https://tagspecialist.ca/google-adk-specialist',
+    canonical: '/google-adk-specialist',
   },
   openGraph: {
     title: 'Google ADK Specialist | Build AI Agents on Vertex AI & BigQuery',
     description:
       'Hire a Google Agent Development Kit (ADK) specialist to build production AI agents on Vertex AI. ADK + Gemini + BigQuery with evals, observability, and managed ops.',
     type: 'website',
-    url: 'https://tagspecialist.ca/google-adk-specialist',
+    url: '/google-adk-specialist',
   },
 };
 
@@ -32,7 +33,7 @@ export default function GoogleADKSpecialistPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'AI Agent Development',
         areaServed: 'Worldwide',
@@ -119,19 +120,19 @@ export default function GoogleADKSpecialistPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Google ADK Specialist',
-            item: 'https://tagspecialist.ca/google-adk-specialist',
+            item: `${SITE_URL}/google-adk-specialist`,
           },
         ],
       },
       {
         '@type': 'WebPage',
         name: 'Google ADK Specialist',
-        url: 'https://tagspecialist.ca/google-adk-specialist',
+        url: `${SITE_URL}/google-adk-specialist`,
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

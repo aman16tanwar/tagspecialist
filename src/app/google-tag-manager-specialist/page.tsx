@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import GTMSpecialistLanding from '@/components/landing/GTMSpecialistLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
   description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience. Free audit.',
   keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation, google tag manager cost, hire google tag manager expert',
   alternates: {
-    canonical: 'https://tagspecialist.ca/google-tag-manager-specialist',
+    canonical: '/google-tag-manager-specialist',
   },
   openGraph: {
     title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
     description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience.',
     type: 'website',
-    url: 'https://tagspecialist.ca/google-tag-manager-specialist',
+    url: '/google-tag-manager-specialist',
   },
 };
 
@@ -28,7 +29,7 @@ export default function GTMSpecialistPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'Google Tag Manager Implementation',
         areaServed: 'Worldwide',
@@ -107,20 +108,20 @@ export default function GTMSpecialistPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://tagspecialist.ca',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Google Tag Manager Specialist',
-            item: 'https://tagspecialist.ca/google-tag-manager-specialist',
+            item: `${SITE_URL}/google-tag-manager-specialist`,
           },
         ],
       },
       {
         '@type': 'WebPage',
         name: 'Google Tag Manager Specialist',
-        url: 'https://tagspecialist.ca/google-tag-manager-specialist',
+        url: `${SITE_URL}/google-tag-manager-specialist`,
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],

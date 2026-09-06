@@ -10,13 +10,14 @@ import TaggingSection from '@/components/home/TaggingSection';
 import FAQSection from '@/components/home/FAQSection';
 import FinalCTASection from '@/components/home/FinalCTASection';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'TagSpecialist | Server-Side Tracking & Data Engineering Experts',
   description: 'Hire server-side tagging specialists and data engineers. GTM server-side implementation, GA4 setup, BigQuery data warehouses, and AI analytics for agencies and brands.',
   keywords: 'server-side tagging specialist, tag manager expert, GTM specialist, google tag manager expert, tagging specialist, server-side tracking, data engineering services, BigQuery consultant, GA4 implementation, conversion tracking expert',
   alternates: {
-    canonical: 'https://tagspecialist.ca/',
+    canonical: '/',
   },
 };
 
@@ -27,9 +28,9 @@ const structuredData = {
       "@type": "ProfessionalService",
       "name": "TagSpecialist",
       "description": "Expert server-side tagging specialists and data engineers. We build tracking infrastructure, GTM server-side implementations, BigQuery data warehouses, and AI analytics for agencies and brands.",
-      "url": "https://tagspecialist.ca",
-      "logo": "https://tagspecialist.ca/logo.png",
-      "image": "https://tagspecialist.ca/og-image.png",
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/logo.png`,
+      "image": `${SITE_URL}/og-image.png`,
       "areaServed": "Worldwide",
       "knowsAbout": [
         "Server-Side Tagging",
@@ -73,8 +74,8 @@ const structuredData = {
     {
       "@type": "Organization",
       "name": "TagSpecialist",
-      "url": "https://tagspecialist.ca",
-      "logo": "https://tagspecialist.ca/logo.png",
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/logo.png`,
       "sameAs": ["https://github.com/tagspecialist"],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -86,7 +87,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       "name": "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
-      "url": "https://tagspecialist.ca",
+      "url": SITE_URL,
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", ".hero-description", ".solution-summary"]

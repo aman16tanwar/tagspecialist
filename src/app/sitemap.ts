@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 import blogs from '@/data/blogs.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tagspecialist.ca';
+  const baseUrl = SITE_URL;
 
   const mainPages: MetadataRoute.Sitemap = [
     {

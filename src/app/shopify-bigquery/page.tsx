@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import ShopifyBigQueryLanding from '@/components/landing/ShopifyBigQueryLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Shopify to BigQuery Pipeline | No Row Limits',
   description: 'The only Shopify to BigQuery connector with NO row limits. Real-time data sync, 5-minute setup, and you own the infrastructure. Save $1,200+/year vs Fivetran.',
   keywords: 'shopify to bigquery, shopify data pipeline, shopify bigquery connector, bigquery shopify integration, shopify data warehouse, unlimited rows shopify, fivetran alternative',
   alternates: {
-    canonical: 'https://tagspecialist.ca/shopify-bigquery',
+    canonical: '/shopify-bigquery',
   },
   openGraph: {
     title: 'Shopify to BigQuery Pipeline | No Row Limits',
     description: 'The only Shopify to BigQuery connector with NO row limits. $50/month total. Save $1,200+/year vs Fivetran.',
     type: 'website',
-    url: 'https://tagspecialist.ca/shopify-bigquery',
+    url: '/shopify-bigquery',
   },
 };
 
@@ -71,8 +72,8 @@ export default function ShopifyBigQueryPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Shopify to BigQuery', item: 'https://tagspecialist.ca/shopify-bigquery' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Shopify to BigQuery', item: `${SITE_URL}/shopify-bigquery` },
         ],
       },
     ],

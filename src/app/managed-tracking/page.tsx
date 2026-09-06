@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import ManagedTrackingLanding from '@/components/landing/ManagedTrackingLanding';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Managed Server-Side Tracking | Tag Specialist',
   description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking for Google Ads, Meta CAPI, and more. From $150/month.',
   keywords: 'server-side tracking, Google Tag Manager server, Meta CAPI, conversion API, ad blocker bypass, managed tracking',
   alternates: {
-    canonical: 'https://tagspecialist.ca/managed-tracking',
+    canonical: '/managed-tracking',
   },
   openGraph: {
     title: 'Managed Server-Side Tracking | Tag Specialist',
     description: 'Stop losing 40-70% of your conversion data. Fully managed server-side tracking from $150/month.',
     type: 'website',
-    url: 'https://tagspecialist.ca/managed-tracking',
+    url: '/managed-tracking',
   },
 };
 
@@ -28,7 +29,7 @@ export default function ManagedTrackingPage() {
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
-          url: 'https://tagspecialist.ca',
+          url: SITE_URL,
         },
         serviceType: 'Marketing Analytics',
         offers: [
@@ -102,8 +103,8 @@ export default function ManagedTrackingPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-          { '@type': 'ListItem', position: 2, name: 'Managed Tracking', item: 'https://tagspecialist.ca/managed-tracking' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Managed Tracking', item: `${SITE_URL}/managed-tracking` },
         ],
       },
     ],

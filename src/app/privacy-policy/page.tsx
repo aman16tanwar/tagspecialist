@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'TagSpecialist Privacy Policy - How we collect, use, and protect your data.',
   alternates: {
-    canonical: 'https://tagspecialist.ca/privacy-policy',
+    canonical: '/privacy-policy',
   },
 };
 

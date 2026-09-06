@@ -5,6 +5,7 @@ import { getBlogs, getBlogBySlug, getBlogById } from '@/lib/blogs';
 import BlogPostContent from '@/components/blog/BlogPostContent';
 import RedirectToSlug from '@/components/blog/RedirectToSlug';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getBlogBySlug(slug);
 
   if (post) {
-    const canonical = `https://tagspecialist.ca/blog/${post.slug}`;
+    const canonical = `/blog/${post.slug}`;
     return {
       title: post.title,
       description: post.description,
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Legacy id URL — point search engines at the canonical slug URL and noindex this page
   const postById = await getBlogById(slug);
   if (postById) {
-    const canonical = `https://tagspecialist.ca/blog/${postById.slug}`;
+    const canonical = `/blog/${postById.slug}`;
     return {
       title: postById.title,
       description: postById.description,
@@ -63,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getBlogBySlug(slug);
 
   if (post) {
-    const canonical = `https://tagspecialist.ca/blog/${post.slug}`;
+    const canonical = `${SITE_URL}/blog/${post.slug}`;
     const articleSchema = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -74,15 +75,15 @@ export default async function BlogPostPage({ params }: Props) {
           author: {
             '@type': 'Organization',
             name: 'Tag Specialist',
-            url: 'https://tagspecialist.ca',
+            url: SITE_URL,
           },
           publisher: {
             '@type': 'Organization',
             name: 'Tag Specialist',
-            url: 'https://tagspecialist.ca',
+            url: SITE_URL,
             logo: {
               '@type': 'ImageObject',
-              url: 'https://tagspecialist.ca/logo.png',
+              url: `${SITE_URL}/logo.png`,
             },
           },
           datePublished: post.publishDate,
@@ -94,8 +95,8 @@ export default async function BlogPostPage({ params }: Props) {
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tagspecialist.ca' },
-            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://tagspecialist.ca/blogs' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blogs` },
             { '@type': 'ListItem', position: 3, name: post.title, item: canonical },
           ],
         },

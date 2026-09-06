@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Unified Data Platform Guide 2026 | Marketing Data Warehouse & Multi-Touch Attribution',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Unified Data Platform Guide 2026 | Marketing Data Warehouse & Attribution',
     description: 'Learn how to unify GA4, CRM, and ad platform data in BigQuery for true multi-touch attribution and ML-powered audience activation.',
     type: 'article',
-    url: 'https://tagspecialist.ca/unified-data-platform-guide',
+    url: '/unified-data-platform-guide',
   },
   twitter: {
     card: 'summary_large_image',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     description: 'Connect GA4, CRM, and ad platforms in BigQuery for true multi-touch attribution.',
   },
   alternates: {
-    canonical: 'https://tagspecialist.ca/unified-data-platform-guide',
+    canonical: '/unified-data-platform-guide',
   },
   robots: {
     index: true,
@@ -47,29 +48,29 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Article',
-      '@id': 'https://tagspecialist.ca/unified-data-platform-guide#article',
+      '@id': `${SITE_URL}/unified-data-platform-guide#article`,
       headline: 'Unified Data Platform Guide: Marketing Data Warehouse & Multi-Touch Attribution',
       description: 'Complete guide to building a unified marketing data platform with BigQuery for multi-touch attribution and ML-powered insights.',
       author: {
         '@type': 'Organization',
         name: 'TagSpecialist',
-        url: 'https://tagspecialist.ca',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
         name: 'TagSpecialist',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://tagspecialist.ca/logo.png',
+          url: `${SITE_URL}/logo.png`,
         },
       },
       datePublished: '2026-04-05',
       dateModified: new Date().toISOString().split('T')[0],
-      mainEntityOfPage: 'https://tagspecialist.ca/unified-data-platform-guide',
+      mainEntityOfPage: `${SITE_URL}/unified-data-platform-guide`,
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://tagspecialist.ca/unified-data-platform-guide#faq',
+      '@id': `${SITE_URL}/unified-data-platform-guide#faq`,
       mainEntity: [
         {
           '@type': 'Question',
@@ -115,7 +116,7 @@ const jsonLd = {
     },
     {
       '@type': 'HowTo',
-      '@id': 'https://tagspecialist.ca/unified-data-platform-guide#howto',
+      '@id': `${SITE_URL}/unified-data-platform-guide#howto`,
       name: 'How to Build a Unified Marketing Data Platform',
       description: 'Step-by-step guide to building a unified data platform for marketing analytics.',
       step: [
@@ -148,19 +149,19 @@ const jsonLd = {
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://tagspecialist.ca/unified-data-platform-guide#breadcrumb',
+      '@id': `${SITE_URL}/unified-data-platform-guide#breadcrumb`,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://tagspecialist.ca',
+          item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Unified Data Platform Guide',
-          item: 'https://tagspecialist.ca/unified-data-platform-guide',
+          item: `${SITE_URL}/unified-data-platform-guide`,
         },
       ],
     },

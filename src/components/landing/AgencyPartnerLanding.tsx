@@ -338,7 +338,7 @@ export default function AgencyPartnerLanding() {
             Ready to Add Tracking to Your Services?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join agencies earning $500-2,000+/month in passive revenue. No technical expertise required.
+            Add a recurring revenue line without hiring for it. You keep the client relationship and the margin; the tracking work is delivered under your brand.
           </p>
           <Link
             href="/book-audit"
@@ -349,6 +349,23 @@ export default function AgencyPartnerLanding() {
           <p className="mt-6 text-blue-300 text-sm">
             No commitment to apply. We&apos;ll schedule a call to discuss if it&apos;s a good fit.
           </p>
+
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <p className="text-blue-300 text-sm mb-4">
+              Putting your brand on someone else&apos;s work is a trust decision. Here is what backs it:
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold">
+              <Link href="/sla" className="text-blue-200 hover:text-white underline underline-offset-4 transition-colors">
+                Service level agreement
+              </Link>
+              <Link href="/data-security" className="text-blue-200 hover:text-white underline underline-offset-4 transition-colors">
+                Data security &amp; access model
+              </Link>
+              <Link href="/case-studies" className="text-blue-200 hover:text-white underline underline-offset-4 transition-colors">
+                Documented case studies
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
