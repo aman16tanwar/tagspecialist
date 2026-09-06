@@ -94,7 +94,7 @@ export default function ManagedTrackingPage() {
             name: 'How much more conversion data will I capture?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Clients typically see 30-40% more conversions captured. Google case studies report +46% increase in Google Ads conversions and Meta studies show +90% increase in reported conversions, with 13% lower cost per result.',
+              text: 'Recovery depends on how much signal the current setup is losing. Google case studies report +46% increase in Google Ads conversions and Meta studies show +90% increase in reported conversions, with 13% lower cost per result.',
             },
           },
         ],

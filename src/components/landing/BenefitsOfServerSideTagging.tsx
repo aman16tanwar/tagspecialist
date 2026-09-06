@@ -110,15 +110,15 @@ export default function BenefitsOfServerSideTagging() {
     },
     {
       q: 'What are the advantages of server-side tagging over client-side tagging?',
-      a: 'The main advantages of server-side tagging over client-side tagging are: (1) it bypasses ad blockers and ITP restrictions that block 30-40% of client-side tracking, (2) it processes data on a server you control instead of in the browser, giving you a centralized point to enforce consent, strip PII, and enrich events with CRM data, (3) it extends first-party cookie lifespans from Safari\'s 7-day ITP limit to 400+ days, (4) it reduces the JavaScript footprint on your site, improving Core Web Vitals and page load speed, and (5) it sends server-to-server conversion events via APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API) that browsers cannot block. Combined, these advantages typically deliver +46% more reported Google Ads conversions and up to 451% ROAS improvement.',
+      a: 'The main advantages of server-side tagging over client-side tagging are: (1) it bypasses ad blockers and ITP restrictions that block 30-40% of client-side tracking, (2) it processes data on a server you control instead of in the browser, giving you a centralized point to enforce consent, strip PII, and enrich events with CRM data, (3) it extends first-party cookie lifespans from Safari\'s 7-day ITP limit to 400+ days, (4) it reduces the JavaScript footprint on your site, improving Core Web Vitals and page load speed, and (5) it sends server-to-server conversion events via APIs (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API) that browsers cannot block. Google reports Enhanced Conversions recover 5-17% additional conversions, and Meta reports around 13% lower cost per action for advertisers running the Conversions API alongside the Pixel.',
     },
     {
       q: 'How much does server-side tagging improve conversion tracking?',
-      a: 'On average, businesses see 30-40% more conversions captured after implementing server-side tagging. This varies by industry and audience — sites with tech-savvy audiences (higher ad blocker usage) see even greater improvements. Google case studies report up to +46% increase in reported conversions, and Meta CAPI studies show up to +90% increase.',
+      a: 'It depends on how much signal your current setup is losing. This varies by industry and audience — sites with tech-savvy audiences (higher ad blocker usage) see even greater improvements. Google case studies report up to +46% increase in reported conversions, and Meta CAPI studies show up to +90% increase.',
     },
     {
       q: 'Is server-side tagging worth the investment?',
-      a: 'If you spend $10K+ per month on digital ads, server-side tagging is almost certainly worth it. The 30-40% more conversion data means better algorithm optimization, lower CPAs, and more accurate attribution. Most businesses see ROI within the first month through improved ad efficiency alone.',
+      a: 'If you spend $10K+ per month on digital ads, server-side tagging is almost certainly worth it. Recovered conversion data means better algorithm optimization, lower CPAs, and more accurate attribution. Whether that pays back in the first month depends on your spend and how much signal you are currently losing.',
     },
     {
       q: 'Does server-side tagging replace Google Tag Manager?',
@@ -388,8 +388,8 @@ export default function BenefitsOfServerSideTagging() {
             {[
               {
                 client: 'DTC Fashion Brand',
-                result: '451% ROAS Increase',
-                detail: 'Server-side tagging + first-party attribution recovered $200K+/month in previously invisible conversions.',
+                result: 'Attribution Rebuilt',
+                detail: 'Server-side tagging plus first-party attribution surfaced conversions that client-side tracking was missing entirely.',
               },
               {
                 client: 'B2B SaaS Company',

@@ -24,49 +24,12 @@ export default function SSTSpecialistPage() {
       {
         '@type': 'ProfessionalService',
         name: 'Server-Side Tagging Specialist Services',
-        description: 'Expert server-side tagging implementation, Meta CAPI, Google Ads Enhanced Conversions, and managed tracking infrastructure by certified specialists with 15+ years experience.',
+        description: 'Expert server-side tagging implementation, Meta CAPI, Google Ads Enhanced Conversions, and managed tracking infrastructure by a certified specialist with 10 years of experience.',
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
         },
-        review: [
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-01-11',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Incredibly skilled with Facebook attribution. Thorough in troubleshooting and solving issues even on checkout software he wasn’t already familiar with.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2024-01-22',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Excellent troubleshooting and testing for Meta CAPI setup. Professional and knowledgeable with Google Analytics, Tag Manager, and Facebook Ads Manager.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-12-28',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Built ETL pipelines for my company. Works perfectly. Took the initiative and suggested ways to improve the setup. Super reactive.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-09-26',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Skilled and responsive data engineer with deep GCP experience. Highly recommend.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-02-26',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Hands down the best Google and Meta tracking specialist I’ve ever worked with. Deep expertise and attention to detail.',
-          },
-        ],
         serviceType: 'Server-Side Tagging Implementation',
         areaServed: 'Worldwide',
         hasOfferCatalog: {

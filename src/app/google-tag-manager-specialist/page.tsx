@@ -24,49 +24,12 @@ export default function GTMSpecialistPage() {
       {
         '@type': 'Service',
         name: 'Google Tag Manager Specialist Services',
-        description: 'Expert Google Tag Manager implementation, server-side tagging, GA4 setup, and conversion tracking by certified GTM specialists with 15+ years experience.',
+        description: 'Expert Google Tag Manager implementation, server-side tagging, GA4 setup, and conversion tracking by a certified GTM specialist with 10 years of experience.',
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
         },
-        review: [
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-02-26',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: "Hands down the best Google and Meta tracking specialist I've ever worked with. Deep expertise, problem-solving skills, and attention to detail make an absolute game-changer.",
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-09-08',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Excellent job as a Google Meta Tracking Specialist — clear communication and accurate tracking setups. Everything delivered on time.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2024-01-22',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Excellent troubleshooting and testing. Professional and knowledgeable with Google Analytics, Tag Manager, and Facebook Ads Manager. Would highly recommend and will gladly rehire.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2022-07-21',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Fantastic job setting up GA4 and Tag Manager for 3 ecommerce websites. Will definitely work again and be referring others.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2022-10-18',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Great and knowledgeable. A great communicator too. Highly recommended.',
-          },
-        ],
         serviceType: 'Google Tag Manager Implementation',
         areaServed: 'Worldwide',
         hasOfferCatalog: {
@@ -132,7 +95,7 @@ export default function GTMSpecialistPage() {
             name: 'What results can I expect from professional GTM implementation?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Our clients typically see: 30-40% more conversion data captured, +46% increase in Google Ads reported conversions, up to 451% ROAS improvement through better attribution, and 15-20% lower cost per acquisition from improved signal quality.',
+              text: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account.',
             },
           },
         ],
@@ -162,7 +125,7 @@ export default function GTMSpecialistPage() {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],
         },
-        description: 'A Google Tag Manager specialist implements and manages tracking tags, conversion pixels, and analytics scripts. Services include GTM audit and fix, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking, and Consent Mode v2. Professional GTM implementation typically results in 30-40% more conversion data captured and up to 451% ROAS improvement.',
+        description: 'A Google Tag Manager specialist implements and manages tracking tags, conversion pixels, and analytics scripts. Services include GTM audit and fix, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking, and Consent Mode v2. Recovery depends on how much signal the current setup is losing; Meta reports around 13% lower cost per action for advertisers running the Conversions API alongside the Pixel, and Google reports Enhanced Conversions recover 5-17% additional conversions.',
       },
     ],
   };

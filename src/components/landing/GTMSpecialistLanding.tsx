@@ -114,15 +114,15 @@ export default function GTMSpecialistLanding() {
 
   const whyUs = [
     {
-      title: '15+ Years of Tracking Experience',
+      title: '10 Years of Tracking Experience',
       description: 'Not a generalist agency — we\'re data engineers who specialize exclusively in GTM, GA4, and server-side tracking.',
     },
     {
-      title: 'Direct Access to Engineers',
-      description: 'No account managers or middlemen. You work directly with the people writing your tags and building your pipelines.',
+      title: 'Direct Access — No Sales Layer',
+      description: 'No account managers, no middlemen, no junior handoff. You work directly with the engineer writing your tags and building your pipelines.',
     },
     {
-      title: 'Up to 451% ROAS Improvement',
+      title: 'Signal Quality That Moves Ad Performance',
       description: 'Our implementations don\'t just track data — they recover conversion signal that directly improves ad platform performance.',
     },
     {
@@ -154,7 +154,7 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'What results can I expect?',
-      a: 'Clients typically see: 30-40% more conversion data captured, +46% increase in Google Ads reported conversions, up to 451% ROAS improvement through better attribution, and 15-20% lower CPA from improved signal quality. Results vary by setup and ad spend, but we guarantee measurable improvement or we work at no additional cost until you see it.',
+      a: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account. Results vary by setup and ad spend. Our 30-day guarantee: if you don\'t see increased conversion data within 30 days, we\'ll work with you at no additional cost until you do.',
     },
     {
       q: 'How long does a GTM implementation take?',
@@ -194,8 +194,8 @@ export default function GTMSpecialistLanding() {
               <span className="text-orange-400">Expert GTM Implementation That Drives Results</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Stop losing conversions to broken tags and incomplete tracking. Our GTM specialists have 15+ years
-              experience building measurement infrastructure for DTC brands, agencies, and enterprises.
+              Stop losing conversions to broken tags and incomplete tracking. You work directly with a senior specialist with 10 years
+              of experience building measurement infrastructure for DTC brands, agencies, and enterprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -219,10 +219,10 @@ export default function GTMSpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> 10 years of implementations
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement
+                <HiCheckCircle className="text-green-400" /> Meta CAPI + Enhanced Conversions
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 15+ years experience
+                <HiCheckCircle className="text-green-400" /> 10 years of experience
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 5.0 client rating
@@ -237,7 +237,7 @@ export default function GTMSpecialistLanding() {
         <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <p className="text-gray-700 text-base leading-relaxed">
-              <strong>A Google Tag Manager specialist</strong> implements and manages tracking tags, conversion pixels, and analytics scripts across your website using GTM. Services include GTM container audits and fixes, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking for Shopify and WooCommerce, Consent Mode v2 setup, and cross-domain tracking. Professional GTM implementation typically results in <strong>30-40% more conversion data captured</strong>, up to <strong>451% ROAS improvement</strong>, and <strong>15-20% lower CPA</strong>. A GTM audit costs <strong>$1,500-$5,000</strong>, full server-side implementation typically runs <strong>$4,000-$15,000</strong>, and managed tracking plans start at <strong>$150/month</strong>.
+              <strong>A Google Tag Manager specialist</strong> implements and manages tracking tags, conversion pixels, and analytics scripts across your website using GTM. Services include GTM container audits and fixes, server-side GTM implementation with Meta CAPI and Google Ads Enhanced Conversions, GA4 migration, e-commerce tracking for Shopify and WooCommerce, Consent Mode v2 setup, and cross-domain tracking. How much conversion signal you recover depends on how much your current setup is losing: Google reports Enhanced Conversions recover <strong>5-17% additional conversions</strong>, and Meta reports around <strong>13% lower cost per action</strong> for advertisers running the Conversions API alongside the Pixel. A GTM audit costs <strong>$1,500-$5,000</strong>, full server-side implementation typically runs <strong>$4,000-$15,000</strong>, and managed tracking plans start at <strong>$150/month</strong>.
             </p>
           </div>
         </div>

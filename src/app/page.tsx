@@ -91,7 +91,7 @@ const structuredData = {
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", ".hero-description", ".solution-summary"]
       },
-      "description": "TagSpecialist is a boutique consultancy specializing in server-side tagging implementation and data engineering. We recover 30-40% of lost conversion data through server-side GTM, build BigQuery data warehouses, and provide managed tracking infrastructure for e-commerce brands and agencies worldwide. Documented case studies show up to 451% ROAS improvement."
+      "description": "TagSpecialist is a boutique consultancy specializing in server-side tagging implementation and data engineering. We implement server-side GTM, Meta Conversions API and Google Ads Enhanced Conversions, build BigQuery data warehouses, and provide managed tracking infrastructure for e-commerce brands and agencies worldwide."
     }
   ]
 };

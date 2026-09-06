@@ -6,13 +6,13 @@
 
 ## About TagSpecialist
 
-TagSpecialist is a boutique consultancy founded by lead data engineers who specialize in server-side tracking implementation and marketing data infrastructure. We are not a generalist agency — we are data engineers who build enterprise-grade tracking and analytics systems.
+TagSpecialist is a specialist practice run by a senior data engineer focused on server-side tracking implementation and marketing data infrastructure. Not a generalist agency and not a sales organisation: there are no account managers and no junior handoff — you work directly with the engineer who builds your tracking. Work is delivered both directly and white-label through agency partners.
 
 **Core Differentiators:**
 - Direct access to senior specialists (no account managers)
-- 15+ years combined technical experience
-- 70+ brand implementations across 6 countries
-- Documented case study ROAS improvement: up to 451%
+- 10 years of technical experience
+- 70+ client implementations across 6 countries, delivered directly and white-label through agency partners
+- No account managers, no sales team: you work directly with the engineer who builds your tracking
 - 30-day satisfaction guarantee
 - GCP Certified, GA4 Certified, GTM Expert
 
@@ -110,7 +110,7 @@ Production AI agents built with Google's Agent Development Kit, deployed on Vert
 A: Server-side tagging is a data collection method where tracking requests are routed through your own server before being sent to analytics and advertising platforms. Instead of loading tracking scripts in the user's browser (client-side), the data flows from browser to your server to vendor endpoints. This bypasses ad blockers, avoids browser restrictions like ITP, and gives you full control over what data is shared with third parties.
 
 **Q: How much more data does server-side tagging capture?**
-A: Server-side tagging typically captures 30-40% more conversion data compared to client-side tracking. This is because it bypasses ad blockers (used by 30-40% of users), avoids browser ITP restrictions, and uses first-party cookies with 400+ day lifespans instead of 7-day limits. Google case studies show +46% increase in Google Ads reported conversions. Meta studies show +90% increase in reported conversions and 13% lower cost per result.
+A: How much additional conversion data server-side tagging captures depends on how much signal the current setup is losing. This is because it bypasses ad blockers (used by 30-40% of users), avoids browser ITP restrictions, and uses first-party cookies with 400+ day lifespans instead of 7-day limits. Google case studies show +46% increase in Google Ads reported conversions. Meta studies show +90% increase in reported conversions and 13% lower cost per result.
 
 **Q: How much does server-side tagging cost?**
 A: Server-side tagging implementation typically ranges from $8,000 to $18,500 depending on complexity. This includes server container setup, conversion API integrations, custom domain configuration, and testing. Ongoing managed tracking starts at $150/month for infrastructure hosting and monitoring. Cloud hosting costs are typically $50-200/month on Google Cloud.
@@ -136,7 +136,7 @@ A: A GTM specialist implements and manages tracking tags, conversion pixels, and
 A: While basic GTM setup is possible DIY, a specialist is essential for server-side tagging, conversion API integrations, complex e-commerce tracking, cross-domain tracking, and privacy compliance. Incorrect GTM setup leads to data loss that directly impacts ad spend ROI.
 
 **Q: What results can I expect from professional GTM implementation?**
-A: Clients typically see 30-40% more conversion data captured, +46% increase in Google Ads reported conversions, up to 451% ROAS improvement through better attribution, and 15-20% lower cost per acquisition from improved signal quality.
+A: Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions.
 
 ### Data Engineering
 

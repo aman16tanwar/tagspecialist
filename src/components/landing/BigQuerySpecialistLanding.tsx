@@ -114,7 +114,7 @@ export default function BigQuerySpecialistLanding() {
 
   const whyUs = [
     {
-      title: '15+ Years of Data Engineering',
+      title: '10 Years of Data Engineering',
       description:
         'Not analytics generalists — we ship production data infrastructure on Google Cloud (BigQuery, Cloud Run, Pub/Sub, dbt) every week.',
     },
@@ -229,7 +229,7 @@ export default function BigQuerySpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> 30-60% lower BigQuery bills
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 15+ years experience
+                <HiCheckCircle className="text-green-400" /> 10 years of experience
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 5.0 client rating

@@ -207,7 +207,7 @@ export default function MetaCAPILanding() {
                 <HiCheckCircle className="text-green-400" /> 1-week delivery
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 15+ years experience
+                <HiCheckCircle className="text-green-400" /> 10 years of experience
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 30-day money-back

@@ -26,18 +26,18 @@
 ## Guides & Resources
 
 - [Server-Side Tagging Guide 2026](https://tagspecialist.ca/server-side-tagging-guide): Comprehensive guide covering GTM server containers, data recovery, privacy compliance (GDPR, CCPA, PIPEDA), platform comparison (Google sGTM, Segment, Stape, Tealium), ROI calculator, and country-specific implementation playbooks.
-- [Benefits of Server-Side Tagging](https://tagspecialist.ca/benefits-of-server-side-tagging): 7 key benefits including 30-40% more conversions, ad blocker bypass, faster page loads, privacy compliance, better ad performance, extended cookie lifespan, server-level data enrichment.
+- [Benefits of Server-Side Tagging](https://tagspecialist.ca/benefits-of-server-side-tagging): 7 key benefits including ad blocker bypass, faster page loads, privacy compliance, better ad performance, extended cookie lifespan, server-level data enrichment.
 - [Unified Data Platform Guide](https://tagspecialist.ca/unified-data-platform-guide): Guide to building a marketing data warehouse with BigQuery, medallion architecture, multi-touch attribution, identity resolution, and AI activation.
-- [Case Studies](https://tagspecialist.ca/case-studies): 12 real project implementations including 451% ROAS improvement, 54% revenue tracking gap fix, multi-touch attribution for ski resort group.
+- [Case Studies](https://tagspecialist.ca/case-studies): 12 documented case studies, drawn from 70+ implementations delivered, including a 54% revenue tracking gap fix, multi-touch attribution for a ski resort group, and server-side Meta CAPI with event deduplication for SaaS.
 - [Blog](https://tagspecialist.ca/blogs): 47 technical articles on server-side GA4, BigQuery data warehouses, GTM transformations, consent management, and data engineering. Notable recent 2026 posts: [Server-Side Tagging Best Practices 2026](https://tagspecialist.ca/blog/server-side-tagging-best-practices-2026), [Google Ads Enhanced Conversions Unification (June 2026)](https://tagspecialist.ca/blog/google-ads-enhanced-conversions-unification-june-2026), [Meta CAPI in 2026: Why Pixel-Only Tracking Costs You 20-40% of Conversions](https://tagspecialist.ca/blog/meta-capi-2026-pixel-only-emq-migration), [Hosted vs. Self-Hosted Server-Side GTM in 2026: Stape vs. Cloud Run](https://tagspecialist.ca/blog/stape-vs-cloud-run-server-side-gtm-2026), [Cross-Device Attribution for SaaS: iOS to Desktop Stripe Conversions Without SKAdNetwork](https://tagspecialist.ca/blog/cross-device-attribution-saas-stripe-client-reference-id-2026), and [Consent-Compliant Server-Side Tracking in 2026: How to Run CAPI Without Triggering GDPR Liability](https://tagspecialist.ca/blog/consent-compliant-server-side-tracking-gdpr-2026), [What Is Google's Agent Development Kit (ADK)? A 2026 Field Guide](https://tagspecialist.ca/blog/what-is-google-agent-development-kit-adk-2026-field-guide) — practical comparison of ADK vs LangChain/LangGraph/CrewAI with production architecture, and [Building a Marketing Analytics AI Agent with Google ADK + BigQuery](https://tagspecialist.ca/blog/marketing-analytics-ai-agent-google-adk-bigquery-2026) — full reference architecture with three typed BigQuery tools, Vertex AI Agent Engine deployment, evals, and the production failure modes we see most often.
 
 ## Key Facts
 
-- Founded by lead data engineers with 15+ years combined experience
-- 70+ brand implementations across 6 countries and 3 continents
+- Founded by a senior data engineer with 10 years of experience
+- 70+ client implementations across 6 countries and 3 continents, delivered directly and white-label through agency partners
+- Specialist practice, not an agency: no account managers, no sales team, no junior handoff — the engineer who scopes the work is the engineer who builds it
 - Industries: E-commerce (DTC, Shopify), SaaS, Hospitality, Fintech, Agencies
-- Documented case study ROAS improvement: up to 451%
-- Server-side tracking recovers 30-40% of conversion data lost to ad blockers
+- Server-side tracking recovers conversion signal lost to ad blockers, ITP cookie limits and iOS privacy restrictions
 - 5.0 client rating
 - GCP Certified, GA4 Certified, GTM Expert
 - Direct specialist access (no account managers)

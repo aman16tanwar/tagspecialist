@@ -134,9 +134,9 @@ export default function GoogleADKSpecialistLanding() {
         'Cloud Trace on every tool call. Cost monitoring per agent invocation. Canary deploys, rollback playbooks, and on-call runbooks. Production-grade, not Jupyter-grade.',
     },
     {
-      title: '15+ Years of Data Engineering',
+      title: '10 Years of Data Engineering',
       description:
-        'BigQuery, dbt, Cloud Run, Pub/Sub — the substrate ADK agents need access to is the substrate we have been building on for 15+ years.',
+        'BigQuery, dbt, Cloud Run, Pub/Sub — the substrate ADK agents need access to is the substrate we have been building on for 10 years.',
     },
     {
       title: 'Direct Engineer Access',
@@ -228,7 +228,7 @@ export default function GoogleADKSpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> Production evals included
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 15+ years data engineering
+                <HiCheckCircle className="text-green-400" /> 10 years of data engineering
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> Deployed in your GCP project
@@ -250,7 +250,7 @@ export default function GoogleADKSpecialistLanding() {
               regressions before they reach production. As of 2026, a typical ADK engagement runs{' '}
               <strong>2-10 weeks</strong> and costs between <strong>$5,000 (prototype)</strong> and{' '}
               <strong>$60,000 (full multi-agent system)</strong>, with managed agent operations from{' '}
-              <strong>$400/month</strong>. The TagSpecialist team combines 15+ years of data engineering on Google Cloud
+              <strong>$400/month</strong>. TagSpecialist combines 10 years of data engineering on Google Cloud
               with hands-on ADK production deployments.
             </p>
           </div>

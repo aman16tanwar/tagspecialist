@@ -58,7 +58,7 @@ const DataSecurity = () => {
                       </li>
                       <li className="flex items-start text-gray-700">
                           <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
-                          <span><strong>Consultant Access:</strong> Our team&apos;s access is granted via specific IAM roles, never basic roles like &quot;Owner&quot; or &quot;Editor&quot; unless absolutely necessary for setup.</span>
+                          <span><strong>Consultant Access:</strong> Consultant access is granted via specific IAM roles, never basic roles like &quot;Owner&quot; or &quot;Editor&quot; unless absolutely necessary for setup.</span>
                       </li>
                       <li className="flex items-start text-gray-700">
                           <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>

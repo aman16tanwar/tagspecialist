@@ -86,7 +86,7 @@ export default function SSTSpecialistLanding() {
 
   const whyChoose = [
     {
-      title: '15+ Years of Tracking Experience',
+      title: '10 Years of Tracking Experience',
       description:
         'Not a generalist agency. We are data engineers who specialize exclusively in server-side tagging, GTM, and conversion APIs.',
     },
@@ -108,7 +108,7 @@ export default function SSTSpecialistLanding() {
     {
       title: 'ROI-First Approach',
       description:
-        'Every implementation is designed to improve ad platform signal quality. Documented case studies show up to 451% ROAS improvement after going server-side.',
+        'Every implementation is designed to improve ad platform signal quality — better match rates, deduplicated events, and conversions that survive ad blockers and short cookie lifetimes.',
     },
     {
       title: 'Managed Infrastructure Included',
@@ -159,7 +159,7 @@ export default function SSTSpecialistLanding() {
     },
     {
       q: 'How much more data will server-side tagging capture?',
-      a: 'Most clients see a 30-40% increase in tracked conversions after moving to server-side tagging. The exact improvement depends on your audience — sites with tech-savvy visitors (who use ad blockers at higher rates) often see even larger gains. Server-side tagging bypasses browser-based ad blockers, extends cookie lifetimes beyond Safari\'s 7-day ITP limit using first-party domains, and sends conversion events directly from server to ad platform via conversion APIs. One client saw a 46% increase in Google Ads reported conversions and 451% ROAS improvement after our server-side tagging specialist implemented their full server-side setup.',
+      a: 'How much you recover depends on how much signal you are losing today. The exact improvement depends on your audience — sites with tech-savvy visitors (who use ad blockers at higher rates) often see even larger gains. Server-side tagging bypasses browser-based ad blockers, extends cookie lifetimes beyond Safari\'s 7-day ITP limit using first-party domains, and sends conversion events directly from server to ad platform via conversion APIs. Google reports Enhanced Conversions recover 5-17% additional conversions, and Meta reports around 8% more attributed conversions for advertisers running the Conversions API alongside the Pixel.',
     },
     {
       q: 'How long does server-side tagging implementation take?',
@@ -224,10 +224,10 @@ export default function SSTSpecialistLanding() {
                 <HiCheckCircle className="text-green-400" /> 10 years of implementations
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> Up to 451% ROAS improvement
+                <HiCheckCircle className="text-green-400" /> Meta CAPI + Enhanced Conversions
               </span>
               <span className="flex items-center gap-2">
-                <HiCheckCircle className="text-green-400" /> 15+ years experience
+                <HiCheckCircle className="text-green-400" /> 10 years of experience
               </span>
               <span className="flex items-center gap-2">
                 <HiCheckCircle className="text-green-400" /> 5.0 client rating

@@ -243,7 +243,7 @@ const CaseStudiesSection: React.FC = () => {
                         Real Projects. <span className="text-blue-600">Real Implementation Details.</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Every project below was delivered by our team — no outsourcing, no templates. From revenue tracking fixes to full data pipelines, here&apos;s the work we actually ship.
+                        Every project below was delivered hands-on — no outsourcing, no templates, no junior handoff. From revenue tracking fixes to full data pipelines, here&apos;s the work we actually ship.
                     </p>
                 </div>
 

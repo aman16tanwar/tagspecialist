@@ -55,7 +55,7 @@ export default function BenefitsOfServerSideTaggingPage() {
             name: 'What are the advantages of server-side tagging over client-side tagging?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The main advantages of server-side tagging over client-side tagging are: (1) it bypasses ad blockers and ITP that block 30-40% of client-side tracking, (2) data is processed on a server you control where you can enforce consent, strip PII, and enrich events with CRM data, (3) first-party cookie lifespans extend from Safari\'s 7-day ITP limit to 400+ days, (4) the JavaScript footprint shrinks, improving Core Web Vitals and page load speed, and (5) server-to-server conversion events (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API) cannot be blocked by browsers. These advantages typically deliver +46% more reported Google Ads conversions and up to 451% ROAS improvement.',
+              text: 'The main advantages of server-side tagging over client-side tagging are: (1) it bypasses ad blockers and ITP that block 30-40% of client-side tracking, (2) data is processed on a server you control where you can enforce consent, strip PII, and enrich events with CRM data, (3) first-party cookie lifespans extend from Safari\'s 7-day ITP limit to 400+ days, (4) the JavaScript footprint shrinks, improving Core Web Vitals and page load speed, and (5) server-to-server conversion events (Meta CAPI, Google Ads Enhanced Conversions, TikTok Events API) cannot be blocked by browsers. Google reports Enhanced Conversions recover 5-17% additional conversions, and Meta reports around 13% lower cost per action for advertisers running the Conversions API alongside the Pixel.',
             },
           },
           {

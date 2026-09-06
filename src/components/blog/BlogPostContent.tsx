@@ -148,10 +148,10 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               </h3>
               <p className="text-sm text-gray-600">
                 {post.tags?.some(t => ['Server-Side Tracking', 'GTM Server Container'].includes(t))
-                  ? 'Our server-side tagging specialists can implement everything in this guide for you. Recover 30-40% lost conversion data.'
+                  ? 'We can implement everything in this guide for you - server-side GTM, Meta CAPI and Enhanced Conversions, built and maintained end to end.'
                   : post.tags?.some(t => ['BigQuery', 'Data Engineering', 'Data Warehouse'].includes(t))
-                    ? 'Our data engineers build production-ready BigQuery warehouses and ETL pipelines. Own your data infrastructure.'
-                    : 'Our specialists handle complex tracking implementations so you can focus on growing your business.'
+                    ? 'We build production-ready BigQuery warehouses and ETL pipelines. Own your data infrastructure.'
+                    : 'We handle complex tracking implementations so you can focus on growing your business.'
                 }
               </p>
             </div>

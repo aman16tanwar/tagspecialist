@@ -96,7 +96,7 @@ export default function AgencyPartnerLanding() {
     {
       icon: HiShieldCheck,
       title: 'Proven Results',
-      desc: 'Back your pitch with real data: 40-90% more conversions tracked. Happy clients = retention.',
+      desc: 'Back your pitch with platform-published benchmarks, not guesses. Better tracking means better retention.',
     },
   ];
 

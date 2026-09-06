@@ -287,7 +287,7 @@ export default function ManagedTrackingLanding() {
                 {
                   step: '2',
                   title: 'We Implement',
-                  desc: 'Our team sets up your server-side tracking. You just provide platform access - we handle the rest.',
+                  desc: 'Your server-side tracking gets built end to end. You just provide platform access - we handle the rest.',
                   icon: '⚙️',
                 },
                 {

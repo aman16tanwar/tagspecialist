@@ -28,29 +28,12 @@ export default function BigQuerySpecialistPage() {
         '@type': 'ProfessionalService',
         name: 'BigQuery Specialist Services',
         description:
-          'Expert BigQuery data warehouse implementation, server-side GA4 pipelines, dbt modeling, BigQuery ML, and managed pipeline operations by certified specialists with 15+ years experience.',
+          'Expert BigQuery data warehouse implementation, server-side GA4 pipelines, dbt modeling, BigQuery ML, and managed pipeline operations by a certified specialist with 10 years of experience.',
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
           url: 'https://tagspecialist.ca',
         },
-        review: [
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-12-28',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody:
-              'Built ETL pipelines for my company. Works perfectly. Took the initiative and suggested ways to improve the setup. Super reactive.',
-          },
-          {
-            '@type': 'Review',
-            author: { '@type': 'Person', name: 'Verified Client' },
-            datePublished: '2025-09-26',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: 'Skilled and responsive data engineer with deep GCP experience. Highly recommend.',
-          },
-        ],
         serviceType: 'BigQuery Data Warehouse Implementation',
         areaServed: 'Worldwide',
         hasOfferCatalog: {
