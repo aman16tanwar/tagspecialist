@@ -34,7 +34,7 @@ const ShopifyBigQueryLanding = () => {
         {
             icon: HiDatabase,
             title: 'No Row Limits Ever',
-            description: 'While others restrict you to 500K rows, we give you unlimited data from day one.'
+            description: 'While others restrict you to 500K rows, this gives you unlimited data from day one.'
         },
         {
             icon: HiCloud,
@@ -122,7 +122,7 @@ const ShopifyBigQueryLanding = () => {
                             <p className="text-gray-700">
                                 Fivetran&apos;s 500K row limit? That&apos;s about 1 week of Shopify data for most stores.
                                 Then you&apos;re paying $120+/month. Stitch&apos;s 5M rows? Maybe a month if you&apos;re lucky.
-                                <span className="text-navy-900 font-semibold"> We give you unlimited rows from day one.</span>
+                                <span className="text-navy-900 font-semibold"> You get unlimited rows from day one.</span>
                             </p>
                         </div>
                     </div>
@@ -171,7 +171,7 @@ const ShopifyBigQueryLanding = () => {
                                     <th className="text-left py-4 px-6 text-navy-900 font-semibold"></th>
                                     <th className="text-center py-4 px-6 text-navy-900 font-semibold">Fivetran</th>
                                     <th className="text-center py-4 px-6 text-navy-900 font-semibold">Stitch Data</th>
-                                    <th className="text-center py-4 px-6 text-blue-600 font-semibold">Our Solution</th>
+                                    <th className="text-center py-4 px-6 text-blue-600 font-semibold">This Pipeline</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -241,7 +241,7 @@ const ShopifyBigQueryLanding = () => {
                             {
                                 step: '02',
                                 title: 'Click Start Onboarding',
-                                description: 'Our system validates everything and creates your infrastructure.',
+                                description: 'The system validates everything and creates your infrastructure.',
                                 time: '1 minute'
                             },
                             {
@@ -306,11 +306,11 @@ const ShopifyBigQueryLanding = () => {
                             },
                             {
                                 q: 'Do I need a Google Cloud account?',
-                                a: 'Yes, but we guide you through setup. The infrastructure runs on YOUR account, giving you full control and ownership. Total cost is about $50/month for compute and storage.'
+                                a: 'Yes, but I guide you through setup. The infrastructure runs on YOUR account, giving you full control and ownership. Total cost is about $50/month for compute and storage.'
                             },
                             {
                                 q: 'Can I customize the pipeline?',
-                                a: 'The free version syncs the 4 core tables. For custom fields, additional APIs, or transformations, we offer paid customization starting at $2,500.'
+                                a: 'The free version syncs the 4 core tables. For custom fields, additional APIs, or transformations, paid customization starts at $2,500.'
                             }
                         ] as FAQ[]).map((item, idx) => (
                             <motion.div

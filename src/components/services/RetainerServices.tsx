@@ -25,7 +25,7 @@ const RetainerServices: React.FC = () => {
         {
             name: "Essentials Retainer",
             roi: "Ensure 100% data uptime",
-            value: "The cost of 1 junior analyst, but you get two senior specialists monitoring your data 24/7 + world-class infrastructure.",
+            value: "The cost of 1 junior analyst, but you get a senior engineer monitoring your data + world-class infrastructure.",
             description: "Best for: Businesses with stable tracking needs wanting ongoing peace of mind.",
             hours: "Up to 10 hours",
             features: [
@@ -40,7 +40,7 @@ const RetainerServices: React.FC = () => {
         {
             name: "Growth Retainer",
             roi: "Designed to pay for itself in ad savings",
-            value: "Less than one day of lost revenue from poor tracking decisions. Our proactive optimization typically pays for itself in week 1.",
+            value: "Less than one day of lost revenue from poor tracking decisions. Proactive optimization typically pays for itself in week 1.",
             description: "Best for: High-growth brands launching regular campaigns and optimizing for scale.",
             hours: "Up to 25 hours",
             recommended: true,
@@ -57,7 +57,7 @@ const RetainerServices: React.FC = () => {
         {
             name: "Scale Retainer",
             roi: "Your Technical Co-founder for data",
-            value: "Your technical co-founder for data—without equity or benefits. Full senior team for the cost of 1.5 hires.",
+            value: "Your technical co-founder for data—without equity or benefits. Senior-level capability for a fraction of one hire.",
             description: "Best for: Enterprise organizations needing elite data engineering and strategic insight.",
             hours: "Up to 50 hours",
             features: [
@@ -89,7 +89,7 @@ const RetainerServices: React.FC = () => {
                         Scale Your Data Operations
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-                        Choose a partnership level that matches your growth stage. No account managers. Just direct access to the specialists doing the work.
+                        Choose a partnership level that matches your growth stage. No account managers. Just direct access to the engineer doing the work.
                     </p>
                 </motion.div>
 
@@ -165,7 +165,7 @@ const RetainerServices: React.FC = () => {
                         </h3>
                         <p className="text-blue-100/80 mb-12 max-w-3xl mx-auto text-lg lg:text-xl font-medium leading-relaxed">
                             One client went from 2.1x to 9.5x ROAS in 6 months—$200K+ additional monthly revenue from accurate attribution and optimization. <br className="hidden md:block" />
-                            Let&apos;s discuss what we can do for your business.
+                            Let&apos;s discuss what I can do for your business.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">

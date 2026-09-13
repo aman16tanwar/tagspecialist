@@ -60,7 +60,7 @@ export default function SSTSpecialistLanding() {
       icon: HiCog,
       title: 'Server-Side Migration',
       description:
-        'Seamlessly migrate your existing client-side tracking to a server-side architecture. We run parallel tracking to validate data accuracy before full cutover.',
+        'Seamlessly migrate your existing client-side tracking to a server-side architecture. I run parallel tracking to validate data accuracy before full cutover.',
       deliverables: [
         'Current setup audit & migration plan',
         'Parallel client + server tracking',
@@ -73,7 +73,7 @@ export default function SSTSpecialistLanding() {
       icon: HiShieldCheck,
       title: 'Managed Server-Side Tracking',
       description:
-        'Ongoing monitoring, maintenance, and optimization of your server-side tracking infrastructure. Starting at $150/mo — we handle everything so you can focus on growth.',
+        'Ongoing monitoring, maintenance, and optimization of your server-side tracking infrastructure. Starting at $150/mo — I handle everything so you can focus on growth.',
       deliverables: [
         'Infrastructure monitoring & uptime',
         'Tag & event maintenance',
@@ -88,7 +88,7 @@ export default function SSTSpecialistLanding() {
     {
       title: '10 Years of Tracking Experience',
       description:
-        'Not a generalist agency. We are data engineers who specialize exclusively in server-side tagging, GTM, and conversion APIs.',
+        'Not a generalist agency. I am a data engineer who works exclusively on server-side tagging, GTM, and conversion APIs.',
     },
     {
       title: 'A Decade of Implementations',
@@ -113,7 +113,7 @@ export default function SSTSpecialistLanding() {
     {
       title: 'Managed Infrastructure Included',
       description:
-        'We deploy on Google Cloud Platform and handle monitoring, scaling, and maintenance. Enterprise-grade reliability without the DevOps overhead.',
+        'I deploy on Google Cloud Platform and handle monitoring, scaling, and maintenance. Enterprise-grade reliability without the DevOps overhead.',
     },
   ];
 
@@ -122,7 +122,7 @@ export default function SSTSpecialistLanding() {
       step: '1',
       title: 'Audit Current Setup',
       description:
-        'We analyze your existing tracking, identify data gaps, and quantify how much conversion signal you are losing to ad blockers and browser restrictions.',
+        'I analyze your existing tracking, identify data gaps, and quantify how much conversion signal you are losing to ad blockers and browser restrictions.',
     },
     {
       step: '2',
@@ -134,7 +134,7 @@ export default function SSTSpecialistLanding() {
       step: '3',
       title: 'Implement & Test',
       description:
-        'We deploy your server-side container, configure conversion APIs, and run parallel tracking to validate data accuracy before cutover.',
+        'I deploy your server-side container, configure conversion APIs, and run parallel tracking to validate data accuracy before cutover.',
     },
     {
       step: '4',
@@ -147,7 +147,7 @@ export default function SSTSpecialistLanding() {
   const faqs: FAQ[] = [
     {
       q: 'What does a server-side tagging specialist do?',
-      a: 'A server-side tagging specialist designs, implements, and maintains server-side tracking infrastructure that processes analytics and advertising tags on a cloud server instead of in the visitor\'s browser. This includes deploying server-side GTM containers on Google Cloud Run, configuring first-party cookie domains, integrating conversion APIs for platforms like Meta, Google Ads, and TikTok, and ensuring event deduplication between client-side and server-side streams. As a server-side tagging specialist, we go beyond basic setup — we architect measurement systems that recover the 30-40% of conversion data lost to ad blockers and browser privacy restrictions.',
+      a: 'A server-side tagging specialist designs, implements, and maintains server-side tracking infrastructure that processes analytics and advertising tags on a cloud server instead of in the visitor\'s browser. This includes deploying server-side GTM containers on Google Cloud Run, configuring first-party cookie domains, integrating conversion APIs for platforms like Meta, Google Ads, and TikTok, and ensuring event deduplication between client-side and server-side streams. As a server-side tagging specialist, I go beyond basic setup — I architect measurement systems that recover the 30-40% of conversion data lost to ad blockers and browser privacy restrictions.',
     },
     {
       q: 'Is a server-side tracking specialist the same as a server-side tagging specialist?',
@@ -155,7 +155,7 @@ export default function SSTSpecialistLanding() {
     },
     {
       q: 'How much does server-side tagging implementation cost?',
-      a: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $4,000-$8,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $8,000-$15,000. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote from our server-side tagging specialist team.',
+      a: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $4,000-$8,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $8,000-$15,000. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote.',
     },
     {
       q: 'How much more data will server-side tagging capture?',
@@ -163,15 +163,15 @@ export default function SSTSpecialistLanding() {
     },
     {
       q: 'How long does server-side tagging implementation take?',
-      a: 'A typical server-side tagging implementation takes 2-4 weeks from kickoff to full production launch. Week one covers server deployment, custom domain setup, and Cloud Run configuration. Weeks two and three focus on conversion API integrations, event mapping, and parallel tracking validation. Week four is for final QA, data accuracy verification, and production cutover. Simpler setups (single CAPI integration) can be completed in 1-2 weeks. Our server-side tagging specialist team provides regular updates throughout the process and handles all the infrastructure complexity.',
+      a: 'A typical server-side tagging implementation takes 2-4 weeks from kickoff to full production launch. Week one covers server deployment, custom domain setup, and Cloud Run configuration. Weeks two and three focus on conversion API integrations, event mapping, and parallel tracking validation. Week four is for final QA, data accuracy verification, and production cutover. Simpler setups (single CAPI integration) can be completed in 1-2 weeks. I send regular updates throughout the process and handle all the infrastructure complexity.',
     },
     {
       q: 'Do I need to replace my existing GTM setup?',
-      a: 'No — server-side tagging works alongside your existing client-side GTM container, not as a replacement. We deploy a separate server-side GTM container that receives events from your client-side container and forwards them to ad platforms and analytics tools via server-to-server connections. Your existing tags continue to work during and after the migration. We run both in parallel to validate data accuracy before shifting traffic to the server-side path. This approach means zero downtime and no disruption to your current tracking during implementation.',
+      a: 'No — server-side tagging works alongside your existing client-side GTM container, not as a replacement. I deploy a separate server-side GTM container that receives events from your client-side container and forwards them to ad platforms and analytics tools via server-to-server connections. Your existing tags continue to work during and after the migration. I run both in parallel to validate data accuracy before shifting traffic to the server-side path. This approach means zero downtime and no disruption to your current tracking during implementation.',
     },
     {
       q: 'What platforms do you support for server-side tracking?',
-      a: 'We support all major advertising and analytics platforms for server-side tracking: Google Ads Enhanced Conversions, Meta Conversion API (CAPI), Google Analytics 4, TikTok Events API, Pinterest Conversion API, LinkedIn Conversions API, Snapchat Conversions API, and Microsoft Ads UET. On the e-commerce side, we work with Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, and fully custom-built platforms. As your server-side tagging specialist, we configure each platform\'s conversion API with proper event mapping, deduplication, and data enrichment to maximize signal quality.',
+      a: 'I support all major advertising and analytics platforms for server-side tracking: Google Ads Enhanced Conversions, Meta Conversion API (CAPI), Google Analytics 4, TikTok Events API, Pinterest Conversion API, LinkedIn Conversions API, Snapchat Conversions API, and Microsoft Ads UET. On the e-commerce side, I work with Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, and fully custom-built platforms. As your server-side tagging specialist, I configure each platform\'s conversion API with proper event mapping, deduplication, and data enrichment to maximize signal quality.',
     },
   ];
 
@@ -199,8 +199,8 @@ export default function SSTSpecialistLanding() {
               <span className="text-orange-400">Expert Implementation for Better Data & Higher ROAS</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Ad blockers and browser restrictions are silently killing 30-40% of your conversion data. Our server-side
-              tagging specialists recover that lost signal — so your ad platforms optimize on complete, accurate data.
+              Ad blockers and browser restrictions are silently killing 30-40% of your conversion data. I recover that
+              lost signal — so your ad platforms optimize on complete, accurate data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -214,7 +214,7 @@ export default function SSTSpecialistLanding() {
                 href="/case-studies"
                 className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center"
               >
-                See Our Results
+                See the Results
               </Link>
             </div>
 
@@ -313,7 +313,7 @@ export default function SSTSpecialistLanding() {
           >
             <h2>Why Choose TagSpecialist for Server-Side Tracking</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              We&apos;re not a generalist agency — we&apos;re data engineers who build server-side tracking
+              I&apos;m not a generalist agency — I&apos;m a data engineer who builds server-side tracking
               infrastructure every day.
             </p>
           </motion.div>
@@ -438,7 +438,7 @@ export default function SSTSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Stop Losing 30-40% of Your Conversion Data</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. We&apos;ll show you exactly how much conversion data you&apos;re losing to ad
+              Book a free 15-minute audit. I&apos;ll show you exactly how much conversion data you&apos;re losing to ad
               blockers and browser restrictions — and how server-side tagging recovers it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

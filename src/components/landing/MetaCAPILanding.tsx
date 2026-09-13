@@ -31,24 +31,24 @@ export default function MetaCAPILanding() {
   const steps = [
     {
       number: '1',
-      title: 'We Connect',
+      title: 'I Connect',
       duration: '15-min call',
       description:
-        'Quick discovery call. You share your store URL, Meta Business Manager access, and Google Ads account. We confirm scope and lock in the start date.',
+        'Quick discovery call. You share your store URL, Meta Business Manager access, and Google Ads account. I confirm scope and lock in the start date.',
     },
     {
       number: '2',
-      title: 'We Build',
+      title: 'I Build',
       duration: '1 week',
       description:
-        'We set up Meta Conversion API, Google Ads Enhanced Conversions, and server-side tracking on our managed Cloud Run infrastructure. You do nothing.',
+        'I set up Meta Conversion API, Google Ads Enhanced Conversions, and server-side tracking on my managed Cloud Run infrastructure. You do nothing.',
     },
     {
       number: '3',
       title: 'You Win',
       duration: '14-21 days',
       description:
-        'Meta and Google start receiving the conversion data they were missing. Per platform averages: lower CPA, more attributed conversions, higher reported ROAS. We monitor everything in the background as part of your managed hosting.',
+        'Meta and Google start receiving the conversion data they were missing. Per platform averages: lower CPA, more attributed conversions, higher reported ROAS. I monitor everything in the background as part of your managed hosting.',
     },
   ];
 
@@ -67,15 +67,15 @@ export default function MetaCAPILanding() {
     },
     {
       title: 'Event Deduplication',
-      desc: 'Your existing Pixel keeps working. We deduplicate events so conversions are never double-counted.',
+      desc: 'Your existing Pixel keeps working. I deduplicate events so conversions are never double-counted.',
     },
     {
       title: 'Sandbox Testing Before Launch',
       desc: 'Every event is validated in a test environment before going live. Zero disruption to your campaigns.',
     },
     {
-      title: 'Hosted on Our Infrastructure',
-      desc: 'No GCP account needed on your end. We deploy on our managed Cloud Run setup and handle every operational detail.',
+      title: 'Hosted on My Infrastructure',
+      desc: 'No GCP account needed on your end. I deploy on my managed Cloud Run setup and handle every operational detail.',
     },
   ];
 
@@ -104,15 +104,15 @@ export default function MetaCAPILanding() {
     },
     {
       q: 'Will this break my current Meta Pixel or Google Ads tracking?',
-      a: 'No. We set up the Conversion API alongside your existing Meta Pixel and Google Ads tag — they run in parallel. We use event deduplication to ensure conversions are not double-counted. Your current campaigns keep running normally throughout the setup, and we test everything in a sandbox before going live.',
+      a: 'No. I set up the Conversion API alongside your existing Meta Pixel and Google Ads tag — they run in parallel. I use event deduplication to ensure conversions are not double-counted. Your current campaigns keep running normally throughout the setup, and I test everything in a sandbox before going live.',
     },
     {
       q: 'Do I need a Google Cloud, AWS, or any technical account?',
-      a: 'No. We host all the infrastructure on our managed Cloud Run setup. You do not need a Google Cloud account, a server, or any technical knowledge. You give us access to your Meta Business Manager and Google Ads account — we handle everything else.',
+      a: 'No. I host the infrastructure on my managed Cloud Run setup. You do not need a Google Cloud account, a server, or any technical knowledge. You give me access to your Meta Business Manager and Google Ads account — I handle everything else.',
     },
     {
       q: 'How long does setup take?',
-      a: '1 week from kickoff to live. Days 1-2: we learn your store and configure events. Days 3-5: we deploy and test the Conversion API in a sandbox. Days 6-7: we go live and validate data is flowing correctly. You will see results in your Meta Ads Manager and Google Ads accounts within 14-21 days.',
+      a: '1 week from kickoff to live. Days 1-2: I learn your store and configure events. Days 3-5: I deploy and test the Conversion API in a sandbox. Days 6-7: I go live and validate data is flowing correctly. You will see results in your Meta Ads Manager and Google Ads accounts within 14-21 days.',
     },
     {
       q: 'What platforms do you support?',
@@ -124,11 +124,11 @@ export default function MetaCAPILanding() {
     },
     {
       q: 'Why $1,500 — what is the catch?',
-      a: 'No catch — $1,500 covers about 20 hours of setup work, which is realistic because we\'ve built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.',
+      a: 'No catch — $1,500 covers about 20 hours of setup work, which is realistic because I\'ve built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. My business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.',
     },
     {
       q: 'What if I want to cancel or move to my own setup later?',
-      a: 'Your plan includes a 6-month service term. After that, cancel anytime or migrate to your own Google Cloud account ($500 migration service to move everything over). If something goes wrong in the first 30 days of going live, we offer a full money-back guarantee. For early exits before the 6-month term, you can either pay out remaining months or use the migration service — whichever is lower.',
+      a: 'Your plan includes a 6-month service term. After that, cancel anytime or migrate to your own Google Cloud account ($500 migration service to move everything over). If something goes wrong in the first 30 days of going live, I offer a full money-back guarantee. For early exits before the 6-month term, you can either pay out remaining months or use the migration service — whichever is lower.',
     },
   ];
 
@@ -164,7 +164,7 @@ export default function MetaCAPILanding() {
               Meta reports a <strong className="text-gray-200">13% lower CPA</strong> and{' '}
               <strong className="text-gray-200">8% more attributed conversions</strong> for CAPI users.
               Google reports up to <strong className="text-gray-200">17% conversion lift</strong> with
-              Enhanced Conversions. We&apos;ve seen up to 40% recovery in tech-heavy verticals.
+              Enhanced Conversions. I&apos;ve seen up to 40% recovery in tech-heavy verticals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -232,7 +232,7 @@ export default function MetaCAPILanding() {
             </p>
             <h2>Three Steps. One Week. Done.</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              You don&apos;t need to know what server-side tracking is. We handle every technical detail end to end.
+              You don&apos;t need to know what server-side tracking is. I handle every technical detail end to end.
             </p>
           </motion.div>
 
@@ -342,7 +342,7 @@ export default function MetaCAPILanding() {
               </p>
               <h2>Is This the Right Fit for You?</h2>
               <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
-                We don&apos;t want to waste your time or ours. Here&apos;s an honest read on who
+                I don&apos;t want to waste your time or mine. Here&apos;s an honest read on who
                 this service is built for.
               </p>
             </div>
@@ -382,9 +382,9 @@ export default function MetaCAPILanding() {
                   {[
                     'Spending under $1k/month on ads — the math won\'t justify the setup cost',
                     'Running only organic / SEO traffic with no paid ad spend',
-                    'Need a fix in under 5 business days — we ship in one week, not 24 hours',
-                    'Want fully self-hosted on your own GCP / AWS account (we offer a separate migration service for that)',
-                    'Looking for a $99 / one-time fix — we run managed infra, not a side-gig setup',
+                    'Need a fix in under 5 business days — I ship in one week, not 24 hours',
+                    'Want fully self-hosted on your own GCP / AWS account (there is a separate migration service for that)',
+                    'Looking for a $99 / one-time fix — this is managed infrastructure, not a one-off script',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
                       <span className="text-gray-400 font-bold text-lg leading-none mt-0.5 flex-shrink-0">×</span>
@@ -403,7 +403,7 @@ export default function MetaCAPILanding() {
               >
                 Book the free diagnostic
               </Link>{' '}
-              — we&apos;ll tell you straight.
+              — I&apos;ll tell you straight.
             </p>
           </motion.div>
         </div>
@@ -425,7 +425,7 @@ export default function MetaCAPILanding() {
               </p>
               <h2>What This Doesn&apos;t Require</h2>
               <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
-                Server-side tracking sounds intimidating. We&apos;ve made the setup so you don&apos;t
+                Server-side tracking sounds intimidating. I&apos;ve made the setup so you don&apos;t
                 need any of it on your end.
               </p>
             </div>

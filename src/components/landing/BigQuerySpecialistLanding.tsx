@@ -88,7 +88,7 @@ export default function BigQuerySpecialistLanding() {
       icon: HiLightningBolt,
       title: 'Cost Optimization Audit',
       description:
-        'BigQuery costs growing faster than warehouse value? We audit query patterns, table design, partitioning, and slot usage — and deliver a fixed remediation plan. Most clients cut BigQuery spend by 30-60% after remediation.',
+        'BigQuery costs growing faster than warehouse value? I audit query patterns, table design, partitioning, and slot usage — and deliver a fixed remediation plan. Most clients cut BigQuery spend by 30-60% after remediation.',
       deliverables: [
         'Slot consumption analysis (on-demand vs reservations)',
         'Query pattern audit for full-scan offenders',
@@ -116,17 +116,17 @@ export default function BigQuerySpecialistLanding() {
     {
       title: '10 Years of Data Engineering',
       description:
-        'Not analytics generalists — we ship production data infrastructure on Google Cloud (BigQuery, Cloud Run, Pub/Sub, dbt) every week.',
+        'Not an analytics generalist — I ship production data infrastructure on Google Cloud (BigQuery, Cloud Run, Pub/Sub, dbt) every week.',
     },
     {
       title: 'Marketing-Native, Not Generic Data Eng',
       description:
-        'We model GA4, Ads, CAPI, and CRM data daily. Generic data teams spend the first month learning your stack; we start in week one.',
+        'I model GA4, Ads, CAPI, and CRM data daily. Generic data teams spend the first month learning your stack; I start in week one.',
     },
     {
       title: 'BigQuery Cost Discipline',
       description:
-        'Every table partitioned and clustered. Every query reviewed for full-scan risk. Most clients see 30-60% lower BigQuery bills after our audits.',
+        'Every table partitioned and clustered. Every query reviewed for full-scan risk. Most clients see 30-60% lower BigQuery bills after my audits.',
     },
     {
       title: 'Direct Engineer Access',
@@ -136,7 +136,7 @@ export default function BigQuerySpecialistLanding() {
     {
       title: 'End-to-End Data Ownership',
       description:
-        'Everything we build, you own. dbt repos, Cloud Run services, BigQuery datasets, IAM — all in your GCP project under your control.',
+        'Everything I build, you own. dbt repos, Cloud Run services, BigQuery datasets, IAM — all in your GCP project under your control.',
     },
     {
       title: 'A Decade of Implementations',
@@ -148,7 +148,7 @@ export default function BigQuerySpecialistLanding() {
   const faqs: FAQ[] = [
     {
       q: 'What does a BigQuery specialist do?',
-      a: 'A BigQuery specialist designs, builds, and operates marketing data warehouses on Google Cloud. This includes ELT pipeline design (server-side GA4, Google Ads, Meta CAPI, Shopify, Stripe, CRM), schema design with partitioning and clustering, dbt modeling for identity resolution and attribution, BigQuery ML for predictive analytics, reverse ETL for audience activation, and cost optimization. We go beyond generic data engineering — we know the marketing stack and the tracking sources end to end.',
+      a: 'A BigQuery specialist designs, builds, and operates marketing data warehouses on Google Cloud. This includes ELT pipeline design (server-side GA4, Google Ads, Meta CAPI, Shopify, Stripe, CRM), schema design with partitioning and clustering, dbt modeling for identity resolution and attribution, BigQuery ML for predictive analytics, reverse ETL for audience activation, and cost optimization. I go beyond generic data engineering — I know the marketing stack and the tracking sources end to end.',
     },
     {
       q: 'How is hiring a BigQuery specialist different from a general data engineer?',
@@ -159,20 +159,20 @@ export default function BigQuerySpecialistLanding() {
       a: 'Engagements range from a focused BigQuery audit ($1,500-$5,000, 3-5 days) to a full marketing data warehouse build ($18,000-$35,000, 5-8 weeks). Server-side GA4 → BigQuery pipelines on their own typically run $5,000-$12,000. Ongoing managed pipeline operations start at $300/month. Pricing is fixed-scope, not hourly. Book a 15-minute call for an exact quote on your situation.',
     },
     {
-      q: 'Do you work with our existing dbt project, or do you need to start fresh?',
-      a: 'Both. We can extend an existing dbt project — adding marketing-specific staging models, identity-resolution logic, attribution marts — or scaffold a new dbt project from scratch with the staging / intermediate / marts pattern. We work with dbt Core and dbt Cloud, and we follow standard dbt project conventions so any future engineer can pick up the work.',
+      q: 'Do you work with an existing dbt project, or do you need to start fresh?',
+      a: 'Both. I can extend an existing dbt project — adding marketing-specific staging models, identity-resolution logic, attribution marts — or scaffold a new dbt project from scratch with the staging / intermediate / marts pattern. I work with dbt Core and dbt Cloud, and I follow standard dbt project conventions so any future engineer can pick up the work.',
     },
     {
       q: 'How do you keep BigQuery costs under control?',
       a: 'Three layers. (1) At table design time: aggressive partitioning on event_timestamp / date, clustering on the columns that actually appear in WHERE clauses, and BigQuery storage tier policies. (2) At query time: dbt incremental models, materialized views for hot dashboards, and BI Engine for sub-second response on rolled-up tables. (3) At ops time: monthly slot consumption review, query-pattern monitoring, and alerts on full-scan queries. Most clients see 30-60% lower bills after the audit.',
     },
     {
-      q: 'Can you migrate us from Snowflake / Redshift / Databricks to BigQuery?',
-      a: 'Yes. We do BigQuery migrations from Snowflake, Redshift, and Databricks regularly — typically driven by either GCP-native tool integration (Vertex AI, Looker, GA4 native export) or cost reasons. Migrations include schema translation, dbt model porting, ETL pipeline rebuild, parallel running for validation, and a phased cutover. Timeline depends on warehouse size and dbt complexity.',
+      q: 'Can you migrate from Snowflake / Redshift / Databricks to BigQuery?',
+      a: 'Yes. I do BigQuery migrations from Snowflake, Redshift, and Databricks regularly — typically driven by either GCP-native tool integration (Vertex AI, Looker, GA4 native export) or cost reasons. Migrations include schema translation, dbt model porting, ETL pipeline rebuild, parallel running for validation, and a phased cutover. Timeline depends on warehouse size and dbt complexity.',
     },
     {
       q: 'Do you handle BigQuery ML, or just SQL modeling?',
-      a: 'Both. BQML for in-warehouse modeling — LTV, propensity, churn, time-series forecasting — and Vertex AI for cases that need more than what BQML supports. We also wire BQML model outputs into reverse ETL pipelines so predicted LTV or churn scores end up as Customer Match audiences in Google Ads or as CRM segments in HubSpot, where the marketing team can act on them.',
+      a: 'Both. BQML for in-warehouse modeling — LTV, propensity, churn, time-series forecasting — and Vertex AI for cases that need more than what BQML supports. I also wire BQML model outputs into reverse ETL pipelines so predicted LTV or churn scores end up as Customer Match audiences in Google Ads or as CRM segments in HubSpot, where the marketing team can act on them.',
     },
   ];
 
@@ -200,7 +200,7 @@ export default function BigQuerySpecialistLanding() {
               <span className="text-orange-400">Marketing Data Warehouses Built for Attribution and Activation</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Stop running attribution off sampled GA4 reports. We build production BigQuery warehouses that combine GA4,
+              Stop running attribution off sampled GA4 reports. I build production BigQuery warehouses that combine GA4,
               Google Ads, Meta Ads, Shopify, Stripe, and CRM into one trusted model — with dbt, BigQuery ML, and reverse
               ETL out to the channels where work happens.
             </p>
@@ -216,7 +216,7 @@ export default function BigQuerySpecialistLanding() {
                 href="/case-studies"
                 className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center"
               >
-                See Our Results
+                See the Results
               </Link>
             </div>
 
@@ -435,7 +435,7 @@ export default function BigQuerySpecialistLanding() {
                 step: '1',
                 title: 'Audit Current State',
                 description:
-                  'We map your existing data sources, BigQuery usage, and reporting needs. Identify what is broken, missing, or expensive.',
+                  'I map your existing data sources, BigQuery usage, and reporting needs. Identify what is broken, missing, or expensive.',
               },
               {
                 step: '2',
@@ -447,7 +447,7 @@ export default function BigQuerySpecialistLanding() {
                 step: '3',
                 title: 'Build & Validate',
                 description:
-                  'We build pipelines, dbt models, and dashboards in parallel with your existing stack. You see progress weekly.',
+                  'I build pipelines, dbt models, and dashboards in parallel with your existing stack. You see progress weekly.',
               },
               {
                 step: '4',
@@ -536,7 +536,7 @@ export default function BigQuerySpecialistLanding() {
           >
             <h2 className="text-white mb-4">Ready to Build a Real Marketing Data Warehouse?</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. We&apos;ll review your current BigQuery usage, identify cost wins, and scope a
+              Book a free 15-minute audit. I&apos;ll review your current BigQuery usage, identify cost wins, and scope a
               warehouse architecture that actually answers attribution questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -23,19 +23,19 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "How do you ensure data accuracy?",
-      answer: "We implement daily automated validation checks. If row counts or totals drift beyond a threshold, our system alerts us immediately to fix it."
+      answer: "I implement daily automated validation checks. If row counts or totals drift beyond a threshold, the monitoring alerts me immediately so I can fix it."
     },
     {
       question: "What is server-side tagging and why do I need it?",
-      answer: "Browser tracking is dying due to cookies and ad blockers. Server-side tagging sends data directly from your server to ad platforms (CAPI), restoring lost signal. Read our complete guide on the benefits of server-side tagging."
+      answer: "Browser tracking is dying due to cookies and ad blockers. Server-side tagging sends data directly from your server to ad platforms (CAPI), restoring lost signal. Read my complete guide on the benefits of server-side tagging."
     },
     {
       question: "Can you handle GA4 migration problems?",
-      answer: "Yes, we specialize in fixing broken GA4 setups, including cross-domain tracking, missing events, and thresholding issues. See our GTM specialist services for details."
+      answer: "Yes — fixing broken GA4 setups is a large part of what I do, including cross-domain tracking, missing events, and thresholding issues. See my GTM specialist services for details."
     },
     {
       question: "Do you maintain tracking + pipelines?",
-      answer: "Yes, our monthly retainers include monitoring, maintenance, and updates when platforms change their APIs."
+      answer: "Yes — my monthly retainers include monitoring, maintenance, and updates when platforms change their APIs."
     },
     {
       question: "How long does setup take?",
@@ -43,11 +43,11 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "What if I don't have BigQuery yet?",
-      answer: "We set it up for you completely in your own Google Cloud account. You own the data forever. Learn more in our unified data platform guide."
+      answer: "I set it up for you completely in your own Google Cloud account. You own the data forever. Learn more in my unified data platform guide."
     },
     {
       question: "Do I get dashboards included?",
-      answer: "Yes, we build custom Looker Studio (formerly Data Studio) dashboards powered by your new BigQuery warehouse."
+      answer: "Yes — I build custom Looker Studio (formerly Data Studio) dashboards powered by your new BigQuery warehouse."
     },
     {
       question: "What is the AI Analyst Layer?",
@@ -63,7 +63,7 @@ const FAQSection: React.FC = () => {
             Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about our engineering process and high-performance data systems.
+            Everything you need to know about my engineering process and high-performance data systems.
           </p>
         </div>
 

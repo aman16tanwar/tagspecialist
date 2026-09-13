@@ -35,7 +35,7 @@ const PartnersSection: React.FC = () => {
         {
             title: "White-Label Partner",
             subtitle: "The 'Ghost' Engineer",
-            desc: "We work as your internal technical department under your brand. You manage the client; we handle the deep engineering.",
+            desc: "I work as your internal technical department under your brand. You manage the client; I handle the deep engineering.",
             benefits: [
                 "100% Invisible to your client",
                 "You set the final retail price",
@@ -48,10 +48,10 @@ const PartnersSection: React.FC = () => {
         {
             title: "Referral Partner",
             subtitle: "The Trusted Specialist",
-            desc: "Introduce us directly to your clients as your exclusive data infrastructure partner. We handle the close and the build.",
+            desc: "Introduce me directly to your clients as your exclusive data infrastructure partner. I handle the close and the build.",
             benefits: [
                 "10% Lifetime referral commission",
-                "We handle all support & technicals",
+                "I handle all support & technicals",
                 "Co-branded discovery calls",
                 "Seamless handover process"
             ],
@@ -62,7 +62,7 @@ const PartnersSection: React.FC = () => {
 
     const capabilities: Capability[] = [
         { icon: HiLightningBolt, title: "Stop Client Churn", desc: "Fix the attribution gaps that make your ad performance look worse than it actually is." },
-        { icon: HiDatabase, title: "No Tech Overhead", desc: "Stop trying to hire $150K/year engineers. Use our senior team on-demand for complex builds." },
+        { icon: HiDatabase, title: "No Tech Overhead", desc: "Stop trying to hire a $150K/year engineer. Bring in a senior specialist on-demand for complex builds." },
         { icon: HiTrendingUp, title: "Scale Your ROAS", desc: "Give your media buyers the 100% accurate data they need to optimize and scale budgets confidently." }
     ];
 
@@ -79,7 +79,7 @@ const PartnersSection: React.FC = () => {
                         <span className="text-blue-600">Keep Your Agency Lean.</span>
                     </h1>
                     <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                        We become your &quot;Technical Data Department.&quot; You sell the growth, we build the infrastructure. No hiring overhead, just enterprise-grade attribution and BigQuery pipelines.
+                        I become your &quot;Technical Data Department.&quot; You sell the growth, I build the infrastructure. No hiring overhead, just enterprise-grade attribution and BigQuery pipelines.
                     </p>
                 </div>
 
@@ -141,7 +141,7 @@ const PartnersSection: React.FC = () => {
                         Stop Losing Clients To <br /> Broken Attribution.
                     </h2>
                     <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
-                        Schedule a partner discovery call. We&apos;ll show you how we&apos;ve helped agencies deliver server-side tracking — under their own brand.
+                        Schedule a partner discovery call. I&apos;ll show you how I&apos;ve helped agencies deliver server-side tracking — under their own brand.
                     </p>
                     <Link
                         href="/book-audit"

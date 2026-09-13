@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Agency Partner Program | Tag Specialist',
-  description: 'Add $500-2,000/month to your agency revenue. White-label server-side tracking for agencies. We handle the tech, you keep the margin.',
+  description: 'Add $500-2,000/month to your agency revenue. White-label server-side tracking for agencies. I handle the tech, you keep the margin.',
   keywords: 'agency partner program, white label tracking, reseller program, server-side tracking partner, marketing agency partnership',
   alternates: {
     canonical: '/agency-partners',
@@ -49,7 +49,7 @@ export default function AgencyPartnersPage() {
             name: 'Is the agency partner program white-label?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Yes — our tracking infrastructure is fully white-label ready. Your clients see your brand, not ours. We handle all the technical implementation and support behind the scenes.',
+              text: 'Yes — the work is fully white-label. Your clients see your brand, and never see me. I handle the technical implementation and support behind the scenes.',
             },
           },
           {
@@ -57,7 +57,7 @@ export default function AgencyPartnersPage() {
             name: 'Do I need technical expertise to join?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'No. We handle all the technical work — server setup, tag implementation, monitoring, and troubleshooting. You just need to identify clients who need better tracking and make the introduction.',
+              text: 'No. I handle the technical work — server setup, tag implementation, monitoring, and troubleshooting. You just need to identify clients who need better tracking and make the introduction.',
             },
           },
         ],

@@ -27,7 +27,7 @@ const structuredData = {
     {
       "@type": "ProfessionalService",
       "name": "TagSpecialist",
-      "description": "Expert server-side tagging specialists and data engineers. We build tracking infrastructure, GTM server-side implementations, BigQuery data warehouses, and AI analytics for agencies and brands.",
+      "description": "Server-side tagging and data engineering, delivered by one senior engineer. Tracking infrastructure, GTM server-side implementations, BigQuery data warehouses, and AI analytics for agencies and brands.",
       "url": SITE_URL,
       "logo": `${SITE_URL}/logo.png`,
       "image": `${SITE_URL}/og-image.png`,
@@ -92,7 +92,7 @@ const structuredData = {
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", ".hero-description", ".solution-summary"]
       },
-      "description": "TagSpecialist is a boutique consultancy specializing in server-side tagging implementation and data engineering. We implement server-side GTM, Meta Conversions API and Google Ads Enhanced Conversions, build BigQuery data warehouses, and provide managed tracking infrastructure for e-commerce brands and agencies worldwide."
+      "description": "TagSpecialist is an independent practice specializing in server-side tagging implementation and data engineering, run by a single senior data engineer. Server-side GTM, Meta Conversions API and Google Ads Enhanced Conversions, BigQuery data warehouses, and managed tracking infrastructure for e-commerce brands and agencies worldwide."
     }
   ]
 };

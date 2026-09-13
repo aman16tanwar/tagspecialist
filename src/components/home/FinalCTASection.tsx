@@ -20,7 +20,7 @@ const FinalCTASection: React.FC = () => {
         </h2>
 
         <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-            One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Let&apos;s discuss what we can do for you.
+            One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Let&apos;s discuss what I can do for you.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">

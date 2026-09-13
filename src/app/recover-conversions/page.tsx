@@ -25,7 +25,7 @@ export default function RecoverConversionsPage() {
       {
         '@type': 'Service',
         name: 'Conversion API Setup for Meta & Google Ads',
-        description: 'Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions implementation. We host the server-side infrastructure on managed Cloud Run. 1-week delivery, $1,500 flat.',
+        description: 'Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions implementation. Server-side infrastructure hosted on managed Cloud Run. 1-week delivery, $1,500 flat.',
         provider: {
           '@type': 'Organization',
           name: 'Tag Specialist',
@@ -57,7 +57,7 @@ export default function RecoverConversionsPage() {
             name: 'Will this break my current Meta Pixel or Google Ads tracking?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'No. We set up the Conversion API alongside your existing Meta Pixel and Google Ads tag — they run in parallel. We use event deduplication to ensure conversions are not double-counted. Your current campaigns keep running normally throughout the setup, and we test everything before going live.',
+              text: 'No. I set up the Conversion API alongside your existing Meta Pixel and Google Ads tag — they run in parallel. I use event deduplication to ensure conversions are not double-counted. Your current campaigns keep running normally throughout the setup, and I test everything before going live.',
             },
           },
           {
@@ -65,7 +65,7 @@ export default function RecoverConversionsPage() {
             name: 'Do I need a Google Cloud, AWS, or any technical account?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'No. We host all the infrastructure on our managed Cloud Run setup. You do not need a Google Cloud account, a server, or any technical knowledge. You give us access to your Meta Business Manager and Google Ads account — we handle everything else.',
+              text: 'No. I host the infrastructure on my managed Cloud Run setup. You do not need a Google Cloud account, a server, or any technical knowledge. You give me access to your Meta Business Manager and Google Ads account — I handle everything else.',
             },
           },
           {
@@ -73,7 +73,7 @@ export default function RecoverConversionsPage() {
             name: 'How long does setup take?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: '1 week from kickoff to live. Day 1-2: we learn your store and configure events. Day 3-5: we deploy and test the Conversion API in a sandbox. Day 6-7: we go live and validate data is flowing correctly. You will see results in your Meta Ads Manager and Google Ads accounts within 14-21 days.',
+              text: '1 week from kickoff to live. Day 1-2: I learn your store and configure events. Day 3-5: I deploy and test the Conversion API in a sandbox. Day 6-7: I go live and validate data is flowing correctly. You will see results in your Meta Ads Manager and Google Ads accounts within 14-21 days.',
             },
           },
           {
@@ -97,7 +97,7 @@ export default function RecoverConversionsPage() {
             name: 'Why $1,500 — what is the catch?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: "No catch — $1,500 covers about 20 hours of setup work, which is realistic because we've built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. Our business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.",
+              text: "No catch — $1,500 covers about 20 hours of setup work, which is realistic because I've built Conversion API implementations for a decade and have a tight process. The $1,500 is intentionally an accessible entry point. My business model is the bundled monthly managed hosting and clients who later expand into bigger projects (data warehouses, attribution modeling). The setup gets you working Conversion APIs and lets you experience the work before any larger commitment.",
             },
           },
           {
@@ -105,7 +105,7 @@ export default function RecoverConversionsPage() {
             name: 'What if I want to cancel or move to my own setup later?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Your plan includes a 6-month service term. After that, cancel anytime or migrate to your own Google Cloud account ($500 migration service). If something goes wrong in the first 30 days of going live, we offer a full money-back guarantee. For early exits before the 6-month term, you can either pay out remaining months or use the $500 migration service — whichever is lower.',
+              text: 'Your plan includes a 6-month service term. After that, cancel anytime or migrate to your own Google Cloud account ($500 migration service). If something goes wrong in the first 30 days of going live, I offer a full money-back guarantee. For early exits before the 6-month term, you can either pay out remaining months or use the $500 migration service — whichever is lower.',
             },
           },
         ],
@@ -125,7 +125,7 @@ export default function RecoverConversionsPage() {
           '@type': 'SpeakableSpecification',
           cssSelector: ['h1', '[data-speakable]'],
         },
-        description: "Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions setup, bundled with managed hosting. We deploy server-side tracking on our managed Cloud Run infrastructure — no Google Cloud account needed. 1-week delivery, $1,500 setup + $150/month managed hosting (1 site) or $220/month (2 sites). Per Meta's published averages, advertisers using CAPI alongside the Pixel see a 13% lower CPA and 8% more attributed conversions; Google reports up to 17% conversion lift from Enhanced Conversions on Search.",
+        description: "Done-for-you Meta Conversion API (CAPI) and Google Ads Enhanced Conversions setup, bundled with managed hosting. I deploy server-side tracking on my managed Cloud Run infrastructure — no Google Cloud account needed. 1-week delivery, $1,500 setup + $150/month managed hosting (1 site) or $220/month (2 sites). Per Meta's published averages, advertisers using CAPI alongside the Pixel see a 13% lower CPA and 8% more attributed conversions; Google reports up to 17% conversion lift from Enhanced Conversions on Search.",
       },
     ],
   };

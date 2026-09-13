@@ -34,11 +34,11 @@ const AboutSection: React.FC = () => {
                     className="text-center mb-20"
                 >
                     <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-6 leading-tight uppercase tracking-tighter">
-                        We&apos;re Not an Agency. <br className="hidden md:block" />
-                        <span className="text-brand-accent text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">We&apos;re Your Data Infrastructure Team.</span>
+                        I&apos;m Not an Agency. <br className="hidden md:block" />
+                        <span className="text-brand-accent text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">I&apos;m the Engineer Who Builds It.</span>
                     </h2>
                     <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                         Small Team. Deep Expertise. Real Business Transformation.
+                         One senior engineer. Ten years of depth. No handoffs.
                     </p>
                 </motion.div>
 
@@ -58,15 +58,15 @@ const AboutSection: React.FC = () => {
                                 Tired of junior staff learning on your dime?
                             </h3>
                             <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                                TagSpecialist is a Vancouver-based boutique practice run by a senior data engineer with 10 years of experience building tracking and data infrastructure for enterprise advertising campaigns — after years of watching generalist agencies fumble complex implementations.
+                                TagSpecialist is a Vancouver-based practice of one. I&apos;m a senior data engineer with 10 years building tracking and data infrastructure for enterprise advertising campaigns — started after years of watching generalist agencies fumble complex implementations.
                             </p>
                             <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                                <strong className="text-navy-900 uppercase text-sm tracking-widest">No account managers. No middlemen.</strong> <br />
-                                The engineer who scopes your project is the engineer who builds it — and actually knows how to make GTM, BigQuery, and server-side tracking work together. Full background, r&eacute;sum&eacute;, and references are shared on our first call.
+                                <strong className="text-navy-900 uppercase text-sm tracking-widest">No account managers. No middlemen. No juniors.</strong> <br />
+                                You talk to me, I scope it, I build it — and I actually know how to make GTM, BigQuery, and server-side tracking work together. Full background, r&eacute;sum&eacute;, and references are shared on our first call.
                             </p>
                             <div className="pt-6 border-t border-gray-100 mt-8">
                                 <p className="text-brand-accent font-black text-lg uppercase tracking-tighter">
-                                    &quot;When you work with us, you get us.&quot;
+                                    &quot;When you hire me, you get me.&quot;
                                 </p>
                             </div>
                         </div>

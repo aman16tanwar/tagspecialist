@@ -36,7 +36,7 @@ export default function GTMSpecialistLanding() {
       icon: HiCog,
       title: 'GTM Audit & Fix',
       description:
-        'Comprehensive audit of your existing GTM setup. We identify broken tags, duplicate fires, missing conversions, data layer issues, and consent gaps — then fix everything.',
+        'Comprehensive audit of your existing GTM setup. I identify broken tags, duplicate fires, missing conversions, data layer issues, and consent gaps — then fix everything.',
       deliverables: [
         'Full container health check',
         'Broken tag identification & repair',
@@ -115,7 +115,7 @@ export default function GTMSpecialistLanding() {
   const whyUs = [
     {
       title: '10 Years of Tracking Experience',
-      description: 'Not a generalist agency — we\'re data engineers who specialize exclusively in GTM, GA4, and server-side tracking.',
+      description: 'Not a generalist agency — I\'m a data engineer who works exclusively on GTM, GA4, and server-side tracking.',
     },
     {
       title: 'Direct Access — No Sales Layer',
@@ -123,15 +123,15 @@ export default function GTMSpecialistLanding() {
     },
     {
       title: 'Signal Quality That Moves Ad Performance',
-      description: 'Our implementations don\'t just track data — they recover conversion signal that directly improves ad platform performance.',
+      description: 'My implementations don\'t just track data — they recover conversion signal that directly improves ad platform performance.',
     },
     {
       title: 'Enterprise-Grade, Boutique Service',
-      description: 'We build on Google Cloud Platform with the same infrastructure as enterprise brands, but with the responsiveness of a small team.',
+      description: 'I build on Google Cloud Platform with the same infrastructure as enterprise brands, but with the responsiveness of one engineer who answers his own email.',
     },
     {
       title: 'End-to-End Data Ownership',
-      description: 'Everything we build, you own. No vendor lock-in, no proprietary platforms, no recurring license traps.',
+      description: 'Everything I build, you own. No vendor lock-in, no proprietary platforms, no recurring license traps.',
     },
     {
       title: 'A Decade of Implementations',
@@ -142,11 +142,11 @@ export default function GTMSpecialistLanding() {
   const faqs: FAQ[] = [
     {
       q: 'What does a Google Tag Manager specialist do?',
-      a: 'A GTM specialist implements and manages all tracking tags, conversion pixels, and analytics scripts on your website through Google Tag Manager. This includes GA4 setup, conversion tracking for Google Ads and Meta, e-commerce tracking, server-side tagging, consent management, and ensuring data accuracy across all marketing platforms. We go beyond basic tag placement — we architect your entire measurement infrastructure.',
+      a: 'A GTM specialist implements and manages all tracking tags, conversion pixels, and analytics scripts on your website through Google Tag Manager. This includes GA4 setup, conversion tracking for Google Ads and Meta, e-commerce tracking, server-side tagging, consent management, and ensuring data accuracy across all marketing platforms. I go beyond basic tag placement — I architect your entire measurement infrastructure.',
     },
     {
       q: 'How much does it cost to hire a Google Tag Manager expert?',
-      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs typically runs $4,000-$15,000. Ongoing managed tracking plans start at $150/month. We offer transparent, fixed-price quotes — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
+      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs typically runs $4,000-$15,000. Ongoing managed tracking plans start at $150/month. I quote transparent, fixed prices — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
     },
     {
       q: 'Do I need a GTM specialist or can I do it myself?',
@@ -154,19 +154,19 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'What results can I expect?',
-      a: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account. Results vary by setup and ad spend. Our 30-day guarantee: if you don\'t see increased conversion data within 30 days, we\'ll work with you at no additional cost until you do.',
+      a: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account. Results vary by setup and ad spend. My 30-day guarantee: if you don\'t see increased conversion data within 30 days, I\'ll keep working with you at no additional cost until you do.',
     },
     {
       q: 'How long does a GTM implementation take?',
-      a: 'GTM audit & fix: 3-5 business days. GA4 + GTM setup: 1-2 weeks. Full server-side implementation with CAPI: 3-4 weeks. We work in sprints and provide regular updates. Emergency/rush implementations are available.',
+      a: 'GTM audit & fix: 3-5 business days. GA4 + GTM setup: 1-2 weeks. Full server-side implementation with CAPI: 3-4 weeks. I work in sprints and send regular updates. Emergency/rush implementations are available.',
     },
     {
       q: 'Do you work with Shopify, WooCommerce, and custom platforms?',
-      a: 'Yes — we work with all major platforms including Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, Squarespace, WordPress, and fully custom-built sites. We\'ve implemented tracking for headless commerce setups, SPAs, and complex multi-domain architectures.',
+      a: 'Yes — I work with all major platforms including Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, Squarespace, WordPress, and fully custom-built sites. I\'ve implemented tracking for headless commerce setups, SPAs, and complex multi-domain architectures.',
     },
     {
       q: 'What\'s the difference between a GTM specialist and a marketing agency?',
-      a: 'Most marketing agencies outsource tracking to junior developers or use pre-built templates. A GTM specialist designs custom measurement architecture tailored to your business. We understand both the marketing KPIs and the technical implementation — no telephone game between teams.',
+      a: 'Most marketing agencies outsource tracking to junior developers or use pre-built templates. A GTM specialist designs custom measurement architecture tailored to your business. I understand both the marketing KPIs and the technical implementation — no telephone game between departments.',
     },
   ];
 
@@ -209,7 +209,7 @@ export default function GTMSpecialistLanding() {
                 href="/case-studies"
                 className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center"
               >
-                See Our Results
+                See the Results
               </Link>
             </div>
 
@@ -255,7 +255,7 @@ export default function GTMSpecialistLanding() {
           >
             <h2>GTM Specialist Services</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              From quick audits to full server-side implementations — we handle every aspect of Google Tag Manager.
+              From quick audits to full server-side implementations — I handle every aspect of Google Tag Manager.
             </p>
           </motion.div>
 
@@ -301,7 +301,7 @@ export default function GTMSpecialistLanding() {
           >
             <h2>Why Choose TagSpecialist as Your GTM Expert</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              We&apos;re not a generalist agency — we&apos;re data engineers who specialize in measurement infrastructure.
+              I&apos;m not a generalist agency — I&apos;m a data engineer who specializes in measurement infrastructure.
             </p>
           </motion.div>
 
@@ -433,7 +433,7 @@ export default function GTMSpecialistLanding() {
               {
                 step: '1',
                 title: 'Free Audit Call',
-                description: 'We review your current tracking setup and identify what\'s broken, missing, or underperforming.',
+                description: 'I review your current tracking setup and identify what\'s broken, missing, or underperforming.',
               },
               {
                 step: '2',
@@ -443,7 +443,7 @@ export default function GTMSpecialistLanding() {
               {
                 step: '3',
                 title: 'Implementation',
-                description: 'We build and deploy your tracking infrastructure. You get regular updates and full transparency.',
+                description: 'I build and deploy your tracking infrastructure. You get regular updates and full transparency.',
               },
               {
                 step: '4',
@@ -531,7 +531,7 @@ export default function GTMSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Stop Losing Conversions to Broken Tracking</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. We&apos;ll show you what&apos;s broken, what&apos;s missing, and exactly how to fix it —
+              Book a free 15-minute audit. I&apos;ll show you what&apos;s broken, what&apos;s missing, and exactly how to fix it —
               no sales pressure, just engineering expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

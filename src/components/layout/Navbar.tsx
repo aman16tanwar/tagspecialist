@@ -25,7 +25,7 @@ const Navbar = () => {
   const setupPackages = [
     { name: 'Tracking Audit & Strategy', desc: 'Complete diagnosis with prioritized fixes — credited toward implementation', timeline: '5 business days', icon: '🔍', id: 'tracking-audit', popular: true, href: '/book-audit' },
     { name: 'Implementation', desc: 'Server-side tracking, CAPI, BigQuery pipelines — fixed quote after your audit', timeline: '2-4 weeks', icon: '⚡', id: 'implementation', href: '/services' },
-    { name: 'Managed Tracking', desc: 'We host, monitor & maintain your tracking infrastructure', timeline: 'Monthly', icon: '🗄️', id: 'managed-tracking', href: '/managed-tracking' }
+    { name: 'Managed Tracking', desc: 'I host, monitor & maintain your tracking infrastructure', timeline: 'Monthly', icon: '🗄️', id: 'managed-tracking', href: '/managed-tracking' }
   ];
 
   const retainers = [

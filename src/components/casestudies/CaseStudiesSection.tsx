@@ -243,7 +243,7 @@ const CaseStudiesSection: React.FC = () => {
                         Real Projects. <span className="text-blue-600">Real Implementation Details.</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Every project below was delivered hands-on — no outsourcing, no templates, no junior handoff. From revenue tracking fixes to full data pipelines, here&apos;s the work we actually ship.
+                        Every project below was delivered hands-on — no outsourcing, no templates, no junior handoff. From revenue tracking fixes to full data pipelines, here&apos;s the work I actually ship.
                     </p>
                 </div>
 
@@ -271,7 +271,7 @@ const CaseStudiesSection: React.FC = () => {
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-bold uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
-                                    <span className="w-8 h-px bg-blue-400/30"></span> What We Implemented
+                                    <span className="w-8 h-px bg-blue-400/30"></span> What I Implemented
                                 </h4>
                                 <ul className="space-y-2">
                                     {mainCase.solution.map((item, i) => (
@@ -405,7 +405,7 @@ const CaseStudiesSection: React.FC = () => {
                 <div className="mt-24 text-center bg-gray-50 rounded-3xl p-12 border border-gray-100 max-w-4xl mx-auto">
                     <h3 className="text-3xl font-bold text-navy-900 mb-4">Ready to Fix Your Tracking?</h3>
                     <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-medium">
-                        Every project above started with a 15-minute discovery call. We&apos;ll audit your current setup, identify quick wins, and show you exactly how we&apos;d approach your data challenges.
+                        Every project above started with a 15-minute discovery call. I&apos;ll audit your current setup, identify quick wins, and show you exactly how I&apos;d approach your data challenges.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Link
@@ -415,7 +415,7 @@ const CaseStudiesSection: React.FC = () => {
                             Book Your Free Audit
                         </Link>
                         <Link href="/services" className="btn-secondary">
-                            See Our Services
+                            See My Services
                         </Link>
                     </div>
                     <p className="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest">

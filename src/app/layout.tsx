@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
     template: "%s | Tag Specialist"
   },
-  description: "Expert server-side tagging, GTM implementation, and data engineering services. We build tracking infrastructure and BigQuery data warehouses for agencies and brands.",
+  description: "Expert server-side tagging, GTM implementation, and data engineering. A senior data engineer building tracking infrastructure and BigQuery data warehouses for agencies and brands.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TagSpecialist | Server-Side Tracking & Data Engineering Experts",
-    description: "Expert server-side tagging, GTM implementation, and data engineering services. We build tracking infrastructure and BigQuery data warehouses for agencies and brands."
+    description: "Expert server-side tagging, GTM implementation, and data engineering. A senior data engineer building tracking infrastructure and BigQuery data warehouses for agencies and brands."
   },
   robots: {
     index: true,

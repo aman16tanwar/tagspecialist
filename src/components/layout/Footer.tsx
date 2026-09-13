@@ -76,7 +76,7 @@ const Footer = () => {
             <h4 className="text-sm font-black text-navy-900 mt-10 mb-6 uppercase tracking-[0.2em] underline decoration-blue-600 decoration-2 underline-offset-8">Company</h4>
             <ul className="space-y-4">
               {[
-                { name: 'About Us', link: '/about' },
+                { name: 'About', link: '/about' },
                 { name: 'Partners', link: '/partners' },
               ].map((item) => (
                 <li key={item.name}>

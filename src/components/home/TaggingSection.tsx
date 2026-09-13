@@ -29,7 +29,7 @@ const TaggingSection: React.FC = () => {
             Tracking & Tagging <span className="text-blue-600">Foundation</span>
           </h2>
           <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-            Before you analyze, you must track accurately. We engineer the entire infrastructure required to capture every signal with 100% precision.
+            Before you analyze, you must track accurately. I engineer the entire infrastructure required to capture every signal with 100% precision.
           </p>
           <p className="text-base text-gray-600 font-medium max-w-3xl mx-auto mt-6 leading-relaxed">
             Hire a{' '}

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import AboutSection from '@/components/about/AboutSection';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Meet the team behind Tag Specialist. Expert data engineers and campaign managers working together to grow your business.',
+  title: 'About',
+  description: 'TagSpecialist is a one-person practice. A senior data engineer with 10 years building tracking and data infrastructure — the engineer who scopes your project is the one who builds it.',
   alternates: {
     canonical: '/about',
   },

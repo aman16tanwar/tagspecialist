@@ -76,12 +76,12 @@ export default function AgencyPartnerLanding() {
     {
       icon: HiTemplate,
       title: 'White-Label Ready',
-      desc: 'Present as your own service. Your branding, your client relationship, our infrastructure.',
+      desc: 'Present as your own service. Your branding, your client relationship, my implementation.',
     },
     {
       icon: HiSupport,
-      title: 'We Handle Support',
-      desc: 'Technical issues? We fix them. You maintain the client relationship, we do the heavy lifting.',
+      title: 'I Handle Support',
+      desc: 'Technical issues? I fix them. You keep the client relationship, I do the heavy lifting.',
     },
     {
       icon: HiTrendingUp,
@@ -91,7 +91,7 @@ export default function AgencyPartnerLanding() {
     {
       icon: HiUserGroup,
       title: 'No Hiring Needed',
-      desc: 'Offer enterprise-grade tracking without hiring specialists. We are your tracking team.',
+      desc: 'Offer enterprise-grade tracking without hiring a specialist. I am the specialist, on call.',
     },
     {
       icon: HiShieldCheck,
@@ -129,7 +129,7 @@ export default function AgencyPartnerLanding() {
                 Add <span className="text-blue-400">$500-2,000/mo</span> to Your Agency Revenue
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Offer server-side tracking to your clients. We handle the tech, you keep the margin. White-label available.
+                Offer server-side tracking to your clients. I handle the tech, you keep the margin. White-label available.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -298,17 +298,17 @@ export default function AgencyPartnerLanding() {
                 {
                   step: '1',
                   title: 'You Sell',
-                  desc: 'Present server-side tracking to your clients as part of your service offering. Use our sales materials or white-label as your own.',
+                  desc: 'Present server-side tracking to your clients as part of your service offering. Use my sales materials or white-label as your own.',
                 },
                 {
                   step: '2',
-                  title: 'We Implement',
-                  desc: 'Send us the client details. We handle all technical setup within 1-5 business days. You stay informed via partner portal.',
+                  title: 'I Implement',
+                  desc: 'Send me the client details. I handle the technical setup within 1-5 business days, and keep you posted directly as it goes.',
                 },
                 {
                   step: '3',
-                  title: 'You Bill, We Support',
-                  desc: 'Bill your client at your markup. We handle all technical support and maintenance. You maintain the relationship.',
+                  title: 'You Bill, I Support',
+                  desc: 'Bill your client at your markup. I handle technical support and maintenance. You keep the relationship.',
                 },
                 {
                   step: '4',
@@ -347,7 +347,7 @@ export default function AgencyPartnerLanding() {
             Apply for Partnership
           </Link>
           <p className="mt-6 text-blue-300 text-sm">
-            No commitment to apply. We&apos;ll schedule a call to discuss if it&apos;s a good fit.
+            No commitment to apply. We&apos;ll get on a call and work out whether it&apos;s a good fit.
           </p>
 
           <div className="mt-10 pt-8 border-t border-white/10">

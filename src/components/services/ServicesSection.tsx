@@ -63,7 +63,7 @@ const ServicesSection: React.FC = () => {
             pricing: "Typically $4K – $15K (fixed quote after audit)",
             timeline: "3-4 weeks",
             guideLink: "/server-side-tagging-guide",
-            guideLinkText: "Read Our Complete Server-Side Tagging Guide"
+            guideLinkText: "Read the Complete Server-Side Tagging Guide"
         },
         {
             title: "Enterprise Data & AI Warehouse",
@@ -102,7 +102,7 @@ const ServicesSection: React.FC = () => {
                         Flagship Data Solutions
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        High-performance data infrastructure engineered for 8-figure brands. We build the systems that turn your data into profitable growth.
+                        High-performance data infrastructure engineered for 8-figure brands. I build the systems that turn your data into profitable growth.
                     </p>
                 </div>
 

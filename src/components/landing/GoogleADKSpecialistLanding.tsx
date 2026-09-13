@@ -88,7 +88,7 @@ export default function GoogleADKSpecialistLanding() {
       icon: HiCode,
       title: 'Agent Tooling & MCP Integration',
       description:
-        'The agent is only as good as its tools. We design and build the tool layer — typed function tools, MCP server integrations, OpenAPI tool generation — that connects ADK agents to your real systems safely.',
+        'The agent is only as good as its tools. I design and build the tool layer — typed function tools, MCP server integrations, OpenAPI tool generation — that connects ADK agents to your real systems safely.',
       deliverables: [
         'Custom Python function tools',
         'MCP server integration for shared tool ecosystems',
@@ -101,7 +101,7 @@ export default function GoogleADKSpecialistLanding() {
       icon: HiLightningBolt,
       title: 'Agent Evaluation & Production Ops',
       description:
-        'Most ADK agents fail in production for the same reasons: unstable tool behavior, prompt drift, and no eval harness. We add evals, telemetry, and rollout discipline so the agent that worked yesterday still works tomorrow.',
+        'Most ADK agents fail in production for the same reasons: unstable tool behavior, prompt drift, and no eval harness. I add evals, telemetry, and rollout discipline so the agent that worked yesterday still works tomorrow.',
       deliverables: [
         'Eval set design (golden tests + adversarial)',
         'Continuous eval in CI/CD',
@@ -116,12 +116,12 @@ export default function GoogleADKSpecialistLanding() {
     {
       title: 'Marketing Data + AI Engineering, Not Either Or',
       description:
-        'Most agent shops know LLMs but not your data. Most data shops know BigQuery but ship LangChain demos. We do both — production agents grounded in production marketing data.',
+        'Most agent shops know LLMs but not your data. Most data shops know BigQuery but ship LangChain demos. I do both — production agents grounded in production marketing data.',
     },
     {
       title: 'GCP-Native Architecture',
       description:
-        'ADK + Vertex AI + BigQuery + Cloud Run is one IAM boundary, one billing surface, one observability stack. We deploy in your GCP project — no vendor lock-in to a third-party agent platform.',
+        'ADK + Vertex AI + BigQuery + Cloud Run is one IAM boundary, one billing surface, one observability stack. I deploy in your GCP project — no vendor lock-in to a third-party agent platform.',
     },
     {
       title: 'Eval-First, Not Demo-First',
@@ -136,7 +136,7 @@ export default function GoogleADKSpecialistLanding() {
     {
       title: '10 Years of Data Engineering',
       description:
-        'BigQuery, dbt, Cloud Run, Pub/Sub — the substrate ADK agents need access to is the substrate we have been building on for 10 years.',
+        'BigQuery, dbt, Cloud Run, Pub/Sub — the substrate ADK agents need access to is the substrate I have been building on for 10 years.',
     },
     {
       title: 'Direct Engineer Access',
@@ -168,7 +168,7 @@ export default function GoogleADKSpecialistLanding() {
     },
     {
       q: 'How does ADK handle agent evaluation?',
-      a: 'ADK has built-in evaluation primitives — `AgentEvaluator` with golden test sets, automated scoring, and CI/CD integration. We typically design two eval sets: a golden set (representative happy-path cases that should always work) and an adversarial set (edge cases, prompt injections, off-topic requests that should be rejected gracefully). Evals run in CI on every prompt or tool change, and we ship to production only when the new agent matches or exceeds the previous version on both sets.',
+      a: 'ADK has built-in evaluation primitives — `AgentEvaluator` with golden test sets, automated scoring, and CI/CD integration. I typically design two eval sets: a golden set (representative happy-path cases that should always work) and an adversarial set (edge cases, prompt injections, off-topic requests that should be rejected gracefully). Evals run in CI on every prompt or tool change, and I ship to production only when the new agent matches or exceeds the previous version on both sets.',
     },
     {
       q: 'Do ADK agents support MCP (Model Context Protocol)?',
@@ -200,7 +200,7 @@ export default function GoogleADKSpecialistLanding() {
               <span className="text-orange-400">Production AI Agents on Google Cloud</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Most AI agents look great in a Jupyter notebook and break in production. We build ADK agents the way data
+              Most AI agents look great in a Jupyter notebook and break in production. I build ADK agents the way data
               infrastructure should be built — with evals, observability, IAM, and a deployment pipeline — grounded in
               your real BigQuery data, deployed on Vertex AI Agent Engine.
             </p>
@@ -216,7 +216,7 @@ export default function GoogleADKSpecialistLanding() {
                 href="/case-studies"
                 className="bg-white/10 text-white border-2 border-white/20 px-7 py-3.5 rounded-md font-heading font-semibold transition-all hover:bg-white/20 text-center"
               >
-                See Our Results
+                See the Results
               </Link>
             </div>
 
@@ -316,7 +316,7 @@ export default function GoogleADKSpecialistLanding() {
           >
             <h2>Why TagSpecialist for Google ADK</h2>
             <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-              Most agent shops know LLMs but not your data. Most data shops ship Jupyter demos. We do both.
+              Most agent shops know LLMs but not your data. Most data shops ship Jupyter demos. I do both.
             </p>
           </motion.div>
 
@@ -538,7 +538,7 @@ export default function GoogleADKSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Ship a Production AI Agent, Not a Demo</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute scoping call. We&apos;ll review your use case, propose an agent architecture, and tell
+              Book a free 15-minute scoping call. I&apos;ll review your use case, propose an agent architecture, and tell
               you honestly if ADK is the right tool — or if a simpler approach would do the job.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -39,7 +39,7 @@ const WhyUsSection: React.FC = () => {
 
           <div className="mt-16 p-8 bg-brand-highlight rounded-lg text-center border border-gray-200">
              <p className="text-2xl font-semibold text-brand-primary mb-2">
-               &quot;We don&apos;t just use the tools. We engineer them.&quot;
+               &quot;I don&apos;t just use the tools. I engineer them.&quot;
              </p>
           </div>
         </div>

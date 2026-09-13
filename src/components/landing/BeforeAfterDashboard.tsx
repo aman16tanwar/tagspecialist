@@ -51,7 +51,7 @@ export default function BeforeAfterDashboard() {
           </p>
           <h2>What Would the Numbers Look Like for You?</h2>
           <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-            Adjust your monthly ad spend and current conversions. We&apos;ll project the impact based
+            Adjust your monthly ad spend and current conversions. The calculator projects the impact based
             on Meta and Google&apos;s published averages for advertisers using Conversion API and
             Enhanced Conversions.
           </p>

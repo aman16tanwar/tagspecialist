@@ -130,7 +130,7 @@ export default function BenefitsOfServerSideTagging() {
     },
     {
       q: 'How long does it take to implement server-side tagging?',
-      a: 'A basic implementation takes 1-2 weeks. A full enterprise setup with Meta CAPI, Google Ads Enhanced Conversions, consent management, and data enrichment takes 3-4 weeks. At TagSpecialist, we handle everything end-to-end.',
+      a: 'A basic implementation takes 1-2 weeks. A full enterprise setup with Meta CAPI, Google Ads Enhanced Conversions, consent management, and data enrichment takes 3-4 weeks. At TagSpecialist, I handle everything end-to-end.',
     },
   ];
 
@@ -479,7 +479,7 @@ export default function BenefitsOfServerSideTagging() {
           >
             <h2 className="text-white mb-4">Ready to Capture 30-40% More Conversions?</h2>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Get a free tracking audit. We&apos;ll show you exactly how much conversion data you&apos;re losing
+              Get a free tracking audit. I&apos;ll show you exactly how much conversion data you&apos;re losing
               and what server-side tagging can recover.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

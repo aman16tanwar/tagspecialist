@@ -108,35 +108,35 @@ export default function ManagedTrackingLanding() {
   const faqs: FAQ[] = [
     {
       q: 'How is this different from doing it myself?',
-      a: 'Setting up server-side tracking requires cloud infrastructure expertise, ongoing maintenance, and monitoring. We handle all of this - you just see better data in your ad platforms. No technical knowledge required.',
+      a: 'Setting up server-side tracking requires cloud infrastructure expertise, ongoing maintenance, and monitoring. I handle all of this - you just see better data in your ad platforms. No technical knowledge required.',
     },
     {
       q: 'What if I don\'t have tracking set up yet?',
-      a: 'Managed tracking covers the ongoing server-side hosting and maintenance. If you need a full tracking build from scratch (GTM setup, GA4 configuration, data layer, conversion tracking), that requires a one-time implementation package first. See our full pricing and setup packages at tagspecialist.ca/services for details.',
+      a: 'Managed tracking covers the ongoing server-side hosting and maintenance. If you need a full tracking build from scratch (GTM setup, GA4 configuration, data layer, conversion tracking), that requires a one-time implementation package first. See the full pricing and setup packages at tagspecialist.ca/services for details.',
     },
     {
       q: 'Do I own the tracking infrastructure?',
-      a: 'The infrastructure runs on our managed cloud environment. This keeps costs low and ensures reliability. If you prefer to own your infrastructure, check out our implementation projects starting at $4,000, scoped from a $1,200 audit.',
+      a: 'The infrastructure runs on my managed cloud environment. This keeps costs low and ensures reliability. If you prefer to own your infrastructure, check out the implementation projects starting at $4,000, scoped from a $1,200 audit.',
     },
     {
       q: 'What platforms do you support?',
-      a: 'Google Ads, Meta (Facebook/Instagram), TikTok, Pinterest, Snapchat, LinkedIn, and most major ad platforms. We also support GA4, Klaviyo, and other marketing tools.',
+      a: 'Google Ads, Meta (Facebook/Instagram), TikTok, Pinterest, Snapchat, LinkedIn, and most major ad platforms. I also support GA4, Klaviyo, and other marketing tools.',
     },
     {
       q: 'How long does setup take?',
-      a: 'Basic websites: 1-2 business days. eCommerce/booking sites: 3-5 business days. We handle everything - you just need to provide platform access.',
+      a: 'Basic websites: 1-2 business days. eCommerce/booking sites: 3-5 business days. I handle everything - you just need to provide platform access.',
     },
     {
       q: 'What happens if tracking breaks?',
-      a: 'We monitor your tracking 24/7 and catch issues before you do. Our 99.5% uptime SLA means your data keeps flowing. If something does break, we fix it at no extra cost.',
+      a: 'Automated monitoring runs 24/7 and catches issues before you do. The 99.5% uptime SLA means your data keeps flowing. If something does break, I fix it at no extra cost.',
     },
     {
       q: 'Can I cancel anytime?',
-      a: 'We require a 6-month minimum commitment (12 months for Scale tier). After that, you can cancel with 30 days notice. Annual plans receive waived setup fees.',
+      a: 'There is a 6-month minimum commitment (12 months for Scale tier). After that, you can cancel with 30 days notice. Annual plans receive waived setup fees.',
     },
     {
       q: 'What if I don\'t see improvements?',
-      a: 'Our 30-day guarantee: if you don\'t see increased conversion data within 30 days, we\'ll work with you at no additional cost until you do.',
+      a: 'My 30-day guarantee: if you don\'t see increased conversion data within 30 days, I\'ll keep working with you at no additional cost until you do.',
     },
   ];
 
@@ -167,7 +167,7 @@ export default function ManagedTrackingLanding() {
                 Stop Losing <span className="text-blue-400">40-70%</span> of Your Conversion Data
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                You shouldn&apos;t have to manage cloud servers, monitor infrastructure health, or debug tracking pipelines. We own and maintain the entire server-side tracking stack — you focus on your business, we keep the data flowing.
+                You shouldn&apos;t have to manage cloud servers, monitor infrastructure health, or debug tracking pipelines. I own and maintain the entire server-side tracking stack — you focus on your business, I keep the data flowing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -240,16 +240,16 @@ export default function ManagedTrackingLanding() {
               Server-Side Tracking: The Fix
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-              We move tracking from the browser to the server. Ad blockers can&apos;t block what they can&apos;t see.
+              I move tracking from the browser to the server. Ad blockers can&apos;t block what they can&apos;t see.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: HiServer, title: 'Server Infrastructure', desc: 'Your own cloud container, managed by us. No technical skills needed.' },
+                { icon: HiServer, title: 'Server Infrastructure', desc: 'Your own cloud container, fully managed. No technical skills needed.' },
                 { icon: HiShieldCheck, title: 'Bypass Blockers', desc: 'Custom Loader technology captures 40% more data that blockers miss.' },
                 { icon: HiChartBar, title: 'Better ROAS', desc: 'Complete data = smarter bidding = lower CPAs = more profit.' },
                 { icon: HiLightningBolt, title: 'Faster Site', desc: 'Fewer client-side scripts = faster load times = better UX.' },
-                { icon: HiClock, title: 'Set & Forget', desc: 'We monitor 24/7 and handle all updates. You just run your business.' },
+                { icon: HiClock, title: 'Set & Forget', desc: 'Monitored 24/7, updates handled. You just run your business.' },
                 { icon: HiCurrencyDollar, title: 'Predictable Cost', desc: 'Flat monthly fee with clear limits. Scale as you grow.' },
               ].map((item, i) => (
                 <div key={i} className="text-center p-6">
@@ -281,19 +281,19 @@ export default function ManagedTrackingLanding() {
                 {
                   step: '1',
                   title: 'Book a Call',
-                  desc: 'We review your current setup, identify gaps, and recommend the right plan for your needs.',
+                  desc: 'I review your current setup, identify gaps, and recommend the right plan for your needs.',
                   icon: '📞',
                 },
                 {
                   step: '2',
-                  title: 'We Implement',
-                  desc: 'Your server-side tracking gets built end to end. You just provide platform access - we handle the rest.',
+                  title: 'I Implement',
+                  desc: 'Your server-side tracking gets built end to end. You just provide platform access - I handle the rest.',
                   icon: '⚙️',
                 },
                 {
                   step: '3',
                   title: 'See More Conversions',
-                  desc: 'Watch your reported conversions increase as we capture data that was previously lost.',
+                  desc: 'Watch your reported conversions increase as the setup captures data that was previously lost.',
                   icon: '📈',
                 },
               ].map((item, i) => (
@@ -447,7 +447,7 @@ export default function ManagedTrackingLanding() {
                 href="/book-audit"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                Contact us for Enterprise pricing
+                Contact me for Enterprise pricing
               </Link> (6+ domains or 1M+ pageviews).
             </p>
           </div>
@@ -462,7 +462,7 @@ export default function ManagedTrackingLanding() {
               What&apos;s Included
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12">
-              Setup fee covers connecting your existing tracking to server-side. Don&apos;t have tracking yet? See our one-time setup packages.
+              Setup fee covers connecting your existing tracking to server-side. Don&apos;t have tracking yet? See the one-time setup packages.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">

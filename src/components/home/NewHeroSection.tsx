@@ -24,7 +24,7 @@ const NewHeroSection: React.FC = () => {
             30-40% of Your Marketing Data Is <span className="text-blue-600">Lost</span> Before It Reaches Your Ad Platforms
           </h1>
           <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-            Browser restrictions, JavaScript failures, and siloed systems mean your campaigns optimize on incomplete signals. We build server-side tracking and unified data pipelines that capture accurate, consent-compliant data from every touchpoint.
+            Browser restrictions, JavaScript failures, and siloed systems mean your campaigns optimize on incomplete signals. I build server-side tracking and unified data pipelines that capture accurate, consent-compliant data from every touchpoint.
           </p>
         </div>
 

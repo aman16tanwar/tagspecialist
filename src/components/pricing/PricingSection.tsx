@@ -36,13 +36,13 @@ const PricingSection: React.FC = () => {
       icon: HiSearch,
       verb: "Diagnose",
       title: "Audit & Strategy",
-      desc: "We diagnose your entire tracking stack, pinpoint what's broken, and size the revenue opportunity — before a single line gets built.",
+      desc: "I diagnose your entire tracking stack, pinpoint what's broken, and size the revenue opportunity — before a single line gets built.",
     },
     {
       icon: HiClipboardList,
       verb: "Design",
       title: "Measurement Architecture",
-      desc: "We design a measurement plan and data architecture mapped directly to your business goals, KPIs, and reporting needs.",
+      desc: "I design a measurement plan and data architecture mapped directly to your business goals, KPIs, and reporting needs.",
     },
     {
       icon: HiCheckCircle,
@@ -54,13 +54,13 @@ const PricingSection: React.FC = () => {
       icon: HiCog,
       verb: "Build",
       title: "Implementation",
-      desc: "We build it cleanly — GA4, server-side GTM, CAPI, BigQuery pipelines — fully documented, tested, and validated.",
+      desc: "I build it cleanly — GA4, server-side GTM, CAPI, BigQuery pipelines — fully documented, tested, and validated.",
     },
     {
       icon: HiRefresh,
       verb: "Sustain",
       title: "Maintenance",
-      desc: "We host, monitor, and maintain your setup so it stays accurate as ad platforms and browsers keep changing.",
+      desc: "I host, monitor, and maintain your setup so it stays accurate as ad platforms and browsers keep changing.",
     },
   ];
 
@@ -76,11 +76,11 @@ const PricingSection: React.FC = () => {
   const faqs: FAQ[] = [
     {
       q: "Why are you more expensive than Upwork freelancers?",
-      a: "Freelancers set up tags. We engineer business-grade data infrastructure — server-side tracking, BigQuery pipelines, CRM integrations, and attribution modeling. You work directly with a senior data engineer, not a junior tag placer. Our systems are built to scale to $100M+ revenue.",
+      a: "Tag freelancers set up tags. I engineer business-grade data infrastructure — server-side tracking, BigQuery pipelines, CRM integrations, and attribution modeling. You work directly with a senior data engineer, not a junior tag placer. The systems are built to scale to $100M+ revenue.",
     },
     {
       q: "What's included in post-launch support?",
-      a: "Every build includes 30 days of 'hyper-care' where we monitor data flows, fix any edge-case bugs, and ensure your team is fully comfortable using the new dashboards.",
+      a: "Every build includes 30 days of 'hyper-care' where I monitor data flows, fix any edge-case bugs, and make sure your team is fully comfortable using the new dashboards.",
     },
     {
       q: "How does the engagement work?",
@@ -88,7 +88,7 @@ const PricingSection: React.FC = () => {
     },
     {
       q: "How is this different from tools like Elevar or Littledata?",
-      a: "Tools are products; we are a custom solution. Tools are 'one-size-fits-all' and you don't own the infrastructure. With us, you own the code, the GCP environment, and the data. We're built for complex setups where tools hit their limits.",
+      a: "Tools are products; this is a custom solution. Tools are 'one-size-fits-all' and you don't own the infrastructure. Working with me, you own the code, the GCP environment, and the data. It's built for complex setups where tools hit their limits.",
     },
   ];
 
@@ -98,10 +98,10 @@ const PricingSection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-4 uppercase tracking-widest">
             <HiClipboardList className="w-4 h-4" />
-            <span>Our Process</span>
+            <span>The Process</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-navy-900 mb-4 uppercase tracking-tighter">
-            How We Work
+            How I Work
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Every engagement follows the same disciplined path — diagnose first, design a plan you approve, build it properly, then keep it accurate. No guesswork, no surprises.
@@ -223,9 +223,9 @@ const PricingSection: React.FC = () => {
             <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-black mb-6 text-white uppercase tracking-tighter">Not Sure Where to Start?</h3>
-                <p className="text-xl mb-8 text-blue-100 font-medium">We&apos;ll audit your current setup and recommend the best path forward—completely free.</p>
+                <p className="text-xl mb-8 text-blue-100 font-medium">I&apos;ll audit your current setup and recommend the best path forward—completely free.</p>
 
-                <h4 className="text-blue-400 font-black uppercase text-[10px] tracking-[0.2em] mb-4">Our 15-Minute Audit Covers:</h4>
+                <h4 className="text-blue-400 font-black uppercase text-[10px] tracking-[0.2em] mb-4">The 15-Minute Audit Covers:</h4>
                 <ul className="space-y-3 mb-10">
                   <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
                     <HiCheck className="text-blue-400 text-xl" /> Current tracking gaps & data quality issues
