@@ -18,7 +18,7 @@ declare global {
 const config = {
   backdrop: { show: true },
   icon: { position: 'bottomLeft' },
-  prompt: { position: 'bottomRight' },
+  prompt: { position: 'bottomCenter' },
   consentTypes: [
     {
       id: 'essential',
