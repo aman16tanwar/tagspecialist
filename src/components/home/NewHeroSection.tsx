@@ -21,7 +21,7 @@ const NewHeroSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-primary tracking-tighter mb-6 uppercase">
-            30-40% of Your Marketing Data Is <span className="text-blue-600">Lost</span> Before It Reaches Your Ad Platforms
+            Your Marketing Data Is Getting <span className="text-blue-600">Lost</span> Before It Reaches Your Ad Platforms
           </h1>
           <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
             Browser restrictions, JavaScript failures, and siloed systems mean your campaigns optimize on incomplete signals. I build server-side tracking and unified data pipelines that capture accurate, consent-compliant data from every touchpoint.
