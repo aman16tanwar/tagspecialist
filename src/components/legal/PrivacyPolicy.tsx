@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-navy-900">Privacy Policy</h1>
-              <p className="text-gray-600 mt-1">Last updated: January 18, 2025</p>
+              <p className="text-gray-600 mt-1">Last updated: September 27, 2026</p>
             </div>
           </div>
 
@@ -108,11 +108,33 @@ const PrivacyPolicy = () => {
               <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>Google Cloud Platform (infrastructure and data storage)</li>
                 <li>Google Analytics 4 (website analytics with IP anonymization)</li>
+                <li>Microsoft Clarity (anonymised session recordings and heatmaps)</li>
+                <li>Google Ads (measuring whether ads lead to bookings and enquiries)</li>
                 <li>Web3Forms (contact form processing)</li>
                 <li>Payment processors (Stripe/PayPal for secure transactions)</li>
               </ul>
               <p className="text-gray-700 mt-4">
                 These services have their own privacy policies and we encourage you to review them.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-navy-900 mb-4">Cookies and Consent</h2>
+              <p className="text-gray-700 mb-4">
+                A cookie banner lets you choose which cookies this site may use. Your choice is stored
+                in your browser and you can change it at any time with the cookie icon in the
+                bottom-left corner of every page.
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                <li><strong className="text-navy-900">Essential:</strong> needed for the site to work and to remember your cookie choice. Always on.</li>
+                <li><strong className="text-navy-900">Analytics:</strong> Google Analytics 4 and Microsoft Clarity, to understand which pages are useful and where the site is confusing.</li>
+                <li><strong className="text-navy-900">Marketing:</strong> Google Ads, to measure whether ads lead to bookings and enquiries. We do not show ads on this site.</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed">
+                Visitors from the European Economic Area, the United Kingdom, Switzerland and Quebec start
+                with analytics and marketing cookies off until they accept them. Everywhere else they start
+                on, and you can switch them off in the banner. We use Google Consent Mode, so Google tags
+                respect your choice automatically.
               </p>
             </section>
 

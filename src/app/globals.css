@@ -143,3 +143,17 @@
     content: none;
   }
 }
+
+/* Silktide consent banner theme. `html` raises specificity above the vendor
+   stylesheet, which loads after this file. */
+html #stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: 'Open Sans', sans-serif;
+  --primaryColor: #2563eb;
+  --backgroundColor: #ffffff;
+  --textColor: #0a192f;
+  --backdropBackgroundColor: #0a192f33;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #2563eb;
+  --iconBackgroundColor: #ffffff;
+}

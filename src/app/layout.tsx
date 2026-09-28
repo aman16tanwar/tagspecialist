@@ -7,9 +7,58 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/modals/ContactForm";
 import SuccessModal from "@/components/modals/SuccessModal";
+import ConsentBanner from "@/components/consent/ConsentBanner";
 import { SITE_URL } from '@/lib/site';
 
 const GTM_ID = "GTM-PTBVKBHB";
+
+// Consent defaults that must exist before GTM loads. Strict opt-in regions (EEA, UK,
+// Switzerland, Quebec) start denied; everywhere else starts granted. The region-specific
+// default wins over the global one for visitors in those regions. The banner
+// (ConsentBanner) sends the visitor's choice as a consent update.
+const CONSENT_DENIED_REGIONS = [
+  // EU
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE",
+  "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",
+  // Rest of EEA, UK, Switzerland, Quebec (Law 25)
+  "IS", "LI", "NO", "GB", "CH", "CA-QC",
+];
+
+const CONSENT_DEFAULT_SCRIPT = `
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){dataLayer.push(arguments);};
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500,
+    region: ${JSON.stringify(CONSENT_DENIED_REGIONS)}
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted',
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
+  // Apply a returning visitor's saved choice now, before GTM loads. The banner replays
+  // it too, but only after gtm.js, which is too late for tags that fire on page load.
+  try {
+    var saved = {}, choice;
+    choice = localStorage.getItem('stcm.consent.analytics');
+    if (choice !== null) saved.analytics_storage = choice === 'true' ? 'granted' : 'denied';
+    choice = localStorage.getItem('stcm.consent.marketing');
+    if (choice !== null) {
+      var ads = choice === 'true' ? 'granted' : 'denied';
+      saved.ad_storage = ads; saved.ad_user_data = ads; saved.ad_personalization = ads;
+    }
+    if (Object.keys(saved).length) gtag('consent', 'update', saved);
+  } catch (e) {}
+`;
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +101,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
+          id="consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }}
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -85,6 +139,7 @@ export default function RootLayout({
             <SuccessModal />
           </div>
         </ModalProvider>
+        <ConsentBanner />
       </body>
     </html>
   );
