@@ -155,7 +155,7 @@ export default function SSTSpecialistLanding() {
     },
     {
       q: 'How much does server-side tagging implementation cost?',
-      a: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $4,000-$8,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $8,000-$15,000. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Book a free audit to get an exact quote.',
+      a: 'Server-side tagging implementation typically ranges from $4,000 to $15,000 depending on scope. A basic server-side GTM setup with one or two conversion APIs starts around $4,000-$8,000. A full implementation with multiple CAPI integrations (Meta, Google Ads, TikTok, Pinterest), custom domain, first-party cookies, and parallel tracking validation runs $8,000-$15,000. Ongoing managed server-side tracking starts at $150/month. Cloud hosting on Google Cloud Run typically costs $30-$100/month depending on traffic. Larger projects are scoped after a 1-hour paid debug session ($150).',
     },
     {
       q: 'How much more data will server-side tagging capture?',
@@ -207,7 +207,7 @@ export default function SSTSpecialistLanding() {
                 href="/book-audit?service=tracking"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free Tracking Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -438,15 +438,16 @@ export default function SSTSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Stop Losing 30-40% of Your Conversion Data</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. I&apos;ll show you exactly how much conversion data you&apos;re losing to ad
-              blockers and browser restrictions — and how server-side tagging recovers it.
+              Book a 1-hour Tracking Debug Session ($150 USD). Bring your broken GTM, sGTM or GA4 setup, we debug it
+              live, and you leave with it working or with a clear plan for what&apos;s left. If I can&apos;t help in the
+              first 10 minutes, full refund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=tracking"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free Tracking Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

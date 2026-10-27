@@ -91,7 +91,7 @@ const ShopifyBigQueryLanding = () => {
                                 className="group px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transform transition-all duration-200 hover:scale-105 flex items-center gap-2 uppercase text-sm tracking-wide"
                             >
                                 <HiSparkles className="w-5 h-5" />
-                                Start Free (3 Stores)
+                                Book a Paid Session
                                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
 
@@ -104,7 +104,7 @@ const ShopifyBigQueryLanding = () => {
                         </div>
 
                         <p className="text-sm text-gray-400">
-                            No credit card required - Setup in 5 minutes - Cancel anytime
+                            1-hour debug session - $150 USD - Full refund if I can&apos;t help in the first 10 minutes
                         </p>
                     </motion.div>
                 </div>
@@ -297,12 +297,8 @@ const ShopifyBigQueryLanding = () => {
                                 a: 'The DIY tutorial requires Python knowledge, Docker, and manual Cloud Run deployment. This automated version has a web UI, deploys automatically, and requires zero technical skills.'
                             },
                             {
-                                q: 'What\'s included in the free plan?',
-                                a: 'Up to 3 Shopify stores, unlimited data rows, 4 core tables (customers, orders, products, order items), daily syncs, and basic monitoring. No credit card required.'
-                            },
-                            {
-                                q: 'What happens after 3 stores?',
-                                a: 'Additional stores are $47/month each. Still way cheaper than any alternative, and you keep unlimited rows.'
+                                q: 'How do I get started?',
+                                a: 'Book a 1-hour Tracking Debug Session ($150 USD). We screen-share through your Shopify and BigQuery setup, and you leave with it working or with a clear plan for what\'s left. Larger projects are scoped after that session. If I can\'t help in the first 10 minutes, full refund.'
                             },
                             {
                                 q: 'Do I need a Google Cloud account?',
@@ -310,7 +306,7 @@ const ShopifyBigQueryLanding = () => {
                             },
                             {
                                 q: 'Can I customize the pipeline?',
-                                a: 'The free version syncs the 4 core tables. For custom fields, additional APIs, or transformations, paid customization starts at $2,500.'
+                                a: 'The pipeline syncs the 4 core tables (customers, orders, products, order items). For custom fields, additional APIs, or transformations, paid customization starts at $2,500.'
                             }
                         ] as FAQ[]).map((item, idx) => (
                             <motion.div
@@ -341,8 +337,8 @@ const ShopifyBigQueryLanding = () => {
                     <div className="bg-white/5 rounded-lg p-8 border border-white/10 mb-8">
                         <div className="grid md:grid-cols-3 gap-6 text-center">
                             <div>
-                                <div className="text-4xl font-bold text-blue-400 mb-2">$0</div>
-                                <p className="text-gray-400">For up to 3 stores</p>
+                                <div className="text-4xl font-bold text-blue-400 mb-2">~$50</div>
+                                <p className="text-gray-400">Monthly hosting on your own GCP account</p>
                             </div>
                             <div>
                                 <div className="text-4xl font-bold text-blue-400 mb-2">∞</div>
@@ -360,12 +356,12 @@ const ShopifyBigQueryLanding = () => {
                         className="group px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transform transition-all duration-200 hover:scale-105 flex items-center gap-2 mx-auto uppercase text-sm tracking-wide"
                     >
                         <HiSparkles className="w-5 h-5" />
-                        Start Your Free Pipeline Now
+                        Book a Paid Session
                         <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
 
                     <p className="text-sm text-gray-400 mt-4">
-                        No credit card - No hidden fees - Cancel anytime
+                        1-hour debug session - $150 USD - Full refund if I can&apos;t help in the first 10 minutes
                     </p>
                 </div>
             </section>

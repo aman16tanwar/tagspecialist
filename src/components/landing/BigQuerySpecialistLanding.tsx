@@ -156,7 +156,7 @@ export default function BigQuerySpecialistLanding() {
     },
     {
       q: 'How much does a BigQuery marketing data warehouse cost?',
-      a: 'Engagements range from a focused BigQuery audit ($1,500-$5,000, 3-5 days) to a full marketing data warehouse build ($18,000-$35,000, 5-8 weeks). Server-side GA4 → BigQuery pipelines on their own typically run $5,000-$12,000. Ongoing managed pipeline operations start at $300/month. Pricing is fixed-scope, not hourly. Book a 15-minute call for an exact quote on your situation.',
+      a: 'Engagements range from a focused BigQuery audit ($1,500-$5,000, 3-5 days) to a full marketing data warehouse build ($18,000-$35,000, 5-8 weeks). Server-side GA4 → BigQuery pipelines on their own typically run $5,000-$12,000. Ongoing managed pipeline operations start at $300/month. Pricing is fixed-scope, not hourly. Larger projects are scoped after a 1-hour paid debug session ($150).',
     },
     {
       q: 'Do you work with an existing dbt project, or do you need to start fresh?',
@@ -209,7 +209,7 @@ export default function BigQuerySpecialistLanding() {
                 href="/book-audit?service=bigquery"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free BigQuery Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -536,15 +536,16 @@ export default function BigQuerySpecialistLanding() {
           >
             <h2 className="text-white mb-4">Ready to Build a Real Marketing Data Warehouse?</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. I&apos;ll review your current BigQuery usage, identify cost wins, and scope a
-              warehouse architecture that actually answers attribution questions.
+              Book a 1-hour Tracking Debug Session ($150 USD). Bring your broken GA4 → BigQuery setup, we debug it live,
+              and you leave with it working or with a clear plan for what&apos;s left. Larger warehouse projects are scoped
+              after that session. If I can&apos;t help in the first 10 minutes, full refund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=bigquery"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free BigQuery Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

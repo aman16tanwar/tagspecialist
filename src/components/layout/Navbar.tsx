@@ -119,13 +119,13 @@ const Navbar = () => {
                       <div className="bg-navy-900 rounded-3xl p-6 text-white h-full flex flex-col">
                         <div className="text-2xl mb-4">🎯</div>
                         <h4 className="font-black text-lg mb-2 uppercase tracking-tighter">Not sure where to start?</h4>
-                        <p className="text-blue-200 text-xs font-bold leading-relaxed mb-6">Get a free 15-minute audit and custom package recommendation for your business.</p>
+                        <p className="text-blue-200 text-xs font-bold leading-relaxed mb-6">Book a 1-hour paid debug session ($150). We fix what we can live, and larger work gets a fixed-scope quote.</p>
                         <ul className="space-y-2 mb-8">
                           <li className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-100">
-                            <HiCheckCircle className="text-blue-400 text-sm" /> Identify Gaps
+                            <HiCheckCircle className="text-blue-400 text-sm" /> Live Screen-Share
                           </li>
                           <li className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-100">
-                            <HiCheckCircle className="text-blue-400 text-sm" /> ROI Opportunity
+                            <HiCheckCircle className="text-blue-400 text-sm" /> Fixed While We Talk
                           </li>
                         </ul>
                         <Link
@@ -133,7 +133,7 @@ const Navbar = () => {
                           onClick={() => setIsMegaMenuOpen(false)}
                           className="block w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl transition-all uppercase text-[10px] tracking-widest shadow-lg text-center"
                         >
-                          Book Free Audit →
+                          Book a Paid Session →
                         </Link>
 
                         <div className="mt-auto pt-6 space-y-3 border-t border-white/10">
@@ -170,7 +170,7 @@ const Navbar = () => {
                 transition={{ delay: 0.6 }}
                 className="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 uppercase text-[10px] tracking-widest"
               >
-                Book Free Audit
+                Book a Paid Session
               </motion.span>
             </Link>
           </div>
@@ -222,7 +222,7 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl uppercase text-xs tracking-widest shadow-lg text-center"
                   >
-                    Book Free Audit
+                    Book a Paid Session
                   </Link>
                 </div>
 

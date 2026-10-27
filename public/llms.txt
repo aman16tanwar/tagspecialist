@@ -48,7 +48,7 @@
 - Website: https://tagspecialist.ca
 - Email: developer@tagspecialist.ca
 - Location: Vancouver, BC, Canada
-- Book Consultation: https://tagspecialist.ca/book-audit
+- Book a Paid Debug Session ($150, 1 hour): https://tagspecialist.ca/book-audit
 
 ## Detailed Content
 

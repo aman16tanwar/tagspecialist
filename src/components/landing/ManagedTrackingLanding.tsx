@@ -132,7 +132,7 @@ export default function ManagedTrackingLanding() {
     },
     {
       q: 'Can I cancel anytime?',
-      a: 'There is a 6-month minimum commitment (12 months for Scale tier). After that, you can cancel with 30 days notice. Annual plans receive waived setup fees.',
+      a: 'There is a 6-month minimum commitment (12 months for Scale tier). After that, you can cancel with 30 days notice.',
     },
     {
       q: 'What if I don\'t see improvements?',
@@ -369,7 +369,7 @@ export default function ManagedTrackingLanding() {
                   href="/book-audit"
                   className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
-                  Get Your Custom Analysis
+                  Book a Paid Session
                 </Link>
               </div>
             </div>
@@ -385,7 +385,7 @@ export default function ManagedTrackingLanding() {
               Simple, Transparent Pricing
             </h2>
             <p className="text-xl text-gray-600">
-              Setup fees waived with annual commitment. 6-month minimum.
+              6-month minimum.
             </p>
           </div>
 
@@ -410,7 +410,7 @@ export default function ManagedTrackingLanding() {
                     <span className="text-gray-500">/month</span>
                   </div>
                   <p className="text-sm text-gray-500 mb-6">
-                    Setup: {tier.setupFee} <span className="text-blue-600 font-semibold">(free w/ annual)</span>
+                    Setup: {tier.setupFee}
                   </p>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
@@ -595,10 +595,10 @@ export default function ManagedTrackingLanding() {
             href="/book-audit"
             className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
           >
-            Start Your Free Consultation
+            Book a Paid Session
           </Link>
           <p className="mt-6 text-blue-300 text-sm">
-            No commitment required. We&apos;ll analyze your current setup and show you exactly what you&apos;re missing.
+            1-hour Tracking Debug Session — $150 USD. If I can&apos;t help in the first 10 minutes, full refund.
           </p>
         </div>
       </section>

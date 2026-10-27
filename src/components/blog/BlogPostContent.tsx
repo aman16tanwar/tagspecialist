@@ -122,7 +122,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2">For Hands-On Implementers</p>
               <h3 className="text-lg font-bold mb-1">Stuck on this? Get it fixed live on a call.</h3>
               <p className="text-sm text-blue-100/80">
-                1-hour screen-share debug session with a senior tracking engineer — bring your broken GTM, sGTM, or GA4 setup and leave with it working. $150 USD. If we can&apos;t help in the first 10 minutes, full refund.
+                1-hour screen-share debug session with me: bring your broken GTM, sGTM, or GA4 setup and leave with it working. $150 USD. If I can&apos;t help in the first 10 minutes, full refund.
               </p>
             </div>
             <a
@@ -150,10 +150,10 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               </h3>
               <p className="text-sm text-gray-600">
                 {post.tags?.some(t => ['Server-Side Tracking', 'GTM Server Container'].includes(t))
-                  ? 'We can implement everything in this guide for you - server-side GTM, Meta CAPI and Enhanced Conversions, built and maintained end to end.'
+                  ? 'I can implement everything in this guide for you: server-side GTM, Meta CAPI and Enhanced Conversions, built and maintained end to end.'
                   : post.tags?.some(t => ['BigQuery', 'Data Engineering', 'Data Warehouse'].includes(t))
-                    ? 'We build production-ready BigQuery warehouses and ETL pipelines. Own your data infrastructure.'
-                    : 'We handle complex tracking implementations so you can focus on growing your business.'
+                    ? 'I build production-ready BigQuery warehouses and ETL pipelines. Own your data infrastructure.'
+                    : 'I handle complex tracking implementations so you can focus on growing your business.'
                 }
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               }
               className="flex-shrink-0 px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors shadow-md"
             >
-              Book Free Audit
+              Book a Paid Session
             </Link>
           </div>
         </div>

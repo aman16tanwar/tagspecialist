@@ -32,9 +32,9 @@ export default function MetaCAPILanding() {
     {
       number: '1',
       title: 'I Connect',
-      duration: '15-min call',
+      duration: '1-hour paid session',
       description:
-        'Quick discovery call. You share your store URL, Meta Business Manager access, and Google Ads account. I confirm scope and lock in the start date.',
+        'Paid debug session, then a fixed-scope quote. We screen-share through your Meta Pixel, CAPI and Google Ads setup, debug it live, and I scope the larger build from there.',
     },
     {
       number: '2',
@@ -171,7 +171,7 @@ export default function MetaCAPILanding() {
                 href="/book-audit?service=conversion-api"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Get a Free Tracking Diagnostic
+                Book a Paid Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -401,7 +401,7 @@ export default function MetaCAPILanding() {
                 href="/book-audit?service=conversion-api"
                 className="text-blue-600 hover:underline font-semibold"
               >
-                Book the free diagnostic
+                Book a $150 debug session
               </Link>{' '}
               — I&apos;ll tell you straight.
             </p>
@@ -673,7 +673,7 @@ export default function MetaCAPILanding() {
         </div>
       </section>
 
-      {/* What's Included in the Free Diagnostic */}
+      {/* What's Included in the Paid Debug Session */}
       <section className="section-padding bg-white">
         <div className="content-container">
           <motion.div
@@ -685,32 +685,32 @@ export default function MetaCAPILanding() {
           >
             <div className="text-center mb-12">
               <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">
-                What&apos;s Free?
+                Book a Paid Session
               </p>
-              <h2>What&apos;s Included in Your Free Diagnostic</h2>
+              <h2>1-Hour Tracking Debug Session — $150 USD</h2>
               <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto">
-                A 15-minute screen-share call. You walk away with a clear picture of your tracking
-                gaps and what it would take to fix them — whether you hire us or not.
+                A 1-hour screen-share. You bring your broken Meta CAPI, Pixel or GTM setup, we debug it
+                live, and you leave with it working or with a clear plan for what&apos;s left.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 {
-                  title: 'Live Setup Audit',
-                  desc: 'We screen-share through your current Meta Pixel, Google Ads tag, and any existing CAPI or Enhanced Conversions setup. You see exactly where the gaps are.',
+                  title: 'Live Debugging',
+                  desc: 'We screen-share through your current Meta Pixel, Conversions API, and Google Ads setup and debug it live.',
                 },
                 {
-                  title: 'Lost-Conversion Estimate',
-                  desc: 'Based on your ad spend, traffic, and audience, we estimate how many conversions ad blockers and iOS 17 ATT are hiding from your campaigns each month.',
+                  title: 'Working Setup or a Clear Plan',
+                  desc: 'You leave with your tracking working, or with a clear plan for what is left.',
                 },
                 {
-                  title: 'Written Recovery Roadmap',
-                  desc: 'You leave with a sequenced fix list — what to do first, what is highest impact, and what is optional. Build it yourself or hire us. Your call.',
+                  title: 'Larger Projects Scoped After',
+                  desc: 'If you need a full CAPI build, I scope it after the session.',
                 },
                 {
-                  title: 'Zero Sales Pitch',
-                  desc: 'If your setup is fine, we will tell you. If it is not, you decide what to do with the info. No follow-up emails, no pressure to buy anything.',
+                  title: '10-Minute Guarantee',
+                  desc: 'If I can\'t help in the first 10 minutes, full refund.',
                 },
               ].map((item) => (
                 <div
@@ -729,7 +729,7 @@ export default function MetaCAPILanding() {
             </div>
 
             <p className="text-center text-gray-500 text-sm mt-8">
-              15-minute call · No credit card · No prerequisite · Email follow-up only if you ask
+              1-hour screen-share · $150 USD · Full refund if I can&apos;t help in the first 10 minutes
             </p>
           </motion.div>
         </div>
@@ -752,14 +752,14 @@ export default function MetaCAPILanding() {
               Stop ignoring the dashboard prompts.
             </h2>
             <p className="text-gray-300 text-lg lg:text-xl mb-10 leading-relaxed">
-              Book a free 15-min call. We&apos;ll tell you exactly what your Conversion API setup needs and how
-              fast we can ship it.
+              Book a 1-hour paid debug session ($150 USD). We debug your Conversion API setup live, and you
+              leave with it working or with a clear plan for what&apos;s left.
             </p>
             <Link
               href="/book-audit?service=conversion-api"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-5 rounded-md transition-all shadow-2xl hover:shadow-orange-500/40 group"
             >
-              Get a Free Tracking Diagnostic
+              Book a Paid Session
               <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
@@ -789,7 +789,7 @@ export default function MetaCAPILanding() {
             href="/book-audit?service=conversion-api"
             className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2.5 rounded-md text-sm whitespace-nowrap flex items-center gap-1"
           >
-            Free Diagnostic
+            Book a Paid Session
             <HiArrowRight className="text-xs" />
           </Link>
         </div>

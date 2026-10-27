@@ -10,67 +10,44 @@ import { useModal } from '@/contexts/ModalContext';
 type ServiceType = 'tracking' | 'data-engineering';
 type ContactMethod = 'call' | 'message';
 
+// Booking is paid only: the 1-hour session is the single way to get time with me.
+const PAID_SESSION_CAL_LINK = 'tagspecialist/1-hour-tracking-debug-session';
+
 const trackingBenefits = [
   {
-    title: 'Tracking Health Assessment',
-    description: "We'll identify gaps in your current tracking setup and quantify data loss."
+    title: '1 Hour, Live on a Screen-Share',
+    description: 'Bring your broken GTM, sGTM, GA4 or Meta CAPI setup. We debug it together, in your accounts.'
   },
   {
-    title: 'Revenue Impact Analysis',
-    description: 'Calculate how much broken attribution might be costing you monthly.'
+    title: 'Fixed While We Talk',
+    description: 'Most issues get fixed in the session. You leave with it working, or with a clear plan for what\'s left.'
   },
   {
-    title: 'Custom Recommendation',
-    description: 'Get a tailored plan for fixing your specific data challenges.'
+    title: 'Larger Work, Scoped After',
+    description: 'If it needs a project, you get a fixed-scope quote after the session.'
   },
   {
-    title: 'No-Pressure Conversation',
-    description: 'Zero sales pitch—just honest engineering expertise and advice.'
+    title: '$150 USD, Paid at Booking',
+    description: "If I can't help in the first 10 minutes, full refund."
   }
 ];
 
 const dataEngineeringBenefits = [
   {
-    title: 'Data Architecture Review',
-    description: "We'll assess your current data stack and identify optimization opportunities."
+    title: '1 Hour, Live on a Screen-Share',
+    description: 'Walk me through your data stack: BigQuery, pipelines, dashboards or an AI/analytics idea.'
   },
   {
-    title: 'Pipeline Feasibility Analysis',
-    description: 'Understand what custom pipelines and integrations are possible for your needs.'
+    title: 'Straight Answers',
+    description: 'What to build, what to skip, and where the cost and risk sit, with your actual setup in front of us.'
   },
   {
-    title: 'Technology Recommendations',
-    description: 'Get expert advice on BigQuery, ETL tools, and AI/ML implementation.'
+    title: 'Larger Work, Scoped After',
+    description: 'If it needs a project, you get a fixed-scope quote after the session.'
   },
   {
-    title: 'No-Pressure Conversation',
-    description: 'Zero sales pitch—just honest engineering expertise and advice.'
-  }
-];
-
-const trackingTestimonials = [
-  {
-    quote: "The audit call was incredibly valuable. In 15 minutes, they spotted three critical tracking issues we didn't even know we had.",
-    author: 'Sarah K.',
-    role: 'E-commerce Director'
-  },
-  {
-    quote: "No BS, no sales pressure—just genuine expertise. They gave us a roadmap even though we weren't ready to hire yet.",
-    author: 'Mike T.',
-    role: 'Head of Growth'
-  }
-];
-
-const dataEngineeringTestimonials = [
-  {
-    quote: "They helped us build a BigQuery pipeline that replaced three expensive SaaS tools. Game changer for our analytics.",
-    author: 'James R.',
-    role: 'Analytics Manager'
-  },
-  {
-    quote: "Finally, a team that understands both marketing data AND engineering. Our Shopify-to-BigQuery setup is bulletproof.",
-    author: 'Lisa M.',
-    role: 'Head of Data'
+    title: '$150 USD, Paid at Booking',
+    description: "If I can't help in the first 10 minutes, full refund."
   }
 ];
 
@@ -146,7 +123,6 @@ function BookAuditContent() {
   }, []);
 
   const benefits = serviceType === 'tracking' ? trackingBenefits : dataEngineeringBenefits;
-  const testimonials = serviceType === 'tracking' ? trackingTestimonials : dataEngineeringTestimonials;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -158,11 +134,11 @@ function BookAuditContent() {
 
     const isTracking = serviceType === 'tracking';
     const subject = isTracking
-      ? `TRACKING AUDIT REQUEST: ${formData.name} - ${formData.company}`
+      ? `TRACKING QUOTE REQUEST: ${formData.name} - ${formData.company}`
       : `DATA ENGINEERING INQUIRY: ${formData.name} - ${formData.company}`;
 
     const message = isTracking
-      ? `TRACKING AUDIT REQUEST\n\nService: Marketing Analytics & Tracking\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nMonthly Ad Spend: ${formData.adSpend}\n\nBiggest Tracking Challenge:\n${formData.trackingChallenge}`
+      ? `TRACKING QUOTE REQUEST\n\nService: Marketing Analytics & Tracking\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nMonthly Ad Spend: ${formData.adSpend}\n\nBiggest Tracking Challenge:\n${formData.trackingChallenge}`
       : `DATA ENGINEERING INQUIRY\n\nService: Data Engineering & AI\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nPrimary Data Source: ${formData.dataSource}\nProject Scope: ${formData.projectScope}\n\nProject Details:\n${formData.engineeringChallenge}`;
 
     try {
@@ -220,7 +196,7 @@ function BookAuditContent() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl mx-auto mb-12"
           >
-            <p className="text-center text-gray-600 font-medium mb-4">What can we help you with?</p>
+            <p className="text-center text-gray-600 font-medium mb-4">What do you need help with?</p>
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
@@ -269,7 +245,7 @@ function BookAuditContent() {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Left Column - Benefits & Testimonials */}
+            {/* Left Column - What the paid session includes */}
             <motion.div
               key={serviceType}
               initial={{ opacity: 0, x: -20 }}
@@ -278,8 +254,8 @@ function BookAuditContent() {
             >
               <h1 className="font-heading mb-10">
                 {serviceType === 'tracking'
-                  ? "What You'll Get in 15 Minutes"
-                  : "Let's Discuss Your Data Project"
+                  ? '1-Hour Tracking Debug Session'
+                  : '1-Hour Data Engineering Session'
                 }
               </h1>
 
@@ -302,26 +278,6 @@ function BookAuditContent() {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Testimonials */}
-              <div className="space-y-4">
-                {testimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={testimonial.author}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    className="bg-gray-50 border-l-4 border-blue-600 p-6 rounded-r-xl"
-                  >
-                    <p className="font-body text-gray-700 italic mb-3">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-                    <p className="font-body text-sm text-gray-500 font-semibold">
-                      — {testimonial.author}, {testimonial.role}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             {/* Right Column - Form */}
@@ -333,10 +289,8 @@ function BookAuditContent() {
             >
               <h2 className="font-heading text-blue-600 text-center mb-6">
                 {contactMethod === 'call'
-                  ? 'Pick a Time That Works for You'
-                  : serviceType === 'tracking'
-                    ? 'Tell Us About Your Tracking'
-                    : 'Start Your Data Project'
+                  ? 'Book Your Paid Session'
+                  : 'Request a Project Quote'
                 }
               </h2>
 
@@ -351,7 +305,7 @@ function BookAuditContent() {
                       : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
                   }`}
                 >
-                  <HiCalendar className="w-5 h-5" /> Book a Call
+                  <HiCalendar className="w-5 h-5" /> Paid Session
                 </button>
                 <button
                   type="button"
@@ -362,25 +316,28 @@ function BookAuditContent() {
                       : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
                   }`}
                 >
-                  <HiMail className="w-5 h-5" /> Send a Message
+                  <HiMail className="w-5 h-5" /> Project Quote
                 </button>
               </div>
 
               {contactMethod === 'call' && (
                 <div className="min-h-[560px]">
                   <Cal
-                    calLink="tagspecialist/free-15-minutes-tracking-audit"
+                    calLink={PAID_SESSION_CAL_LINK}
                     style={{ width: '100%', height: '100%', overflow: 'auto' }}
                     config={{ layout: 'month_view', useSlotsViewOnSmallScreen: 'true' }}
                   />
                   <p className="text-xs text-gray-400 text-center mt-4">
-                    Free 15-minute call. No sales pitch — just honest engineering advice.
+                    $150 USD, paid when you book. If I can&apos;t help in the first 10 minutes, full refund.
                   </p>
                 </div>
               )}
 
               {contactMethod === 'message' && (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <p className="text-sm text-gray-500 text-center -mt-2">
+                  For fixed-scope projects. I reply by email with a quote; any call is the paid session.
+                </p>
                 <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
                 <div>
                   <label className={labelClasses}>
@@ -532,10 +489,7 @@ function BookAuditContent() {
                   ) : (
                     <>
                       <span>
-                        {serviceType === 'tracking'
-                          ? 'Book My Free Audit'
-                          : 'Schedule Consultation'
-                        }
+                        Request a Quote
                       </span>
                       <HiArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
                     </>

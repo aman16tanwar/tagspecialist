@@ -74,7 +74,7 @@ export default function ServicesPage() {
             name: 'What results can I expect from server-side tracking?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account.',
+              text: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A 1-hour paid debug session shows which of these apply to your account.',
             },
           },
         ],

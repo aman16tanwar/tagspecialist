@@ -166,7 +166,7 @@ export default function BenefitsOfServerSideTagging() {
                 href="/book-audit?service=tracking"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Get a Free Tracking Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -479,15 +479,16 @@ export default function BenefitsOfServerSideTagging() {
           >
             <h2 className="text-white mb-4">Ready to Capture 30-40% More Conversions?</h2>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Get a free tracking audit. I&apos;ll show you exactly how much conversion data you&apos;re losing
-              and what server-side tagging can recover.
+              Book a 1-hour Tracking Debug Session ($150 USD). Bring your broken GTM, sGTM or GA4 setup, we debug it
+              live, and you leave with it working or with a clear plan for what&apos;s left. If I can&apos;t help in the
+              first 10 minutes, full refund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=tracking"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

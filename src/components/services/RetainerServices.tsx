@@ -144,7 +144,7 @@ const RetainerServices: React.FC = () => {
                                         : 'bg-navy-900 text-white hover:bg-navy-800 shadow-md'
                                     }`}
                                 >
-                                    Book Consultation
+                                    Book a Paid Session
                                 </Link>
                             </motion.div>
                         );
@@ -173,7 +173,7 @@ const RetainerServices: React.FC = () => {
                                 href="/book-audit"
                                 className="inline-block px-12 py-6 bg-orange-500 text-white font-black rounded-xl hover:bg-orange-600 transition-all shadow-xl hover:shadow-orange-500/40 uppercase tracking-[0.2em] text-sm"
                             >
-                                Book Free Data Audit
+                                Book a Paid Session
                             </Link>
                             <Link
                                 href="/case-studies"
@@ -185,10 +185,10 @@ const RetainerServices: React.FC = () => {
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-xs font-black uppercase tracking-[0.2em] text-blue-200/40 border-t border-white/10 pt-12">
                             <div className="flex items-center justify-center gap-2">
-                                <HiCheckCircle className="text-blue-400 text-lg" /> 15-Min Consultation
+                                <HiCheckCircle className="text-blue-400 text-lg" /> 1-Hour Debug Session · $150
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <HiCheckCircle className="text-blue-400 text-lg" /> No sales pitch
+                                <HiCheckCircle className="text-blue-400 text-lg" /> Full refund if I can&apos;t help in 10 min
                             </div>
                             <div className="flex items-center justify-center gap-2">
                                 <HiCheckCircle className="text-blue-400 text-lg" /> Direct Expert Access

@@ -142,7 +142,7 @@ export default function UnifiedDataPlatformGuidePage() {
                   href="/book-audit?service=data-engineering"
                   className="block w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all text-xs tracking-wider text-center uppercase"
                 >
-                  Get a Free Assessment →
+                  Book a Paid Session →
                 </Link>
               </div>
             </div>
@@ -612,14 +612,14 @@ export default function UnifiedDataPlatformGuidePage() {
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
                 <h2 className="text-2xl font-bold text-white mb-3">Ready to Unify Your Marketing Data?</h2>
                 <p className="text-blue-100 mb-6 max-w-xl mx-auto text-sm">
-                  Book a free data engineering consultation. We&apos;ll assess your current data stack, identify integration opportunities, and outline a custom architecture for your business.
+                  Book a 1-hour paid debug session ($150 USD). Bring your broken GA4, GTM or BigQuery setup, we debug it live, and you leave with it working or with a clear plan for what&apos;s left. Larger data platform projects are scoped after that session.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href="/book-audit?service=data-engineering"
                     className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-bold text-sm transition-all shadow-lg"
                   >
-                    Book Free Consultation →
+                    Book a Paid Session →
                   </Link>
                   <Link
                     href="/case-studies"

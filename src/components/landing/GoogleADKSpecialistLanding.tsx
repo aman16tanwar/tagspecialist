@@ -209,7 +209,7 @@ export default function GoogleADKSpecialistLanding() {
                 href="/book-audit?service=adk"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free Agent Scoping Call
+                Book a Paid Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -538,15 +538,16 @@ export default function GoogleADKSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Ship a Production AI Agent, Not a Demo</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute scoping call. I&apos;ll review your use case, propose an agent architecture, and tell
-              you honestly if ADK is the right tool — or if a simpler approach would do the job.
+              Book a 1-hour paid session ($150 USD). We screen-share through your use case, and I&apos;ll tell you honestly
+              if ADK is the right tool — or if a simpler approach would do the job. Larger projects are scoped after that
+              session. If I can&apos;t help in the first 10 minutes, full refund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=adk"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free Scoping Call
+                Book a Paid Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

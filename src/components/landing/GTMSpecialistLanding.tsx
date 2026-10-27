@@ -146,7 +146,7 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'How much does it cost to hire a Google Tag Manager expert?',
-      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs typically runs $4,000-$15,000. Ongoing managed tracking plans start at $150/month. I quote transparent, fixed prices — no hourly billing surprises. Book a free audit call to get an exact quote for your situation.',
+      a: 'It depends on scope. A GTM audit and fix typically costs $1,500-$5,000. Full server-side GTM with conversion APIs typically runs $4,000-$15,000. Ongoing managed tracking plans start at $150/month. I quote transparent, fixed prices — no hourly billing surprises. Book a 1-hour paid debug session ($150) and I scope larger projects after that session.',
     },
     {
       q: 'Do I need a GTM specialist or can I do it myself?',
@@ -154,7 +154,7 @@ export default function GTMSpecialistLanding() {
     },
     {
       q: 'What results can I expect?',
-      a: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account. Results vary by setup and ad spend. My 30-day guarantee: if you don\'t see increased conversion data within 30 days, I\'ll keep working with you at no additional cost until you do.',
+      a: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A 1-hour paid debug session shows which of these apply to your account. Results vary by setup and ad spend. My 30-day guarantee: if you don\'t see increased conversion data within 30 days, I\'ll keep working with you at no additional cost until you do.',
     },
     {
       q: 'How long does a GTM implementation take?',
@@ -202,7 +202,7 @@ export default function GTMSpecialistLanding() {
                 href="/book-audit?service=tracking"
                 className="btn-primary text-center inline-flex items-center justify-center gap-2 group"
               >
-                Book a Free GTM Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -432,8 +432,8 @@ export default function GTMSpecialistLanding() {
             {[
               {
                 step: '1',
-                title: 'Free Audit Call',
-                description: 'I review your current tracking setup and identify what\'s broken, missing, or underperforming.',
+                title: 'Paid Debug Session',
+                description: '1-hour paid debug session. We screen-share through your broken GTM, sGTM or GA4 setup and debug it live.',
               },
               {
                 step: '2',
@@ -531,15 +531,16 @@ export default function GTMSpecialistLanding() {
           >
             <h2 className="text-white mb-4">Stop Losing Conversions to Broken Tracking</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free 15-minute audit. I&apos;ll show you what&apos;s broken, what&apos;s missing, and exactly how to fix it —
-              no sales pressure, just engineering expertise.
+              Book a 1-hour Tracking Debug Session ($150 USD). Bring your broken GTM, sGTM or GA4 setup, we debug it
+              live, and you leave with it working or with a clear plan for what&apos;s left. If I can&apos;t help in the
+              first 10 minutes, full refund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book-audit?service=tracking"
                 className="bg-orange-500 text-white px-8 py-4 rounded-md font-heading font-semibold hover:bg-orange-600 transition-all shadow-lg inline-flex items-center justify-center gap-2 group"
               >
-                Book Your Free GTM Audit
+                Book a $150 Debug Session
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

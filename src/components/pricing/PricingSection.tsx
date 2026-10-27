@@ -217,34 +217,34 @@ const PricingSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Free Audit CTA Section */}
+        {/* Paid Debug Session CTA Section */}
         <div className="max-w-5xl mx-auto mb-20">
           <div className="bg-gradient-to-r from-navy-900 to-blue-900 rounded-[2rem] p-10 lg:p-16 text-white shadow-2xl relative overflow-hidden">
             <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-black mb-6 text-white uppercase tracking-tighter">Not Sure Where to Start?</h3>
-                <p className="text-xl mb-8 text-blue-100 font-medium">I&apos;ll audit your current setup and recommend the best path forward—completely free.</p>
+                <p className="text-xl mb-8 text-blue-100 font-medium">Start with a 1-hour paid debug session. We go through your setup live, fix what we can, and you leave knowing exactly what the rest needs.</p>
 
-                <h4 className="text-blue-400 font-black uppercase text-[10px] tracking-[0.2em] mb-4">The 15-Minute Audit Covers:</h4>
+                <h4 className="text-blue-400 font-black uppercase text-[10px] tracking-[0.2em] mb-4">The 1-Hour Session Covers:</h4>
                 <ul className="space-y-3 mb-10">
                   <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
                     <HiCheck className="text-blue-400 text-xl" /> Current tracking gaps & data quality issues
                   </li>
                   <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
-                    <HiCheck className="text-blue-400 text-xl" /> ROI opportunity sizing
+                    <HiCheck className="text-blue-400 text-xl" /> Live fixes on a screen-share
                   </li>
                   <li className="flex items-center gap-3 text-blue-100 text-sm font-bold">
-                    <HiCheck className="text-blue-400 text-xl" /> A recommended path for your business
+                    <HiCheck className="text-blue-400 text-xl" /> A fixed-scope quote for anything larger
                   </li>
                 </ul>
 
-                <p className="text-blue-300 text-[10px] font-black uppercase tracking-widest mb-8">Free. No obligation. No sales pitch.</p>
+                <p className="text-blue-300 text-[10px] font-black uppercase tracking-widest mb-8">$150 USD. If I can&apos;t help in the first 10 minutes, full refund.</p>
 
                 <Link
                   href="/book-audit"
                   className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-black px-10 py-5 rounded-xl transition-all shadow-xl hover:shadow-orange-500/25 uppercase tracking-widest text-sm"
                 >
-                  Book Free 15-Min Audit
+                  Book a $150 Debug Session
                 </Link>
               </div>
 

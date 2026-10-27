@@ -41,7 +41,7 @@ const Footer = () => {
                 { name: 'Server-Side Tagging Specialist', link: '/server-side-tagging-specialist' },
                 { name: 'Shopify to BigQuery', link: '/shopify-bigquery' },
                 { name: 'Agency Partners', link: '/agency-partners' },
-                { name: 'Book Free Audit', link: '/book-audit' },
+                { name: 'Book a Paid Session', link: '/book-audit' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors text-[11px] font-black uppercase tracking-widest flex items-center group">
@@ -121,7 +121,7 @@ const Footer = () => {
                 href="/book-audit"
                 className="block w-full py-4 bg-orange-500 text-white font-black rounded-xl uppercase text-xs tracking-widest hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 text-center"
               >
-                Book Free Audit →
+                Book a Paid Session →
               </Link>
             </div>
 

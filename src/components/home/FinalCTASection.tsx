@@ -20,7 +20,7 @@ const FinalCTASection: React.FC = () => {
         </h2>
 
         <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-            One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Let&apos;s discuss what I can do for you.
+            One client went from 2.1x to 9.5x ROAS in 6 months by fixing their attribution and engineering a BigQuery warehouse. Start with a paid 1-hour debug session.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
@@ -28,7 +28,7 @@ const FinalCTASection: React.FC = () => {
              href="/book-audit"
              className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-md uppercase tracking-[0.2em] font-black transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/40 inline-flex items-center transition-all"
            >
-             Book a 15-Minute Call
+             Book a Paid Session
              <HiArrowRight className="ml-3 inline-block" />
            </Link>
            <Link

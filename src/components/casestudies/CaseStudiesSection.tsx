@@ -405,14 +405,14 @@ const CaseStudiesSection: React.FC = () => {
                 <div className="mt-24 text-center bg-gray-50 rounded-3xl p-12 border border-gray-100 max-w-4xl mx-auto">
                     <h3 className="text-3xl font-bold text-navy-900 mb-4">Ready to Fix Your Tracking?</h3>
                     <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-medium">
-                        Every project above started with a 15-minute discovery call. I&apos;ll audit your current setup, identify quick wins, and show you exactly how I&apos;d approach your data challenges.
+                        Book a 1-hour Tracking Debug Session ($150 USD). Bring your broken GTM, sGTM or GA4 setup, we debug it live, and you leave with it working or with a clear plan for what&apos;s left. Larger projects are scoped after that session.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Link
                             href="/book-audit"
                             className="bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-md font-semibold transition-all shadow-sm hover:shadow-orange-500/25 inline-block"
                         >
-                            Book Your Free Audit
+                            Book a $150 Debug Session
                         </Link>
                         <Link href="/services" className="btn-secondary">
                             See My Services

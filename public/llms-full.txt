@@ -237,6 +237,6 @@ Our blog covers deep technical topics in server-side tracking and data engineeri
 
 - **Website:** https://tagspecialist.ca
 - **Email:** developer@tagspecialist.ca
-- **Book Free Audit:** https://tagspecialist.ca/book-audit
+- **Book a Paid Debug Session ($150, 1 hour):** https://tagspecialist.ca/book-audit
 - **Location:** Vancouver, BC, Canada
 - **GitHub:** https://github.com/tagspecialist

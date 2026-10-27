@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Server-Side Tracking Specialist for Hire | Senior Expert, 10 Years',
-  description: 'Hire a server-side tracking & tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. 10 years of enterprise experience. Free audit.',
+  description: 'Hire a server-side tracking & tagging specialist. GTM server-side, Meta CAPI, Google Ads Enhanced Conversions on Cloud Run. 10 years of enterprise experience.',
   keywords: 'server-side tagging specialist, server-side tracking specialist, server-side tracking expert, server side tagging implementation, GTM server-side specialist, server-side tracking consultant, hire server-side tagging expert, managed server-side tracking, conversion API specialist, tagging specialist, server-side tagging agency',
   alternates: {
     canonical: '/server-side-tagging-specialist',

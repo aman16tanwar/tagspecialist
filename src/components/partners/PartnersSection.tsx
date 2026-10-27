@@ -52,7 +52,7 @@ const PartnersSection: React.FC = () => {
             benefits: [
                 "10% Lifetime referral commission",
                 "I handle all support & technicals",
-                "Co-branded discovery calls",
+                "Co-branded client debug sessions",
                 "Seamless handover process"
             ],
             icon: HiUserGroup,
@@ -141,13 +141,13 @@ const PartnersSection: React.FC = () => {
                         Stop Losing Clients To <br /> Broken Attribution.
                     </h2>
                     <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
-                        Schedule a partner discovery call. I&apos;ll show you how I&apos;ve helped agencies deliver server-side tracking — under their own brand.
+                        Book a 1-hour paid debug session ($150 USD). Bring a client&apos;s broken GTM, sGTM or GA4 setup, we debug it live, and larger partner projects are scoped after that session.
                     </p>
                     <Link
                         href="/book-audit"
                         className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-md uppercase tracking-[0.2em] font-black shadow-xl hover:shadow-orange-500/25 inline-flex items-center transition-all"
                     >
-                        Book Partner Call <HiArrowRight className="inline-block ml-2" />
+                        Book a Paid Session <HiArrowRight className="inline-block ml-2" />
                     </Link>
                     {/* Decorative */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl -mr-32 -mt-32"></div>

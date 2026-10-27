@@ -60,7 +60,7 @@ const ServicesSection: React.FC = () => {
                 "SOP documentation & team training",
                 "30-day post-launch support & QA"
             ],
-            pricing: "Typically $4K – $15K (fixed quote after audit)",
+            pricing: "Typically $4K – $15K (fixed quote after a paid debug session)",
             timeline: "3-4 weeks",
             guideLink: "/server-side-tagging-guide",
             guideLinkText: "Read the Complete Server-Side Tagging Guide"
@@ -88,7 +88,7 @@ const ServicesSection: React.FC = () => {
                 "GenAI natural language query interface",
                 "Documentation & ongoing optimization plan"
             ],
-            pricing: "Custom quote after audit",
+            pricing: "Custom quote after a paid debug session",
             timeline: "5-6 weeks"
         }
     ];

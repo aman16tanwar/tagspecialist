@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Book a Free Tracking Audit | Tag Specialist',
-  description: 'Schedule a free 15-minute tracking audit or data engineering consultation. Get a tracking health assessment, revenue impact analysis, and custom recommendations — no sales pressure.',
-  keywords: 'free tracking audit, GA4 audit, GTM audit, server-side tracking consultation, data engineering consultation, BigQuery consultation',
+  title: 'Book a Paid Tracking Debug Session ($150) | Tag Specialist',
+  description: 'Book a 1-hour paid screen-share session ($150 USD) to debug GTM, server-side GTM, GA4, Meta CAPI or BigQuery issues live. Larger projects are scoped after the session.',
+  keywords: 'tracking debug session, GA4 debugging, GTM debugging, server-side GTM help, Meta CAPI help, BigQuery consulting',
   alternates: {
     canonical: '/book-audit',
   },
   openGraph: {
-    title: 'Book a Free Tracking Audit | Tag Specialist',
-    description: 'Schedule a free 15-minute tracking audit. Get a tracking health assessment and revenue impact analysis.',
+    title: 'Book a Paid Tracking Debug Session ($150) | Tag Specialist',
+    description: 'A 1-hour paid screen-share session to debug your tracking or data setup live.',
     type: 'website',
     url: '/book-audit',
   },

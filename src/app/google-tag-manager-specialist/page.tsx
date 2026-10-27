@@ -5,14 +5,14 @@ import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
-  description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience. Free audit.',
+  description: 'Hire a GTM specialist to fix broken tracking and recover lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience.',
   keywords: 'google tag manager specialist, tag manager expert, google tag manager expert, expert google tag manager, GTM specialist, GTM expert, GTM consultant, google tag manager consultant, hire GTM expert, tag management expert, tagging specialist, google tag manager implementation, google tag manager cost, hire google tag manager expert',
   alternates: {
     canonical: '/google-tag-manager-specialist',
   },
   openGraph: {
     title: 'Google Tag Manager Specialist for Hire | Senior Expert, 10 Years',
-    description: 'Hire a GTM specialist to fix broken tracking and recover 30–40% lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience.',
+    description: 'Hire a GTM specialist to fix broken tracking and recover lost conversions. Server-side GTM, GA4, Meta CAPI. 10 years of enterprise experience.',
     type: 'website',
     url: '/google-tag-manager-specialist',
   },
@@ -96,7 +96,7 @@ export default function GTMSpecialistPage() {
             name: 'What results can I expect from professional GTM implementation?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A free audit shows which of these apply to your account.',
+              text: 'Results depend on how much signal your current setup is losing today. Published platform benchmarks give a realistic range: Meta reports advertisers running the Conversions API alongside the Pixel see around 13% lower cost per action and 8% more attributed conversions, and Google reports Enhanced Conversions recover 5-17% additional conversions. A 1-hour paid debug session shows which of these apply to your account.',
             },
           },
         ],

@@ -136,7 +136,7 @@ export default function AgencyPartnerLanding() {
                   href="/book-audit"
                   className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
-                  Apply for Partnership
+                  Book a Paid Session
                 </Link>
                 <a
                   href="#calculator"
@@ -217,7 +217,7 @@ export default function AgencyPartnerLanding() {
                   href="/book-audit"
                   className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
                 >
-                  Get Your Custom Partner Quote
+                  Book a Paid Session
                 </Link>
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function AgencyPartnerLanding() {
                         : 'bg-navy-900 text-white hover:bg-navy-800'
                     }`}
                   >
-                    Apply Now
+                    Book a Paid Session
                   </Link>
                 </div>
               </div>
@@ -344,10 +344,10 @@ export default function AgencyPartnerLanding() {
             href="/book-audit"
             className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 text-lg inline-block"
           >
-            Apply for Partnership
+            Book a Paid Session
           </Link>
           <p className="mt-6 text-blue-300 text-sm">
-            No commitment to apply. We&apos;ll get on a call and work out whether it&apos;s a good fit.
+            Partnerships start with a 1-hour paid debug session ($150 USD). Larger projects are scoped after that session.
           </p>
 
           <div className="mt-10 pt-8 border-t border-white/10">
