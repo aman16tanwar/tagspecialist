@@ -10,6 +10,8 @@ export interface BlogPost {
   tags: string[];
   publishDate: string;
   author: string;
+  // YouTube video ID of the post's Short, embedded at the top of the post (optional).
+  youtubeId?: string;
 }
 
 export async function getBlogs(): Promise<BlogPost[]> {
@@ -24,6 +26,7 @@ export async function getBlogs(): Promise<BlogPost[]> {
       tags: blog.tags || [],
       publishDate: blog.publishDate || '',
       author: blog.author || 'Tag Specialist',
+      youtubeId: blog.youtubeId,
     }))
     .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 }

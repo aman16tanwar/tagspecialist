@@ -10,6 +10,7 @@ import rehypeSlug from 'rehype-slug';
 import type { BlogPost } from '@/lib/blogs';
 import MermaidDiagram, { extractText } from './MermaidDiagram';
 import TableOfContents, { buildToc } from './TableOfContents';
+import YouTubeShort from './YouTubeShort';
 
 // ```mermaid fences arrive here as a <pre><code class="language-mermaid"> pair. They are
 // intercepted at the <pre> level so the diagram replaces the block entirely rather than
@@ -89,6 +90,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
           {/* min-w-0 lets wide code blocks and tables scroll inside the flex child instead
               of forcing the whole row wider. */}
           <div className="prose prose-lg prose-blue max-w-none lg:min-w-0 lg:flex-1">
+          {post.youtubeId && <YouTubeShort id={post.youtubeId} title={post.title} />}
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeSlug, rehypeHighlight]}

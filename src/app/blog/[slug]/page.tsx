@@ -100,6 +100,20 @@ export default async function BlogPostPage({ params }: Props) {
             { '@type': 'ListItem', position: 3, name: post.title, item: canonical },
           ],
         },
+        // Lets Google show the post's Short as a video result. Thumbnail and player come from YouTube.
+        ...(post.youtubeId
+          ? [
+              {
+                '@type': 'VideoObject',
+                name: post.title,
+                description: post.description,
+                thumbnailUrl: `https://i.ytimg.com/vi/${post.youtubeId}/hqdefault.jpg`,
+                uploadDate: post.publishDate,
+                embedUrl: `https://www.youtube-nocookie.com/embed/${post.youtubeId}`,
+                url: `https://www.youtube.com/shorts/${post.youtubeId}`,
+              },
+            ]
+          : []),
       ],
     };
 
